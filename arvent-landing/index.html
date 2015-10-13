@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+
+    <title>ARVent by Soler&amp;Palau</title>
+
+    <!-- Core CSS -->
+    <!-- build:css assets/css/main.min.css -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- /build -->
+
+    <!-- Typography -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body role="document">
+
+    <header class="hero">
+
+        <ul class="scene" id="scene">
+
+          <li class="layer" data-depth="0.10">
+            <div class="background"></div>
+          </li>
+          
+          <li class="layer front" data-depth="0.90">
+            <div class="ipad"><img src="assets/img/header/ipad.png" alt="ARVent by Soler&amp;Palau"></div>
+          </li>
+
+
+        </ul>
+
+        <div class="logo"><a href="#"><img src="assets/img/logo.png" alt="ARVent by Soler&amp;Palau"></a></a>
+
+      </div>
+
+    </header>
+
+    <!-- Core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- build:js assets/js/scripts.min.js -->
+    <script src="assets/js/scripts.js"></script>
+    <!-- /build -->
+    <script>
+      $(document).ready(function(){
+        $('#scene').parallax();
+      });
+    </script>
+  </body>
+</html>

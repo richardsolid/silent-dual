@@ -1,0 +1,48 @@
+/**
+ * Hero
+ **/
+
+.hero{
+	position: relative;
+	height: 700px;
+}
+
+.hero .scene{
+	position: relative;
+	overflow: hidden;
+}
+
+.hero .scene,
+.hero .layer{
+	display: block;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.hero .layer .background{
+	background: transparent url("../img/header/bg.jpg") no-repeat scroll 50% 100% / cover;
+	position: absolute;
+	bottom: 0;
+	width: 110%;
+	left: -5%;
+	top: -5%;
+}
+
+.hero .layer.front{
+	text-align: center;
+}
+
+.hero .layer .ipad{
+	position: absolute;
+	bottom: -50px;
+	width: 100%;
+}
+
+.hero .logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+}
