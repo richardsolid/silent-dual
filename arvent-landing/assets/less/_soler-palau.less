@@ -19,7 +19,7 @@
 @font-family-sans-serif:	"Roboto", Arial, sans-serif;
 @headings-font-weight:		400;
 
-@font-size-h2:				32px;
+@font-size-h2:				24px;
 
 @font-size-base:			16px;
 
@@ -49,3 +49,26 @@
 
 @input-border-focus:		@brand-primary;
 
+
+/**
+* Modals
+*/
+
+@modal-backdrop-bg:    		#FFFFFF;
+@modal-backdrop-opacity:	.95;
+.close{
+	opacity: .5;
+}
+.close:hover,
+.close:focus{
+	opacity: 1;
+}
+.modal-dialog{
+	width: 900px;
+	@media(max-width: @screen-md-max){
+		width: 600px;
+	}
+	@media(max-width: @screen-xs-max){
+		width: 300px;
+	}
+}

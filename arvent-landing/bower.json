@@ -1,5 +1,5 @@
 {
-  "name": "Binaria base",
+  "name": "ARVent",
   "version": "1.0.0",
   "homepage": "http://jorditarrida.cat",
   "authors": [
@@ -17,6 +17,8 @@
     "jquery": "1.11.1",
     "bootstrap": "3.2.0",
     "respond": "1.4.2",
-    "parallax": "~2.1.3"
+    "parallax": "~2.1.3",
+    "animate.css": "~3.4.0",
+    "wow": "wowjs#~1.1.2"
   }
 }

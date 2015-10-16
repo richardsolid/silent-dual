@@ -1,9 +1,12 @@
 +function($){
+
+  //  http://jsfiddle.net/NbE9d/18/ 
+
     autoPlayYouTubeModal();
 
   //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
   function autoPlayYouTubeModal() {
-      var trigger = $("body").find('.video');
+      var trigger = $("body").find('.video a');
       trigger.click(function () {
           var theModal = $(this).data("target"),
               videoSRC = $(this).attr("data-theVideo"),

@@ -19,6 +19,8 @@ module.exports = function(grunt) {
     'assets/vendor/bootstrap/js/tab.js',
     'assets/vendor/bootstrap/js/affix.js',
     'assets/vendor/parallax/deploy/jquery.parallax.min.js',
+    'assets/vendor/wow/dist/wow.min.js',
+    'assets/img/feature3/edge_includes/edge.6.0.0.min.js',
     'assets/js/plugins/*.js',
     'assets/js/_*.js'
   ];
@@ -44,7 +46,8 @@ module.exports = function(grunt) {
       dev: {
         files: {
           'assets/css/main.css': [
-            'assets/less/main.less'
+            'assets/less/main.less',
+            'assets/vendor/animate.css/animate.min.css'
           ]
         },
         options: {
@@ -60,7 +63,8 @@ module.exports = function(grunt) {
       build: {
         files: {
           'dist/assets/css/main.min.css': [
-            'assets/less/main.less'
+            'assets/less/main.less',
+            'assets/vendor/animate.css/animate.min.css'
           ]
         },
         options: {
@@ -138,7 +142,7 @@ module.exports = function(grunt) {
     copy:{
       build: {
         files: [
-          {expand: true, cwd: 'assets/img/', src: ['**'], dest: 'dist/assets/img/', flatten: true, filter: 'isFile'},
+          {expand: true, cwd: 'assets/img/', src: ['**'], dest: 'dist/assets/img/', filter: 'isFile'},
           {expand: true, cwd: '', src: 'favicon.ico', dest: 'dist/', flatten: true, filter: 'isFile'},
         ]
       }
@@ -236,7 +240,7 @@ module.exports = function(grunt) {
     'uglify',
     'modernizr',
     'processhtml',
-    'uncss',
+//  'uncss',
     'copy:build',
     'cssmin',
     'usebanner'
