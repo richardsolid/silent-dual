@@ -203,15 +203,22 @@ section p{
 .arvent-presentation .video{
 	.make-md-column(12);
 	display: block;
-	a{
+}
+
+.arvent-presentation .video a{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: @brand-primary;
+	&:before{
 		display: inline-block;
 		vertical-align: middle;
-		&:before{
-			display: inline-block;
-			vertical-align: middle;
-			margin-right: 5px;
-			content: url(../img/icons/video.png);
-		}
+		margin-right: 5px;
+		content: url(../img/icons/video.png);
+	}
+	@media( max-width: @screen-xs-max ){
+		font-size: 18px;
 	}
 }
 
