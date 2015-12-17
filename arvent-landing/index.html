@@ -93,7 +93,7 @@
           </div>
 
           <div class="feature-image wow fadeInRight">
-            <video autoplay loop>
+            <video autoplay loop id="feature1video">
               <source src="assets/img/feature1/feature1.mp4" type="video/mp4">
               <source src="assets/img/feature1/feature1.webm" type="video/webm">
               Su navegador no soporta la reproducción de vídeos.
@@ -245,6 +245,14 @@
     <!-- build:js assets/js/scripts.min.js -->
     <script src="assets/js/scripts.js"></script>
     <!-- /build -->
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        if(navigator.userAgent.toLowerCase().indexOf('android') > -1) {
+          $('#feature1video').attr('controls', 'controls');
+        }
+      });
+    </script>
 
     <script>
       new WOW().init();
