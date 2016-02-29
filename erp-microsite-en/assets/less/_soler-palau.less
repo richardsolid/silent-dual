@@ -1,0 +1,82 @@
+/**
+* COLORS
+*/
+
+@text-color:				#666666;
+@headings-color:			#333333;
+
+@brand-primary:				#E72F22;
+@brand-secondary:			#3487D2;
+
+@bg-light-grey:				#F2F2F2;
+
+
+
+/**
+* TYPOGRAPHY
+*/
+
+@font-family-sans-serif:	"Roboto", Arial, sans-serif;
+@headings-font-weight:		300;
+
+@font-size-h2:				28px;
+
+@font-size-base:			16px;
+
+
+
+/**
+* VERTICAL RHYTHM
+*/
+
+@vr-lg:						60px;
+@vr-md:						40px;
+@vr-sm:						20px;
+
+
+/**
+* BOOTSTRAP COMPONENTS
+*/
+
+@link-color:				@brand-secondary;
+
+
+@container-large-desktop:	@container-desktop;
+
+@table-border-color:		#CCCCCC;
+@table-bg-hover:			@bg-light-grey;
+
+@border-radius-base:		3px;
+@border-radius-large:		@border-radius-base;
+@border-radius-small:		@border-radius-base;
+
+@input-border-radius:		@border-radius-base;
+.input-sm, .input-lg{border-radius: @input-border-radius;}
+
+@input-border-focus:		#FFFFFF;
+
+
+/**
+* Modals
+*/
+
+@modal-content-bg:			#FFFFFF;
+@modal-backdrop-bg:    		#000000;
+@modal-backdrop-opacity:	.8;
+.close{
+	opacity: .25;
+	transition: opacity .2s;
+}
+.close:hover,
+.close:focus{
+	opacity: 1;
+}
+.modal-dialog{
+	width: 900px;
+	@media(max-width: @screen-md-max){
+		width: 600px;
+	}
+	@media(max-width: @screen-xs-max){
+		width: 300px;
+	}
+}
