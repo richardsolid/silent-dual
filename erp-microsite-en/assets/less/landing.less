@@ -1,7 +1,8 @@
 *{text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.document{overflow-x:hidden;font-weight:300;}
+.document,.modal{overflow-x:hidden;font-weight:300;}
 //.wow{visibility: hidden;}
-.edgeLoad-EDGE-1196149138{visibility:hidden;}
+.edgeLoad-EDGE-1196149138,.edgeLoad-EDGE-1196149138-mobile,.edgeLoad-EDGE-1265963674{visibility:hidden;}
+a{transition: color .3s, background-color .3s, text-decoration .3s, font-weight .3s;}
 
 
 /**
@@ -205,8 +206,10 @@
 }
 
 .page-section .page-section__content{
-	.make-sm-column(8);
-	.make-sm-column-offset(2);
+	.make-sm-column(10);
+	.make-sm-column-offset(1);
+	.make-md-column(8);
+	.make-md-column-offset(2);
 }
 
 .page-section p,
@@ -240,21 +243,28 @@
 }
 
 .page-section__tabs{
-	.make-sm-column(8);
-	.make-sm-column-offset(2);
+	.make-sm-column(10);
+	.make-sm-column-offset(1);
+	.make-md-column(8);
+	.make-md-column-offset(2);
 }
 
 .page-section__tabs ul{
 	margin-left: 0;
 	margin-bottom: 0;
 	padding-left: 0;
-	.make-row();
+	display: table;
+	width: 100%;
 }
 
 .page-section__tabs ul li{
-	.make-xs-column(6);
+	display: table-cell;
+	vertical-align: bottom;
+	width: 50%;
 	margin-bottom: -1px;
-	padding-bottom: (@vr-sm + 1);
+	padding-bottom: @vr-sm;
+	padding-left: 10px;
+	padding-right: 10px;
 	font-size: 14px;
 	font-weight: 500;
 	text-align: center;
@@ -277,7 +287,6 @@
 }
 
 .page-section__tabs ul li:after{
-	content: '';
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -287,6 +296,7 @@
 	width: 0;
 	background-color: transparent;
 	transition: width .3s ease, background-color .3s ease;
+	content: '';
 }
 
 .page-section__tabs ul li.active:after{
@@ -381,7 +391,7 @@
 }
 
 .requisite__content{
-	.make-sm-column(10);
+	.make-sm-column(9);
 	.make-md-column(7);
 }
 
@@ -456,6 +466,21 @@
 
 .form label{
 	font-weight: 500;
+}
+
+.form .checkbox label{
+	font-weight: 400;
+}
+
+.form .checkbox a{
+	font-weight: 500;
+	color: #FFFFFF;
+	&:hover,
+	&:focus,
+	&:active{
+		text-decoration: none;
+		color: lighten(@brand-primary, 30%);
+	}
 }
 
 .form button{
@@ -619,4 +644,8 @@
 
 .center{
 	text-align: center;
+}
+
+.link-row{
+	cursor: pointer;
 }
