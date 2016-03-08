@@ -145,6 +145,7 @@ module.exports = function(grunt) {
         files: [
           {expand: true, cwd: 'assets/img/', src: ['**'], dest: 'dist/assets/img/', filter: 'isFile'},
           {expand: true, cwd: 'lib/', src: ['**'], dest: 'dist/lib/', filter: 'isFile'},
+          {expand: true, cwd: '', src: 'signup.php', dest: 'dist/', flatten: true, filter: 'isFile'},
           {expand: true, cwd: '', src: 'favicon.ico', dest: 'dist/', flatten: true, filter: 'isFile'},
         ]
       }
