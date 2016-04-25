@@ -663,3 +663,27 @@ a{transition: color .3s, background-color .3s, text-decoration .3s, font-weight 
 .link-row{
 	cursor: pointer;
 }
+
+/**
+ * SCROLL DOWN BUTTON
+**/
+
+.scrolldown-btn{
+	cursor: pointer;
+	width: 69px;
+	height: 69px;
+	position: fixed;
+	bottom: 50px;
+	right: 0;
+	@media(max-width: @screen-sm-max){
+		display: none;
+	}
+}
+
+.scrolldown-btn.next{
+	background: url(../img/icon-next-section.png) no-repeat;
+}
+
+.scrolldown-btn.previous{
+	background: url(../img/icon-next-section-prev.png) no-repeat;
+}
