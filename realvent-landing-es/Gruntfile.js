@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     'assets/vendor/bootstrap/js/affix.js',
     'assets/vendor/parallax/deploy/jquery.parallax.min.js',
     'assets/vendor/wow/dist/wow.min.js',
-    'assets/img/graph01/edge_includes/edge.6.0.0.min.js',
+    'assets/img/slider/edge_includes/edge.6.0.0.min.js',
     'assets/vendor/bootstrap-validator/dist/validator.min.js',
     'assets/js/plugins/*.js',
     'assets/js/_*.js'
@@ -145,6 +145,8 @@ module.exports = function(grunt) {
         files: [
           {expand: true, cwd: 'assets/img/', src: ['**'], dest: 'dist/assets/img/', filter: 'isFile'},
           {expand: true, cwd: 'lib/', src: ['**'], dest: 'dist/lib/', filter: 'isFile'},
+          {expand: true, cwd: 'js/', src: ['**'], dest: 'dist/js', filter: 'isFile'},
+          {expand: true, cwd: 'images/', src: ['**'], dest: 'dist/images/', filter: 'isFile'},
           {expand: true, cwd: '', src: 'signup.php', dest: 'dist/', flatten: true, filter: 'isFile'},
           {expand: true, cwd: '', src: 'favicon.ico', dest: 'dist/', flatten: true, filter: 'isFile'},
         ]
