@@ -513,7 +513,19 @@
           $('#Stage1_ExcludedNoRes, #Stage1mobile_ExcludedNoRes-mobile').click(function(){
             $('#Modal_ExcludedNoRes').modal('show');
           });
+
+          $('#Stage1_Text01Copy2').click(function (e) {
+            e.preventDefault();
+            $('a[href="#non-residential"]').tab('show');
+            $('html, body').animate({scrollTop: $('.page-section--tabs').offset().top},'slow');
+          });
+          $('#Stage1_Text01Copy3').click(function (e) {
+            e.preventDefault();
+            $('a[href="#residential"]').tab('show');
+            $('html, body').animate({scrollTop: $('.page-section--tabs').offset().top},'slow');
+          });
         });
+
       });
     </script>
 

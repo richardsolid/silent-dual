@@ -288,6 +288,7 @@ new WOW().init();
     //Background movements & distance to top
     $(window).bind("load resize scroll",function(e) {
       var y = $(window).scrollTop();
+
       $("#presentacion").css('background-position', '0px ' + parseInt(-y * 0.8) + 'px');
       $("#aplicacion").css('background-position', '0px ' + parseInt(-y * 0.8) + 'px');
       var heightHeader = $('header').height();

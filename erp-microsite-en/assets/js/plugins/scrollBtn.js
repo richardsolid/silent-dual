@@ -49,7 +49,7 @@
        if ($cur != null && pagePositon != $cur.data('pos')) {
            pagePositon = $cur.data('pos');
        }               
-    }
+    } 
     
 
 }(jQuery);
