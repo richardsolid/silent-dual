@@ -123,7 +123,8 @@ module.exports = function(grunt) {
     processhtml: {
       build: {
         files: {
-          'dist/index.html': ['index.html']
+          'dist/index.html': ['index.html'],
+          'dist/page-vr.html': ['page-vr.html']
         }
       }
     },

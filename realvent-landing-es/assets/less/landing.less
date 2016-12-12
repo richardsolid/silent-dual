@@ -154,6 +154,75 @@ h1{
  }
 }
 
+/*Aplicacion*/
+
+#aplicacion {
+  h1{
+    margin-bottom: 60px; 
+  }
+  p {
+    margin-top: 40px;
+  }
+  img{
+    margin-left: -20px;
+    margin-top: 0;
+  }
+}
+
+.aplicacion__btn {
+  border: 2px black solid;
+  text-align: center;
+  padding: 15px 60px 13px;
+  display: inline-block;
+  &:first-of-type{
+    margin-right: 15px
+  }
+  &:last-of-type{
+    margin-left: 15px
+  }
+  a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+.aplicacion__btnvr {
+  display: inline-block;
+  a {
+    color: #333;
+    text-decoration: underline;
+  }
+  &:first-of-type{
+    margin-right: 15px
+  }
+  &:last-of-type{
+    margin-left: 15px
+  }
+}
+
+  /* Medium devices (desktops, 992px and up) */
+  @media (max-width: @screen-sm-max) {
+    .aplicacion__btn {
+      display: block;
+      width: 80%;
+      &:first-of-type{
+        margin-bottom: 40px;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      &:last-of-type{
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  }
+}
+
+/***************/
+
 #slider-2 {
   background-color: #CAD7DD;
   .container {
