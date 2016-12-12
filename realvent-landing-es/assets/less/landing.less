@@ -78,25 +78,25 @@ a{transition: color .3s, background-color .3s, text-decoration .3s, font-weight 
   width: 100%;
   .container {
    padding-bottom: @vr-sm;
-     div.row ~ div {
-      display: inline-block;
-      p{
-       margin-top: 30px;
-       font-weight: 400;
-     }
+   div.row ~ div {
+    display: inline-block;
+    p{
+     margin-top: 30px;
+     font-weight: 400;
    }
-  span {
+ }
+ span {
   position: relative;
   display: inline-block;
-  }
-  img {
-    display:block;
-    margin: 0 auto;
-    &:last-child {
-     position: absolute;
-     bottom: -20px;
-     left: -40px;
-  }
+}
+img {
+  display:block;
+  margin: 0 auto;
+  &:last-child {
+   position: absolute;
+   bottom: -20px;
+   left: -40px;
+ }
 }
 
 }
@@ -128,14 +128,51 @@ h1 {
  }
  .row {
   margin: 0;
-}
-img {
- margin-top: @vr-md;
- display: inline-block;
-}
-h1{
- margin-top:0;
-}
+  }
+  img {
+   margin-top: @vr-md;
+   display: inline-block;
+  }
+  h1{
+   margin-top:0;
+  }
+  .modal-dialog {
+    @media (max-width: 767px){
+      width: 100%;
+      margin: 0;
+    }
+    @media (min-width: 1200px){
+      width: 1180px;
+      .modal-content {
+        padding: 60px 120px;
+      }
+    }
+    .modal-content {
+        color: white;
+         padding: 30px 30px;
+      }
+    h2{
+      .make-sm-column(12);
+      .make-md-column(8);
+      .make-md-column-offset(2);
+      text-align: center;
+      color: white;
+      margin-bottom: 25px;
+    }
+    .field {
+      margin-bottom: 20px;
+    }
+  }
+  .hbspt-form .hs-form fieldset{
+    width: 100%;
+    max-width: inherit;
+  }
+  .hbspt-form .hs-form .input, .hbspt-form .hs-form label {
+    padding: 0 15px;
+  }
+  .hbspt-form .hs-form label{
+    padding-left: 27px
+  }
 }
 
 #experiencia {
@@ -166,6 +203,13 @@ h1{
   img{
     margin-left: -20px;
     margin-top: 0;
+  }
+  .modal-content {
+    background-color: #e72f22;
+  }
+  .hs-form{
+    width: 100%;
+    overflow: hidden;
   }
 }
 
@@ -202,22 +246,22 @@ h1{
   }
 }
 
-  /* Medium devices (desktops, 992px and up) */
-  @media (max-width: @screen-sm-max) {
-    .aplicacion__btn {
-      display: block;
-      width: 80%;
-      &:first-of-type{
-        margin-bottom: 40px;
-        margin-top: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      &:last-of-type{
-        margin-top: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: @screen-sm-max) {
+  .aplicacion__btn {
+    display: block;
+    width: 80%;
+    &:first-of-type{
+      margin-bottom: 40px;
+      margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &:last-of-type{
+      margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -227,13 +271,13 @@ h1{
   background-color: #CAD7DD;
   .container {
     background-image: url('../img/background-slider-2.png');
-   padding-top: @vr-lg;
-   padding-bottom: @vr-lg;
-   width: 100% !important;
- }
- .carousel-inner {
- }
- h1 {
+    padding-top: @vr-lg;
+    padding-bottom: @vr-lg;
+    width: 100% !important;
+  }
+  .carousel-inner {
+  }
+  h1 {
    margin-bottom: @vr-lg;
  }
  .item {
@@ -291,23 +335,23 @@ h1{
    }
    .left span:first-of-type{
     left: 50%
-   }
-   .right span:first-of-type{
-    right: 50%
-   }
-   span:first-of-type {
-     width: 15px;
-     height: 24px;
-     position: absolute;
-     top: 50%;
-     transform: translateY(-50%);
-     &.arrow-left {
-      background: url('../img/arrow-left.png') no-repeat;
-    }
-    &.arrow-right {
-      background: url('../img/arrow-right.png') no-repeat;
-    }
   }
+  .right span:first-of-type{
+    right: 50%
+  }
+  span:first-of-type {
+   width: 15px;
+   height: 24px;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   &.arrow-left {
+    background: url('../img/arrow-left.png') no-repeat;
+  }
+  &.arrow-right {
+    background: url('../img/arrow-right.png') no-repeat;
+  }
+}
 }
 
 /*Breakpoints*/
@@ -412,87 +456,146 @@ color: black;*/
  }
 
 /**
- * SECTION specific classes
+ * HUBSPOT FORM
  **/
 
- #contact .container, #footer .container {
- 	max-width: 1280px
- }
+ #contact .hs-form{
+  .container();
+}
 
- .contact .form{
- 	.make-xs-column(12);
- 	margin-top: @vr-sm;
- }
+#contact .hbspt-form .hs-form fieldset{
+  .make-row();
+  max-width: 100%;
+  margin-bottom: 15px;
+}
 
- .form label{
- 	font-weight: 500;
- }
+.hbspt-form .hs-form fieldset label{
+  font-weight: normal;
+}
 
- .form .checkbox label{
- 	font-weight: 400;
- }
+.hbspt-form .hs-form fieldset.form-columns-2 .input,
+.hbspt-form .hs-form fieldset.form-columns-1 .input{
+  margin-right: 0;
+}
 
- .form .checkbox a{
- 	font-weight: 500;
- 	color: #FFFFFF;
- 	&:hover,
- 	&:focus,
- 	&:active{
- 		text-decoration: none;
- 		color: lighten(@brand-primary, 30%);
- 	}
- }
+.hbspt-form .hs-form fieldset.form-columns-1 .hs-input{
+  width: 100%;
+  @media(max-width:400px){
+    width: 95%;
+  }
+}
 
- .form button{
- 	margin-top: @vr-sm;
- 	padding-left: 50px;
- 	padding-right: 50px;
- }
+.hbspt-form .hs-form fieldset.form-columns-1 textarea{
+  height: auto;
+}
 
- .form-group.has-error .help-block,
- .form-group.has-error .control-label,
- .form-group.has-error .radio,
- .form-group.has-error .checkbox,
- .form-group.has-error .radio-inline,
- .form-group.has-error .checkbox-inline{
- 	color: #FDB7B7;
- }
+.hbspt-form .hs-form fieldset .hs-richtext{
+  .make-md-column(12);
+  margin-bottom: 15px;
+  h2{
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  .page-section__content{
+    width: 100%;
+    margin: 0;
+  }
+}
 
- .clear {
-  clear: both
- }
+#contact {
+  .hbspt-form .hs-form fieldset .hs_name,
+  .hbspt-form .hs-form fieldset .hs_surname,
+  .hbspt-form .hs-form fieldset .hs_jobtitle,
+  .hbspt-form .hs-form fieldset .hs_puesto_de_trabajo,
+  .hbspt-form .hs-form fieldset .hs_email{
+    .make-md-column(6);
+    .make-xs-column(12);
+  }
+  .hbspt-form .hs-form fieldset .hs_message{
+    .make-md-column(12);
+  }
+}
 
- .has-error .form-control{
- 	border-color: #FDB7B7;
- }
 
- .btn-outline{
- 	border-color: #FFFFFF;
- 	background-color: transparent;
- 	color: #FFFFFF;
- 	transition: background-color .3s;
- 	&:focus,
- 	&.focus {
- 		color: #FFFFFF;
- 		background-color: rgba(255, 255, 255, .2);
- 	}
- 	&:hover {
- 		color: #FFFFFF;
- 		background-color: rgba(255, 255, 255, .2);
- 	}
- 	&:active,
- 	&.active,
- 	.open > &.dropdown-toggle {
- 		color: #FFFFFF;
- 		background-color: rgba(255, 255, 255, .2);
- 		&:hover,
- 		&:focus,
- 		&.focus {
- 			background-color: rgba(255, 255, 255, .2);
- 		}
- 	}
- }
 
+
+.hbspt-form .hs-input{
+  .form-control;
+}
+
+.hbspt-form .hs-form .hs_submit{
+  .make-md-column(12);
+  text-align: center;
+}
+
+.hbspt-form .hs-form .hs_submit .hs-button{
+  .btn;
+  .btn-lg;
+  margin-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-color: #FFF;
+  background-color: transparent;
+  opacity: 0.8;
+  transition: .3s;
+  color: white !important;
+  &:hover {
+    opacity: 1;
+    transition: .3s
+  }
+}
+
+.hbspt-form .hs-form fieldset .hs-error-msgs{
+  padding-left: 0;
+  margin-top: 5px;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.hbspt-form .hs-form fieldset .hs_politica_de_privacidad{
+  .make-md-column(12);
+  text-align: center;
+  @media(max-width: @screen-xs-max){
+    text-align: left;
+  }
+}
+
+.hbspt-form .hs-form fieldset .hs_politica_de_privacidad a{
+  color:#FFF;
+  font-weight: bold;
+  transiton: color .3s ease;
+  &:hover{
+    text-decoration: none;
+    color: #f6b1ac;
+  }
+}
+
+.hbspt-form .hs-form .inputs-list{
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.hbspt-form .hs-form .inputs-list li{
+  list-style: none;
+}
+
+.hbspt-form .hs-form fieldset.form-columns-1 .hs-form-booleancheckbox label{
+  padding-left: 20px;
+}
+
+.hbspt-form .hs-form fieldset.form-columns-1 .hs-form-booleancheckbox label input{
+  position: absolute;
+  margin-left: -20px;
+  width: auto;
+  height: auto;
+}
+
+.hbspt-form .submitted-message{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+}
 
 /**
  * FOOTER
