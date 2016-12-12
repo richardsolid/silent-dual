@@ -1,5 +1,5 @@
 /* ========================================================================
- * Bootstrap (plugin): validator.js v0.11.5
+ * Bootstrap (plugin): validator.js v0.11.7
  * ========================================================================
  * The MIT License (MIT)
  *
@@ -35,6 +35,7 @@
   function getValue($el) {
     return $el.is('[type="checkbox"]') ? $el.prop('checked')                                     :
            $el.is('[type="radio"]')    ? !!$('[name="' + $el.attr('name') + '"]:checked').length :
+           $el.is('select[multiple]')  ? +$el.val() ? $el.val() : null                           :
                                          $el.val()
   }
 
@@ -61,13 +62,16 @@
       })
     })
 
-    this.$inputs.filter(function () { return getValue($(this)) }).trigger('focusout')
+    // run validators for fields with values, but don't clobber server-side errors
+    this.$inputs.filter(function () {
+      return getValue($(this)) && !$(this).closest('.has-error').length
+    }).trigger('focusout')
 
     this.$element.attr('novalidate', true) // disable automatic native validation
     this.toggleSubmit()
   }
 
-  Validator.VERSION = '0.11.5'
+  Validator.VERSION = '0.11.7'
 
   Validator.INPUT_SELECTOR = ':input:not([type="hidden"], [type="submit"], [type="reset"], button)'
 
@@ -129,7 +133,6 @@
   Validator.prototype.validateInput = function ($el, deferErrors) {
     var value      = getValue($el)
     var prevErrors = $el.data('bs.validator.errors')
-    var errors
 
     if ($el.is('[type="radio"]')) $el = this.$element.find('input[name="' + $el.attr('name') + '"]')
 
@@ -232,7 +235,7 @@
   Validator.prototype.focusError = function () {
     if (!this.options.focus) return
 
-    var $input = $(".has-error:first :input")
+    var $input = this.$element.find(".has-error:first :input")
     if ($input.length === 0) return
 
     $('html, body').animate({scrollTop: $input.offset().top - Validator.FOCUS_OFFSET}, 250)
@@ -357,6 +360,7 @@
     this.validators = null
     this.$element   = null
     this.$btn       = null
+    this.$inputs    = null
 
     return this
   }

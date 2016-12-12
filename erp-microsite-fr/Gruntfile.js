@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   var jsFileList = [
-    //'assets/vendor/bootstrap/js/transition.js',
+    'assets/vendor/bootstrap/js/transition.js',
     'assets/vendor/bootstrap/js/alert.js',
     'assets/vendor/bootstrap/js/button.js',
     'assets/vendor/bootstrap/js/carousel.js',
@@ -34,6 +34,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       options: {
+        reporterOutput: '',
         jshintrc: '.jshintrc'
       },
       all: [
@@ -144,8 +145,6 @@ module.exports = function(grunt) {
       build: {
         files: [
           {expand: true, cwd: 'assets/img/', src: ['**'], dest: 'dist/assets/img/', filter: 'isFile'},
-          {expand: true, cwd: 'lib/', src: ['**'], dest: 'dist/lib/', filter: 'isFile'},
-          {expand: true, cwd: '', src: 'signup.php', dest: 'dist/', flatten: true, filter: 'isFile'},
           {expand: true, cwd: '', src: 'favicon.ico', dest: 'dist/', flatten: true, filter: 'isFile'},
         ]
       }

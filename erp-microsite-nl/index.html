@@ -346,69 +346,25 @@
 
         <div class="container"><div class="row">
 
-          <h2>Hebt u hulp nodig?</h2>
+          <!--[if lte IE 8]>
 
-          <div class="page-section__content">
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
 
-            <p class="center">Vul het formulier in, dan zullen wij contact met u opnemen</p>
+          <![endif]-->
 
-          </div>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 
-          <form class="form" role="form" id="form">
+          <script>
 
-            <div class="form-group col-sm-6">
-              <label for="inputName">Naam</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Vul uw voornaam in" required>
-              <div class="help-block with-errors"></div>
-            </div>
+            hbspt.forms.create({
 
-            <div class="form-group col-sm-6">
-              <label for="inputSurname">Achternaam</label>
-              <input type="text" class="form-control" id="inputSurname" placeholder="Vul uw achternaam in" required>
-              <div class="help-block with-errors"></div>
-            </div>
+              portalId: '2009592',
 
-            <div class="form-group col-sm-6">
-              <label for="inputCompany">Bedrijf</label>
-              <input type="text" class="form-control" id="inputCompany" placeholder="Vul de naam van uw bedrijf in" required>
-              <div class="help-block with-errors"></div>
-            </div>
+              formId: '6d932df3-db03-4ca1-9547-a3712d819211'
 
-            <div class="form-group col-sm-6">
-              <label for="inputJobTitle">Werkplaats</label>
-              <input type="text" class="form-control" id="inputJobTitle" placeholder="Vul het adres in waar u werkt" required>
-              <div class="help-block with-errors"></div>
-            </div>
+            });
 
-            <div class="form-group col-sm-6">
-              <label for="inputEmail">E-mail</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Vul uw e-mailadres in" required>
-              <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="form-group col-xs-12">
-              <label for="txtMessage">Bericht</label>
-              <textarea class="form-control" id="txtMessage" placeholder="Schrijf uw bericht" rows="5" required></textarea>
-              <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="col-xs-12">
-              <small class="strong">Alle velden zijn verplicht</small>
-            </div>
-
-            <div class="form-group col-xs-12 center">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" required> Ik heb het <a href="http://www.solerpalau.com/en/legal-disclaimer/" target="_blank">privacybeleid</a> gelezen en ga ermee akkoord
-                </label>
-              </div>
-            </div>
-
-            <div class="col-xs-12 center">
-              <button type="submit" class="btn btn-lg btn-outline wow fadeInUp" id="btnSubmit">Contact opnemen met S&P</button>
-            </div>
-
-          </form>
+          </script>
 
         </div></div>
 
