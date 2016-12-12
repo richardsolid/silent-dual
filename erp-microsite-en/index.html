@@ -190,7 +190,7 @@
                 <div class="requisite__content">
                   <h3>Energy efficiency requirements</h3>
                   <ul>
-                    <li>Since 01/2016 the SEC (Specific Energy Consumption) should be equal to or less than 0 kWh/(m2.a)</li>
+                    <li>Since 01/2016 the SEC (Specific Energy Consumption) should be equal to or less than 0 kWh/(m2.a).</li>
                     <li>From 01/2018 the SEC should be equal to or less than -20 kWh/(m2.a).</li>
                   </ul>
                 </div>
@@ -229,7 +229,7 @@
                     <thead>
                       <tr>
                         <th>SEC Category</th>
-                        <th>SEC in kWh / an.m2</th>
+                        <th>SEC in kWh/m2.a</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -304,9 +304,16 @@
                 <div class="requisite__icon"><i class="requisites-icon1"></i></div>
                 <div class="requisite__content">
                   <h3>Energy efficiency requirements</h3>
+                  <p>Since 01/2016:</p>
                   <ul>
-                    <li>Since 01/2016 the minimum thermal efficiency of heat exchangers is 67%.</li>
-                    <li>From 01/2018 the minimum thermal efficiency of heat exchangers must be 73%.</li>
+                    <li>The minimum thermal efficiency of heat exchangers is 67%.</li>
+                    <li>The efficiency of the fans should be higher than a concrete value.</li>
+                    <li>The pressure drop inside the units with air treatment should be within concrete limits.</li>
+                  </ul>
+                  <p>Since 01/2018:</p>
+                  <ul>
+                    <li>The minimum thermal efficiency of heat exchangers must be 73%.</li>
+                    <li>The efficiency of fans and the limits of pressure drop inside the unit are more demanding.</li>
                   </ul>
                 </div>
               </div>
@@ -346,69 +353,27 @@
 
         <div class="container"><div class="row">
 
-          <h2>Do you need help?</h2>
+          <!--[if lte IE 8]>
 
-          <div class="page-section__content">
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
 
-            <p class="center">Complete the form and we will contact you</p>
+          <![endif]-->
 
-          </div>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 
-          <form class="form" role="form" id="form">
+          <script>
 
-            <div class="form-group col-sm-6">
-              <label for="inputName">Name</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Name" required>
-              <div class="help-block with-errors"></div>
-            </div>
+            hbspt.forms.create({
 
-            <div class="form-group col-sm-6">
-              <label for="inputSurname">Surname</label>
-              <input type="text" class="form-control" id="inputSurname" placeholder="Surname" required>
-              <div class="help-block with-errors"></div>
-            </div>
+              css: '',
 
-            <div class="form-group col-sm-6">
-              <label for="inputCompany">Company</label>
-              <input type="text" class="form-control" id="inputCompany" placeholder="Company" required>
-              <div class="help-block with-errors"></div>
-            </div>
+              portalId: '2009592',
 
-            <div class="form-group col-sm-6">
-              <label for="inputJobTitle">Job Title</label>
-              <input type="text" class="form-control" id="inputJobTitle" placeholder="Job Title" required>
-              <div class="help-block with-errors"></div>
-            </div>
+              formId: 'c89a58b1-e2f8-43d2-8b36-6d99e8ca1d2e'
 
-            <div class="form-group col-sm-6">
-              <label for="inputEmail">Email address</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
-              <div class="help-block with-errors"></div>
-            </div>
+            });
 
-            <div class="form-group col-xs-12">
-              <label for="txtMessage">Message</label>
-              <textarea class="form-control" id="txtMessage" placeholder="Message" rows="5" required></textarea>
-              <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="col-xs-12">
-              <small class="strong">All fields are required</small>
-            </div>
-
-            <div class="form-group col-xs-12 center">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" required> I have read and accept the <a href="http://www.solerpalau.com/en/legal-disclaimer/" target="_blank">privacy policy</a>
-                </label>
-              </div>
-            </div>
-
-            <div class="col-xs-12 center">
-              <button type="submit" class="btn btn-lg btn-outline wow fadeInUp" id="btnSubmit">Contact S&amp;P</button>
-            </div>
-
-          </form>
+          </script>
 
         </div></div>
 
@@ -416,7 +381,7 @@
 
       <div class="scrolldown-btn next"></div>
 
-      <footer id="footer" class="footer" role="content-info">
+      <footer id="footer" class="footer section-scroll" role="content-info">
 
         <div class="container">
 

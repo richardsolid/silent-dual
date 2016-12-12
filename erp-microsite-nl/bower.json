@@ -1,0 +1,25 @@
+{
+  "name": "erp",
+  "version": "1.0.0",
+  "homepage": "http://binaria.com",
+  "authors": [
+    "Jordi Tarrida <info@binaria.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "assets/vendor"
+  ],
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "jquery": "1.11.1",
+    "bootstrap": "3.2.0",
+    "respond": "1.4.2",
+    "parallax": "~2.1.3",
+    "animate.css": "~3.4.0",
+    "wow": "wowjs#~1.1.2",
+    "bootstrap-validator": "^0.11.5"
+  }
+}
