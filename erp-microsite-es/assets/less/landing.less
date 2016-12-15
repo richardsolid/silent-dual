@@ -700,7 +700,7 @@ a{transition: color .3s, background-color .3s, text-decoration .3s, font-weight 
  * HUBSPOT FORM
 **/
 
-.hs-form{
+.document .hbspt-form .hs-form{
 	.container();
 }
 
@@ -770,6 +770,12 @@ a{transition: color .3s, background-color .3s, text-decoration .3s, font-weight 
 	margin-top: 20px;
 	padding-left: 50px;
 	padding-right: 50px;
+	text-shadow: initial;
+	&:hover{
+		box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5),0 0 5px #FFF;
+		border: 1px solid #FFF;
+		
+	} 
 }
 
 .hbspt-form .hs-form fieldset .hs-error-msgs{
