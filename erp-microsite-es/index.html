@@ -353,69 +353,27 @@
 
         <div class="container"><div class="row">
 
-          <h2>¿Alguna duda?</h2>
+          <!--[if lte IE 8]>
 
-          <div class="page-section__content">
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
 
-            <p class="center">Completa el formulario y nos pondremos en contacto contigo</p>
+          <![endif]-->
 
-          </div>
+          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 
-          <form class="form" role="form" id="form">
+          <script>
 
-            <div class="form-group col-sm-6">
-              <label for="inputName">Nombre</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Nombre" required>
-              <div class="help-block with-errors"></div>
-            </div>
+            hbspt.forms.create({
 
-            <div class="form-group col-sm-6">
-              <label for="inputSurname">Apellidos</label>
-              <input type="text" class="form-control" id="inputSurname" placeholder="Apellidos" required>
-              <div class="help-block with-errors"></div>
-            </div>
+              css: '',
 
-            <div class="form-group col-sm-6">
-              <label for="inputCompany">Empresa</label>
-              <input type="text" class="form-control" id="inputCompany" placeholder="Empresa" required>
-              <div class="help-block with-errors"></div>
-            </div>
+              portalId: '2009592',
 
-            <div class="form-group col-sm-6">
-              <label for="inputJobTitle">Puesto de trabajo</label>
-              <input type="text" class="form-control" id="inputJobTitle" placeholder="Puesto de trabajo" required>
-              <div class="help-block with-errors"></div>
-            </div>
+              formId: 'b123b7f3-80b1-4c9b-a3b4-d1c289371679'
 
-            <div class="form-group col-sm-6">
-              <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
-              <div class="help-block with-errors"></div>
-            </div>
+            });
 
-            <div class="form-group col-xs-12">
-              <label for="txtMessage">Mensaje</label>
-              <textarea class="form-control" id="txtMessage" placeholder="Mensaje" rows="5" required></textarea>
-              <div class="help-block with-errors"></div>
-            </div>
-
-            <div class="col-xs-12">
-              <small class="strong">Todos los campos son obligatorios</small>
-            </div>
-
-            <div class="form-group col-xs-12 center">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" required> He leído y acepto la <a href="http://www.solerpalau.com/en/legal-disclaimer/" target="_blank">política de privacidad</a>
-                </label>
-              </div>
-            </div>
-
-            <div class="col-xs-12 center">
-              <button type="submit" class="btn btn-lg btn-outline wow fadeInUp" id="btnSubmit">Contactar con S&amp;P</button>
-            </div>
-
-          </form>
+          </script>
 
         </div></div>
 

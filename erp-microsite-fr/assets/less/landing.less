@@ -687,3 +687,136 @@ a{transition: color .3s, background-color .3s, text-decoration .3s, font-weight 
 .scrolldown-btn.previous{
 	background: url(../img/icon-next-section-prev.png) no-repeat;
 }
+
+/**
+ * HUBSPOT FORM
+**/
+
+.document .hbspt-form .hs-form{
+	.container();
+}
+
+.hbspt-form .hs-form fieldset{
+	.make-row();
+	max-width: 100%;
+	margin-bottom: 15px;
+}
+
+.hbspt-form .hs-form fieldset label{
+	font-weight: normal;
+}
+
+.hbspt-form .hs-form fieldset.form-columns-2 .input,
+.hbspt-form .hs-form fieldset.form-columns-1 .input{
+    margin-right: 0;
+}
+
+.hbspt-form .hs-form fieldset.form-columns-1 .hs-input{
+	width: 100%;
+}
+
+.hbspt-form .hs-form fieldset.form-columns-1 textarea{
+	height: auto;
+}
+
+.hbspt-form .hs-form fieldset .hs-richtext{
+	.make-md-column(12);
+	margin-bottom: 15px;
+	h2{
+		width: 100%;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+	.page-section__content{
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.hbspt-form .hs-form fieldset .hs_name,
+.hbspt-form .hs-form fieldset .hs_surname,
+.hbspt-form .hs-form fieldset .hs_jobtitle,
+.hbspt-form .hs-form fieldset .hs_puesto_de_trabajo,
+.hbspt-form .hs-form fieldset .hs_email{
+	.make-md-column(6);
+	.make-xs-column(12);
+}
+
+.hbspt-form .hs-form fieldset .hs_message{
+	.make-md-column(12);
+}
+
+.hbspt-form .hs-input{
+	.form-control;
+}
+
+.hbspt-form .hs-form .hs_submit{
+	.make-md-column(12);
+	text-align: center;
+}
+
+.hbspt-form .hs-form .hs_submit .hs-button{
+	.btn;
+	.btn-lg;
+	.btn-outline;
+	margin-top: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-shadow: initial;
+	&:hover{
+		box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5),0 0 5px #FFF;
+		border: 1px solid #FFF;
+		
+	} 
+}
+
+.hbspt-form .hs-form fieldset .hs-error-msgs{
+	padding-left: 0;
+	margin-top: 5px;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+.hbspt-form .hs-form fieldset .hs_politica_de_privacidad{
+	.make-md-column(12);
+	text-align: center;
+	@media(max-width: @screen-xs-max){
+		text-align: left;
+	}
+}
+
+.hbspt-form .hs-form fieldset .hs_politica_de_privacidad a{
+	color:#FFF;
+	font-weight: bold;
+	transiton: color .3s ease;
+	&:hover{
+		text-decoration: none;
+		color: #f6b1ac;
+	}
+}
+
+.hbspt-form .hs-form .inputs-list{
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.hbspt-form .hs-form .inputs-list li{
+	list-style: none;
+}
+
+.hbspt-form .hs-form fieldset.form-columns-1 .hs-form-booleancheckbox label{
+	padding-left: 20px;
+}
+
+.hbspt-form .hs-form fieldset.form-columns-1 .hs-form-booleancheckbox label input{
+	position: absolute;
+	margin-left: -20px;
+	width: auto;
+	height: auto;
+}
+
+.hbspt-form .submitted-message{
+	text-align: center;
+	font-size: 28px;
+	font-weight: 300;
+}
