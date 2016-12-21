@@ -1,0 +1,2795 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@3.7.2
+3 info using node@v4.3.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly loadAllDepsIntoIdealTree Finishing
+20 silly idealTree:prePrune sp-arvent-landing@0.1.0
+20 silly idealTree:prePrune ├── abbrev
+20 silly idealTree:prePrune ├── accepts
+20 silly idealTree:prePrune ├── align-text
+20 silly idealTree:prePrune ├── amdefine
+20 silly idealTree:prePrune ├── ansi-regex
+20 silly idealTree:prePrune ├── ansi-styles
+20 silly idealTree:prePrune ├── array-differ
+20 silly idealTree:prePrune ├── array-find-index
+20 silly idealTree:prePrune ├── array-union
+20 silly idealTree:prePrune ├── array-uniq
+20 silly idealTree:prePrune ├── asn1
+20 silly idealTree:prePrune ├── assert-plus
+20 silly idealTree:prePrune ├── async
+20 silly idealTree:prePrune ├── autoprefixer-core
+20 silly idealTree:prePrune ├── aws-sign
+20 silly idealTree:prePrune ├── aws-sign2
+20 silly idealTree:prePrune ├── balanced-match
+20 silly idealTree:prePrune ├── basic-auth
+20 silly idealTree:prePrune ├── batch
+20 silly idealTree:prePrune ├── bcrypt-pbkdf
+20 silly idealTree:prePrune ├── bl
+20 silly idealTree:prePrune ├── bluebird
+20 silly idealTree:prePrune ├── boom
+20 silly idealTree:prePrune ├── bower@1.7.9
+20 silly idealTree:prePrune ├── brace-expansion
+20 silly idealTree:prePrune ├── browserify-zlib
+20 silly idealTree:prePrune ├── builtin-modules
+20 silly idealTree:prePrune ├── camelcase
+20 silly idealTree:prePrune ├── camelcase-keys
+20 silly idealTree:prePrune ├── caniuse-db
+20 silly idealTree:prePrune ├── caseless
+20 silly idealTree:prePrune ├── center-align
+20 silly idealTree:prePrune ├── chalk
+20 silly idealTree:prePrune ├── cliui
+20 silly idealTree:prePrune ├── coffee-script
+20 silly idealTree:prePrune ├── colors
+20 silly idealTree:prePrune ├── combined-stream
+20 silly idealTree:prePrune ├── commander
+20 silly idealTree:prePrune ├── concat-map
+20 silly idealTree:prePrune ├── concat-stream
+20 silly idealTree:prePrune ├── connect
+20 silly idealTree:prePrune ├── connect-livereload
+20 silly idealTree:prePrune ├── console-browserify
+20 silly idealTree:prePrune ├── cookie-jar
+20 silly idealTree:prePrune ├── core-util-is
+20 silly idealTree:prePrune ├── cryptiles
+20 silly idealTree:prePrune ├── css
+20 silly idealTree:prePrune ├── css-parse
+20 silly idealTree:prePrune ├── css-stringify
+20 silly idealTree:prePrune ├── ctype
+20 silly idealTree:prePrune ├── currently-unhandled
+20 silly idealTree:prePrune ├── date-now
+20 silly idealTree:prePrune ├── date-time
+20 silly idealTree:prePrune ├── dateformat
+20 silly idealTree:prePrune ├── debug
+20 silly idealTree:prePrune ├── decamelize
+20 silly idealTree:prePrune ├── deep-equal
+20 silly idealTree:prePrune ├── defined
+20 silly idealTree:prePrune ├── delayed-stream
+20 silly idealTree:prePrune ├── depd
+20 silly idealTree:prePrune ├── destroy
+20 silly idealTree:prePrune ├── diff
+20 silly idealTree:prePrune ├── domelementtype
+20 silly idealTree:prePrune ├── domhandler
+20 silly idealTree:prePrune ├── domutils
+20 silly idealTree:prePrune ├── ecc-jsbn
+20 silly idealTree:prePrune ├── ee-first
+20 silly idealTree:prePrune ├── encodeurl
+20 silly idealTree:prePrune ├── entities
+20 silly idealTree:prePrune ├── error-ex
+20 silly idealTree:prePrune ├── escape-html
+20 silly idealTree:prePrune ├── escape-string-regexp
+20 silly idealTree:prePrune ├── esprima
+20 silly idealTree:prePrune ├── etag
+20 silly idealTree:prePrune ├── eventemitter2
+20 silly idealTree:prePrune ├── exit
+20 silly idealTree:prePrune ├── extend
+20 silly idealTree:prePrune ├── extract-zip
+20 silly idealTree:prePrune ├── extsprintf
+20 silly idealTree:prePrune ├── faye-websocket
+20 silly idealTree:prePrune ├── fd-slicer
+20 silly idealTree:prePrune ├── figures
+20 silly idealTree:prePrune ├── file-sync-cmp
+20 silly idealTree:prePrune ├── finalhandler
+20 silly idealTree:prePrune ├── find-up
+20 silly idealTree:prePrune ├── forever-agent
+20 silly idealTree:prePrune ├── fork-stream
+20 silly idealTree:prePrune ├── fresh
+20 silly idealTree:prePrune ├── fs.realpath@1.0.0
+20 silly idealTree:prePrune ├── gaze
+20 silly idealTree:prePrune ├── generate-function
+20 silly idealTree:prePrune ├── generate-object-property
+20 silly idealTree:prePrune ├── get-stdin
+20 silly idealTree:prePrune ├── getobject
+20 silly idealTree:prePrune ├── graceful-fs
+20 silly idealTree:prePrune ├── graceful-readlink
+20 silly idealTree:prePrune ├─┬ grunt-autoprefixer@1.0.1
+20 silly idealTree:prePrune │ ├── amdefine@1.0.0
+20 silly idealTree:prePrune │ ├── ansi-regex@0.2.1
+20 silly idealTree:prePrune │ ├── ansi-styles@1.1.0
+20 silly idealTree:prePrune │ ├── autoprefixer-core@3.1.2
+20 silly idealTree:prePrune │ ├── caniuse-db@1.0.30000559
+20 silly idealTree:prePrune │ ├── chalk@0.5.1
+20 silly idealTree:prePrune │ ├── diff@1.0.8
+20 silly idealTree:prePrune │ ├── escape-string-regexp@1.0.5
+20 silly idealTree:prePrune │ ├── has-ansi@0.1.0
+20 silly idealTree:prePrune │ ├── js-base64@2.1.9
+20 silly idealTree:prePrune │ ├── postcss@2.2.6
+20 silly idealTree:prePrune │ ├── source-map@0.1.43
+20 silly idealTree:prePrune │ ├── strip-ansi@0.3.0
+20 silly idealTree:prePrune │ └── supports-color@0.2.0
+20 silly idealTree:prePrune ├── grunt-banner@0.3.1
+20 silly idealTree:prePrune ├─┬ grunt-contrib-concat@0.5.1
+20 silly idealTree:prePrune │ ├── amdefine@1.0.0
+20 silly idealTree:prePrune │ ├── ansi-regex@0.2.1
+20 silly idealTree:prePrune │ ├── ansi-styles@1.1.0
+20 silly idealTree:prePrune │ ├── chalk@0.5.1
+20 silly idealTree:prePrune │ ├── escape-string-regexp@1.0.5
+20 silly idealTree:prePrune │ ├── has-ansi@0.1.0
+20 silly idealTree:prePrune │ ├── source-map@0.3.0
+20 silly idealTree:prePrune │ ├── strip-ansi@0.3.0
+20 silly idealTree:prePrune │ └── supports-color@0.2.0
+20 silly idealTree:prePrune ├─┬ grunt-contrib-connect@0.11.2
+20 silly idealTree:prePrune │ ├── accepts@1.3.3
+20 silly idealTree:prePrune │ ├── async@0.9.2
+20 silly idealTree:prePrune │ ├── basic-auth@1.0.4
+20 silly idealTree:prePrune │ ├── batch@0.5.3
+20 silly idealTree:prePrune │ ├── connect-livereload@0.5.4
+20 silly idealTree:prePrune │ ├── connect@3.5.0
+20 silly idealTree:prePrune │ ├── debug@2.2.0
+20 silly idealTree:prePrune │ ├── depd@1.1.0
+20 silly idealTree:prePrune │ ├── destroy@1.0.4
+20 silly idealTree:prePrune │ ├── ee-first@1.1.1
+20 silly idealTree:prePrune │ ├── encodeurl@1.0.1
+20 silly idealTree:prePrune │ ├── escape-html@1.0.3
+20 silly idealTree:prePrune │ ├── etag@1.7.0
+20 silly idealTree:prePrune │ ├── finalhandler@0.5.0
+20 silly idealTree:prePrune │ ├── fresh@0.3.0
+20 silly idealTree:prePrune │ ├── http-errors@1.5.0
+20 silly idealTree:prePrune │ ├── inherits@2.0.1
+20 silly idealTree:prePrune │ ├── mime-db@1.24.0
+20 silly idealTree:prePrune │ ├── mime-types@2.1.12
+20 silly idealTree:prePrune │ ├── mime@1.3.4
+20 silly idealTree:prePrune │ ├── morgan@1.7.0
+20 silly idealTree:prePrune │ ├── ms@0.7.1
+20 silly idealTree:prePrune │ ├── negotiator@0.6.1
+20 silly idealTree:prePrune │ ├── on-finished@2.3.0
+20 silly idealTree:prePrune │ ├── on-headers@1.0.1
+20 silly idealTree:prePrune │ ├── opn@1.0.2
+20 silly idealTree:prePrune │ ├── parseurl@1.3.1
+20 silly idealTree:prePrune │ ├─┬ portscanner@1.0.0
+20 silly idealTree:prePrune │ │ └── async@0.1.15
+20 silly idealTree:prePrune │ ├── range-parser@1.2.0
+20 silly idealTree:prePrune │ ├── send@0.14.1
+20 silly idealTree:prePrune │ ├── serve-index@1.8.0
+20 silly idealTree:prePrune │ ├── serve-static@1.11.1
+20 silly idealTree:prePrune │ ├── setprototypeof@1.0.1
+20 silly idealTree:prePrune │ ├── statuses@1.3.0
+20 silly idealTree:prePrune │ ├── unpipe@1.0.0
+20 silly idealTree:prePrune │ └── utils-merge@1.0.0
+20 silly idealTree:prePrune ├─┬ grunt-contrib-copy@0.8.2
+20 silly idealTree:prePrune │ ├── ansi-regex@2.0.0
+20 silly idealTree:prePrune │ ├── ansi-styles@2.2.1
+20 silly idealTree:prePrune │ ├── chalk@1.1.3
+20 silly idealTree:prePrune │ ├── escape-string-regexp@1.0.5
+20 silly idealTree:prePrune │ ├── file-sync-cmp@0.1.1
+20 silly idealTree:prePrune │ ├── has-ansi@2.0.0
+20 silly idealTree:prePrune │ ├── strip-ansi@3.0.1
+20 silly idealTree:prePrune │ └── supports-color@2.0.0
+20 silly idealTree:prePrune ├─┬ grunt-contrib-cssmin@0.12.3
+20 silly idealTree:prePrune │ ├── amdefine@1.0.0
+20 silly idealTree:prePrune │ ├── ansi-regex@2.0.0
+20 silly idealTree:prePrune │ ├── ansi-styles@2.2.1
+20 silly idealTree:prePrune │ ├── array-find-index@1.0.2
+20 silly idealTree:prePrune │ ├── browserify-zlib@0.1.4
+20 silly idealTree:prePrune │ ├── builtin-modules@1.1.1
+20 silly idealTree:prePrune │ ├── camelcase-keys@2.1.0
+20 silly idealTree:prePrune │ ├── camelcase@2.1.1
+20 silly idealTree:prePrune │ ├── chalk@1.1.3
+20 silly idealTree:prePrune │ ├── clean-css@3.4.20
+20 silly idealTree:prePrune │ ├── commander@2.8.1
+20 silly idealTree:prePrune │ ├── concat-stream@1.5.2
+20 silly idealTree:prePrune │ ├── core-util-is@1.0.2
+20 silly idealTree:prePrune │ ├── currently-unhandled@0.4.1
+20 silly idealTree:prePrune │ ├── decamelize@1.2.0
+20 silly idealTree:prePrune │ ├── error-ex@1.3.0
+20 silly idealTree:prePrune │ ├── escape-string-regexp@1.0.5
+20 silly idealTree:prePrune │ ├── figures@1.7.0
+20 silly idealTree:prePrune │ ├── find-up@1.1.2
+20 silly idealTree:prePrune │ ├── get-stdin@4.0.1
+20 silly idealTree:prePrune │ ├── graceful-fs@4.1.9
+20 silly idealTree:prePrune │ ├── graceful-readlink@1.0.1
+20 silly idealTree:prePrune │ ├── gzip-size@1.0.0
+20 silly idealTree:prePrune │ ├── has-ansi@2.0.0
+20 silly idealTree:prePrune │ ├── hosted-git-info@2.1.5
+20 silly idealTree:prePrune │ ├── indent-string@2.1.0
+20 silly idealTree:prePrune │ ├── inherits@2.0.3
+20 silly idealTree:prePrune │ ├── is-arrayish@0.2.1
+20 silly idealTree:prePrune │ ├── is-builtin-module@1.0.0
+20 silly idealTree:prePrune │ ├── is-finite@1.0.2
+20 silly idealTree:prePrune │ ├── is-utf8@0.2.1
+20 silly idealTree:prePrune │ ├── isarray@1.0.0
+20 silly idealTree:prePrune │ ├── load-json-file@1.1.0
+20 silly idealTree:prePrune │ ├── loud-rejection@1.6.0
+20 silly idealTree:prePrune │ ├── map-obj@1.0.1
+20 silly idealTree:prePrune │ ├── maxmin@1.1.0
+20 silly idealTree:prePrune │ ├── meow@3.7.0
+20 silly idealTree:prePrune │ ├── minimist@1.2.0
+20 silly idealTree:prePrune │ ├── normalize-package-data@2.3.5
+20 silly idealTree:prePrune │ ├── number-is-nan@1.0.1
+20 silly idealTree:prePrune │ ├── object-assign@4.1.0
+20 silly idealTree:prePrune │ ├── pako@0.2.9
+20 silly idealTree:prePrune │ ├── parse-json@2.2.0
+20 silly idealTree:prePrune │ ├── path-exists@2.1.0
+20 silly idealTree:prePrune │ ├── path-type@1.1.0
+20 silly idealTree:prePrune │ ├── pify@2.3.0
+20 silly idealTree:prePrune │ ├── pinkie-promise@2.0.1
+20 silly idealTree:prePrune │ ├── pinkie@2.0.4
+20 silly idealTree:prePrune │ ├── pretty-bytes@1.0.4
+20 silly idealTree:prePrune │ ├── process-nextick-args@1.0.7
+20 silly idealTree:prePrune │ ├── read-pkg-up@1.0.1
+20 silly idealTree:prePrune │ ├── read-pkg@1.1.0
+20 silly idealTree:prePrune │ ├── readable-stream@2.0.6
+20 silly idealTree:prePrune │ ├── redent@1.0.0
+20 silly idealTree:prePrune │ ├── repeating@2.0.1
+20 silly idealTree:prePrune │ ├── semver@5.3.0
+20 silly idealTree:prePrune │ ├── signal-exit@3.0.1
+20 silly idealTree:prePrune │ ├── source-map@0.4.4
+20 silly idealTree:prePrune │ ├── spdx-correct@1.0.2
+20 silly idealTree:prePrune │ ├── spdx-expression-parse@1.0.4
+20 silly idealTree:prePrune │ ├── spdx-license-ids@1.2.2
+20 silly idealTree:prePrune │ ├── string_decoder@0.10.31
+20 silly idealTree:prePrune │ ├── strip-ansi@3.0.1
+20 silly idealTree:prePrune │ ├── strip-bom@2.0.0
+20 silly idealTree:prePrune │ ├── strip-indent@1.0.1
+20 silly idealTree:prePrune │ ├── supports-color@2.0.0
+20 silly idealTree:prePrune │ ├── trim-newlines@1.0.0
+20 silly idealTree:prePrune │ ├── typedarray@0.0.6
+20 silly idealTree:prePrune │ ├── util-deprecate@1.0.2
+20 silly idealTree:prePrune │ └── validate-npm-package-license@3.0.1
+20 silly idealTree:prePrune ├─┬ grunt-contrib-jshint@0.10.0
+20 silly idealTree:prePrune │ ├── cli@0.6.6
+20 silly idealTree:prePrune │ ├── console-browserify@1.1.0
+20 silly idealTree:prePrune │ ├── core-util-is@1.0.2
+20 silly idealTree:prePrune │ ├── date-now@0.1.4
+20 silly idealTree:prePrune │ ├─┬ dom-serializer@0.1.0
+20 silly idealTree:prePrune │ │ ├── domelementtype@1.1.3
+20 silly idealTree:prePrune │ │ └── entities@1.1.1
+20 silly idealTree:prePrune │ ├── domelementtype@1.3.0
+20 silly idealTree:prePrune │ ├── domhandler@2.3.0
+20 silly idealTree:prePrune │ ├── domutils@1.5.1
+20 silly idealTree:prePrune │ ├── entities@1.0.0
+20 silly idealTree:prePrune │ ├── exit@0.1.2
+20 silly idealTree:prePrune │ ├─┬ glob@3.2.11
+20 silly idealTree:prePrune │ │ └── minimatch@0.3.0
+20 silly idealTree:prePrune │ ├── hooker@0.2.3
+20 silly idealTree:prePrune │ ├── htmlparser2@3.8.3
+20 silly idealTree:prePrune │ ├── inherits@2.0.3
+20 silly idealTree:prePrune │ ├── isarray@0.0.1
+20 silly idealTree:prePrune │ ├── jshint@2.5.11
+20 silly idealTree:prePrune │ ├── lru-cache@2.7.3
+20 silly idealTree:prePrune │ ├── minimatch@1.0.0
+20 silly idealTree:prePrune │ ├── readable-stream@1.1.14
+20 silly idealTree:prePrune │ ├── shelljs@0.3.0
+20 silly idealTree:prePrune │ ├── sigmund@1.0.1
+20 silly idealTree:prePrune │ ├── string_decoder@0.10.31
+20 silly idealTree:prePrune │ ├── strip-json-comments@1.0.4
+20 silly idealTree:prePrune │ └── underscore@1.6.0
+20 silly idealTree:prePrune ├─┬ grunt-contrib-less@0.11.4
+20 silly idealTree:prePrune │ ├── amdefine@1.0.0
+20 silly idealTree:prePrune │ ├── ansi-regex@0.2.1
+20 silly idealTree:prePrune │ ├── ansi-styles@1.1.0
+20 silly idealTree:prePrune │ ├── asn1@0.1.11
+20 silly idealTree:prePrune │ ├── assert-plus@0.1.5
+20 silly idealTree:prePrune │ ├── async@0.2.10
+20 silly idealTree:prePrune │ ├── aws-sign2@0.5.0
+20 silly idealTree:prePrune │ ├── boom@0.4.2
+20 silly idealTree:prePrune │ ├── chalk@0.5.1
+20 silly idealTree:prePrune │ ├── clean-css@2.2.23
+20 silly idealTree:prePrune │ ├── combined-stream@0.0.7
+20 silly idealTree:prePrune │ ├── commander@2.2.0
+20 silly idealTree:prePrune │ ├── concat-stream@1.5.2
+20 silly idealTree:prePrune │ ├── core-util-is@1.0.2
+20 silly idealTree:prePrune │ ├── cryptiles@0.2.2
+20 silly idealTree:prePrune │ ├── ctype@0.5.3
+20 silly idealTree:prePrune │ ├── deep-equal@0.0.0
+20 silly idealTree:prePrune │ ├── defined@0.0.0
+20 silly idealTree:prePrune │ ├── delayed-stream@0.0.5
+20 silly idealTree:prePrune │ ├── escape-string-regexp@1.0.5
+20 silly idealTree:prePrune │ ├── forever-agent@0.5.2
+20 silly idealTree:prePrune │ ├─┬ form-data@0.1.4
+20 silly idealTree:prePrune │ │ └── async@0.9.2
+20 silly idealTree:prePrune │ ├── graceful-fs@3.0.11
+20 silly idealTree:prePrune │ ├── gzip-size@0.1.1
+20 silly idealTree:prePrune │ ├── has-ansi@0.1.0
+20 silly idealTree:prePrune │ ├── has-color@0.1.7
+20 silly idealTree:prePrune │ ├── hawk@1.1.1
+20 silly idealTree:prePrune │ ├── hoek@0.9.1
+20 silly idealTree:prePrune │ ├── http-signature@0.10.1
+20 silly idealTree:prePrune │ ├── inherits@2.0.3
+20 silly idealTree:prePrune │ ├── isarray@1.0.0
+20 silly idealTree:prePrune │ ├── json-stringify-safe@5.0.1
+20 silly idealTree:prePrune │ ├── jsonify@0.0.0
+20 silly idealTree:prePrune │ ├── less@1.7.5
+20 silly idealTree:prePrune │ ├── lodash@2.4.2
+20 silly idealTree:prePrune │ ├─┬ maxmin@0.1.0
+20 silly idealTree:prePrune │ │ ├── ansi-styles@1.0.0
+20 silly idealTree:prePrune │ │ ├── chalk@0.4.0
+20 silly idealTree:prePrune │ │ └── strip-ansi@0.1.1
+20 silly idealTree:prePrune │ ├── mime-types@1.0.2
+20 silly idealTree:prePrune │ ├── mime@1.2.11
+20 silly idealTree:prePrune │ ├── minimist@0.0.8
+20 silly idealTree:prePrune │ ├── mkdirp@0.5.1
+20 silly idealTree:prePrune │ ├── natives@1.1.0
+20 silly idealTree:prePrune │ ├── node-uuid@1.4.7
+20 silly idealTree:prePrune │ ├── oauth-sign@0.3.0
+20 silly idealTree:prePrune │ ├── pretty-bytes@0.1.2
+20 silly idealTree:prePrune │ ├── process-nextick-args@1.0.7
+20 silly idealTree:prePrune │ ├── qs@1.0.2
+20 silly idealTree:prePrune │ ├── readable-stream@2.0.6
+20 silly idealTree:prePrune │ ├── request@2.40.0
+20 silly idealTree:prePrune │ ├── sntp@0.2.4
+20 silly idealTree:prePrune │ ├── source-map@0.1.43
+20 silly idealTree:prePrune │ ├── string_decoder@0.10.31
+20 silly idealTree:prePrune │ ├── stringstream@0.0.5
+20 silly idealTree:prePrune │ ├── strip-ansi@0.3.0
+20 silly idealTree:prePrune │ ├── supports-color@0.2.0
+20 silly idealTree:prePrune │ ├── tape@0.2.2
+20 silly idealTree:prePrune │ ├── tough-cookie@2.3.1
+20 silly idealTree:prePrune │ ├── tunnel-agent@0.4.3
+20 silly idealTree:prePrune │ ├── typedarray@0.0.6
+20 silly idealTree:prePrune │ ├── util-deprecate@1.0.2
+20 silly idealTree:prePrune │ └── zlib-browserify@0.0.3
+20 silly idealTree:prePrune ├─┬ grunt-contrib-uglify@0.5.1
+20 silly idealTree:prePrune │ ├── align-text@0.1.4
+20 silly idealTree:prePrune │ ├── ansi-regex@0.2.1
+20 silly idealTree:prePrune │ ├── ansi-styles@1.1.0
+20 silly idealTree:prePrune │ ├── async@0.2.10
+20 silly idealTree:prePrune │ ├── browserify-zlib@0.1.4
+20 silly idealTree:prePrune │ ├── camelcase@1.2.1
+20 silly idealTree:prePrune │ ├── center-align@0.1.3
+20 silly idealTree:prePrune │ ├── chalk@0.5.1
+20 silly idealTree:prePrune │ ├── cliui@2.1.0
+20 silly idealTree:prePrune │ ├── concat-stream@1.5.2
+20 silly idealTree:prePrune │ ├── core-util-is@1.0.2
+20 silly idealTree:prePrune │ ├── decamelize@1.2.0
+20 silly idealTree:prePrune │ ├── escape-string-regexp@1.0.5
+20 silly idealTree:prePrune │ ├── figures@1.7.0
+20 silly idealTree:prePrune │ ├── gzip-size@0.2.0
+20 silly idealTree:prePrune │ ├── has-ansi@0.1.0
+20 silly idealTree:prePrune │ ├── inherits@2.0.3
+20 silly idealTree:prePrune │ ├── is-buffer@1.1.4
+20 silly idealTree:prePrune │ ├── isarray@1.0.0
+20 silly idealTree:prePrune │ ├── kind-of@3.0.4
+20 silly idealTree:prePrune │ ├── lazy-cache@1.0.4
+20 silly idealTree:prePrune │ ├── lodash@2.4.2
+20 silly idealTree:prePrune │ ├── longest@1.0.1
+20 silly idealTree:prePrune │ ├── maxmin@0.2.2
+20 silly idealTree:prePrune │ ├── object-assign@4.1.0
+20 silly idealTree:prePrune │ ├── pako@0.2.9
+20 silly idealTree:prePrune │ ├── pretty-bytes@0.1.2
+20 silly idealTree:prePrune │ ├── process-nextick-args@1.0.7
+20 silly idealTree:prePrune │ ├── readable-stream@2.0.6
+20 silly idealTree:prePrune │ ├── repeat-string@1.5.4
+20 silly idealTree:prePrune │ ├── right-align@0.1.3
+20 silly idealTree:prePrune │ ├── source-map@0.5.6
+20 silly idealTree:prePrune │ ├── string_decoder@0.10.31
+20 silly idealTree:prePrune │ ├── strip-ansi@0.3.0
+20 silly idealTree:prePrune │ ├── supports-color@0.2.0
+20 silly idealTree:prePrune │ ├── typedarray@0.0.6
+20 silly idealTree:prePrune │ ├── uglify-js@2.7.3
+20 silly idealTree:prePrune │ ├── uglify-to-browserify@1.0.2
+20 silly idealTree:prePrune │ ├── util-deprecate@1.0.2
+20 silly idealTree:prePrune │ ├── window-size@0.1.0
+20 silly idealTree:prePrune │ ├── wordwrap@0.0.2
+20 silly idealTree:prePrune │ └── yargs@3.10.0
+20 silly idealTree:prePrune ├─┬ grunt-contrib-watch@0.6.1
+20 silly idealTree:prePrune │ ├── abbrev@1.0.9
+20 silly idealTree:prePrune │ ├── async@0.2.10
+20 silly idealTree:prePrune │ ├── debug@0.7.4
+20 silly idealTree:prePrune │ ├── faye-websocket@0.4.4
+20 silly idealTree:prePrune │ ├── gaze@0.5.2
+20 silly idealTree:prePrune │ ├── glob@3.1.21
+20 silly idealTree:prePrune │ ├─┬ globule@0.1.0
+20 silly idealTree:prePrune │ │ └── lodash@1.0.2
+20 silly idealTree:prePrune │ ├── graceful-fs@1.2.3
+20 silly idealTree:prePrune │ ├── inherits@1.0.2
+20 silly idealTree:prePrune │ ├── lodash@2.4.2
+20 silly idealTree:prePrune │ ├── lru-cache@2.7.3
+20 silly idealTree:prePrune │ ├── minimatch@0.2.14
+20 silly idealTree:prePrune │ ├── nopt@2.0.0
+20 silly idealTree:prePrune │ ├── noptify@0.0.3
+20 silly idealTree:prePrune │ ├── qs@0.5.6
+20 silly idealTree:prePrune │ ├── sigmund@1.0.1
+20 silly idealTree:prePrune │ └── tiny-lr-fork@0.0.5
+20 silly idealTree:prePrune ├── grunt-legacy-util
+20 silly idealTree:prePrune ├─┬ grunt-modernizr@0.5.2
+20 silly idealTree:prePrune │ ├── asn1@0.1.11
+20 silly idealTree:prePrune │ ├── assert-plus@0.1.5
+20 silly idealTree:prePrune │ ├── async@0.9.2
+20 silly idealTree:prePrune │ ├── aws-sign@0.3.0
+20 silly idealTree:prePrune │ ├── boom@0.4.2
+20 silly idealTree:prePrune │ ├── colors@0.6.2
+20 silly idealTree:prePrune │ ├── combined-stream@0.0.7
+20 silly idealTree:prePrune │ ├── cookie-jar@0.3.0
+20 silly idealTree:prePrune │ ├── cryptiles@0.2.2
+20 silly idealTree:prePrune │ ├── ctype@0.5.3
+20 silly idealTree:prePrune │ ├── delayed-stream@0.0.5
+20 silly idealTree:prePrune │ ├── forever-agent@0.5.2
+20 silly idealTree:prePrune │ ├── form-data@0.1.4
+20 silly idealTree:prePrune │ ├── hawk@1.0.0
+20 silly idealTree:prePrune │ ├── hoek@0.9.1
+20 silly idealTree:prePrune │ ├── http-signature@0.10.1
+20 silly idealTree:prePrune │ ├── json-stringify-safe@5.0.1
+20 silly idealTree:prePrune │ ├── mime@1.2.11
+20 silly idealTree:prePrune │ ├── node-uuid@1.4.7
+20 silly idealTree:prePrune │ ├── oauth-sign@0.3.0
+20 silly idealTree:prePrune │ ├── promised-io@0.3.5
+20 silly idealTree:prePrune │ ├── qs@0.6.6
+20 silly idealTree:prePrune │ ├── request@2.27.0
+20 silly idealTree:prePrune │ ├── sntp@0.2.4
+20 silly idealTree:prePrune │ ├── tunnel-agent@0.3.0
+20 silly idealTree:prePrune │ └── uglify-js@1.3.3
+20 silly idealTree:prePrune ├─┬ grunt-processhtml@0.3.13
+20 silly idealTree:prePrune │ ├── async@0.9.2
+20 silly idealTree:prePrune │ ├── htmlprocessor@0.2.3
+20 silly idealTree:prePrune │ ├── lodash.clonedeep@4.5.0
+20 silly idealTree:prePrune │ └── lodash@2.4.2
+20 silly idealTree:prePrune ├─┬ grunt-uncss@0.4.4
+20 silly idealTree:prePrune │ ├── amdefine@1.0.0
+20 silly idealTree:prePrune │ ├── ansi-regex@2.0.0
+20 silly idealTree:prePrune │ ├── ansi-styles@2.2.1
+20 silly idealTree:prePrune │ ├── array-find-index@1.0.2
+20 silly idealTree:prePrune │ ├── asn1@0.2.3
+20 silly idealTree:prePrune │ ├── assert-plus@0.2.0
+20 silly idealTree:prePrune │ ├─┬ async@2.1.2
+20 silly idealTree:prePrune │ │ └── lodash@4.16.4
+20 silly idealTree:prePrune │ ├── aws-sign2@0.6.0
+20 silly idealTree:prePrune │ ├── balanced-match@0.4.2
+20 silly idealTree:prePrune │ ├── bcrypt-pbkdf@1.0.0
+20 silly idealTree:prePrune │ ├── bl@1.0.3
+20 silly idealTree:prePrune │ ├── bluebird@2.9.34
+20 silly idealTree:prePrune │ ├── boom@2.10.1
+20 silly idealTree:prePrune │ ├── brace-expansion@1.1.6
+20 silly idealTree:prePrune │ ├── browserify-zlib@0.1.4
+20 silly idealTree:prePrune │ ├── builtin-modules@1.1.1
+20 silly idealTree:prePrune │ ├── camelcase-keys@2.1.0
+20 silly idealTree:prePrune │ ├── camelcase@2.1.1
+20 silly idealTree:prePrune │ ├── caseless@0.11.0
+20 silly idealTree:prePrune │ ├── chalk@1.1.3
+20 silly idealTree:prePrune │ ├── combined-stream@1.0.5
+20 silly idealTree:prePrune │ ├── commander@2.6.0
+20 silly idealTree:prePrune │ ├── concat-map@0.0.1
+20 silly idealTree:prePrune │ ├── concat-stream@1.5.2
+20 silly idealTree:prePrune │ ├── core-util-is@1.0.2
+20 silly idealTree:prePrune │ ├── cryptiles@2.0.5
+20 silly idealTree:prePrune │ ├── css-parse@1.7.0
+20 silly idealTree:prePrune │ ├── css-stringify@1.4.1
+20 silly idealTree:prePrune │ ├── css@1.6.0
+20 silly idealTree:prePrune │ ├── ctype@0.5.3
+20 silly idealTree:prePrune │ ├── currently-unhandled@0.4.1
+20 silly idealTree:prePrune │ ├─┬ dashdash@1.14.0
+20 silly idealTree:prePrune │ │ └── assert-plus@1.0.0
+20 silly idealTree:prePrune │ ├── debug@0.7.4
+20 silly idealTree:prePrune │ ├── decamelize@1.2.0
+20 silly idealTree:prePrune │ ├── delayed-stream@1.0.0
+20 silly idealTree:prePrune │ ├── ecc-jsbn@0.1.1
+20 silly idealTree:prePrune │ ├── error-ex@1.3.0
+20 silly idealTree:prePrune │ ├── escape-string-regexp@1.0.5
+20 silly idealTree:prePrune │ ├── extend@3.0.0
+20 silly idealTree:prePrune │ ├─┬ extract-zip@1.5.0
+20 silly idealTree:prePrune │ │ └── concat-stream@1.5.0
+20 silly idealTree:prePrune │ ├── extsprintf@1.0.2
+20 silly idealTree:prePrune │ ├── fd-slicer@1.0.1
+20 silly idealTree:prePrune │ ├── figures@1.7.0
+20 silly idealTree:prePrune │ ├── find-up@1.1.2
+20 silly idealTree:prePrune │ ├── forever-agent@0.6.1
+20 silly idealTree:prePrune │ ├── fork-stream@0.0.4
+20 silly idealTree:prePrune │ ├── form-data@1.0.1
+20 silly idealTree:prePrune │ ├── fs-extra@0.26.7
+20 silly idealTree:prePrune │ ├── generate-function@2.0.0
+20 silly idealTree:prePrune │ ├── generate-object-property@1.2.0
+20 silly idealTree:prePrune │ ├── get-stdin@4.0.1
+20 silly idealTree:prePrune │ ├─┬ getpass@0.1.6
+20 silly idealTree:prePrune │ │ └── assert-plus@1.0.0
+20 silly idealTree:prePrune │ ├── glob@4.4.2
+20 silly idealTree:prePrune │ ├── graceful-fs@4.1.9
+20 silly idealTree:prePrune │ ├── graceful-readlink@1.0.1
+20 silly idealTree:prePrune │ ├── gzip-size@1.0.0
+20 silly idealTree:prePrune │ ├─┬ har-validator@2.0.6
+20 silly idealTree:prePrune │ │ └── commander@2.9.0
+20 silly idealTree:prePrune │ ├── has-ansi@2.0.0
+20 silly idealTree:prePrune │ ├── hasha@2.2.0
+20 silly idealTree:prePrune │ ├── hawk@3.1.3
+20 silly idealTree:prePrune │ ├── hoek@2.16.3
+20 silly idealTree:prePrune │ ├── hosted-git-info@2.1.5
+20 silly idealTree:prePrune │ ├── html-tags@1.1.1
+20 silly idealTree:prePrune │ ├── http-signature@1.1.1
+20 silly idealTree:prePrune │ ├── indent-string@2.1.0
+20 silly idealTree:prePrune │ ├── inflight@1.0.6
+20 silly idealTree:prePrune │ ├── inherits@2.0.3
+20 silly idealTree:prePrune │ ├── is-absolute-url@1.0.0
+20 silly idealTree:prePrune │ ├── is-arrayish@0.2.1
+20 silly idealTree:prePrune │ ├── is-builtin-module@1.0.0
+20 silly idealTree:prePrune │ ├── is-finite@1.0.2
+20 silly idealTree:prePrune │ ├── is-html@1.0.0
+20 silly idealTree:prePrune │ ├── is-my-json-valid@2.15.0
+20 silly idealTree:prePrune │ ├── is-property@1.0.2
+20 silly idealTree:prePrune │ ├── is-stream@1.1.0
+20 silly idealTree:prePrune │ ├── is-typedarray@1.0.0
+20 silly idealTree:prePrune │ ├── is-utf8@0.2.1
+20 silly idealTree:prePrune │ ├── isarray@1.0.0
+20 silly idealTree:prePrune │ ├── isexe@1.1.2
+20 silly idealTree:prePrune │ ├── isstream@0.1.2
+20 silly idealTree:prePrune │ ├── jodid25519@1.0.2
+20 silly idealTree:prePrune │ ├── jsbn@0.1.0
+20 silly idealTree:prePrune │ ├── json-schema@0.2.3
+20 silly idealTree:prePrune │ ├── json-stringify-safe@5.0.1
+20 silly idealTree:prePrune │ ├── jsonfile@2.4.0
+20 silly idealTree:prePrune │ ├── jsonpointer@4.0.0
+20 silly idealTree:prePrune │ ├── jsprim@1.3.1
+20 silly idealTree:prePrune │ ├── kew@0.7.0
+20 silly idealTree:prePrune │ ├── klaw@1.3.0
+20 silly idealTree:prePrune │ ├── linerstream@0.1.4
+20 silly idealTree:prePrune │ ├── load-json-file@1.1.0
+20 silly idealTree:prePrune │ ├── lodash@3.3.1
+20 silly idealTree:prePrune │ ├── loud-rejection@1.6.0
+20 silly idealTree:prePrune │ ├── map-obj@1.0.1
+20 silly idealTree:prePrune │ ├── maxmin@1.1.0
+20 silly idealTree:prePrune │ ├── meow@3.7.0
+20 silly idealTree:prePrune │ ├── mime-db@1.24.0
+20 silly idealTree:prePrune │ ├── mime-types@2.1.12
+20 silly idealTree:prePrune │ ├── minimatch@2.0.10
+20 silly idealTree:prePrune │ ├── minimist@1.2.0
+20 silly idealTree:prePrune │ ├─┬ mkdirp@0.5.0
+20 silly idealTree:prePrune │ │ └── minimist@0.0.8
+20 silly idealTree:prePrune │ ├── node-uuid@1.4.7
+20 silly idealTree:prePrune │ ├── normalize-package-data@2.3.5
+20 silly idealTree:prePrune │ ├── number-is-nan@1.0.1
+20 silly idealTree:prePrune │ ├── oauth-sign@0.8.2
+20 silly idealTree:prePrune │ ├── object-assign@4.1.0
+20 silly idealTree:prePrune │ ├── once@1.4.0
+20 silly idealTree:prePrune │ ├── os-tmpdir@1.0.2
+20 silly idealTree:prePrune │ ├── pako@0.2.9
+20 silly idealTree:prePrune │ ├── parse-json@2.2.0
+20 silly idealTree:prePrune │ ├── path-exists@2.1.0
+20 silly idealTree:prePrune │ ├── path-is-absolute@1.0.1
+20 silly idealTree:prePrune │ ├── path-type@1.1.0
+20 silly idealTree:prePrune │ ├── pend@1.2.0
+20 silly idealTree:prePrune │ ├─┬ phantomjs@1.9.20
+20 silly idealTree:prePrune │ │ └── request@2.67.0
+20 silly idealTree:prePrune │ ├── phridge@1.0.8
+20 silly idealTree:prePrune │ ├── pify@2.3.0
+20 silly idealTree:prePrune │ ├── pinkie-promise@2.0.1
+20 silly idealTree:prePrune │ ├── pinkie@2.0.4
+20 silly idealTree:prePrune │ ├── pretty-bytes@1.0.4
+20 silly idealTree:prePrune │ ├── process-nextick-args@1.0.7
+20 silly idealTree:prePrune │ ├── progress@1.1.8
+20 silly idealTree:prePrune │ ├── qs@5.2.1
+20 silly idealTree:prePrune │ ├── read-pkg-up@1.0.1
+20 silly idealTree:prePrune │ ├── read-pkg@1.1.0
+20 silly idealTree:prePrune │ ├── readable-stream@2.0.6
+20 silly idealTree:prePrune │ ├── redent@1.0.0
+20 silly idealTree:prePrune │ ├── repeating@2.0.1
+20 silly idealTree:prePrune │ ├── request-progress@2.0.1
+20 silly idealTree:prePrune │ ├─┬ request@2.53.0
+20 silly idealTree:prePrune │ │ ├── asn1@0.1.11
+20 silly idealTree:prePrune │ │ ├── assert-plus@0.1.5
+20 silly idealTree:prePrune │ │ ├── async@0.9.2
+20 silly idealTree:prePrune │ │ ├── aws-sign2@0.5.0
+20 silly idealTree:prePrune │ │ ├── bl@0.9.5
+20 silly idealTree:prePrune │ │ ├── caseless@0.9.0
+20 silly idealTree:prePrune │ │ ├── combined-stream@0.0.7
+20 silly idealTree:prePrune │ │ ├── delayed-stream@0.0.5
+20 silly idealTree:prePrune │ │ ├── forever-agent@0.5.2
+20 silly idealTree:prePrune │ │ ├── form-data@0.2.0
+20 silly idealTree:prePrune │ │ ├── hawk@2.3.1
+20 silly idealTree:prePrune │ │ ├── http-signature@0.10.1
+20 silly idealTree:prePrune │ │ ├── isarray@0.0.1
+20 silly idealTree:prePrune │ │ ├── mime-db@1.12.0
+20 silly idealTree:prePrune │ │ ├── mime-types@2.0.14
+20 silly idealTree:prePrune │ │ ├── oauth-sign@0.6.0
+20 silly idealTree:prePrune │ │ ├── qs@2.3.3
+20 silly idealTree:prePrune │ │ └── readable-stream@1.0.34
+20 silly idealTree:prePrune │ ├─┬ rimraf@2.5.4
+20 silly idealTree:prePrune │ │ ├── glob@7.1.1
+20 silly idealTree:prePrune │ │ └── minimatch@3.0.3
+20 silly idealTree:prePrune │ ├── semver@5.3.0
+20 silly idealTree:prePrune │ ├── signal-exit@3.0.1
+20 silly idealTree:prePrune │ ├── sntp@1.0.9
+20 silly idealTree:prePrune │ ├── source-map@0.1.43
+20 silly idealTree:prePrune │ ├── spdx-correct@1.0.2
+20 silly idealTree:prePrune │ ├── spdx-expression-parse@1.0.4
+20 silly idealTree:prePrune │ ├── spdx-license-ids@1.2.2
+20 silly idealTree:prePrune │ ├─┬ sshpk@1.10.1
+20 silly idealTree:prePrune │ │ └── assert-plus@1.0.0
+20 silly idealTree:prePrune │ ├── string_decoder@0.10.31
+20 silly idealTree:prePrune │ ├── stringstream@0.0.5
+20 silly idealTree:prePrune │ ├── strip-ansi@3.0.1
+20 silly idealTree:prePrune │ ├── strip-bom@2.0.0
+20 silly idealTree:prePrune │ ├── strip-indent@1.0.1
+20 silly idealTree:prePrune │ ├── supports-color@2.0.0
+20 silly idealTree:prePrune │ ├─┬ temp@0.8.3
+20 silly idealTree:prePrune │ │ └── rimraf@2.2.8
+20 silly idealTree:prePrune │ ├── throttleit@1.0.0
+20 silly idealTree:prePrune │ ├── tough-cookie@2.2.2
+20 silly idealTree:prePrune │ ├── trim-newlines@1.0.0
+20 silly idealTree:prePrune │ ├── tunnel-agent@0.4.3
+20 silly idealTree:prePrune │ ├── tweetnacl@0.14.3
+20 silly idealTree:prePrune │ ├── typedarray@0.0.6
+20 silly idealTree:prePrune │ ├── uncss@0.12.1
+20 silly idealTree:prePrune │ ├── util-deprecate@1.0.2
+20 silly idealTree:prePrune │ ├── validate-npm-package-license@3.0.1
+20 silly idealTree:prePrune │ ├── verror@1.3.6
+20 silly idealTree:prePrune │ ├── when@3.7.7
+20 silly idealTree:prePrune │ ├── which@1.2.11
+20 silly idealTree:prePrune │ ├── wrappy@1.0.2
+20 silly idealTree:prePrune │ ├── xtend@4.0.1
+20 silly idealTree:prePrune │ └── yauzl@2.4.1
+20 silly idealTree:prePrune ├─┬ grunt@0.4.5
+20 silly idealTree:prePrune │ ├── abbrev@1.0.9
+20 silly idealTree:prePrune │ ├─┬ argparse@0.1.16
+20 silly idealTree:prePrune │ │ └── underscore.string@2.4.0
+20 silly idealTree:prePrune │ ├── async@0.1.22
+20 silly idealTree:prePrune │ ├── coffee-script@1.3.3
+20 silly idealTree:prePrune │ ├── colors@0.6.2
+20 silly idealTree:prePrune │ ├── dateformat@1.0.2-1.2.3
+20 silly idealTree:prePrune │ ├── esprima@1.0.4
+20 silly idealTree:prePrune │ ├── eventemitter2@0.4.14
+20 silly idealTree:prePrune │ ├── exit@0.1.2
+20 silly idealTree:prePrune │ ├─┬ findup-sync@0.1.3
+20 silly idealTree:prePrune │ │ ├── glob@3.2.11
+20 silly idealTree:prePrune │ │ ├── lodash@2.4.2
+20 silly idealTree:prePrune │ │ └── minimatch@0.3.0
+20 silly idealTree:prePrune │ ├── getobject@0.1.0
+20 silly idealTree:prePrune │ ├─┬ glob@3.1.21
+20 silly idealTree:prePrune │ │ └── inherits@1.0.2
+20 silly idealTree:prePrune │ ├── graceful-fs@1.2.3
+20 silly idealTree:prePrune │ ├─┬ grunt-legacy-log-utils@0.1.1
+20 silly idealTree:prePrune │ │ ├── lodash@2.4.2
+20 silly idealTree:prePrune │ │ └── underscore.string@2.3.3
+20 silly idealTree:prePrune │ ├─┬ grunt-legacy-log@0.1.3
+20 silly idealTree:prePrune │ │ ├── lodash@2.4.2
+20 silly idealTree:prePrune │ │ └── underscore.string@2.3.3
+20 silly idealTree:prePrune │ ├── grunt-legacy-util@0.2.0
+20 silly idealTree:prePrune │ ├── hooker@0.2.3
+20 silly idealTree:prePrune │ ├── iconv-lite@0.2.11
+20 silly idealTree:prePrune │ ├── inherits@2.0.3
+20 silly idealTree:prePrune │ ├── js-yaml@2.0.5
+20 silly idealTree:prePrune │ ├── lodash@0.9.2
+20 silly idealTree:prePrune │ ├── lru-cache@2.7.3
+20 silly idealTree:prePrune │ ├── minimatch@0.2.14
+20 silly idealTree:prePrune │ ├── nopt@1.0.10
+20 silly idealTree:prePrune │ ├── rimraf@2.2.8
+20 silly idealTree:prePrune │ ├── sigmund@1.0.1
+20 silly idealTree:prePrune │ ├── underscore.string@2.2.1
+20 silly idealTree:prePrune │ ├── underscore@1.7.0
+20 silly idealTree:prePrune │ └── which@1.0.9
+20 silly idealTree:prePrune ├── gzip-size
+20 silly idealTree:prePrune ├── has-ansi
+20 silly idealTree:prePrune ├── has-color
+20 silly idealTree:prePrune ├── hasha
+20 silly idealTree:prePrune ├── hawk
+20 silly idealTree:prePrune ├── hoek
+20 silly idealTree:prePrune ├── hooker
+20 silly idealTree:prePrune ├── hosted-git-info
+20 silly idealTree:prePrune ├── html-tags
+20 silly idealTree:prePrune ├── http-signature
+20 silly idealTree:prePrune ├── iconv-lite
+20 silly idealTree:prePrune ├── indent-string
+20 silly idealTree:prePrune ├── inflight
+20 silly idealTree:prePrune ├── inherits
+20 silly idealTree:prePrune ├── is-absolute-url
+20 silly idealTree:prePrune ├── is-arrayish
+20 silly idealTree:prePrune ├── is-buffer
+20 silly idealTree:prePrune ├── is-builtin-module
+20 silly idealTree:prePrune ├── is-finite
+20 silly idealTree:prePrune ├── is-html
+20 silly idealTree:prePrune ├── is-my-json-valid
+20 silly idealTree:prePrune ├── is-property
+20 silly idealTree:prePrune ├── is-stream
+20 silly idealTree:prePrune ├── is-typedarray
+20 silly idealTree:prePrune ├── is-utf8
+20 silly idealTree:prePrune ├── isarray
+20 silly idealTree:prePrune ├── isexe
+20 silly idealTree:prePrune ├── isstream
+20 silly idealTree:prePrune ├── jodid25519
+20 silly idealTree:prePrune ├── js-base64
+20 silly idealTree:prePrune ├── js-yaml
+20 silly idealTree:prePrune ├── jsbn
+20 silly idealTree:prePrune ├── json-schema
+20 silly idealTree:prePrune ├── json-stringify-safe
+20 silly idealTree:prePrune ├── jsonify
+20 silly idealTree:prePrune ├── jsonpointer
+20 silly idealTree:prePrune ├── jsprim
+20 silly idealTree:prePrune ├── kew
+20 silly idealTree:prePrune ├── kind-of
+20 silly idealTree:prePrune ├── klaw
+20 silly idealTree:prePrune ├── lazy-cache
+20 silly idealTree:prePrune ├── less
+20 silly idealTree:prePrune ├── linerstream
+20 silly idealTree:prePrune ├─┬ load-grunt-tasks@0.6.0
+20 silly idealTree:prePrune │ ├── array-differ@0.1.0
+20 silly idealTree:prePrune │ ├── array-union@0.1.0
+20 silly idealTree:prePrune │ ├── array-uniq@0.1.1
+20 silly idealTree:prePrune │ ├── findup-sync@0.1.3
+20 silly idealTree:prePrune │ ├── glob@3.2.11
+20 silly idealTree:prePrune │ ├── inherits@2.0.3
+20 silly idealTree:prePrune │ ├── lodash@2.4.2
+20 silly idealTree:prePrune │ ├── lru-cache@2.7.3
+20 silly idealTree:prePrune │ ├── minimatch@0.3.0
+20 silly idealTree:prePrune │ ├── multimatch@0.3.0
+20 silly idealTree:prePrune │ └── sigmund@1.0.1
+20 silly idealTree:prePrune ├── lodash
+20 silly idealTree:prePrune ├── lodash.clonedeep
+20 silly idealTree:prePrune ├── longest
+20 silly idealTree:prePrune ├── loud-rejection
+20 silly idealTree:prePrune ├── lru-cache
+20 silly idealTree:prePrune ├── map-obj
+20 silly idealTree:prePrune ├── meow
+20 silly idealTree:prePrune ├── mime
+20 silly idealTree:prePrune ├── mime-db
+20 silly idealTree:prePrune ├── mime-types
+20 silly idealTree:prePrune ├── minimatch
+20 silly idealTree:prePrune ├── minimist
+20 silly idealTree:prePrune ├── morgan
+20 silly idealTree:prePrune ├── ms
+20 silly idealTree:prePrune ├── natives
+20 silly idealTree:prePrune ├── negotiator
+20 silly idealTree:prePrune ├── node-uuid
+20 silly idealTree:prePrune ├── nopt
+20 silly idealTree:prePrune ├── noptify
+20 silly idealTree:prePrune ├── normalize-package-data
+20 silly idealTree:prePrune ├── number-is-nan
+20 silly idealTree:prePrune ├── oauth-sign
+20 silly idealTree:prePrune ├── object-assign
+20 silly idealTree:prePrune ├── on-finished
+20 silly idealTree:prePrune ├── on-headers
+20 silly idealTree:prePrune ├── once
+20 silly idealTree:prePrune ├── opn
+20 silly idealTree:prePrune ├── os-tmpdir
+20 silly idealTree:prePrune ├── pako
+20 silly idealTree:prePrune ├── parse-json
+20 silly idealTree:prePrune ├── parse-ms
+20 silly idealTree:prePrune ├── parseurl
+20 silly idealTree:prePrune ├── path-exists
+20 silly idealTree:prePrune ├── path-is-absolute
+20 silly idealTree:prePrune ├── pend
+20 silly idealTree:prePrune ├── phantomjs
+20 silly idealTree:prePrune ├── phridge
+20 silly idealTree:prePrune ├── pify
+20 silly idealTree:prePrune ├── pinkie
+20 silly idealTree:prePrune ├── pinkie-promise
+20 silly idealTree:prePrune ├── postcss
+20 silly idealTree:prePrune ├── pretty-bytes
+20 silly idealTree:prePrune ├── pretty-ms
+20 silly idealTree:prePrune ├── process-nextick-args
+20 silly idealTree:prePrune ├── progress
+20 silly idealTree:prePrune ├── promised-io
+20 silly idealTree:prePrune ├── qs
+20 silly idealTree:prePrune ├── range-parser
+20 silly idealTree:prePrune ├── read-pkg
+20 silly idealTree:prePrune ├── read-pkg-up
+20 silly idealTree:prePrune ├── readable-stream
+20 silly idealTree:prePrune ├── redent
+20 silly idealTree:prePrune ├── repeat-string
+20 silly idealTree:prePrune ├── repeating
+20 silly idealTree:prePrune ├── request-progress
+20 silly idealTree:prePrune ├── right-align
+20 silly idealTree:prePrune ├── rimraf
+20 silly idealTree:prePrune ├── semver
+20 silly idealTree:prePrune ├── send
+20 silly idealTree:prePrune ├── serve-index
+20 silly idealTree:prePrune ├── serve-static
+20 silly idealTree:prePrune ├── setprototypeof
+20 silly idealTree:prePrune ├── shelljs
+20 silly idealTree:prePrune ├── sigmund
+20 silly idealTree:prePrune ├── signal-exit
+20 silly idealTree:prePrune ├── sntp
+20 silly idealTree:prePrune ├── source-map
+20 silly idealTree:prePrune ├── spdx-correct
+20 silly idealTree:prePrune ├── spdx-expression-parse
+20 silly idealTree:prePrune ├── spdx-license-ids
+20 silly idealTree:prePrune ├── statuses
+20 silly idealTree:prePrune ├── string_decoder
+20 silly idealTree:prePrune ├── stringstream
+20 silly idealTree:prePrune ├── strip-ansi
+20 silly idealTree:prePrune ├── strip-bom
+20 silly idealTree:prePrune ├── strip-indent
+20 silly idealTree:prePrune ├── strip-json-comments
+20 silly idealTree:prePrune ├── supports-color
+20 silly idealTree:prePrune ├── tape
+20 silly idealTree:prePrune ├── temp
+20 silly idealTree:prePrune ├── text-table
+20 silly idealTree:prePrune ├── throttleit
+20 silly idealTree:prePrune ├─┬ time-grunt@0.4.0
+20 silly idealTree:prePrune │ ├── ansi-regex@0.2.1
+20 silly idealTree:prePrune │ ├── ansi-styles@1.1.0
+20 silly idealTree:prePrune │ ├── chalk@0.5.1
+20 silly idealTree:prePrune │ ├── date-time@0.1.1
+20 silly idealTree:prePrune │ ├── escape-string-regexp@1.0.5
+20 silly idealTree:prePrune │ ├── figures@1.7.0
+20 silly idealTree:prePrune │ ├── has-ansi@0.1.0
+20 silly idealTree:prePrune │ ├── hooker@0.2.3
+20 silly idealTree:prePrune │ ├── object-assign@4.1.0
+20 silly idealTree:prePrune │ ├── parse-ms@0.1.2
+20 silly idealTree:prePrune │ ├── pretty-ms@0.2.2
+20 silly idealTree:prePrune │ ├── strip-ansi@0.3.0
+20 silly idealTree:prePrune │ ├── supports-color@0.2.0
+20 silly idealTree:prePrune │ └── text-table@0.2.0
+20 silly idealTree:prePrune ├── tough-cookie
+20 silly idealTree:prePrune ├── trim-newlines
+20 silly idealTree:prePrune ├── tunnel-agent
+20 silly idealTree:prePrune ├── tweetnacl
+20 silly idealTree:prePrune ├── typedarray
+20 silly idealTree:prePrune ├── uglify-to-browserify
+20 silly idealTree:prePrune ├── underscore
+20 silly idealTree:prePrune ├── underscore.string
+20 silly idealTree:prePrune ├── unpipe
+20 silly idealTree:prePrune ├── util-deprecate
+20 silly idealTree:prePrune ├── utils-merge
+20 silly idealTree:prePrune ├── validate-npm-package-license
+20 silly idealTree:prePrune ├── verror
+20 silly idealTree:prePrune ├── when
+20 silly idealTree:prePrune ├── which
+20 silly idealTree:prePrune ├── window-size
+20 silly idealTree:prePrune ├── wordwrap
+20 silly idealTree:prePrune ├── wrappy
+20 silly idealTree:prePrune ├── xtend
+20 silly idealTree:prePrune ├── yauzl
+20 silly idealTree:prePrune └── zlib-browserify
+21 silly loadIdealTree Finishing
+22 silly currentTree sp-arvent-landing@0.1.0
+22 silly currentTree ├── abbrev
+22 silly currentTree ├── accepts
+22 silly currentTree ├── align-text
+22 silly currentTree ├── amdefine
+22 silly currentTree ├── ansi-regex
+22 silly currentTree ├── ansi-styles
+22 silly currentTree ├── array-differ
+22 silly currentTree ├── array-find-index
+22 silly currentTree ├── array-union
+22 silly currentTree ├── array-uniq
+22 silly currentTree ├── asn1
+22 silly currentTree ├── assert-plus
+22 silly currentTree ├── async
+22 silly currentTree ├── autoprefixer-core
+22 silly currentTree ├── aws-sign
+22 silly currentTree ├── aws-sign2
+22 silly currentTree ├── balanced-match
+22 silly currentTree ├── basic-auth
+22 silly currentTree ├── batch
+22 silly currentTree ├── bcrypt-pbkdf
+22 silly currentTree ├── bl
+22 silly currentTree ├── bluebird
+22 silly currentTree ├── boom
+22 silly currentTree ├── bower@1.7.9
+22 silly currentTree ├── brace-expansion
+22 silly currentTree ├── browserify-zlib
+22 silly currentTree ├── builtin-modules
+22 silly currentTree ├── camelcase
+22 silly currentTree ├── camelcase-keys
+22 silly currentTree ├── caniuse-db
+22 silly currentTree ├── caseless
+22 silly currentTree ├── center-align
+22 silly currentTree ├── chalk
+22 silly currentTree ├── cliui
+22 silly currentTree ├── coffee-script
+22 silly currentTree ├── colors
+22 silly currentTree ├── combined-stream
+22 silly currentTree ├── commander
+22 silly currentTree ├── concat-map
+22 silly currentTree ├── concat-stream
+22 silly currentTree ├── connect
+22 silly currentTree ├── connect-livereload
+22 silly currentTree ├── console-browserify
+22 silly currentTree ├── cookie-jar
+22 silly currentTree ├── core-util-is
+22 silly currentTree ├── cryptiles
+22 silly currentTree ├── css
+22 silly currentTree ├── css-parse
+22 silly currentTree ├── css-stringify
+22 silly currentTree ├── ctype
+22 silly currentTree ├── currently-unhandled
+22 silly currentTree ├── date-now
+22 silly currentTree ├── date-time
+22 silly currentTree ├── dateformat
+22 silly currentTree ├── debug
+22 silly currentTree ├── decamelize
+22 silly currentTree ├── deep-equal
+22 silly currentTree ├── defined
+22 silly currentTree ├── delayed-stream
+22 silly currentTree ├── depd
+22 silly currentTree ├── destroy
+22 silly currentTree ├── diff
+22 silly currentTree ├── domelementtype
+22 silly currentTree ├── domhandler
+22 silly currentTree ├── domutils
+22 silly currentTree ├── ecc-jsbn
+22 silly currentTree ├── ee-first
+22 silly currentTree ├── encodeurl
+22 silly currentTree ├── entities
+22 silly currentTree ├── error-ex
+22 silly currentTree ├── escape-html
+22 silly currentTree ├── escape-string-regexp
+22 silly currentTree ├── esprima
+22 silly currentTree ├── etag
+22 silly currentTree ├── eventemitter2
+22 silly currentTree ├── exit
+22 silly currentTree ├── extend
+22 silly currentTree ├── extract-zip
+22 silly currentTree ├── extsprintf
+22 silly currentTree ├── faye-websocket
+22 silly currentTree ├── fd-slicer
+22 silly currentTree ├── figures
+22 silly currentTree ├── file-sync-cmp
+22 silly currentTree ├── finalhandler
+22 silly currentTree ├── find-up
+22 silly currentTree ├── forever-agent
+22 silly currentTree ├── fork-stream
+22 silly currentTree ├── fresh
+22 silly currentTree ├── fs.realpath@1.0.0
+22 silly currentTree ├── gaze
+22 silly currentTree ├── generate-function
+22 silly currentTree ├── generate-object-property
+22 silly currentTree ├── get-stdin
+22 silly currentTree ├── getobject
+22 silly currentTree ├── graceful-fs
+22 silly currentTree ├── graceful-readlink
+22 silly currentTree ├─┬ grunt-autoprefixer@1.0.1
+22 silly currentTree │ ├── amdefine@1.0.0
+22 silly currentTree │ ├── ansi-regex@0.2.1
+22 silly currentTree │ ├── ansi-styles@1.1.0
+22 silly currentTree │ ├── autoprefixer-core@3.1.2
+22 silly currentTree │ ├── caniuse-db@1.0.30000559
+22 silly currentTree │ ├── chalk@0.5.1
+22 silly currentTree │ ├── diff@1.0.8
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── has-ansi@0.1.0
+22 silly currentTree │ ├── js-base64@2.1.9
+22 silly currentTree │ ├── postcss@2.2.6
+22 silly currentTree │ ├── source-map@0.1.43
+22 silly currentTree │ ├── strip-ansi@0.3.0
+22 silly currentTree │ └── supports-color@0.2.0
+22 silly currentTree ├── grunt-banner@0.3.1
+22 silly currentTree ├─┬ grunt-contrib-concat@0.5.1
+22 silly currentTree │ ├── amdefine@1.0.0
+22 silly currentTree │ ├── ansi-regex@0.2.1
+22 silly currentTree │ ├── ansi-styles@1.1.0
+22 silly currentTree │ ├── chalk@0.5.1
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── has-ansi@0.1.0
+22 silly currentTree │ ├── source-map@0.3.0
+22 silly currentTree │ ├── strip-ansi@0.3.0
+22 silly currentTree │ └── supports-color@0.2.0
+22 silly currentTree ├─┬ grunt-contrib-connect@0.11.2
+22 silly currentTree │ ├── accepts@1.3.3
+22 silly currentTree │ ├── async@0.9.2
+22 silly currentTree │ ├── basic-auth@1.0.4
+22 silly currentTree │ ├── batch@0.5.3
+22 silly currentTree │ ├── connect-livereload@0.5.4
+22 silly currentTree │ ├── connect@3.5.0
+22 silly currentTree │ ├── debug@2.2.0
+22 silly currentTree │ ├── depd@1.1.0
+22 silly currentTree │ ├── destroy@1.0.4
+22 silly currentTree │ ├── ee-first@1.1.1
+22 silly currentTree │ ├── encodeurl@1.0.1
+22 silly currentTree │ ├── escape-html@1.0.3
+22 silly currentTree │ ├── etag@1.7.0
+22 silly currentTree │ ├── finalhandler@0.5.0
+22 silly currentTree │ ├── fresh@0.3.0
+22 silly currentTree │ ├── http-errors@1.5.0
+22 silly currentTree │ ├── inherits@2.0.1
+22 silly currentTree │ ├── mime-db@1.24.0
+22 silly currentTree │ ├── mime-types@2.1.12
+22 silly currentTree │ ├── mime@1.3.4
+22 silly currentTree │ ├── morgan@1.7.0
+22 silly currentTree │ ├── ms@0.7.1
+22 silly currentTree │ ├── negotiator@0.6.1
+22 silly currentTree │ ├── on-finished@2.3.0
+22 silly currentTree │ ├── on-headers@1.0.1
+22 silly currentTree │ ├── opn@1.0.2
+22 silly currentTree │ ├── parseurl@1.3.1
+22 silly currentTree │ ├─┬ portscanner@1.0.0
+22 silly currentTree │ │ └── async@0.1.15
+22 silly currentTree │ ├── range-parser@1.2.0
+22 silly currentTree │ ├── send@0.14.1
+22 silly currentTree │ ├── serve-index@1.8.0
+22 silly currentTree │ ├── serve-static@1.11.1
+22 silly currentTree │ ├── setprototypeof@1.0.1
+22 silly currentTree │ ├── statuses@1.3.0
+22 silly currentTree │ ├── unpipe@1.0.0
+22 silly currentTree │ └── utils-merge@1.0.0
+22 silly currentTree ├─┬ grunt-contrib-copy@0.8.2
+22 silly currentTree │ ├── ansi-regex@2.0.0
+22 silly currentTree │ ├── ansi-styles@2.2.1
+22 silly currentTree │ ├── chalk@1.1.3
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── file-sync-cmp@0.1.1
+22 silly currentTree │ ├── has-ansi@2.0.0
+22 silly currentTree │ ├── strip-ansi@3.0.1
+22 silly currentTree │ └── supports-color@2.0.0
+22 silly currentTree ├─┬ grunt-contrib-cssmin@0.12.3
+22 silly currentTree │ ├── amdefine@1.0.0
+22 silly currentTree │ ├── ansi-regex@2.0.0
+22 silly currentTree │ ├── ansi-styles@2.2.1
+22 silly currentTree │ ├── array-find-index@1.0.2
+22 silly currentTree │ ├── browserify-zlib@0.1.4
+22 silly currentTree │ ├── builtin-modules@1.1.1
+22 silly currentTree │ ├── camelcase-keys@2.1.0
+22 silly currentTree │ ├── camelcase@2.1.1
+22 silly currentTree │ ├── chalk@1.1.3
+22 silly currentTree │ ├── clean-css@3.4.20
+22 silly currentTree │ ├── commander@2.8.1
+22 silly currentTree │ ├── concat-stream@1.5.2
+22 silly currentTree │ ├── core-util-is@1.0.2
+22 silly currentTree │ ├── currently-unhandled@0.4.1
+22 silly currentTree │ ├── decamelize@1.2.0
+22 silly currentTree │ ├── error-ex@1.3.0
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── figures@1.7.0
+22 silly currentTree │ ├── find-up@1.1.2
+22 silly currentTree │ ├── get-stdin@4.0.1
+22 silly currentTree │ ├── graceful-fs@4.1.9
+22 silly currentTree │ ├── graceful-readlink@1.0.1
+22 silly currentTree │ ├── gzip-size@1.0.0
+22 silly currentTree │ ├── has-ansi@2.0.0
+22 silly currentTree │ ├── hosted-git-info@2.1.5
+22 silly currentTree │ ├── indent-string@2.1.0
+22 silly currentTree │ ├── inherits@2.0.3
+22 silly currentTree │ ├── is-arrayish@0.2.1
+22 silly currentTree │ ├── is-builtin-module@1.0.0
+22 silly currentTree │ ├── is-finite@1.0.2
+22 silly currentTree │ ├── is-utf8@0.2.1
+22 silly currentTree │ ├── isarray@1.0.0
+22 silly currentTree │ ├── load-json-file@1.1.0
+22 silly currentTree │ ├── loud-rejection@1.6.0
+22 silly currentTree │ ├── map-obj@1.0.1
+22 silly currentTree │ ├── maxmin@1.1.0
+22 silly currentTree │ ├── meow@3.7.0
+22 silly currentTree │ ├── minimist@1.2.0
+22 silly currentTree │ ├── normalize-package-data@2.3.5
+22 silly currentTree │ ├── number-is-nan@1.0.1
+22 silly currentTree │ ├── object-assign@4.1.0
+22 silly currentTree │ ├── pako@0.2.9
+22 silly currentTree │ ├── parse-json@2.2.0
+22 silly currentTree │ ├── path-exists@2.1.0
+22 silly currentTree │ ├── path-type@1.1.0
+22 silly currentTree │ ├── pify@2.3.0
+22 silly currentTree │ ├── pinkie-promise@2.0.1
+22 silly currentTree │ ├── pinkie@2.0.4
+22 silly currentTree │ ├── pretty-bytes@1.0.4
+22 silly currentTree │ ├── process-nextick-args@1.0.7
+22 silly currentTree │ ├── read-pkg-up@1.0.1
+22 silly currentTree │ ├── read-pkg@1.1.0
+22 silly currentTree │ ├── readable-stream@2.0.6
+22 silly currentTree │ ├── redent@1.0.0
+22 silly currentTree │ ├── repeating@2.0.1
+22 silly currentTree │ ├── semver@5.3.0
+22 silly currentTree │ ├── signal-exit@3.0.1
+22 silly currentTree │ ├── source-map@0.4.4
+22 silly currentTree │ ├── spdx-correct@1.0.2
+22 silly currentTree │ ├── spdx-expression-parse@1.0.4
+22 silly currentTree │ ├── spdx-license-ids@1.2.2
+22 silly currentTree │ ├── string_decoder@0.10.31
+22 silly currentTree │ ├── strip-ansi@3.0.1
+22 silly currentTree │ ├── strip-bom@2.0.0
+22 silly currentTree │ ├── strip-indent@1.0.1
+22 silly currentTree │ ├── supports-color@2.0.0
+22 silly currentTree │ ├── trim-newlines@1.0.0
+22 silly currentTree │ ├── typedarray@0.0.6
+22 silly currentTree │ ├── util-deprecate@1.0.2
+22 silly currentTree │ └── validate-npm-package-license@3.0.1
+22 silly currentTree ├─┬ grunt-contrib-jshint@0.10.0
+22 silly currentTree │ ├── cli@0.6.6
+22 silly currentTree │ ├── console-browserify@1.1.0
+22 silly currentTree │ ├── core-util-is@1.0.2
+22 silly currentTree │ ├── date-now@0.1.4
+22 silly currentTree │ ├─┬ dom-serializer@0.1.0
+22 silly currentTree │ │ ├── domelementtype@1.1.3
+22 silly currentTree │ │ └── entities@1.1.1
+22 silly currentTree │ ├── domelementtype@1.3.0
+22 silly currentTree │ ├── domhandler@2.3.0
+22 silly currentTree │ ├── domutils@1.5.1
+22 silly currentTree │ ├── entities@1.0.0
+22 silly currentTree │ ├── exit@0.1.2
+22 silly currentTree │ ├─┬ glob@3.2.11
+22 silly currentTree │ │ └── minimatch@0.3.0
+22 silly currentTree │ ├── hooker@0.2.3
+22 silly currentTree │ ├── htmlparser2@3.8.3
+22 silly currentTree │ ├── inherits@2.0.3
+22 silly currentTree │ ├── isarray@0.0.1
+22 silly currentTree │ ├── jshint@2.5.11
+22 silly currentTree │ ├── lru-cache@2.7.3
+22 silly currentTree │ ├── minimatch@1.0.0
+22 silly currentTree │ ├── readable-stream@1.1.14
+22 silly currentTree │ ├── shelljs@0.3.0
+22 silly currentTree │ ├── sigmund@1.0.1
+22 silly currentTree │ ├── string_decoder@0.10.31
+22 silly currentTree │ ├── strip-json-comments@1.0.4
+22 silly currentTree │ └── underscore@1.6.0
+22 silly currentTree ├─┬ grunt-contrib-less@0.11.4
+22 silly currentTree │ ├── amdefine@1.0.0
+22 silly currentTree │ ├── ansi-regex@0.2.1
+22 silly currentTree │ ├── ansi-styles@1.1.0
+22 silly currentTree │ ├── asn1@0.1.11
+22 silly currentTree │ ├── assert-plus@0.1.5
+22 silly currentTree │ ├── async@0.2.10
+22 silly currentTree │ ├── aws-sign2@0.5.0
+22 silly currentTree │ ├── boom@0.4.2
+22 silly currentTree │ ├── chalk@0.5.1
+22 silly currentTree │ ├── clean-css@2.2.23
+22 silly currentTree │ ├── combined-stream@0.0.7
+22 silly currentTree │ ├── commander@2.2.0
+22 silly currentTree │ ├── concat-stream@1.5.2
+22 silly currentTree │ ├── core-util-is@1.0.2
+22 silly currentTree │ ├── cryptiles@0.2.2
+22 silly currentTree │ ├── ctype@0.5.3
+22 silly currentTree │ ├── deep-equal@0.0.0
+22 silly currentTree │ ├── defined@0.0.0
+22 silly currentTree │ ├── delayed-stream@0.0.5
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── forever-agent@0.5.2
+22 silly currentTree │ ├─┬ form-data@0.1.4
+22 silly currentTree │ │ └── async@0.9.2
+22 silly currentTree │ ├── graceful-fs@3.0.11
+22 silly currentTree │ ├── gzip-size@0.1.1
+22 silly currentTree │ ├── has-ansi@0.1.0
+22 silly currentTree │ ├── has-color@0.1.7
+22 silly currentTree │ ├── hawk@1.1.1
+22 silly currentTree │ ├── hoek@0.9.1
+22 silly currentTree │ ├── http-signature@0.10.1
+22 silly currentTree │ ├── inherits@2.0.3
+22 silly currentTree │ ├── isarray@1.0.0
+22 silly currentTree │ ├── json-stringify-safe@5.0.1
+22 silly currentTree │ ├── jsonify@0.0.0
+22 silly currentTree │ ├── less@1.7.5
+22 silly currentTree │ ├── lodash@2.4.2
+22 silly currentTree │ ├─┬ maxmin@0.1.0
+22 silly currentTree │ │ ├── ansi-styles@1.0.0
+22 silly currentTree │ │ ├── chalk@0.4.0
+22 silly currentTree │ │ └── strip-ansi@0.1.1
+22 silly currentTree │ ├── mime-types@1.0.2
+22 silly currentTree │ ├── mime@1.2.11
+22 silly currentTree │ ├── minimist@0.0.8
+22 silly currentTree │ ├── mkdirp@0.5.1
+22 silly currentTree │ ├── natives@1.1.0
+22 silly currentTree │ ├── node-uuid@1.4.7
+22 silly currentTree │ ├── oauth-sign@0.3.0
+22 silly currentTree │ ├── pretty-bytes@0.1.2
+22 silly currentTree │ ├── process-nextick-args@1.0.7
+22 silly currentTree │ ├── qs@1.0.2
+22 silly currentTree │ ├── readable-stream@2.0.6
+22 silly currentTree │ ├── request@2.40.0
+22 silly currentTree │ ├── sntp@0.2.4
+22 silly currentTree │ ├── source-map@0.1.43
+22 silly currentTree │ ├── string_decoder@0.10.31
+22 silly currentTree │ ├── stringstream@0.0.5
+22 silly currentTree │ ├── strip-ansi@0.3.0
+22 silly currentTree │ ├── supports-color@0.2.0
+22 silly currentTree │ ├── tape@0.2.2
+22 silly currentTree │ ├── tough-cookie@2.3.1
+22 silly currentTree │ ├── tunnel-agent@0.4.3
+22 silly currentTree │ ├── typedarray@0.0.6
+22 silly currentTree │ ├── util-deprecate@1.0.2
+22 silly currentTree │ └── zlib-browserify@0.0.3
+22 silly currentTree ├─┬ grunt-contrib-uglify@0.5.1
+22 silly currentTree │ ├── align-text@0.1.4
+22 silly currentTree │ ├── ansi-regex@0.2.1
+22 silly currentTree │ ├── ansi-styles@1.1.0
+22 silly currentTree │ ├── async@0.2.10
+22 silly currentTree │ ├── browserify-zlib@0.1.4
+22 silly currentTree │ ├── camelcase@1.2.1
+22 silly currentTree │ ├── center-align@0.1.3
+22 silly currentTree │ ├── chalk@0.5.1
+22 silly currentTree │ ├── cliui@2.1.0
+22 silly currentTree │ ├── concat-stream@1.5.2
+22 silly currentTree │ ├── core-util-is@1.0.2
+22 silly currentTree │ ├── decamelize@1.2.0
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── figures@1.7.0
+22 silly currentTree │ ├── gzip-size@0.2.0
+22 silly currentTree │ ├── has-ansi@0.1.0
+22 silly currentTree │ ├── inherits@2.0.3
+22 silly currentTree │ ├── is-buffer@1.1.4
+22 silly currentTree │ ├── isarray@1.0.0
+22 silly currentTree │ ├── kind-of@3.0.4
+22 silly currentTree │ ├── lazy-cache@1.0.4
+22 silly currentTree │ ├── lodash@2.4.2
+22 silly currentTree │ ├── longest@1.0.1
+22 silly currentTree │ ├── maxmin@0.2.2
+22 silly currentTree │ ├── object-assign@4.1.0
+22 silly currentTree │ ├── pako@0.2.9
+22 silly currentTree │ ├── pretty-bytes@0.1.2
+22 silly currentTree │ ├── process-nextick-args@1.0.7
+22 silly currentTree │ ├── readable-stream@2.0.6
+22 silly currentTree │ ├── repeat-string@1.5.4
+22 silly currentTree │ ├── right-align@0.1.3
+22 silly currentTree │ ├── source-map@0.5.6
+22 silly currentTree │ ├── string_decoder@0.10.31
+22 silly currentTree │ ├── strip-ansi@0.3.0
+22 silly currentTree │ ├── supports-color@0.2.0
+22 silly currentTree │ ├── typedarray@0.0.6
+22 silly currentTree │ ├── uglify-js@2.7.3
+22 silly currentTree │ ├── uglify-to-browserify@1.0.2
+22 silly currentTree │ ├── util-deprecate@1.0.2
+22 silly currentTree │ ├── window-size@0.1.0
+22 silly currentTree │ ├── wordwrap@0.0.2
+22 silly currentTree │ └── yargs@3.10.0
+22 silly currentTree ├─┬ grunt-contrib-watch@0.6.1
+22 silly currentTree │ ├── abbrev@1.0.9
+22 silly currentTree │ ├── async@0.2.10
+22 silly currentTree │ ├── debug@0.7.4
+22 silly currentTree │ ├── faye-websocket@0.4.4
+22 silly currentTree │ ├── gaze@0.5.2
+22 silly currentTree │ ├── glob@3.1.21
+22 silly currentTree │ ├─┬ globule@0.1.0
+22 silly currentTree │ │ └── lodash@1.0.2
+22 silly currentTree │ ├── graceful-fs@1.2.3
+22 silly currentTree │ ├── inherits@1.0.2
+22 silly currentTree │ ├── lodash@2.4.2
+22 silly currentTree │ ├── lru-cache@2.7.3
+22 silly currentTree │ ├── minimatch@0.2.14
+22 silly currentTree │ ├── nopt@2.0.0
+22 silly currentTree │ ├── noptify@0.0.3
+22 silly currentTree │ ├── qs@0.5.6
+22 silly currentTree │ ├── sigmund@1.0.1
+22 silly currentTree │ └── tiny-lr-fork@0.0.5
+22 silly currentTree ├── grunt-legacy-util
+22 silly currentTree ├─┬ grunt-modernizr@0.5.2
+22 silly currentTree │ ├── asn1@0.1.11
+22 silly currentTree │ ├── assert-plus@0.1.5
+22 silly currentTree │ ├── async@0.9.2
+22 silly currentTree │ ├── aws-sign@0.3.0
+22 silly currentTree │ ├── boom@0.4.2
+22 silly currentTree │ ├── colors@0.6.2
+22 silly currentTree │ ├── combined-stream@0.0.7
+22 silly currentTree │ ├── cookie-jar@0.3.0
+22 silly currentTree │ ├── cryptiles@0.2.2
+22 silly currentTree │ ├── ctype@0.5.3
+22 silly currentTree │ ├── delayed-stream@0.0.5
+22 silly currentTree │ ├── forever-agent@0.5.2
+22 silly currentTree │ ├── form-data@0.1.4
+22 silly currentTree │ ├── hawk@1.0.0
+22 silly currentTree │ ├── hoek@0.9.1
+22 silly currentTree │ ├── http-signature@0.10.1
+22 silly currentTree │ ├── json-stringify-safe@5.0.1
+22 silly currentTree │ ├── mime@1.2.11
+22 silly currentTree │ ├── node-uuid@1.4.7
+22 silly currentTree │ ├── oauth-sign@0.3.0
+22 silly currentTree │ ├── promised-io@0.3.5
+22 silly currentTree │ ├── qs@0.6.6
+22 silly currentTree │ ├── request@2.27.0
+22 silly currentTree │ ├── sntp@0.2.4
+22 silly currentTree │ ├── tunnel-agent@0.3.0
+22 silly currentTree │ └── uglify-js@1.3.3
+22 silly currentTree ├─┬ grunt-processhtml@0.3.13
+22 silly currentTree │ ├── async@0.9.2
+22 silly currentTree │ ├── htmlprocessor@0.2.3
+22 silly currentTree │ ├── lodash.clonedeep@4.5.0
+22 silly currentTree │ └── lodash@2.4.2
+22 silly currentTree ├─┬ grunt-uncss@0.4.4
+22 silly currentTree │ ├── amdefine@1.0.0
+22 silly currentTree │ ├── ansi-regex@2.0.0
+22 silly currentTree │ ├── ansi-styles@2.2.1
+22 silly currentTree │ ├── array-find-index@1.0.2
+22 silly currentTree │ ├── asn1@0.2.3
+22 silly currentTree │ ├── assert-plus@0.2.0
+22 silly currentTree │ ├─┬ async@2.1.2
+22 silly currentTree │ │ └── lodash@4.16.4
+22 silly currentTree │ ├── aws-sign2@0.6.0
+22 silly currentTree │ ├── balanced-match@0.4.2
+22 silly currentTree │ ├── bcrypt-pbkdf@1.0.0
+22 silly currentTree │ ├── bl@1.0.3
+22 silly currentTree │ ├── bluebird@2.9.34
+22 silly currentTree │ ├── boom@2.10.1
+22 silly currentTree │ ├── brace-expansion@1.1.6
+22 silly currentTree │ ├── browserify-zlib@0.1.4
+22 silly currentTree │ ├── builtin-modules@1.1.1
+22 silly currentTree │ ├── camelcase-keys@2.1.0
+22 silly currentTree │ ├── camelcase@2.1.1
+22 silly currentTree │ ├── caseless@0.11.0
+22 silly currentTree │ ├── chalk@1.1.3
+22 silly currentTree │ ├── combined-stream@1.0.5
+22 silly currentTree │ ├── commander@2.6.0
+22 silly currentTree │ ├── concat-map@0.0.1
+22 silly currentTree │ ├── concat-stream@1.5.2
+22 silly currentTree │ ├── core-util-is@1.0.2
+22 silly currentTree │ ├── cryptiles@2.0.5
+22 silly currentTree │ ├── css-parse@1.7.0
+22 silly currentTree │ ├── css-stringify@1.4.1
+22 silly currentTree │ ├── css@1.6.0
+22 silly currentTree │ ├── ctype@0.5.3
+22 silly currentTree │ ├── currently-unhandled@0.4.1
+22 silly currentTree │ ├─┬ dashdash@1.14.0
+22 silly currentTree │ │ └── assert-plus@1.0.0
+22 silly currentTree │ ├── debug@0.7.4
+22 silly currentTree │ ├── decamelize@1.2.0
+22 silly currentTree │ ├── delayed-stream@1.0.0
+22 silly currentTree │ ├── ecc-jsbn@0.1.1
+22 silly currentTree │ ├── error-ex@1.3.0
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── extend@3.0.0
+22 silly currentTree │ ├─┬ extract-zip@1.5.0
+22 silly currentTree │ │ └── concat-stream@1.5.0
+22 silly currentTree │ ├── extsprintf@1.0.2
+22 silly currentTree │ ├── fd-slicer@1.0.1
+22 silly currentTree │ ├── figures@1.7.0
+22 silly currentTree │ ├── find-up@1.1.2
+22 silly currentTree │ ├── forever-agent@0.6.1
+22 silly currentTree │ ├── fork-stream@0.0.4
+22 silly currentTree │ ├── form-data@1.0.1
+22 silly currentTree │ ├── fs-extra@0.26.7
+22 silly currentTree │ ├── generate-function@2.0.0
+22 silly currentTree │ ├── generate-object-property@1.2.0
+22 silly currentTree │ ├── get-stdin@4.0.1
+22 silly currentTree │ ├─┬ getpass@0.1.6
+22 silly currentTree │ │ └── assert-plus@1.0.0
+22 silly currentTree │ ├── glob@4.4.2
+22 silly currentTree │ ├── graceful-fs@4.1.9
+22 silly currentTree │ ├── graceful-readlink@1.0.1
+22 silly currentTree │ ├── gzip-size@1.0.0
+22 silly currentTree │ ├─┬ har-validator@2.0.6
+22 silly currentTree │ │ └── commander@2.9.0
+22 silly currentTree │ ├── has-ansi@2.0.0
+22 silly currentTree │ ├── hasha@2.2.0
+22 silly currentTree │ ├── hawk@3.1.3
+22 silly currentTree │ ├── hoek@2.16.3
+22 silly currentTree │ ├── hosted-git-info@2.1.5
+22 silly currentTree │ ├── html-tags@1.1.1
+22 silly currentTree │ ├── http-signature@1.1.1
+22 silly currentTree │ ├── indent-string@2.1.0
+22 silly currentTree │ ├── inflight@1.0.6
+22 silly currentTree │ ├── inherits@2.0.3
+22 silly currentTree │ ├── is-absolute-url@1.0.0
+22 silly currentTree │ ├── is-arrayish@0.2.1
+22 silly currentTree │ ├── is-builtin-module@1.0.0
+22 silly currentTree │ ├── is-finite@1.0.2
+22 silly currentTree │ ├── is-html@1.0.0
+22 silly currentTree │ ├── is-my-json-valid@2.15.0
+22 silly currentTree │ ├── is-property@1.0.2
+22 silly currentTree │ ├── is-stream@1.1.0
+22 silly currentTree │ ├── is-typedarray@1.0.0
+22 silly currentTree │ ├── is-utf8@0.2.1
+22 silly currentTree │ ├── isarray@1.0.0
+22 silly currentTree │ ├── isexe@1.1.2
+22 silly currentTree │ ├── isstream@0.1.2
+22 silly currentTree │ ├── jodid25519@1.0.2
+22 silly currentTree │ ├── jsbn@0.1.0
+22 silly currentTree │ ├── json-schema@0.2.3
+22 silly currentTree │ ├── json-stringify-safe@5.0.1
+22 silly currentTree │ ├── jsonfile@2.4.0
+22 silly currentTree │ ├── jsonpointer@4.0.0
+22 silly currentTree │ ├── jsprim@1.3.1
+22 silly currentTree │ ├── kew@0.7.0
+22 silly currentTree │ ├── klaw@1.3.0
+22 silly currentTree │ ├── linerstream@0.1.4
+22 silly currentTree │ ├── load-json-file@1.1.0
+22 silly currentTree │ ├── lodash@3.3.1
+22 silly currentTree │ ├── loud-rejection@1.6.0
+22 silly currentTree │ ├── map-obj@1.0.1
+22 silly currentTree │ ├── maxmin@1.1.0
+22 silly currentTree │ ├── meow@3.7.0
+22 silly currentTree │ ├── mime-db@1.24.0
+22 silly currentTree │ ├── mime-types@2.1.12
+22 silly currentTree │ ├── minimatch@2.0.10
+22 silly currentTree │ ├── minimist@1.2.0
+22 silly currentTree │ ├─┬ mkdirp@0.5.0
+22 silly currentTree │ │ └── minimist@0.0.8
+22 silly currentTree │ ├── node-uuid@1.4.7
+22 silly currentTree │ ├── normalize-package-data@2.3.5
+22 silly currentTree │ ├── number-is-nan@1.0.1
+22 silly currentTree │ ├── oauth-sign@0.8.2
+22 silly currentTree │ ├── object-assign@4.1.0
+22 silly currentTree │ ├── once@1.4.0
+22 silly currentTree │ ├── os-tmpdir@1.0.2
+22 silly currentTree │ ├── pako@0.2.9
+22 silly currentTree │ ├── parse-json@2.2.0
+22 silly currentTree │ ├── path-exists@2.1.0
+22 silly currentTree │ ├── path-is-absolute@1.0.1
+22 silly currentTree │ ├── path-type@1.1.0
+22 silly currentTree │ ├── pend@1.2.0
+22 silly currentTree │ ├─┬ phantomjs@1.9.20
+22 silly currentTree │ │ └── request@2.67.0
+22 silly currentTree │ ├── phridge@1.0.8
+22 silly currentTree │ ├── pify@2.3.0
+22 silly currentTree │ ├── pinkie-promise@2.0.1
+22 silly currentTree │ ├── pinkie@2.0.4
+22 silly currentTree │ ├── pretty-bytes@1.0.4
+22 silly currentTree │ ├── process-nextick-args@1.0.7
+22 silly currentTree │ ├── progress@1.1.8
+22 silly currentTree │ ├── qs@5.2.1
+22 silly currentTree │ ├── read-pkg-up@1.0.1
+22 silly currentTree │ ├── read-pkg@1.1.0
+22 silly currentTree │ ├── readable-stream@2.0.6
+22 silly currentTree │ ├── redent@1.0.0
+22 silly currentTree │ ├── repeating@2.0.1
+22 silly currentTree │ ├── request-progress@2.0.1
+22 silly currentTree │ ├─┬ request@2.53.0
+22 silly currentTree │ │ ├── asn1@0.1.11
+22 silly currentTree │ │ ├── assert-plus@0.1.5
+22 silly currentTree │ │ ├── async@0.9.2
+22 silly currentTree │ │ ├── aws-sign2@0.5.0
+22 silly currentTree │ │ ├── bl@0.9.5
+22 silly currentTree │ │ ├── caseless@0.9.0
+22 silly currentTree │ │ ├── combined-stream@0.0.7
+22 silly currentTree │ │ ├── delayed-stream@0.0.5
+22 silly currentTree │ │ ├── forever-agent@0.5.2
+22 silly currentTree │ │ ├── form-data@0.2.0
+22 silly currentTree │ │ ├── hawk@2.3.1
+22 silly currentTree │ │ ├── http-signature@0.10.1
+22 silly currentTree │ │ ├── isarray@0.0.1
+22 silly currentTree │ │ ├── mime-db@1.12.0
+22 silly currentTree │ │ ├── mime-types@2.0.14
+22 silly currentTree │ │ ├── oauth-sign@0.6.0
+22 silly currentTree │ │ ├── qs@2.3.3
+22 silly currentTree │ │ └── readable-stream@1.0.34
+22 silly currentTree │ ├─┬ rimraf@2.5.4
+22 silly currentTree │ │ ├── glob@7.1.1
+22 silly currentTree │ │ └── minimatch@3.0.3
+22 silly currentTree │ ├── semver@5.3.0
+22 silly currentTree │ ├── signal-exit@3.0.1
+22 silly currentTree │ ├── sntp@1.0.9
+22 silly currentTree │ ├── source-map@0.1.43
+22 silly currentTree │ ├── spdx-correct@1.0.2
+22 silly currentTree │ ├── spdx-expression-parse@1.0.4
+22 silly currentTree │ ├── spdx-license-ids@1.2.2
+22 silly currentTree │ ├─┬ sshpk@1.10.1
+22 silly currentTree │ │ └── assert-plus@1.0.0
+22 silly currentTree │ ├── string_decoder@0.10.31
+22 silly currentTree │ ├── stringstream@0.0.5
+22 silly currentTree │ ├── strip-ansi@3.0.1
+22 silly currentTree │ ├── strip-bom@2.0.0
+22 silly currentTree │ ├── strip-indent@1.0.1
+22 silly currentTree │ ├── supports-color@2.0.0
+22 silly currentTree │ ├─┬ temp@0.8.3
+22 silly currentTree │ │ └── rimraf@2.2.8
+22 silly currentTree │ ├── throttleit@1.0.0
+22 silly currentTree │ ├── tough-cookie@2.2.2
+22 silly currentTree │ ├── trim-newlines@1.0.0
+22 silly currentTree │ ├── tunnel-agent@0.4.3
+22 silly currentTree │ ├── tweetnacl@0.14.3
+22 silly currentTree │ ├── typedarray@0.0.6
+22 silly currentTree │ ├── uncss@0.12.1
+22 silly currentTree │ ├── util-deprecate@1.0.2
+22 silly currentTree │ ├── validate-npm-package-license@3.0.1
+22 silly currentTree │ ├── verror@1.3.6
+22 silly currentTree │ ├── when@3.7.7
+22 silly currentTree │ ├── which@1.2.11
+22 silly currentTree │ ├── wrappy@1.0.2
+22 silly currentTree │ ├── xtend@4.0.1
+22 silly currentTree │ └── yauzl@2.4.1
+22 silly currentTree ├─┬ grunt@0.4.5
+22 silly currentTree │ ├── abbrev@1.0.9
+22 silly currentTree │ ├─┬ argparse@0.1.16
+22 silly currentTree │ │ └── underscore.string@2.4.0
+22 silly currentTree │ ├── async@0.1.22
+22 silly currentTree │ ├── coffee-script@1.3.3
+22 silly currentTree │ ├── colors@0.6.2
+22 silly currentTree │ ├── dateformat@1.0.2-1.2.3
+22 silly currentTree │ ├── esprima@1.0.4
+22 silly currentTree │ ├── eventemitter2@0.4.14
+22 silly currentTree │ ├── exit@0.1.2
+22 silly currentTree │ ├─┬ findup-sync@0.1.3
+22 silly currentTree │ │ ├── glob@3.2.11
+22 silly currentTree │ │ ├── lodash@2.4.2
+22 silly currentTree │ │ └── minimatch@0.3.0
+22 silly currentTree │ ├── getobject@0.1.0
+22 silly currentTree │ ├─┬ glob@3.1.21
+22 silly currentTree │ │ └── inherits@1.0.2
+22 silly currentTree │ ├── graceful-fs@1.2.3
+22 silly currentTree │ ├─┬ grunt-legacy-log-utils@0.1.1
+22 silly currentTree │ │ ├── lodash@2.4.2
+22 silly currentTree │ │ └── underscore.string@2.3.3
+22 silly currentTree │ ├─┬ grunt-legacy-log@0.1.3
+22 silly currentTree │ │ ├── lodash@2.4.2
+22 silly currentTree │ │ └── underscore.string@2.3.3
+22 silly currentTree │ ├── grunt-legacy-util@0.2.0
+22 silly currentTree │ ├── hooker@0.2.3
+22 silly currentTree │ ├── iconv-lite@0.2.11
+22 silly currentTree │ ├── inherits@2.0.3
+22 silly currentTree │ ├── js-yaml@2.0.5
+22 silly currentTree │ ├── lodash@0.9.2
+22 silly currentTree │ ├── lru-cache@2.7.3
+22 silly currentTree │ ├── minimatch@0.2.14
+22 silly currentTree │ ├── nopt@1.0.10
+22 silly currentTree │ ├── rimraf@2.2.8
+22 silly currentTree │ ├── sigmund@1.0.1
+22 silly currentTree │ ├── underscore.string@2.2.1
+22 silly currentTree │ ├── underscore@1.7.0
+22 silly currentTree │ └── which@1.0.9
+22 silly currentTree ├── gzip-size
+22 silly currentTree ├── has-ansi
+22 silly currentTree ├── has-color
+22 silly currentTree ├── hasha
+22 silly currentTree ├── hawk
+22 silly currentTree ├── hoek
+22 silly currentTree ├── hooker
+22 silly currentTree ├── hosted-git-info
+22 silly currentTree ├── html-tags
+22 silly currentTree ├── http-signature
+22 silly currentTree ├── iconv-lite
+22 silly currentTree ├── indent-string
+22 silly currentTree ├── inflight
+22 silly currentTree ├── inherits
+22 silly currentTree ├── is-absolute-url
+22 silly currentTree ├── is-arrayish
+22 silly currentTree ├── is-buffer
+22 silly currentTree ├── is-builtin-module
+22 silly currentTree ├── is-finite
+22 silly currentTree ├── is-html
+22 silly currentTree ├── is-my-json-valid
+22 silly currentTree ├── is-property
+22 silly currentTree ├── is-stream
+22 silly currentTree ├── is-typedarray
+22 silly currentTree ├── is-utf8
+22 silly currentTree ├── isarray
+22 silly currentTree ├── isexe
+22 silly currentTree ├── isstream
+22 silly currentTree ├── jodid25519
+22 silly currentTree ├── js-base64
+22 silly currentTree ├── js-yaml
+22 silly currentTree ├── jsbn
+22 silly currentTree ├── json-schema
+22 silly currentTree ├── json-stringify-safe
+22 silly currentTree ├── jsonify
+22 silly currentTree ├── jsonpointer
+22 silly currentTree ├── jsprim
+22 silly currentTree ├── kew
+22 silly currentTree ├── kind-of
+22 silly currentTree ├── klaw
+22 silly currentTree ├── lazy-cache
+22 silly currentTree ├── less
+22 silly currentTree ├── linerstream
+22 silly currentTree ├─┬ load-grunt-tasks@0.6.0
+22 silly currentTree │ ├── array-differ@0.1.0
+22 silly currentTree │ ├── array-union@0.1.0
+22 silly currentTree │ ├── array-uniq@0.1.1
+22 silly currentTree │ ├── findup-sync@0.1.3
+22 silly currentTree │ ├── glob@3.2.11
+22 silly currentTree │ ├── inherits@2.0.3
+22 silly currentTree │ ├── lodash@2.4.2
+22 silly currentTree │ ├── lru-cache@2.7.3
+22 silly currentTree │ ├── minimatch@0.3.0
+22 silly currentTree │ ├── multimatch@0.3.0
+22 silly currentTree │ └── sigmund@1.0.1
+22 silly currentTree ├── lodash
+22 silly currentTree ├── lodash.clonedeep
+22 silly currentTree ├── longest
+22 silly currentTree ├── loud-rejection
+22 silly currentTree ├── lru-cache
+22 silly currentTree ├── map-obj
+22 silly currentTree ├── meow
+22 silly currentTree ├── mime
+22 silly currentTree ├── mime-db
+22 silly currentTree ├── mime-types
+22 silly currentTree ├── minimatch
+22 silly currentTree ├── minimist
+22 silly currentTree ├── morgan
+22 silly currentTree ├── ms
+22 silly currentTree ├── natives
+22 silly currentTree ├── negotiator
+22 silly currentTree ├── node-uuid
+22 silly currentTree ├── nopt
+22 silly currentTree ├── noptify
+22 silly currentTree ├── normalize-package-data
+22 silly currentTree ├── number-is-nan
+22 silly currentTree ├── oauth-sign
+22 silly currentTree ├── object-assign
+22 silly currentTree ├── on-finished
+22 silly currentTree ├── on-headers
+22 silly currentTree ├── once
+22 silly currentTree ├── opn
+22 silly currentTree ├── os-tmpdir
+22 silly currentTree ├── pako
+22 silly currentTree ├── parse-json
+22 silly currentTree ├── parse-ms
+22 silly currentTree ├── parseurl
+22 silly currentTree ├── path-exists
+22 silly currentTree ├── path-is-absolute
+22 silly currentTree ├── pend
+22 silly currentTree ├── phantomjs
+22 silly currentTree ├── phridge
+22 silly currentTree ├── pify
+22 silly currentTree ├── pinkie
+22 silly currentTree ├── pinkie-promise
+22 silly currentTree ├── postcss
+22 silly currentTree ├── pretty-bytes
+22 silly currentTree ├── pretty-ms
+22 silly currentTree ├── process-nextick-args
+22 silly currentTree ├── progress
+22 silly currentTree ├── promised-io
+22 silly currentTree ├── qs
+22 silly currentTree ├── range-parser
+22 silly currentTree ├── read-pkg
+22 silly currentTree ├── read-pkg-up
+22 silly currentTree ├── readable-stream
+22 silly currentTree ├── redent
+22 silly currentTree ├── repeat-string
+22 silly currentTree ├── repeating
+22 silly currentTree ├── request-progress
+22 silly currentTree ├── right-align
+22 silly currentTree ├── rimraf
+22 silly currentTree ├── semver
+22 silly currentTree ├── send
+22 silly currentTree ├── serve-index
+22 silly currentTree ├── serve-static
+22 silly currentTree ├── setprototypeof
+22 silly currentTree ├── shelljs
+22 silly currentTree ├── sigmund
+22 silly currentTree ├── signal-exit
+22 silly currentTree ├── sntp
+22 silly currentTree ├── source-map
+22 silly currentTree ├── spdx-correct
+22 silly currentTree ├── spdx-expression-parse
+22 silly currentTree ├── spdx-license-ids
+22 silly currentTree ├── statuses
+22 silly currentTree ├── string_decoder
+22 silly currentTree ├── stringstream
+22 silly currentTree ├── strip-ansi
+22 silly currentTree ├── strip-bom
+22 silly currentTree ├── strip-indent
+22 silly currentTree ├── strip-json-comments
+22 silly currentTree ├── supports-color
+22 silly currentTree ├── tape
+22 silly currentTree ├── temp
+22 silly currentTree ├── text-table
+22 silly currentTree ├── throttleit
+22 silly currentTree ├─┬ time-grunt@0.4.0
+22 silly currentTree │ ├── ansi-regex@0.2.1
+22 silly currentTree │ ├── ansi-styles@1.1.0
+22 silly currentTree │ ├── chalk@0.5.1
+22 silly currentTree │ ├── date-time@0.1.1
+22 silly currentTree │ ├── escape-string-regexp@1.0.5
+22 silly currentTree │ ├── figures@1.7.0
+22 silly currentTree │ ├── has-ansi@0.1.0
+22 silly currentTree │ ├── hooker@0.2.3
+22 silly currentTree │ ├── object-assign@4.1.0
+22 silly currentTree │ ├── parse-ms@0.1.2
+22 silly currentTree │ ├── pretty-ms@0.2.2
+22 silly currentTree │ ├── strip-ansi@0.3.0
+22 silly currentTree │ ├── supports-color@0.2.0
+22 silly currentTree │ └── text-table@0.2.0
+22 silly currentTree ├── tough-cookie
+22 silly currentTree ├── trim-newlines
+22 silly currentTree ├── tunnel-agent
+22 silly currentTree ├── tweetnacl
+22 silly currentTree ├── typedarray
+22 silly currentTree ├── uglify-to-browserify
+22 silly currentTree ├── underscore
+22 silly currentTree ├── underscore.string
+22 silly currentTree ├── unpipe
+22 silly currentTree ├── util-deprecate
+22 silly currentTree ├── utils-merge
+22 silly currentTree ├── validate-npm-package-license
+22 silly currentTree ├── verror
+22 silly currentTree ├── when
+22 silly currentTree ├── which
+22 silly currentTree ├── window-size
+22 silly currentTree ├── wordwrap
+22 silly currentTree ├── wrappy
+22 silly currentTree ├── xtend
+22 silly currentTree ├── yauzl
+22 silly currentTree └── zlib-browserify
+23 silly idealTree sp-arvent-landing@0.1.0
+23 silly idealTree ├── abbrev
+23 silly idealTree ├── accepts
+23 silly idealTree ├── align-text
+23 silly idealTree ├── amdefine
+23 silly idealTree ├── ansi-regex
+23 silly idealTree ├── ansi-styles
+23 silly idealTree ├── array-differ
+23 silly idealTree ├── array-find-index
+23 silly idealTree ├── array-union
+23 silly idealTree ├── array-uniq
+23 silly idealTree ├── asn1
+23 silly idealTree ├── assert-plus
+23 silly idealTree ├── async
+23 silly idealTree ├── autoprefixer-core
+23 silly idealTree ├── aws-sign
+23 silly idealTree ├── aws-sign2
+23 silly idealTree ├── balanced-match
+23 silly idealTree ├── basic-auth
+23 silly idealTree ├── batch
+23 silly idealTree ├── bcrypt-pbkdf
+23 silly idealTree ├── bl
+23 silly idealTree ├── bluebird
+23 silly idealTree ├── boom
+23 silly idealTree ├── bower@1.7.9
+23 silly idealTree ├── brace-expansion
+23 silly idealTree ├── browserify-zlib
+23 silly idealTree ├── builtin-modules
+23 silly idealTree ├── camelcase
+23 silly idealTree ├── camelcase-keys
+23 silly idealTree ├── caniuse-db
+23 silly idealTree ├── caseless
+23 silly idealTree ├── center-align
+23 silly idealTree ├── chalk
+23 silly idealTree ├── cliui
+23 silly idealTree ├── coffee-script
+23 silly idealTree ├── colors
+23 silly idealTree ├── combined-stream
+23 silly idealTree ├── commander
+23 silly idealTree ├── concat-map
+23 silly idealTree ├── concat-stream
+23 silly idealTree ├── connect
+23 silly idealTree ├── connect-livereload
+23 silly idealTree ├── console-browserify
+23 silly idealTree ├── cookie-jar
+23 silly idealTree ├── core-util-is
+23 silly idealTree ├── cryptiles
+23 silly idealTree ├── css
+23 silly idealTree ├── css-parse
+23 silly idealTree ├── css-stringify
+23 silly idealTree ├── ctype
+23 silly idealTree ├── currently-unhandled
+23 silly idealTree ├── date-now
+23 silly idealTree ├── date-time
+23 silly idealTree ├── dateformat
+23 silly idealTree ├── debug
+23 silly idealTree ├── decamelize
+23 silly idealTree ├── deep-equal
+23 silly idealTree ├── defined
+23 silly idealTree ├── delayed-stream
+23 silly idealTree ├── depd
+23 silly idealTree ├── destroy
+23 silly idealTree ├── diff
+23 silly idealTree ├── domelementtype
+23 silly idealTree ├── domhandler
+23 silly idealTree ├── domutils
+23 silly idealTree ├── ecc-jsbn
+23 silly idealTree ├── ee-first
+23 silly idealTree ├── encodeurl
+23 silly idealTree ├── entities
+23 silly idealTree ├── error-ex
+23 silly idealTree ├── escape-html
+23 silly idealTree ├── escape-string-regexp
+23 silly idealTree ├── esprima
+23 silly idealTree ├── etag
+23 silly idealTree ├── eventemitter2
+23 silly idealTree ├── exit
+23 silly idealTree ├── extend
+23 silly idealTree ├── extract-zip
+23 silly idealTree ├── extsprintf
+23 silly idealTree ├── faye-websocket
+23 silly idealTree ├── fd-slicer
+23 silly idealTree ├── figures
+23 silly idealTree ├── file-sync-cmp
+23 silly idealTree ├── finalhandler
+23 silly idealTree ├── find-up
+23 silly idealTree ├── forever-agent
+23 silly idealTree ├── fork-stream
+23 silly idealTree ├── fresh
+23 silly idealTree ├── fs.realpath@1.0.0
+23 silly idealTree ├── gaze
+23 silly idealTree ├── generate-function
+23 silly idealTree ├── generate-object-property
+23 silly idealTree ├── get-stdin
+23 silly idealTree ├── getobject
+23 silly idealTree ├── graceful-fs
+23 silly idealTree ├── graceful-readlink
+23 silly idealTree ├─┬ grunt-autoprefixer@1.0.1
+23 silly idealTree │ ├── amdefine@1.0.0
+23 silly idealTree │ ├── ansi-regex@0.2.1
+23 silly idealTree │ ├── ansi-styles@1.1.0
+23 silly idealTree │ ├── autoprefixer-core@3.1.2
+23 silly idealTree │ ├── caniuse-db@1.0.30000559
+23 silly idealTree │ ├── chalk@0.5.1
+23 silly idealTree │ ├── diff@1.0.8
+23 silly idealTree │ ├── escape-string-regexp@1.0.5
+23 silly idealTree │ ├── has-ansi@0.1.0
+23 silly idealTree │ ├── js-base64@2.1.9
+23 silly idealTree │ ├── postcss@2.2.6
+23 silly idealTree │ ├── source-map@0.1.43
+23 silly idealTree │ ├── strip-ansi@0.3.0
+23 silly idealTree │ └── supports-color@0.2.0
+23 silly idealTree ├── grunt-banner@0.3.1
+23 silly idealTree ├─┬ grunt-contrib-concat@0.5.1
+23 silly idealTree │ ├── amdefine@1.0.0
+23 silly idealTree │ ├── ansi-regex@0.2.1
+23 silly idealTree │ ├── ansi-styles@1.1.0
+23 silly idealTree │ ├── chalk@0.5.1
+23 silly idealTree │ ├── escape-string-regexp@1.0.5
+23 silly idealTree │ ├── has-ansi@0.1.0
+23 silly idealTree │ ├── source-map@0.3.0
+23 silly idealTree │ ├── strip-ansi@0.3.0
+23 silly idealTree │ └── supports-color@0.2.0
+23 silly idealTree ├─┬ grunt-contrib-connect@0.11.2
+23 silly idealTree │ ├── accepts@1.3.3
+23 silly idealTree │ ├── async@0.9.2
+23 silly idealTree │ ├── basic-auth@1.0.4
+23 silly idealTree │ ├── batch@0.5.3
+23 silly idealTree │ ├── connect-livereload@0.5.4
+23 silly idealTree │ ├── connect@3.5.0
+23 silly idealTree │ ├── debug@2.2.0
+23 silly idealTree │ ├── depd@1.1.0
+23 silly idealTree │ ├── destroy@1.0.4
+23 silly idealTree │ ├── ee-first@1.1.1
+23 silly idealTree │ ├── encodeurl@1.0.1
+23 silly idealTree │ ├── escape-html@1.0.3
+23 silly idealTree │ ├── etag@1.7.0
+23 silly idealTree │ ├── finalhandler@0.5.0
+23 silly idealTree │ ├── fresh@0.3.0
+23 silly idealTree │ ├── http-errors@1.5.0
+23 silly idealTree │ ├── inherits@2.0.1
+23 silly idealTree │ ├── mime-db@1.24.0
+23 silly idealTree │ ├── mime-types@2.1.12
+23 silly idealTree │ ├── mime@1.3.4
+23 silly idealTree │ ├── morgan@1.7.0
+23 silly idealTree │ ├── ms@0.7.1
+23 silly idealTree │ ├── negotiator@0.6.1
+23 silly idealTree │ ├── on-finished@2.3.0
+23 silly idealTree │ ├── on-headers@1.0.1
+23 silly idealTree │ ├── opn@1.0.2
+23 silly idealTree │ ├── parseurl@1.3.1
+23 silly idealTree │ ├─┬ portscanner@1.0.0
+23 silly idealTree │ │ └── async@0.1.15
+23 silly idealTree │ ├── range-parser@1.2.0
+23 silly idealTree │ ├── send@0.14.1
+23 silly idealTree │ ├── serve-index@1.8.0
+23 silly idealTree │ ├── serve-static@1.11.1
+23 silly idealTree │ ├── setprototypeof@1.0.1
+23 silly idealTree │ ├── statuses@1.3.0
+23 silly idealTree │ ├── unpipe@1.0.0
+23 silly idealTree │ └── utils-merge@1.0.0
+23 silly idealTree ├─┬ grunt-contrib-copy@0.8.2
+23 silly idealTree │ ├── ansi-regex@2.0.0
+23 silly idealTree │ ├── ansi-styles@2.2.1
+23 silly idealTree │ ├── chalk@1.1.3
+23 silly idealTree │ ├── escape-string-regexp@1.0.5
+23 silly idealTree │ ├── file-sync-cmp@0.1.1
+23 silly idealTree │ ├── has-ansi@2.0.0
+23 silly idealTree │ ├── strip-ansi@3.0.1
+23 silly idealTree │ └── supports-color@2.0.0
+23 silly idealTree ├─┬ grunt-contrib-cssmin@0.12.3
+23 silly idealTree │ ├── amdefine@1.0.0
+23 silly idealTree │ ├── ansi-regex@2.0.0
+23 silly idealTree │ ├── ansi-styles@2.2.1
+23 silly idealTree │ ├── array-find-index@1.0.2
+23 silly idealTree │ ├── browserify-zlib@0.1.4
+23 silly idealTree │ ├── builtin-modules@1.1.1
+23 silly idealTree │ ├── camelcase-keys@2.1.0
+23 silly idealTree │ ├── camelcase@2.1.1
+23 silly idealTree │ ├── chalk@1.1.3
+23 silly idealTree │ ├── clean-css@3.4.20
+23 silly idealTree │ ├── commander@2.8.1
+23 silly idealTree │ ├── concat-stream@1.5.2
+23 silly idealTree │ ├── core-util-is@1.0.2
+23 silly idealTree │ ├── currently-unhandled@0.4.1
+23 silly idealTree │ ├── decamelize@1.2.0
+23 silly idealTree │ ├── error-ex@1.3.0
+23 silly idealTree │ ├── escape-string-regexp@1.0.5
+23 silly idealTree │ ├── figures@1.7.0
+23 silly idealTree │ ├── find-up@1.1.2
+23 silly idealTree │ ├── get-stdin@4.0.1
+23 silly idealTree │ ├── graceful-fs@4.1.9
+23 silly idealTree │ ├── graceful-readlink@1.0.1
+23 silly idealTree │ ├── gzip-size@1.0.0
+23 silly idealTree │ ├── has-ansi@2.0.0
+23 silly idealTree │ ├── hosted-git-info@2.1.5
+23 silly idealTree │ ├── indent-string@2.1.0
+23 silly idealTree │ ├── inherits@2.0.3
+23 silly idealTree │ ├── is-arrayish@0.2.1
+23 silly idealTree │ ├── is-builtin-module@1.0.0
+23 silly idealTree │ ├── is-finite@1.0.2
+23 silly idealTree │ ├── is-utf8@0.2.1
+23 silly idealTree │ ├── isarray@1.0.0
+23 silly idealTree │ ├── load-json-file@1.1.0
+23 silly idealTree │ ├── loud-rejection@1.6.0
+23 silly idealTree │ ├── map-obj@1.0.1
+23 silly idealTree │ ├── maxmin@1.1.0
+23 silly idealTree │ ├── meow@3.7.0
+23 silly idealTree │ ├── minimist@1.2.0
+23 silly idealTree │ ├── normalize-package-data@2.3.5
+23 silly idealTree │ ├── number-is-nan@1.0.1
+23 silly idealTree │ ├── object-assign@4.1.0
+23 silly idealTree │ ├── pako@0.2.9
+23 silly idealTree │ ├── parse-json@2.2.0
+23 silly idealTree │ ├── path-exists@2.1.0
+23 silly idealTree │ ├── path-type@1.1.0
+23 silly idealTree │ ├── pify@2.3.0
+23 silly idealTree │ ├── pinkie-promise@2.0.1
+23 silly idealTree │ ├── pinkie@2.0.4
+23 silly idealTree │ ├── pretty-bytes@1.0.4
+23 silly idealTree │ ├── process-nextick-args@1.0.7
+23 silly idealTree │ ├── read-pkg-up@1.0.1
+23 silly idealTree │ ├── read-pkg@1.1.0
+23 silly idealTree │ ├── readable-stream@2.0.6
+23 silly idealTree │ ├── redent@1.0.0
+23 silly idealTree │ ├── repeating@2.0.1
+23 silly idealTree │ ├── semver@5.3.0
+23 silly idealTree │ ├── signal-exit@3.0.1
+23 silly idealTree │ ├── source-map@0.4.4
+23 silly idealTree │ ├── spdx-correct@1.0.2
+23 silly idealTree │ ├── spdx-expression-parse@1.0.4
+23 silly idealTree │ ├── spdx-license-ids@1.2.2
+23 silly idealTree │ ├── string_decoder@0.10.31
+23 silly idealTree │ ├── strip-ansi@3.0.1
+23 silly idealTree │ ├── strip-bom@2.0.0
+23 silly idealTree │ ├── strip-indent@1.0.1
+23 silly idealTree │ ├── supports-color@2.0.0
+23 silly idealTree │ ├── trim-newlines@1.0.0
+23 silly idealTree │ ├── typedarray@0.0.6
+23 silly idealTree │ ├── util-deprecate@1.0.2
+23 silly idealTree │ └── validate-npm-package-license@3.0.1
+23 silly idealTree ├─┬ grunt-contrib-jshint@0.10.0
+23 silly idealTree │ ├── cli@0.6.6
+23 silly idealTree │ ├── console-browserify@1.1.0
+23 silly idealTree │ ├── core-util-is@1.0.2
+23 silly idealTree │ ├── date-now@0.1.4
+23 silly idealTree │ ├─┬ dom-serializer@0.1.0
+23 silly idealTree │ │ ├── domelementtype@1.1.3
+23 silly idealTree │ │ └── entities@1.1.1
+23 silly idealTree │ ├── domelementtype@1.3.0
+23 silly idealTree │ ├── domhandler@2.3.0
+23 silly idealTree │ ├── domutils@1.5.1
+23 silly idealTree │ ├── entities@1.0.0
+23 silly idealTree │ ├── exit@0.1.2
+23 silly idealTree │ ├─┬ glob@3.2.11
+23 silly idealTree │ │ └── minimatch@0.3.0
+23 silly idealTree │ ├── hooker@0.2.3
+23 silly idealTree │ ├── htmlparser2@3.8.3
+23 silly idealTree │ ├── inherits@2.0.3
+23 silly idealTree │ ├── isarray@0.0.1
+23 silly idealTree │ ├── jshint@2.5.11
+23 silly idealTree │ ├── lru-cache@2.7.3
+23 silly idealTree │ ├── minimatch@1.0.0
+23 silly idealTree │ ├── readable-stream@1.1.14
+23 silly idealTree │ ├── shelljs@0.3.0
+23 silly idealTree │ ├── sigmund@1.0.1
+23 silly idealTree │ ├── string_decoder@0.10.31
+23 silly idealTree │ ├── strip-json-comments@1.0.4
+23 silly idealTree │ └── underscore@1.6.0
+23 silly idealTree ├─┬ grunt-contrib-less@0.11.4
+23 silly idealTree │ ├── amdefine@1.0.0
+23 silly idealTree │ ├── ansi-regex@0.2.1
+23 silly idealTree │ ├── ansi-styles@1.1.0
+23 silly idealTree │ ├── asn1@0.1.11
+23 silly idealTree │ ├── assert-plus@0.1.5
+23 silly idealTree │ ├── async@0.2.10
+23 silly idealTree │ ├── aws-sign2@0.5.0
+23 silly idealTree │ ├── boom@0.4.2
+23 silly idealTree │ ├── chalk@0.5.1
+23 silly idealTree │ ├── clean-css@2.2.23
+23 silly idealTree │ ├── combined-stream@0.0.7
+23 silly idealTree │ ├── commander@2.2.0
+23 silly idealTree │ ├── concat-stream@1.5.2
+23 silly idealTree │ ├── core-util-is@1.0.2
+23 silly idealTree │ ├── cryptiles@0.2.2
+23 silly idealTree │ ├── ctype@0.5.3
+23 silly idealTree │ ├── deep-equal@0.0.0
+23 silly idealTree │ ├── defined@0.0.0
+23 silly idealTree │ ├── delayed-stream@0.0.5
+23 silly idealTree │ ├── escape-string-regexp@1.0.5
+23 silly idealTree │ ├── forever-agent@0.5.2
+23 silly idealTree │ ├─┬ form-data@0.1.4
+23 silly idealTree │ │ └── async@0.9.2
+23 silly idealTree │ ├── graceful-fs@3.0.11
+23 silly idealTree │ ├── gzip-size@0.1.1
+23 silly idealTree │ ├── has-ansi@0.1.0
+23 silly idealTree │ ├── has-color@0.1.7
+23 silly idealTree │ ├── hawk@1.1.1
+23 silly idealTree │ ├── hoek@0.9.1
+23 silly idealTree │ ├── http-signature@0.10.1
+23 silly idealTree │ ├── inherits@2.0.3
+23 silly idealTree │ ├── isarray@1.0.0
+23 silly idealTree │ ├── json-stringify-safe@5.0.1
+23 silly idealTree │ ├── jsonify@0.0.0
+23 silly idealTree │ ├── less@1.7.5
+23 silly idealTree │ ├── lodash@2.4.2
+23 silly idealTree │ ├─┬ maxmin@0.1.0
+23 silly idealTree │ │ ├── ansi-styles@1.0.0
+23 silly idealTree │ │ ├── chalk@0.4.0
+23 silly idealTree │ │ └── strip-ansi@0.1.1
+23 silly idealTree │ ├── mime-types@1.0.2
+23 silly idealTree │ ├── mime@1.2.11
+23 silly idealTree │ ├── minimist@0.0.8
+23 silly idealTree │ ├── mkdirp@0.5.1
+23 silly idealTree │ ├── natives@1.1.0
+23 silly idealTree │ ├── node-uuid@1.4.7
+23 silly idealTree │ ├── oauth-sign@0.3.0
+23 silly idealTree │ ├── pretty-bytes@0.1.2
+23 silly idealTree │ ├── process-nextick-args@1.0.7
+23 silly idealTree │ ├── qs@1.0.2
+23 silly idealTree │ ├── readable-stream@2.0.6
+23 silly idealTree │ ├── request@2.40.0
+23 silly idealTree │ ├── sntp@0.2.4
+23 silly idealTree │ ├── source-map@0.1.43
+23 silly idealTree │ ├── string_decoder@0.10.31
+23 silly idealTree │ ├── stringstream@0.0.5
+23 silly idealTree │ ├── strip-ansi@0.3.0
+23 silly idealTree │ ├── supports-color@0.2.0
+23 silly idealTree │ ├── tape@0.2.2
+23 silly idealTree │ ├── tough-cookie@2.3.1
+23 silly idealTree │ ├── tunnel-agent@0.4.3
+23 silly idealTree │ ├── typedarray@0.0.6
+23 silly idealTree │ ├── util-deprecate@1.0.2
+23 silly idealTree │ └── zlib-browserify@0.0.3
+23 silly idealTree ├─┬ grunt-contrib-uglify@0.5.1
+23 silly idealTree │ ├── align-text@0.1.4
+23 silly idealTree │ ├── ansi-regex@0.2.1
+23 silly idealTree │ ├── ansi-styles@1.1.0
+23 silly idealTree │ ├── async@0.2.10
+23 silly idealTree │ ├── browserify-zlib@0.1.4
+23 silly idealTree │ ├── camelcase@1.2.1
+23 silly idealTree │ ├── center-align@0.1.3
+23 silly idealTree │ ├── chalk@0.5.1
+23 silly idealTree │ ├── cliui@2.1.0
+23 silly idealTree │ ├── concat-stream@1.5.2
+23 silly idealTree │ ├── core-util-is@1.0.2
+23 silly idealTree │ ├── decamelize@1.2.0
+23 silly idealTree │ ├── escape-string-regexp@1.0.5
+23 silly idealTree │ ├── figures@1.7.0
+23 silly idealTree │ ├── gzip-size@0.2.0
+23 silly idealTree │ ├── has-ansi@0.1.0
+23 silly idealTree │ ├── inherits@2.0.3
+23 silly idealTree │ ├── is-buffer@1.1.4
+23 silly idealTree │ ├── isarray@1.0.0
+23 silly idealTree │ ├── kind-of@3.0.4
+23 silly idealTree │ ├── lazy-cache@1.0.4
+23 silly idealTree │ ├── lodash@2.4.2
+23 silly idealTree │ ├── longest@1.0.1
+23 silly idealTree │ ├── maxmin@0.2.2
+23 silly idealTree │ ├── object-assign@4.1.0
+23 silly idealTree │ ├── pako@0.2.9
+23 silly idealTree │ ├── pretty-bytes@0.1.2
+23 silly idealTree │ ├── process-nextick-args@1.0.7
+23 silly idealTree │ ├── readable-stream@2.0.6
+23 silly idealTree │ ├── repeat-string@1.5.4
+23 silly idealTree │ ├── right-align@0.1.3
+23 silly idealTree │ ├── source-map@0.5.6
+23 silly idealTree │ ├── string_decoder@0.10.31
+23 silly idealTree │ ├── strip-ansi@0.3.0
+23 silly idealTree │ ├── supports-color@0.2.0
+23 silly idealTree │ ├── typedarray@0.0.6
+23 silly idealTree │ ├── uglify-js@2.7.3
+23 silly idealTree │ ├── uglify-to-browserify@1.0.2
+23 silly idealTree │ ├── util-deprecate@1.0.2
+23 silly idealTree │ ├── window-size@0.1.0
+23 silly idealTree │ ├── wordwrap@0.0.2
+23 silly idealTree │ └── yargs@3.10.0
+23 silly idealTree ├─┬ grunt-contrib-watch@0.6.1
+23 silly idealTree │ ├── abbrev@1.0.9
+23 silly idealTree │ ├── async@0.2.10
+23 silly idealTree │ ├── debug@0.7.4
+23 silly idealTree │ ├── faye-websocket@0.4.4
+23 silly idealTree │ ├── gaze@0.5.2
+23 silly idealTree │ ├── glob@3.1.21
+23 silly idealTree │ ├─┬ globule@0.1.0
+23 silly idealTree │ │ └── lodash@1.0.2
+23 silly idealTree │ ├── graceful-fs@1.2.3
+23 silly idealTree │ ├── inherits@1.0.2
+23 silly idealTree │ ├── lodash@2.4.2
+23 silly idealTree │ ├── lru-cache@2.7.3
+23 silly idealTree │ ├── minimatch@0.2.14
+23 silly idealTree │ ├── nopt@2.0.0
+23 silly idealTree │ ├── noptify@0.0.3
+23 silly idealTree │ ├── qs@0.5.6
+23 silly idealTree │ ├── sigmund@1.0.1
+23 silly idealTree │ └── tiny-lr-fork@0.0.5
+23 silly idealTree ├── grunt-legacy-util
+23 silly idealTree ├─┬ grunt-modernizr@0.5.2
+23 silly idealTree │ ├── asn1@0.1.11
+23 silly idealTree │ ├── assert-plus@0.1.5
+23 silly idealTree │ ├── async@0.9.2
+23 silly idealTree │ ├── aws-sign@0.3.0
+23 silly idealTree │ ├── boom@0.4.2
+23 silly idealTree │ ├── colors@0.6.2
+23 silly idealTree │ ├── combined-stream@0.0.7
+23 silly idealTree │ ├── cookie-jar@0.3.0
+23 silly idealTree │ ├── cryptiles@0.2.2
+23 silly idealTree │ ├── ctype@0.5.3
+23 silly idealTree │ ├── delayed-stream@0.0.5
+23 silly idealTree │ ├── forever-agent@0.5.2
+23 silly idealTree │ ├── form-data@0.1.4
+23 silly idealTree │ ├── hawk@1.0.0
+23 silly idealTree │ ├── hoek@0.9.1
+23 silly idealTree │ ├── http-signature@0.10.1
+23 silly idealTree │ ├── json-stringify-safe@5.0.1
+23 silly idealTree │ ├── mime@1.2.11
+23 silly idealTree │ ├── node-uuid@1.4.7
+23 silly idealTree │ ├── oauth-sign@0.3.0
+23 silly idealTree │ ├── promised-io@0.3.5
+23 silly idealTree │ ├── qs@0.6.6
+23 silly idealTree │ ├── request@2.27.0
+23 silly idealTree │ ├── sntp@0.2.4
+23 silly idealTree │ ├── tunnel-agent@0.3.0
+23 silly idealTree │ └── uglify-js@1.3.3
+23 silly idealTree ├─┬ grunt-processhtml@0.3.13
+23 silly idealTree │ ├── async@0.9.2
+23 silly idealTree │ ├── htmlprocessor@0.2.3
+23 silly idealTree │ ├── lodash.clonedeep@4.5.0
+23 silly idealTree │ └── lodash@2.4.2
+23 silly idealTree ├─┬ grunt-uncss@0.4.4
+23 silly idealTree │ ├── amdefine@1.0.0
+23 silly idealTree │ ├── ansi-regex@2.0.0
+23 silly idealTree │ ├── ansi-styles@2.2.1
+23 silly idealTree │ ├── array-find-index@1.0.2
+23 silly idealTree │ ├── asn1@0.2.3
+23 silly idealTree │ ├── assert-plus@0.2.0
+23 silly idealTree │ ├─┬ async@2.1.2
+23 silly idealTree │ │ └── lodash@4.16.4
+23 silly idealTree │ ├── aws-sign2@0.6.0
+23 silly idealTree │ ├── balanced-match@0.4.2
+23 silly idealTree │ ├── bcrypt-pbkdf@1.0.0
+23 silly idealTree │ ├── bl@1.0.3
+23 silly idealTree │ ├── bluebird@2.9.34
+23 silly idealTree │ ├── boom@2.10.1
+23 silly idealTree │ ├── brace-expansion@1.1.6
+23 silly idealTree │ ├── browserify-zlib@0.1.4
+23 silly idealTree │ ├── builtin-modules@1.1.1
+23 silly idealTree │ ├── camelcase-keys@2.1.0
+23 silly idealTree │ ├── camelcase@2.1.1
+23 silly idealTree │ ├── caseless@0.11.0
+23 silly idealTree │ ├── chalk@1.1.3
+23 silly idealTree │ ├── combined-stream@1.0.5
+23 silly idealTree │ ├── commander@2.6.0
+23 silly idealTree │ ├── concat-map@0.0.1
+23 silly idealTree │ ├── concat-stream@1.5.2
+23 silly idealTree │ ├── core-util-is@1.0.2
+23 silly idealTree │ ├── cryptiles@2.0.5
+23 silly idealTree │ ├── css-parse@1.7.0
+23 silly idealTree │ ├── css-stringify@1.4.1
+23 silly idealTree │ ├── css@1.6.0
+23 silly idealTree │ ├── ctype@0.5.3
+23 silly idealTree │ ├── currently-unhandled@0.4.1
+23 silly idealTree │ ├─┬ dashdash@1.14.0
+23 silly idealTree │ │ └── assert-plus@1.0.0
+23 silly idealTree │ ├── debug@0.7.4
+23 silly idealTree │ ├── decamelize@1.2.0
+23 silly idealTree │ ├── delayed-stream@1.0.0
+23 silly idealTree │ ├── ecc-jsbn@0.1.1
+23 silly idealTree │ ├── error-ex@1.3.0
+23 silly idealTree │ ├── escape-string-regexp@1.0.5
+23 silly idealTree │ ├── extend@3.0.0
+23 silly idealTree │ ├─┬ extract-zip@1.5.0
+23 silly idealTree │ │ └── concat-stream@1.5.0
+23 silly idealTree │ ├── extsprintf@1.0.2
+23 silly idealTree │ ├── fd-slicer@1.0.1
+23 silly idealTree │ ├── figures@1.7.0
+23 silly idealTree │ ├── find-up@1.1.2
+23 silly idealTree │ ├── forever-agent@0.6.1
+23 silly idealTree │ ├── fork-stream@0.0.4
+23 silly idealTree │ ├── form-data@1.0.1
+23 silly idealTree │ ├── fs-extra@0.26.7
+23 silly idealTree │ ├── generate-function@2.0.0
+23 silly idealTree │ ├── generate-object-property@1.2.0
+23 silly idealTree │ ├── get-stdin@4.0.1
+23 silly idealTree │ ├─┬ getpass@0.1.6
+23 silly idealTree │ │ └── assert-plus@1.0.0
+23 silly idealTree │ ├── glob@4.4.2
+23 silly idealTree │ ├── graceful-fs@4.1.9
+23 silly idealTree │ ├── graceful-readlink@1.0.1
+23 silly idealTree │ ├── gzip-size@1.0.0
+23 silly idealTree │ ├─┬ har-validator@2.0.6
+23 silly idealTree │ │ └── commander@2.9.0
+23 silly idealTree │ ├── has-ansi@2.0.0
+23 silly idealTree │ ├── hasha@2.2.0
+23 silly idealTree │ ├── hawk@3.1.3
+23 silly idealTree │ ├── hoek@2.16.3
+23 silly idealTree │ ├── hosted-git-info@2.1.5
+23 silly idealTree │ ├── html-tags@1.1.1
+23 silly idealTree │ ├── http-signature@1.1.1
+23 silly idealTree │ ├── indent-string@2.1.0
+23 silly idealTree │ ├── inflight@1.0.6
+23 silly idealTree │ ├── inherits@2.0.3
+23 silly idealTree │ ├── is-absolute-url@1.0.0
+23 silly idealTree │ ├── is-arrayish@0.2.1
+23 silly idealTree │ ├── is-builtin-module@1.0.0
+23 silly idealTree │ ├── is-finite@1.0.2
+23 silly idealTree │ ├── is-html@1.0.0
+23 silly idealTree │ ├── is-my-json-valid@2.15.0
+23 silly idealTree │ ├── is-property@1.0.2
+23 silly idealTree │ ├── is-stream@1.1.0
+23 silly idealTree │ ├── is-typedarray@1.0.0
+23 silly idealTree │ ├── is-utf8@0.2.1
+23 silly idealTree │ ├── isarray@1.0.0
+23 silly idealTree │ ├── isexe@1.1.2
+23 silly idealTree │ ├── isstream@0.1.2
+23 silly idealTree │ ├── jodid25519@1.0.2
+23 silly idealTree │ ├── jsbn@0.1.0
+23 silly idealTree │ ├── json-schema@0.2.3
+23 silly idealTree │ ├── json-stringify-safe@5.0.1
+23 silly idealTree │ ├── jsonfile@2.4.0
+23 silly idealTree │ ├── jsonpointer@4.0.0
+23 silly idealTree │ ├── jsprim@1.3.1
+23 silly idealTree │ ├── kew@0.7.0
+23 silly idealTree │ ├── klaw@1.3.0
+23 silly idealTree │ ├── linerstream@0.1.4
+23 silly idealTree │ ├── load-json-file@1.1.0
+23 silly idealTree │ ├── lodash@3.3.1
+23 silly idealTree │ ├── loud-rejection@1.6.0
+23 silly idealTree │ ├── map-obj@1.0.1
+23 silly idealTree │ ├── maxmin@1.1.0
+23 silly idealTree │ ├── meow@3.7.0
+23 silly idealTree │ ├── mime-db@1.24.0
+23 silly idealTree │ ├── mime-types@2.1.12
+23 silly idealTree │ ├── minimatch@2.0.10
+23 silly idealTree │ ├── minimist@1.2.0
+23 silly idealTree │ ├─┬ mkdirp@0.5.0
+23 silly idealTree │ │ └── minimist@0.0.8
+23 silly idealTree │ ├── node-uuid@1.4.7
+23 silly idealTree │ ├── normalize-package-data@2.3.5
+23 silly idealTree │ ├── number-is-nan@1.0.1
+23 silly idealTree │ ├── oauth-sign@0.8.2
+23 silly idealTree │ ├── object-assign@4.1.0
+23 silly idealTree │ ├── once@1.4.0
+23 silly idealTree │ ├── os-tmpdir@1.0.2
+23 silly idealTree │ ├── pako@0.2.9
+23 silly idealTree │ ├── parse-json@2.2.0
+23 silly idealTree │ ├── path-exists@2.1.0
+23 silly idealTree │ ├── path-is-absolute@1.0.1
+23 silly idealTree │ ├── path-type@1.1.0
+23 silly idealTree │ ├── pend@1.2.0
+23 silly idealTree │ ├─┬ phantomjs@1.9.20
+23 silly idealTree │ │ └── request@2.67.0
+23 silly idealTree │ ├── phridge@1.0.8
+23 silly idealTree │ ├── pify@2.3.0
+23 silly idealTree │ ├── pinkie-promise@2.0.1
+23 silly idealTree │ ├── pinkie@2.0.4
+23 silly idealTree │ ├── pretty-bytes@1.0.4
+23 silly idealTree │ ├── process-nextick-args@1.0.7
+23 silly idealTree │ ├── progress@1.1.8
+23 silly idealTree │ ├── qs@5.2.1
+23 silly idealTree │ ├── read-pkg-up@1.0.1
+23 silly idealTree │ ├── read-pkg@1.1.0
+23 silly idealTree │ ├── readable-stream@2.0.6
+23 silly idealTree │ ├── redent@1.0.0
+23 silly idealTree │ ├── repeating@2.0.1
+23 silly idealTree │ ├── request-progress@2.0.1
+23 silly idealTree │ ├─┬ request@2.53.0
+23 silly idealTree │ │ ├── asn1@0.1.11
+23 silly idealTree │ │ ├── assert-plus@0.1.5
+23 silly idealTree │ │ ├── async@0.9.2
+23 silly idealTree │ │ ├── aws-sign2@0.5.0
+23 silly idealTree │ │ ├── bl@0.9.5
+23 silly idealTree │ │ ├── caseless@0.9.0
+23 silly idealTree │ │ ├── combined-stream@0.0.7
+23 silly idealTree │ │ ├── delayed-stream@0.0.5
+23 silly idealTree │ │ ├── forever-agent@0.5.2
+23 silly idealTree │ │ ├── form-data@0.2.0
+23 silly idealTree │ │ ├── hawk@2.3.1
+23 silly idealTree │ │ ├── http-signature@0.10.1
+23 silly idealTree │ │ ├── isarray@0.0.1
+23 silly idealTree │ │ ├── mime-db@1.12.0
+23 silly idealTree │ │ ├── mime-types@2.0.14
+23 silly idealTree │ │ ├── oauth-sign@0.6.0
+23 silly idealTree │ │ ├── qs@2.3.3
+23 silly idealTree │ │ └── readable-stream@1.0.34
+23 silly idealTree │ ├─┬ rimraf@2.5.4
+23 silly idealTree │ │ ├── glob@7.1.1
+23 silly idealTree │ │ └── minimatch@3.0.3
+23 silly idealTree │ ├── semver@5.3.0
+23 silly idealTree │ ├── signal-exit@3.0.1
+23 silly idealTree │ ├── sntp@1.0.9
+23 silly idealTree │ ├── source-map@0.1.43
+23 silly idealTree │ ├── spdx-correct@1.0.2
+23 silly idealTree │ ├── spdx-expression-parse@1.0.4
+23 silly idealTree │ ├── spdx-license-ids@1.2.2
+23 silly idealTree │ ├─┬ sshpk@1.10.1
+23 silly idealTree │ │ └── assert-plus@1.0.0
+23 silly idealTree │ ├── string_decoder@0.10.31
+23 silly idealTree │ ├── stringstream@0.0.5
+23 silly idealTree │ ├── strip-ansi@3.0.1
+23 silly idealTree │ ├── strip-bom@2.0.0
+23 silly idealTree │ ├── strip-indent@1.0.1
+23 silly idealTree │ ├── supports-color@2.0.0
+23 silly idealTree │ ├─┬ temp@0.8.3
+23 silly idealTree │ │ └── rimraf@2.2.8
+23 silly idealTree │ ├── throttleit@1.0.0
+23 silly idealTree │ ├── tough-cookie@2.2.2
+23 silly idealTree │ ├── trim-newlines@1.0.0
+23 silly idealTree │ ├── tunnel-agent@0.4.3
+23 silly idealTree │ ├── tweetnacl@0.14.3
+23 silly idealTree │ ├── typedarray@0.0.6
+23 silly idealTree │ ├── uncss@0.12.1
+23 silly idealTree │ ├── util-deprecate@1.0.2
+23 silly idealTree │ ├── validate-npm-package-license@3.0.1
+23 silly idealTree │ ├── verror@1.3.6
+23 silly idealTree │ ├── when@3.7.7
+23 silly idealTree │ ├── which@1.2.11
+23 silly idealTree │ ├── wrappy@1.0.2
+23 silly idealTree │ ├── xtend@4.0.1
+23 silly idealTree │ └── yauzl@2.4.1
+23 silly idealTree ├─┬ grunt@0.4.5
+23 silly idealTree │ ├── abbrev@1.0.9
+23 silly idealTree │ ├─┬ argparse@0.1.16
+23 silly idealTree │ │ └── underscore.string@2.4.0
+23 silly idealTree │ ├── async@0.1.22
+23 silly idealTree │ ├── coffee-script@1.3.3
+23 silly idealTree │ ├── colors@0.6.2
+23 silly idealTree │ ├── dateformat@1.0.2-1.2.3
+23 silly idealTree │ ├── esprima@1.0.4
+23 silly idealTree │ ├── eventemitter2@0.4.14
+23 silly idealTree │ ├── exit@0.1.2
+23 silly idealTree │ ├─┬ findup-sync@0.1.3
+23 silly idealTree │ │ ├── glob@3.2.11
+23 silly idealTree │ │ ├── lodash@2.4.2
+23 silly idealTree │ │ └── minimatch@0.3.0
+23 silly idealTree │ ├── getobject@0.1.0
+23 silly idealTree │ ├─┬ glob@3.1.21
+23 silly idealTree │ │ └── inherits@1.0.2
+23 silly idealTree │ ├── graceful-fs@1.2.3
+23 silly idealTree │ ├─┬ grunt-legacy-log-utils@0.1.1
+23 silly idealTree │ │ ├── lodash@2.4.2
+23 silly idealTree │ │ └── underscore.string@2.3.3
+23 silly idealTree │ ├─┬ grunt-legacy-log@0.1.3
+23 silly idealTree │ │ ├── lodash@2.4.2
+23 silly idealTree │ │ └── underscore.string@2.3.3
+23 silly idealTree │ ├── grunt-legacy-util@0.2.0
+23 silly idealTree │ ├── hooker@0.2.3
+23 silly idealTree │ ├── iconv-lite@0.2.11
+23 silly idealTree │ ├── inherits@2.0.3
+23 silly idealTree │ ├── js-yaml@2.0.5
+23 silly idealTree │ ├── lodash@0.9.2
+23 silly idealTree │ ├── lru-cache@2.7.3
+23 silly idealTree │ ├── minimatch@0.2.14
+23 silly idealTree │ ├── nopt@1.0.10
+23 silly idealTree │ ├── rimraf@2.2.8
+23 silly idealTree │ ├── sigmund@1.0.1
+23 silly idealTree │ ├── underscore.string@2.2.1
+23 silly idealTree │ ├── underscore@1.7.0
+23 silly idealTree │ └── which@1.0.9
+23 silly idealTree ├── gzip-size
+23 silly idealTree ├── has-ansi
+23 silly idealTree ├── has-color
+23 silly idealTree ├── hasha
+23 silly idealTree ├── hawk
+23 silly idealTree ├── hoek
+23 silly idealTree ├── hooker
+23 silly idealTree ├── hosted-git-info
+23 silly idealTree ├── html-tags
+23 silly idealTree ├── http-signature
+23 silly idealTree ├── iconv-lite
+23 silly idealTree ├── indent-string
+23 silly idealTree ├── inflight
+23 silly idealTree ├── inherits
+23 silly idealTree ├── is-absolute-url
+23 silly idealTree ├── is-arrayish
+23 silly idealTree ├── is-buffer
+23 silly idealTree ├── is-builtin-module
+23 silly idealTree ├── is-finite
+23 silly idealTree ├── is-html
+23 silly idealTree ├── is-my-json-valid
+23 silly idealTree ├── is-property
+23 silly idealTree ├── is-stream
+23 silly idealTree ├── is-typedarray
+23 silly idealTree ├── is-utf8
+23 silly idealTree ├── isarray
+23 silly idealTree ├── isexe
+23 silly idealTree ├── isstream
+23 silly idealTree ├── jodid25519
+23 silly idealTree ├── js-base64
+23 silly idealTree ├── js-yaml
+23 silly idealTree ├── jsbn
+23 silly idealTree ├── json-schema
+23 silly idealTree ├── json-stringify-safe
+23 silly idealTree ├── jsonify
+23 silly idealTree ├── jsonpointer
+23 silly idealTree ├── jsprim
+23 silly idealTree ├── kew
+23 silly idealTree ├── kind-of
+23 silly idealTree ├── klaw
+23 silly idealTree ├── lazy-cache
+23 silly idealTree ├── less
+23 silly idealTree ├── linerstream
+23 silly idealTree ├─┬ load-grunt-tasks@0.6.0
+23 silly idealTree │ ├── array-differ@0.1.0
+23 silly idealTree │ ├── array-union@0.1.0
+23 silly idealTree │ ├── array-uniq@0.1.1
+23 silly idealTree │ ├── findup-sync@0.1.3
+23 silly idealTree │ ├── glob@3.2.11
+23 silly idealTree │ ├── inherits@2.0.3
+23 silly idealTree │ ├── lodash@2.4.2
+23 silly idealTree │ ├── lru-cache@2.7.3
+23 silly idealTree │ ├── minimatch@0.3.0
+23 silly idealTree │ ├── multimatch@0.3.0
+23 silly idealTree │ └── sigmund@1.0.1
+23 silly idealTree ├── lodash
+23 silly idealTree ├── lodash.clonedeep
+23 silly idealTree ├── longest
+23 silly idealTree ├── loud-rejection
+23 silly idealTree ├── lru-cache
+23 silly idealTree ├── map-obj
+23 silly idealTree ├── meow
+23 silly idealTree ├── mime
+23 silly idealTree ├── mime-db
+23 silly idealTree ├── mime-types
+23 silly idealTree ├── minimatch
+23 silly idealTree ├── minimist
+23 silly idealTree ├── morgan
+23 silly idealTree ├── ms
+23 silly idealTree ├── natives
+23 silly idealTree ├── negotiator
+23 silly idealTree ├── node-uuid
+23 silly idealTree ├── nopt
+23 silly idealTree ├── noptify
+23 silly idealTree ├── normalize-package-data
+23 silly idealTree ├── number-is-nan
+23 silly idealTree ├── oauth-sign
+23 silly idealTree ├── object-assign
+23 silly idealTree ├── on-finished
+23 silly idealTree ├── on-headers
+23 silly idealTree ├── once
+23 silly idealTree ├── opn
+23 silly idealTree ├── os-tmpdir
+23 silly idealTree ├── pako
+23 silly idealTree ├── parse-json
+23 silly idealTree ├── parse-ms
+23 silly idealTree ├── parseurl
+23 silly idealTree ├── path-exists
+23 silly idealTree ├── path-is-absolute
+23 silly idealTree ├── pend
+23 silly idealTree ├── phantomjs
+23 silly idealTree ├── phridge
+23 silly idealTree ├── pify
+23 silly idealTree ├── pinkie
+23 silly idealTree ├── pinkie-promise
+23 silly idealTree ├── postcss
+23 silly idealTree ├── pretty-bytes
+23 silly idealTree ├── pretty-ms
+23 silly idealTree ├── process-nextick-args
+23 silly idealTree ├── progress
+23 silly idealTree ├── promised-io
+23 silly idealTree ├── qs
+23 silly idealTree ├── range-parser
+23 silly idealTree ├── read-pkg
+23 silly idealTree ├── read-pkg-up
+23 silly idealTree ├── readable-stream
+23 silly idealTree ├── redent
+23 silly idealTree ├── repeat-string
+23 silly idealTree ├── repeating
+23 silly idealTree ├── request-progress
+23 silly idealTree ├── right-align
+23 silly idealTree ├── rimraf
+23 silly idealTree ├── semver
+23 silly idealTree ├── send
+23 silly idealTree ├── serve-index
+23 silly idealTree ├── serve-static
+23 silly idealTree ├── setprototypeof
+23 silly idealTree ├── shelljs
+23 silly idealTree ├── sigmund
+23 silly idealTree ├── signal-exit
+23 silly idealTree ├── sntp
+23 silly idealTree ├── source-map
+23 silly idealTree ├── spdx-correct
+23 silly idealTree ├── spdx-expression-parse
+23 silly idealTree ├── spdx-license-ids
+23 silly idealTree ├── statuses
+23 silly idealTree ├── string_decoder
+23 silly idealTree ├── stringstream
+23 silly idealTree ├── strip-ansi
+23 silly idealTree ├── strip-bom
+23 silly idealTree ├── strip-indent
+23 silly idealTree ├── strip-json-comments
+23 silly idealTree ├── supports-color
+23 silly idealTree ├── tape
+23 silly idealTree ├── temp
+23 silly idealTree ├── text-table
+23 silly idealTree ├── throttleit
+23 silly idealTree ├─┬ time-grunt@0.4.0
+23 silly idealTree │ ├── ansi-regex@0.2.1
+23 silly idealTree │ ├── ansi-styles@1.1.0
+23 silly idealTree │ ├── chalk@0.5.1
+23 silly idealTree │ ├── date-time@0.1.1
+23 silly idealTree │ ├── escape-string-regexp@1.0.5
+23 silly idealTree │ ├── figures@1.7.0
+23 silly idealTree │ ├── has-ansi@0.1.0
+23 silly idealTree │ ├── hooker@0.2.3
+23 silly idealTree │ ├── object-assign@4.1.0
+23 silly idealTree │ ├── parse-ms@0.1.2
+23 silly idealTree │ ├── pretty-ms@0.2.2
+23 silly idealTree │ ├── strip-ansi@0.3.0
+23 silly idealTree │ ├── supports-color@0.2.0
+23 silly idealTree │ └── text-table@0.2.0
+23 silly idealTree ├── tough-cookie
+23 silly idealTree ├── trim-newlines
+23 silly idealTree ├── tunnel-agent
+23 silly idealTree ├── tweetnacl
+23 silly idealTree ├── typedarray
+23 silly idealTree ├── uglify-to-browserify
+23 silly idealTree ├── underscore
+23 silly idealTree ├── underscore.string
+23 silly idealTree ├── unpipe
+23 silly idealTree ├── util-deprecate
+23 silly idealTree ├── utils-merge
+23 silly idealTree ├── validate-npm-package-license
+23 silly idealTree ├── verror
+23 silly idealTree ├── when
+23 silly idealTree ├── which
+23 silly idealTree ├── window-size
+23 silly idealTree ├── wordwrap
+23 silly idealTree ├── wrappy
+23 silly idealTree ├── xtend
+23 silly idealTree ├── yauzl
+23 silly idealTree └── zlib-browserify
+24 silly generateActionsToTake Starting
+25 silly install generateActionsToTake
+26 silly generateActionsToTake Finishing
+27 silly diffTrees action count 0
+28 silly decomposeActions action count 0
+29 silly executeActions Starting
+30 silly install executeActions
+31 silly doSerial global-install 0
+32 silly doParallel fetch 0
+33 verbose correctMkdir /Users/caipirinha/.npm/_locks correctMkdir not in flight; initializing
+34 verbose lock using /Users/caipirinha/.npm/_locks/staging-4b281ecad3263623.lock for /Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/.staging
+35 verbose unlock done using /Users/caipirinha/.npm/_locks/staging-4b281ecad3263623.lock for /Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/.staging
+36 silly rollbackFailedOptional Starting
+37 silly rollbackFailedOptional Finishing
+38 silly runTopLevelLifecycles Starting
+39 silly runTopLevelLifecycles Finishing
+40 silly install printInstalled
+41 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/abbrev/package.json'
+42 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/accepts/package.json'
+43 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/align-text/package.json'
+44 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/amdefine/package.json'
+45 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/ansi-regex/package.json'
+46 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/ansi-styles/package.json'
+47 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/array-differ/package.json'
+48 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/array-find-index/package.json'
+49 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/array-union/package.json'
+50 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/array-uniq/package.json'
+51 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/asn1/package.json'
+52 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/assert-plus/package.json'
+53 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/async/package.json'
+54 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/autoprefixer-core/package.json'
+55 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/aws-sign/package.json'
+56 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/aws-sign2/package.json'
+57 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/balanced-match/package.json'
+58 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/basic-auth/package.json'
+59 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/batch/package.json'
+60 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/bcrypt-pbkdf/package.json'
+61 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/bl/package.json'
+62 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/bluebird/package.json'
+63 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/boom/package.json'
+64 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/brace-expansion/package.json'
+65 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/browserify-zlib/package.json'
+66 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/builtin-modules/package.json'
+67 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/camelcase/package.json'
+68 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/camelcase-keys/package.json'
+69 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/caniuse-db/package.json'
+70 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/caseless/package.json'
+71 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/center-align/package.json'
+72 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/chalk/package.json'
+73 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/cliui/package.json'
+74 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/coffee-script/package.json'
+75 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/colors/package.json'
+76 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/combined-stream/package.json'
+77 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/commander/package.json'
+78 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/concat-map/package.json'
+79 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/concat-stream/package.json'
+80 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/connect/package.json'
+81 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/connect-livereload/package.json'
+82 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/console-browserify/package.json'
+83 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/cookie-jar/package.json'
+84 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/core-util-is/package.json'
+85 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/cryptiles/package.json'
+86 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/css/package.json'
+87 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/css-parse/package.json'
+88 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/css-stringify/package.json'
+89 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/ctype/package.json'
+90 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/currently-unhandled/package.json'
+91 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/date-now/package.json'
+92 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/date-time/package.json'
+93 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/dateformat/package.json'
+94 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/debug/package.json'
+95 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/decamelize/package.json'
+96 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/deep-equal/package.json'
+97 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/defined/package.json'
+98 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/delayed-stream/package.json'
+99 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/depd/package.json'
+100 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/destroy/package.json'
+101 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/diff/package.json'
+102 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/domelementtype/package.json'
+103 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/domhandler/package.json'
+104 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/domutils/package.json'
+105 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/ecc-jsbn/package.json'
+106 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/ee-first/package.json'
+107 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/encodeurl/package.json'
+108 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/entities/package.json'
+109 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/error-ex/package.json'
+110 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/escape-html/package.json'
+111 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/escape-string-regexp/package.json'
+112 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/esprima/package.json'
+113 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/etag/package.json'
+114 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/eventemitter2/package.json'
+115 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/exit/package.json'
+116 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/extend/package.json'
+117 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/extract-zip/package.json'
+118 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/extsprintf/package.json'
+119 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/faye-websocket/package.json'
+120 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/fd-slicer/package.json'
+121 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/figures/package.json'
+122 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/file-sync-cmp/package.json'
+123 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/finalhandler/package.json'
+124 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/find-up/package.json'
+125 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/forever-agent/package.json'
+126 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/fork-stream/package.json'
+127 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/fresh/package.json'
+128 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/gaze/package.json'
+129 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/generate-function/package.json'
+130 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/generate-object-property/package.json'
+131 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/get-stdin/package.json'
+132 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/getobject/package.json'
+133 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/graceful-fs/package.json'
+134 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/graceful-readlink/package.json'
+135 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/grunt-legacy-util/package.json'
+136 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/gzip-size/package.json'
+137 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/has-ansi/package.json'
+138 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/has-color/package.json'
+139 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/hasha/package.json'
+140 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/hawk/package.json'
+141 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/hoek/package.json'
+142 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/hooker/package.json'
+143 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/hosted-git-info/package.json'
+144 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/html-tags/package.json'
+145 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/http-signature/package.json'
+146 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/iconv-lite/package.json'
+147 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/indent-string/package.json'
+148 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/inflight/package.json'
+149 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/inherits/package.json'
+150 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-absolute-url/package.json'
+151 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-arrayish/package.json'
+152 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-buffer/package.json'
+153 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-builtin-module/package.json'
+154 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-finite/package.json'
+155 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-html/package.json'
+156 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-my-json-valid/package.json'
+157 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-property/package.json'
+158 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-stream/package.json'
+159 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-typedarray/package.json'
+160 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/is-utf8/package.json'
+161 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/isarray/package.json'
+162 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/isexe/package.json'
+163 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/isstream/package.json'
+164 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/jodid25519/package.json'
+165 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/js-base64/package.json'
+166 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/js-yaml/package.json'
+167 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/jsbn/package.json'
+168 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/json-schema/package.json'
+169 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/json-stringify-safe/package.json'
+170 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/jsonify/package.json'
+171 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/jsonpointer/package.json'
+172 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/jsprim/package.json'
+173 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/kew/package.json'
+174 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/kind-of/package.json'
+175 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/klaw/package.json'
+176 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/lazy-cache/package.json'
+177 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/less/package.json'
+178 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/linerstream/package.json'
+179 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/lodash/package.json'
+180 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/lodash.clonedeep/package.json'
+181 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/longest/package.json'
+182 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/loud-rejection/package.json'
+183 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/lru-cache/package.json'
+184 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/map-obj/package.json'
+185 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/meow/package.json'
+186 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/mime/package.json'
+187 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/mime-db/package.json'
+188 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/mime-types/package.json'
+189 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/minimatch/package.json'
+190 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/minimist/package.json'
+191 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/morgan/package.json'
+192 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/ms/package.json'
+193 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/natives/package.json'
+194 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/negotiator/package.json'
+195 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/node-uuid/package.json'
+196 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/nopt/package.json'
+197 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/noptify/package.json'
+198 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/normalize-package-data/package.json'
+199 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/number-is-nan/package.json'
+200 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/oauth-sign/package.json'
+201 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/object-assign/package.json'
+202 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/on-finished/package.json'
+203 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/on-headers/package.json'
+204 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/once/package.json'
+205 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/opn/package.json'
+206 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/os-tmpdir/package.json'
+207 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/pako/package.json'
+208 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/parse-json/package.json'
+209 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/parse-ms/package.json'
+210 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/parseurl/package.json'
+211 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/path-exists/package.json'
+212 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/path-is-absolute/package.json'
+213 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/pend/package.json'
+214 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/phantomjs/package.json'
+215 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/phridge/package.json'
+216 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/pify/package.json'
+217 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/pinkie/package.json'
+218 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/pinkie-promise/package.json'
+219 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/postcss/package.json'
+220 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/pretty-bytes/package.json'
+221 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/pretty-ms/package.json'
+222 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/process-nextick-args/package.json'
+223 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/progress/package.json'
+224 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/promised-io/package.json'
+225 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/qs/package.json'
+226 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/range-parser/package.json'
+227 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/read-pkg/package.json'
+228 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/read-pkg-up/package.json'
+229 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/readable-stream/package.json'
+230 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/redent/package.json'
+231 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/repeat-string/package.json'
+232 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/repeating/package.json'
+233 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/request-progress/package.json'
+234 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/right-align/package.json'
+235 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/rimraf/package.json'
+236 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/semver/package.json'
+237 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/send/package.json'
+238 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/serve-index/package.json'
+239 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/serve-static/package.json'
+240 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/setprototypeof/package.json'
+241 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/shelljs/package.json'
+242 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/sigmund/package.json'
+243 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/signal-exit/package.json'
+244 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/sntp/package.json'
+245 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/source-map/package.json'
+246 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/spdx-correct/package.json'
+247 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/spdx-expression-parse/package.json'
+248 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/spdx-license-ids/package.json'
+249 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/statuses/package.json'
+250 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/string_decoder/package.json'
+251 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/stringstream/package.json'
+252 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/strip-ansi/package.json'
+253 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/strip-bom/package.json'
+254 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/strip-indent/package.json'
+255 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/strip-json-comments/package.json'
+256 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/supports-color/package.json'
+257 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/tape/package.json'
+258 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/temp/package.json'
+259 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/text-table/package.json'
+260 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/throttleit/package.json'
+261 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/tough-cookie/package.json'
+262 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/trim-newlines/package.json'
+263 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/tunnel-agent/package.json'
+264 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/tweetnacl/package.json'
+265 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/typedarray/package.json'
+266 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/uglify-to-browserify/package.json'
+267 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/underscore/package.json'
+268 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/underscore.string/package.json'
+269 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/unpipe/package.json'
+270 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/util-deprecate/package.json'
+271 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/utils-merge/package.json'
+272 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/validate-npm-package-license/package.json'
+273 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/verror/package.json'
+274 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/when/package.json'
+275 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/which/package.json'
+276 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/window-size/package.json'
+277 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/wordwrap/package.json'
+278 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/wrappy/package.json'
+279 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/xtend/package.json'
+280 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/yauzl/package.json'
+281 warn enoent ENOENT: no such file or directory, open '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/zlib-browserify/package.json'
+282 verbose stack Error: EACCES: permission denied, mkdir '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/.staging'
+282 verbose stack     at Error (native)
+283 verbose cwd /Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl
+284 error Darwin 15.2.0
+285 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+286 error node v4.3.0
+287 error npm  v3.7.2
+288 error path /Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/.staging
+289 error code EACCES
+290 error errno -13
+291 error syscall mkdir
+292 error Error: EACCES: permission denied, mkdir '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/.staging'
+292 error     at Error (native)
+292 error  { [Error: EACCES: permission denied, mkdir '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/.staging']
+292 error   errno: -13,
+292 error   code: 'EACCES',
+292 error   syscall: 'mkdir',
+292 error   path: '/Applications/XAMPP/xamppfiles/htdocs/binaria/soler-palau/erp-microsite-nl/node_modules/.staging' }
+293 error Please try running this command again as root/Administrator.
+294 verbose exit [ -13, true ]
