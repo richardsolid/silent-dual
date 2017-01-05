@@ -14,17 +14,26 @@ a{transition: color .3s, background-color .3s, text-decoration .3s, font-weight 
   position: fixed;
   width: 100%;
   z-index: 0;
+  button.plyr__play-large{
+    display: none !important;
+  }
+  .plyr--video .plyr__controls{
+    z-index: 9;
+  }
   > img {
     visibility: hidden;
+  }
+  video {
+    min-height: 500px;
   }
   img {
     padding: 0;
   }
-  .container:first-of-type {
+  .container:nth-child(2) {
     padding: 0;
-    position: relative;
-    background: url('../img/header-v-real-vent.jpg') no-repeat center;
-    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     width: 100% !important;
     min-height: 500px;
     border-top: #ED2E38 5px solid;
@@ -59,6 +68,7 @@ a{transition: color .3s, background-color .3s, text-decoration .3s, font-weight 
     left: 50%;
     transform: translateX(-50%);
     top: -28px;
+    z-index: 10;
     img {
       display: block;
       margin: 16px auto 0;
