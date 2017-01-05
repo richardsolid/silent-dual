@@ -225,6 +225,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
     grunt.task.run([
+    	'dev',
       'connect',
       'watch'
     ]);
