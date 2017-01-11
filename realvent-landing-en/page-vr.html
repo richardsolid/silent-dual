@@ -39,7 +39,7 @@
     <body role="document">
       <div class="document">
         <header>
-          <video poster='assets/img/poster-video.jpg' autoplay preload controls >
+          <video poster='assets/img/poster-video.jpg' controls="false" autoplay="autoplay" preload loop >
               <source src='assets/img/video-rv.mp4' type='video/mp4'>
               <source src='assets/img/video-rv.ogg' type='video/ogg'>
               <source src='assets/img/video-rv.webm' type='video/webm'>
@@ -94,8 +94,8 @@
                 <h1><strong>Try it now, ask for the Virtual Reality glasses from S&P*</strong></h1>
                 <a alt="" href="#" data-toggle="modal" data-target=".modal_vr-form"><img class="img-responsive" alt="" src="assets/img/boton-vr.png"></a>
                 <p><strong>¿Do you have them already? Download the app</strong></p>
-                <span class="aplicacion__btnvr"><a href="#"><strong>V-RealVent for iOS</strong></a></span>
-                <span class="aplicacion__btnvr"><a href="#"><strong>V-RealVent  for Android</a></strong></span>
+                <span class="aplicacion__btnvr"><a href="https://itunes.apple.com/us/app/vrealventcardboard/id1115667090?mt=8"><strong>V-RealVent for iOS</strong></a></span>
+                <span class="aplicacion__btnvr"><a href="https://play.google.com/store/apps/details?id=com.pixeldreams.VRealventCardboard"><strong>V-RealVent  for Android</a></strong></span>
                 <p>*Promotional offer while stocks last.</p>
               </div>
               <!-- Large modal -->
@@ -124,13 +124,9 @@
               <div class="container"><div class="row text-center">
                 <h1><strong>V-RealVent experience</strong></h1>
               </div></div>
-              <div>
-                <video controls poster='assets/img/poster-video.jpg' preload="none" >
-                  <source src='assets/img/video-soler-palau-preview.mp4' type='video/mp4'>
-                    <source src='assets/img/video-soler-palau-preview.ogg' type='video/ogg'>
-                      <source src='assets/img/video-soler-palau-preview.webm' type='video/webm'>
-                    </video>
-                  </div>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zEFX-ADvJWk" frameborder="0" allowfullscreen></iframe>
+              </div>
                 </section>
 
                 <section id="slider-2" role="article">
@@ -204,7 +200,7 @@
 
                   <div class="container">
 
-                    © S&amp;P Ventilation Group - <a href="#contact" title="Contacto">Contact</a> - <a href="http://www.solerpalau.com/" title="Corporate website">www.solerpalau.com</a>
+                    © S&amp;P Ventilation Group - <a class="contact-link" href="#contact" title="Contacto">Contact</a> - <a href="http://www.solerpalau.com/" title="Corporate website">www.solerpalau.com</a>
 
                   </div>
 

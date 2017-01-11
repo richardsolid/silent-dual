@@ -527,11 +527,19 @@ color: black;*/
   }
 }
 
-
-
-
 .hbspt-form .hs-input{
   .form-control;
+}
+
+.focus-zoomfield{
+  animation-name: zoomfield;
+  animation-duration: .5s; 
+}
+
+@keyframes zoomfield {
+    0%   {transform:scale(1);}
+    50%  {transform:scale(1.1);}
+    100% {transform:scale(1);}
 }
 
 .hbspt-form .hs-form .hs_submit{

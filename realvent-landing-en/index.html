@@ -39,7 +39,7 @@
     <body role="document">
       <div class="document">
         <header>
-          <video poster='assets/img/poster-video.jpg' autoplay preload controls >
+          <video poster='assets/img/poster-video.jpg' controls="false" autoplay="autoplay" preload loop >
               <source src='assets/img/video-rv.mp4' type='video/mp4'>
               <source src='assets/img/video-rv.ogg' type='video/ogg'>
               <source src='assets/img/video-rv.webm' type='video/webm'>
@@ -92,8 +92,8 @@
 
               <div class="container"><div class="row text-center">
                 <h1><strong>Get the app for your device</strong></h1>
-                <span class="aplicacion__btn"><a href="#">V-RealVent<br>for iOS</a></span>
-                <span class="aplicacion__btn"><a href="#">V-RealVent <br> for Android</a></span>
+                <span class="aplicacion__btn"><a href="https://itunes.apple.com/us/app/vrealventcardboard/id1115667090?mt=8">V-RealVent<br>for iOS</a></span>
+                <span class="aplicacion__btn"><a href="https://play.google.com/store/apps/details?id=com.pixeldreams.VRealventCardboard">V-RealVent <br> for Android</a></span>
               </div></div>
 
             </section>
@@ -103,14 +103,10 @@
               <div class="container"><div class="row text-center">
                 <h1><strong>V-RealVent experience</strong></h1>
               </div></div>
-              <div>
-                <video controls poster='assets/img/poster-video.jpg' preload="none" >
-                  <source src='assets/img/video-soler-palau-preview.mp4' type='video/mp4'>
-                    <source src='assets/img/video-soler-palau-preview.ogg' type='video/ogg'>
-                      <source src='assets/img/video-soler-palau-preview.webm' type='video/webm'>
-                      </video>
-                    </div>
-                  </section>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zEFX-ADvJWk" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </section>
 
                   <section id="slider-2" role="article">
 
@@ -186,7 +182,7 @@
 
                     <div class="container">
 
-                      © S&amp;P Ventilation Group - <a href="#contact" title="Contacto">Contact</a> - <a href="http://www.solerpalau.com/" title="Corporate website">www.solerpalau.com</a>
+                      © S&amp;P Ventilation Group - <a class="contact-link" href="#contact" title="Contacto">Contact</a> - <a href="http://www.solerpalau.com/" title="Corporate website">www.solerpalau.com</a>
 
                     </div>
 
