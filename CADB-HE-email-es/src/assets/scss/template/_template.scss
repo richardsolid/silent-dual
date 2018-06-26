@@ -1,0 +1,188 @@
+// These are the styles to make some of the templates look extra nice.
+// Feel free to remove these styles for production!
+
+// Body Styles 
+body,
+html, 
+.body {
+  
+}
+
+*{
+  hyphens: none;
+}
+
+.container.header {
+  background: #f3f3f3;
+}
+
+.body-drip {
+  border-top: 8px solid #663399;
+}
+
+// Full Width Headers
+
+.top-text{
+  background: $body-background;
+}
+
+.top-text p{
+  font-size: 11px;
+}
+
+.top-text a{
+  font-size: 11px;
+  color: $global-font-color;
+  text-decoration: underline;
+}
+
+.header {
+  background: #FFFFFF;
+}
+
+.header .columns{
+  @media screen and (max-width: 750px) {
+    padding-bottom: 10px;
+  }
+}
+
+.header .columns{
+  padding-top: 60px;
+  @media screen and (max-width: 750px) {
+    padding-top: 30px !important;
+  }
+}
+
+.header .columns:first-child{
+  padding-top: 30px;
+  @media screen and (max-width: 750px) {
+    padding-left: 0 !important;
+  }
+}
+
+.header h1{
+  @media screen and (max-width: 750px) {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+  }
+}
+
+.header .columns:first-child img{
+  @media screen and (max-width: 750px) {
+    margin: 0 auto;
+  }
+}
+
+.header .columns:last-child{
+  @media screen and (max-width: 750px) {
+    padding-top: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+
+.header.body{
+  padding-left: 15px !important;
+}
+
+.header .columns {
+  padding-bottom: 0;
+}
+
+.header p {
+  color: #fff;
+  padding-top: 15px;
+}
+
+.header .wrapper-inner {
+  padding: 20px;
+}
+
+.header .container {
+  background: transparent;
+}
+
+.hero img{
+  width: 100% !important;
+  height: auto !important;
+}
+
+.info .columns{
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  @media screen and (max-width: 750px) {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+
+.info .columns h2{
+  font-weight: bold;
+}
+
+h3{
+  font-weight: bold;
+}
+
+.purificador .columns{
+  background-color: $medium-gray;
+}
+
+.purificador .columns:last-child{
+  padding-top: 50px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  padding-bottom: 50px !important;
+  @media screen and (max-width: 750px) {
+    padding-top: 0px !important;
+  }
+}
+
+.eficientes-funcionales h3{
+  @media screen and (max-width: 750px) {
+    text-align: center;
+  }
+}
+
+.eficientes-funcionales img{
+  margin-bottom: 10px;
+}
+
+.eficientes-funcionales p{
+  text-align: center;
+}
+
+.eficientes-funcionales .columns{
+  text-align: center;
+  @media screen and (max-width: 750px) {
+    padding-bottom: 30px !important;
+  }
+}
+
+.padded .wrapper-inner{
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+.footer p{
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+  font-size: 11px;
+  color: $dark-gray;
+}
+
+.footer a{
+  font-size: 11px;
+  color: $global-font-color;
+  text-decoration: underline;
+}
+
+.footer .columns{
+  border-top: 1px solid $medium-gray;
+}
+
+
+
+
+
+
+

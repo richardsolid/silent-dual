@@ -173,14 +173,14 @@ h1 {
       margin-bottom: 20px;
     }
   }
-  .hbspt-form .hs-form fieldset{
+  .hubspot-form .hs-form fieldset{
     width: 100%;
     max-width: inherit;
   }
-  .hbspt-form .hs-form .input, .hbspt-form .hs-form label {
+  .hubspot-form .hs-form .input, .hubspot-form .hs-form label {
     padding: 0 15px;
   }
-  .hbspt-form .hs-form label{
+  .hubspot-form .hs-form label{
     padding-left: 27px
   }
 }
@@ -473,33 +473,33 @@ color: black;*/
   .container();
 }
 
-#contact .hbspt-form .hs-form fieldset{
+#contact .hubspot-form .hs-form fieldset{
   .make-row();
   max-width: 100%;
   margin-bottom: 15px;
 }
 
-.hbspt-form .hs-form fieldset label{
+.hubspot-form .hs-form fieldset label{
   font-weight: normal;
 }
 
-.hbspt-form .hs-form fieldset.form-columns-2 .input,
-.hbspt-form .hs-form fieldset.form-columns-1 .input{
+.hubspot-form .hs-form fieldset.form-columns-2 .input,
+.hubspot-form .hs-form fieldset.form-columns-1 .input{
   margin-right: 0;
 }
 
-.hbspt-form .hs-form fieldset.form-columns-1 .hs-input{
+.hubspot-form .hs-form fieldset.form-columns-1 .hs-input{
   width: 100%;
   @media(max-width:400px){
     width: 95%;
   }
 }
 
-.hbspt-form .hs-form fieldset.form-columns-1 textarea{
+.hubspot-form .hs-form fieldset.form-columns-1 textarea{
   height: auto;
 }
 
-.hbspt-form .hs-form fieldset .hs-richtext{
+.hubspot-form .hs-form fieldset .hs-richtext{
   .make-md-column(12);
   margin-bottom: 15px;
   h2{
@@ -514,32 +514,40 @@ color: black;*/
 }
 
 #contact {
-  .hbspt-form .hs-form fieldset .hs_name,
-  .hbspt-form .hs-form fieldset .hs_surname,
-  .hbspt-form .hs-form fieldset .hs_jobtitle,
-  .hbspt-form .hs-form fieldset .hs_puesto_de_trabajo,
-  .hbspt-form .hs-form fieldset .hs_email{
+  .hubspot-form .hs-form fieldset .hs_name,
+  .hubspot-form .hs-form fieldset .hs_surname,
+  .hubspot-form .hs-form fieldset .hs_jobtitle,
+  .hubspot-form .hs-form fieldset .hs_puesto_de_trabajo,
+  .hubspot-form .hs-form fieldset .hs_email{
     .make-md-column(6);
     .make-xs-column(12);
   }
-  .hbspt-form .hs-form fieldset .hs_message{
+  .hubspot-form .hs-form fieldset .hs_message{
     .make-md-column(12);
   }
 }
 
-
-
-
-.hbspt-form .hs-input{
+.hubspot-form .hs-input{
   .form-control;
 }
 
-.hbspt-form .hs-form .hs_submit{
+.focus-zoomfield{
+  animation-name: zoomfield;
+  animation-duration: .5s; 
+}
+
+@keyframes zoomfield {
+    0%   {transform:scale(1);}
+    50%  {transform:scale(1.1);}
+    100% {transform:scale(1);}
+}
+
+.hubspot-form .hs-form .hs_submit{
   .make-md-column(12);
   text-align: center;
 }
 
-.hbspt-form .hs-form .hs_submit .hs-button{
+.hubspot-form .hs-form .hs_submit .hs-button{
   .btn;
   .btn-lg;
   margin-top: 20px;
@@ -556,14 +564,14 @@ color: black;*/
   }
 }
 
-.hbspt-form .hs-form fieldset .hs-error-msgs{
+.hubspot-form .hs-form fieldset .hs-error-msgs{
   padding-left: 0;
   margin-top: 5px;
   margin-bottom: 0;
   list-style: none;
 }
 
-.hbspt-form .hs-form fieldset .hs_politica_de_privacidad{
+.hubspot-form .hs-form fieldset .hs_politica_de_privacidad{
   .make-md-column(12);
   text-align: center;
   @media(max-width: @screen-xs-max){
@@ -571,7 +579,7 @@ color: black;*/
   }
 }
 
-.hbspt-form .hs-form fieldset .hs_politica_de_privacidad a{
+.hubspot-form .hs-form fieldset .hs_politica_de_privacidad a{
   color:#FFF;
   font-weight: bold;
   transiton: color .3s ease;
@@ -581,27 +589,27 @@ color: black;*/
   }
 }
 
-.hbspt-form .hs-form .inputs-list{
+.hubspot-form .hs-form .inputs-list{
   padding-left: 0;
   margin-bottom: 0;
 }
 
-.hbspt-form .hs-form .inputs-list li{
+.hubspot-form .hs-form .inputs-list li{
   list-style: none;
 }
 
-.hbspt-form .hs-form fieldset.form-columns-1 .hs-form-booleancheckbox label{
+.hubspot-form .hs-form fieldset.form-columns-1 .hs-form-booleancheckbox label{
   padding-left: 20px;
 }
 
-.hbspt-form .hs-form fieldset.form-columns-1 .hs-form-booleancheckbox label input{
+.hubspot-form .hs-form fieldset.form-columns-1 .hs-form-booleancheckbox label input{
   position: absolute;
   margin-left: -20px;
   width: auto;
   height: auto;
 }
 
-.hbspt-form .submitted-message{
+.hubspot-form .submitted-message{
   text-align: center;
   font-size: 28px;
   font-weight: 300;
