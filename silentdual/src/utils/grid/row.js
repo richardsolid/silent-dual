@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import { gutter } from '../../styles/gutter'
 
 const RowLayout = styled.div`
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    margin-left: -${gutter}px;
-    margin-right: -${gutter}px;
+  margin-left: -${gutter}px;
+  margin-right: -${gutter}px;
 `
 
-const Row = ({children, align}) => {
+const Row = ({ children, align }) => {
     return (
         <RowLayout align={align}>
             {children}
