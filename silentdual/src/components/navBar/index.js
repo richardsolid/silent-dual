@@ -3,26 +3,28 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { TweenMax, Back } from "gsap";
 
-import colors from "../../styles/colors";
-import { breakpoints } from "../../styles/breakpoints";
-
-//component:
-import Burger from "./burgerIcon.js";
-
+//Utils
 import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
-
-//images:
-import logo from "../../images/logo.svg";
-
-//data:
-import data from "../../data/index.js";
-
-//utils:
 import useWindowSize from "../../utils/useWindowSize";
 
-const NavBarContainer = styled.div`
+//Assets
+import colors from "../../styles/colors";
+import { breakpoints } from "../../styles/breakpoints";
+import logo from "../../images/logo.svg";
+
+//Components
+import Burger from "./burgerIcon.js";
+
+
+const Navigator = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+`;
+
+const NavBarContainer = styled.header`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -33,7 +35,7 @@ const NavBarContainer = styled.div`
 
 	top: 0;
 	width: 100vw;
-	height: ${({ isPhone }) => (isPhone ? "80px" : "100px")};
+	height: 100px;
 	box-sizing: border-box;
 	z-index: 100;
 
@@ -58,13 +60,7 @@ const Bar = styled.div`
 	align-items: center;
 `;
 
-const Navigator = styled.div`
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-`;
-
-const SPLogo = styled(Link)`
+const SPLogo = styled(Link) `
 	display: flex;
 	color: ${colors.tertiary};
 	width: 50px;
@@ -148,32 +144,40 @@ const CollapsedItemsContainer = styled.div`
 `;
 
 //component:
-const NavBar = () => {
+const NavBar = ({ data }) => {
+
 	const size = useWindowSize();
-	const { navbar } = data[0];
+	const navbar = data.navbar;
 
 	const [width, setWidth] = useState(null);
 	const [viewNavItems, setViewNavItems] = useState(false);
 
 	useEffect(() => {
+
 		if (viewNavItems) {
+
 			TweenMax.to("#menu", 0.3, {
 				autoAlpha: 1
 			});
+
 			// TweenMax.staggerTo(
 			// 	".navItem",
 			// 	0.5,
 			// 	{ autoAlpha: 1, delay: 0.1, ease: Back.easeOut },
 			// 	0.1
 			// );
+
 			TweenMax.to(".navItem", 0.5, {
 				autoAlpha: 1,
 				delay: 0.1,
 				ease: Back.easeOut
 			});
+
 		} else {
+
 			TweenMax.to("#menu, .navItem", 0.3, {
 				autoAlpha: 0
+
 			});
 		}
 
@@ -184,6 +188,7 @@ const NavBar = () => {
 	if (width < breakpoints.large)
 		return (
 			<Navigator>
+
 				<NavBarContainer isPhone>
 					<Wrapper>
 						<Row>
@@ -196,6 +201,7 @@ const NavBar = () => {
 						</Row>
 					</Wrapper>
 				</NavBarContainer>
+
 				<CollapsedMenu id="menu">
 					<CollapsedItemsContainer>
 						{navbar.map((section, i) => (
@@ -210,12 +216,14 @@ const NavBar = () => {
 						))}
 					</CollapsedItemsContainer>
 				</CollapsedMenu>
+
 			</Navigator>
 		);
 
 	//items on navbar:
 	return (
 		<NavBarContainer>
+
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
@@ -230,6 +238,7 @@ const NavBar = () => {
 					</Column>
 				</Row>
 			</Wrapper>
+
 		</NavBarContainer>
 	);
 };

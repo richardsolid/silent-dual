@@ -7,9 +7,9 @@ import { gutter } from '../../assets/styles/gutter'
 const WrapperContainer = styled.div`
   width: 100%;
   max-width: calc(100% - ${gutter * 4}px);
+  margin: 0 auto;
 
   @media only screen and (min-width: ${breakpoints.phone}px ){
-    margin: 50px auto;
     max-width: ${maxWidthContainer.phone}px;
   }
 

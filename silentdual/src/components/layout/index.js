@@ -1,12 +1,18 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 
+import variables from "../../assets/styles/variables";
+
+//Assets
 import "../../assets/fonts/fonts.scss";
 import "./index.scss";
 
-import variables from "../../assets/styles/variables";
+//Data
+import data from "../../data";
 
-import Header from "../../components/header";
+//Components
+import NavBar from "../navBar";
+import Footer from "../footer";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -19,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${variables.din};
     font-size: 16px;
     line-height: 24px;
+    margin: 100px 0 0;
+    padding: 0;
   }
 
 `;
@@ -26,11 +34,13 @@ const GlobalStyle = createGlobalStyle`
 const Layout = ({ children }) => {
 	return (
 		<>
-			<Header />
-
 			<GlobalStyle />
 
+			<NavBar data={data} />
+
 			{children}
+
+			<Footer data={data} />
 		</>
 	);
 };
