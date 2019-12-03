@@ -10,8 +10,8 @@ import Column from "../../utils/grid/column";
 import useWindowSize from "../../utils/useWindowSize";
 
 //Assets
-import colors from "../../styles/colors";
-import { breakpoints } from "../../styles/breakpoints";
+import variables from "../../assets/styles/variables";
+import { breakpoints } from "../../assets/styles/breakpoints";
 import logo from "../../images/logo.svg";
 
 //Components
@@ -21,6 +21,7 @@ const Navigator = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	background: black;
 `;
 
 const NavBarContainer = styled.header`
@@ -29,71 +30,58 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background-color: ${colors.primaryDark};
-	color: ${colors.tertiary};
+	background: black;
+	color: white;
 
 	top: 0;
 	width: 100vw;
-	height: 100px;
+	height: 60px;
 	box-sizing: border-box;
-	z-index: 100;
-
-	a {
-		text-decoration: none;
-		color: ${colors.tertiary};
-		font-size: 14px;
-		height: 21px;
-		line-height: 21px;
-		font-weight: bold;
-	}
+	z-index: 1000;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		justify-content: space-evenly;
+		height: 110px;
 	}
-`;
-
-const Bar = styled.div`
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 `;
 
 const SPLogo = styled(Link)`
 	display: flex;
-	color: ${colors.tertiary};
-	width: 50px;
-	height: 50px !important;
+	background: url(${logo}) no-repeat center center;
+	background-size: contain;
 
-	::after {
-		content: "";
-		width: 50px;
-		height: 50px;
-		background-repeat: no-repeat;
-		background-image: url(${logo});
-		color: ${colors.tertiary};
+	width: 40px;
+	height: 40px;
+
+	opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
+	visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
+
+	transition: 0.2s;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		width: 70px;
+		height: 70px;
 	}
 `;
 
 const SectionsLinksBar = styled.div`
 	display: flex;
-	margin: auto 2%;
-	width: 100%;
-	justify-content: space-between;
-
-	@media screen and (min-width: ${breakpoints.large}px) {
-		justify-content: space-evenly;
-		width: 75%;
-	}
+	margin: 0 0 0 auto;
+	justify-content: center;
+	align-items: center;
 
 	a {
 		text-decoration: none;
-		color: ${colors.tertiary};
+		color: white;
+		opacity: 1;
 
 		transition: all 0.4s ease;
 
 		&:hover {
-			color: ${colors.tertiaryLight};
+			opacity: 0.8;
+		}
+
+		& + a {
+			margin-left: 40px;
 		}
 	}
 `;
@@ -102,26 +90,34 @@ const CollapsedMenu = styled.div`
 	display: flex;
 	margin: auto 0;
 	flex-direction: column;
-	color: ${colors.tertiary};
-	background-color: ${colors.primaryDark};
+	color: white;
+	background-color: ${variables.secondaryDark};
 	padding: 0;
 	position: fixed;
 	width: 100%;
 	top: 80px;
-	height: calc(100vh - 60px);
+	height: 100vh;
 	box-sizing: border-box;
 	z-index: 100;
+
+	overflow: hidden;
+
+	top: 0;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		top: 110px;
+	}
 
 	opacity: 0;
 	visibility: hidden;
 
 	a {
 		text-decoration: none;
-		color: ${colors.tertiary};
+		color: white;
 		cursor: pointer;
 
 		display: flex;
-		justify-content: flex-center;
+		justify-content: center;
 		align-items: center;
 		height: 60px;
 		padding: 0;
@@ -143,12 +139,16 @@ const CollapsedItemsContainer = styled.div`
 `;
 
 //component:
-const NavBar = ({ data }) => {
+const NavBar = ({ data, modalIsOpen }) => {
 	const size = useWindowSize();
-	console.log(data);
 
 	const [width, setWidth] = useState(null);
 	const [viewNavItems, setViewNavItems] = useState(false);
+
+	const handleBurgerClick = () => {
+		setViewNavItems(!viewNavItems);
+		modalIsOpen(!viewNavItems);
+	};
 
 	useEffect(() => {
 		if (viewNavItems) {
@@ -185,29 +185,37 @@ const NavBar = ({ data }) => {
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
-								<Bar>
-									<SPLogo to={"#hero"} onClick={() => setViewNavItems(false)} />
-									<Burger isOpen={viewNavItems} handleClick={setViewNavItems} />
-								</Bar>
+								<SPLogo
+									isOpen={viewNavItems}
+									to={"#hero"}
+									onClick={() => setViewNavItems(false)}
+								/>
+								<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
 							</Column>
 						</Row>
 					</Wrapper>
 				</NavBarContainer>
 
 				<CollapsedMenu id="menu">
-					<CollapsedItemsContainer>
-						{data &&
-							data.map((section, i) => (
-								<Link
-									key={i}
-									to={section.anchor}
-									onClick={() => setViewNavItems(false)}
-									className="navItem"
-								>
-									{section.name}
-								</Link>
-							))}
-					</CollapsedItemsContainer>
+					<Wrapper>
+						<Row>
+							<Column xs={12}>
+								<CollapsedItemsContainer>
+									{data &&
+										data.map((section, i) => (
+											<Link
+												key={i}
+												to={section.anchor}
+												onClick={() => setViewNavItems(!viewNavItems)}
+												className="navItem"
+											>
+												{section.name}
+											</Link>
+										))}
+								</CollapsedItemsContainer>
+							</Column>
+						</Row>
+					</Wrapper>
 				</CollapsedMenu>
 			</Navigator>
 		);

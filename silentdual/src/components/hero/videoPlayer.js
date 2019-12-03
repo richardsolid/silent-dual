@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import videoPoster from "../../images/video_poster.jpg";
 import crossIcon from "../../images/cross.svg";
 
-const VideoContainer = styled.span`
+const Background = styled.span`
 	position: relative;
 	width: 100vw;
 	height: 100vh;
@@ -26,11 +26,18 @@ const VideoContainer = styled.span`
 	}
 `;
 
-const HomeVideo = styled.video`
-	position: absolute;
+const VideoContainer = styled.div`
+	position: relative;
+	display: flex;
+	margin: 50px auto;
 	max-width: 800px;
 	width: 100%;
 	z-index: 2000;
+`;
+
+const HomeVideo = styled.video`
+	position: absolute;
+	width: inherit;
 `;
 
 const CloseButton = styled.span`
@@ -39,26 +46,28 @@ const CloseButton = styled.span`
 	top: 20px;
 	width: 20px;
 	height: 20px;
-	opacity: 0;
 	z-index: 10000;
 	background: yellow;
-
-/* 
 	background: url(${crossIcon}) no-repeat center center;
-	background-size: 100%; */
+	background-size: 100%;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+	}
 `;
 
 const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
 	useEffect(() => {
 		showVideo
 			? gsap.to("#videoPlayer", 0, {
-					duration: 0.4,
-					ease: "expo.out",
+					duration: 1,
+					// ease: "expo.out",
 					autoAlpha: 1
 			  })
 			: gsap.to("#videoPlayer", 0, {
-					duration: 0.4,
-					ease: "expo.out",
+					duration: 0.6,
+					// ease: "expo.out",
 					autoAlpha: 0
 			  });
 	}, [showVideo]);
@@ -67,33 +76,30 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
 		setShowVideo(false);
 	};
 
+	const isPhoneSize = width < 768;
+
 	if (showVideo)
 		return (
-			<VideoContainer id={"videoPlayer"}>
-				{width < 768 ? (
+			<Background id={"videoPlayer"}>
+				<VideoContainer>
 					<HomeVideo
 						src={video}
+						poster={videoPoster}
+						playsinline={!isPhoneSize}
 						controls={true}
 						type="video/mp4"
 						crossOrigin="anonymous"
+						autoPlay
+						muted
 					>
+						{!isPhoneSize && <source src={video} type="video/mp4" />}
 						Your browser can't play this video
 					</HomeVideo>
-				) : (
-					<HomeVideo
-						playsinline
-						controls={true}
-						type="video/mp4"
-						poster={videoPoster}
-					>
-						<source src={video} type="video/mp4" />
-						Your browser can't play this video
-					</HomeVideo>
-				)}
-				<CloseButton onClick={closePlayer} />
-			</VideoContainer>
+					<CloseButton onClick={closePlayer} />
+				</VideoContainer>
+			</Background>
 		);
-	else return null;
+	return null;
 };
 
 export default VideoPlayer;

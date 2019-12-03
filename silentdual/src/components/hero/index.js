@@ -15,7 +15,7 @@ import arrowDown from "../../images/arrow_down.svg";
 import Demovideo from "../../videos/demovideo.mp4";
 
 //styles:
-import colors from "../../styles/colors";
+// import variables from "../../assets/styles/variables";
 
 import VideoPlayer from "./videoPlayer";
 
@@ -26,9 +26,9 @@ const HomeContainer = styled.section`
 	align-items: center;
 	flex: 1;
 	height: 90vh;
-	width: 100vw;
+	width: 100%;
 	position: relative;
-	color: ${colors.tertiary};
+	color: white;
 
 	#instantFriendly,
 	#playButton {
@@ -43,10 +43,6 @@ const HomeContainer = styled.section`
 		&:hover {
 			opacity: 0.9;
 		}
-	}
-
-	@media screen and (min-width: 768px) {
-		padding: 70px 8.3333% 0;
 	}
 `;
 
@@ -124,7 +120,7 @@ const HomeTitle = styled.h1`
 const HomeSubtitle = styled.h2``;
 
 const HeroLinkDown = styled(Link)`
-	color: ${colors.tertiary};
+	color: white;
 	text-decoration: none;
 	font-size: 14px;
 	font-weight: bold;

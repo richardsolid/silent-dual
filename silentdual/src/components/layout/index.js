@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import { createGlobalStyle } from "styled-components";
 
 import variables from "../../assets/styles/variables";
@@ -27,18 +27,24 @@ const GlobalStyle = createGlobalStyle`
     line-height: 24px;
     margin: 100px 0 0;
     padding: 0;
-  }
+    overflow: ${({ modalIsOpen }) =>
+			modalIsOpen === true ? "hidden" : "inherit"};
+    };
+     max-width: 100vw;
+    overflow-x: hidden;
 
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, modalIsOpen }) => {
 	const { navbar, footer } = data;
+
+	const [handleScroll, setHandleScroll] = useState(null);
 
 	return (
 		<Fragment>
-			<GlobalStyle />
+			<GlobalStyle modalIsOpen={modalIsOpen} />
 
-			<NavBar data={navbar} />
+			<NavBar modalIsOpen={setHandleScroll} data={navbar} />
 
 			{children}
 
