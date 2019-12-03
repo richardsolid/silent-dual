@@ -45,8 +45,6 @@ const Layout = ({ children, modalIsOpen }) => {
 
       <NavBar modalIsOpen={setHandleScroll} data={data} />
 
-      {console.log(setHandleScroll)}
-
       {children}
 
       <Footer data={data} />
