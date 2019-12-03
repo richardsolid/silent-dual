@@ -17,6 +17,13 @@ import logo from "../../images/logo.svg";
 //Components
 import Burger from "./burgerIcon.js";
 
+
+const Navigator = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+`;
+
 const NavBarContainer = styled.header`
 	display: flex;
 	align-items: center;
@@ -28,7 +35,7 @@ const NavBarContainer = styled.header`
 
 	top: 0;
 	width: 100vw;
-	height: ${({ isPhone }) => (isPhone ? "80px" : "100px")};
+	height: 100px;
 	box-sizing: border-box;
 	z-index: 100;
 
@@ -51,12 +58,6 @@ const Bar = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-`;
-
-const Navigator = styled.div`
-	display: flex;
-	flex-direction: column;
-	width: 100%;
 `;
 
 const SPLogo = styled(Link) `

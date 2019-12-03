@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${variables.din};
     font-size: 16px;
     line-height: 24px;
-    margin: 0;
+    margin: 100px 0 0;
     padding: 0;
   }
 
