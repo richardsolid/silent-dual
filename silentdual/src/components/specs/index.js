@@ -4,8 +4,8 @@ import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
 import SpecSensores from "./SpecSensores";
-import SpecFuncionamiento from "./SpecFuncionamiento";
-import SpecEntradasAire from "./SpecEntradasAire";
+//import SpecFuncionamiento from "./SpecFuncionamiento";
+//import SpecEntradasAire from "./SpecEntradasAire";
 
 const Title = styled.h2`
   color: rgb(0, 0, 0);
@@ -17,7 +17,7 @@ const Title = styled.h2`
   text-align: center;
   width: 792px;
 `;
-export default Specs = () => {
+const Specs = () => {
   return (
     <section id="specs">
       <Wrapper>
@@ -27,9 +27,9 @@ export default Specs = () => {
           </Column>
         </Row>
         <SpecSensores />
-        <SpecFuncionamiento />
-        <SpecEntradasAire />
       </Wrapper>
     </section>
   );
 };
+
+export default Specs;

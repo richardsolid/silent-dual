@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
+import SpecSensorComp from "./SpecSensoresComp";
 
 const Title = styled.h3`
   width: 139px;
@@ -30,7 +31,7 @@ const Description = styled.p`
   letter-spacing: 0px;
   line-height: 30px;
 `;
-export default SpecSensores = () => {
+const SpecSensor = () => {
   return (
     <section id="specs">
       <Row>
@@ -50,3 +51,5 @@ export default SpecSensores = () => {
     </section>
   );
 };
+
+export default SpecSensor;
