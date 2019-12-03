@@ -5,7 +5,12 @@ import Layout from "../components/layout";
 import NavBar from "../components/navBar/index";
 import HeroVideo from "../components/home/index";
 
+import Wrapper from "../utils/grid/wrapper"
+import Row from "../utils/grid/row"
+import Column from "../utils/grid/column"
+
 const IndexPage = () => (
+<<<<<<< HEAD
 	<Fragment>
 		<SEO title="Home" />
 		<NavBar />
@@ -19,5 +24,17 @@ const IndexPage = () => (
 		<Link to="/page-2/">Go to page 2</Link>
 	</Fragment>
 );
+=======
+
+  <Layout>
+
+    <Wrapper>
+
+    </Wrapper>
+
+  </Layout>
+
+)
+>>>>>>> 762bebcb324bb812045fcfe3d603ba218da7ef8b
 
 export default IndexPage;

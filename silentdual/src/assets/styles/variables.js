@@ -20,7 +20,7 @@ export default {
 
   spaceLarge: '80px',
   spaceMedium: '40px',
-  spaceSmall: '40px',
+  spaceSmall: '20px',
 
 
   //Dividers Colors
