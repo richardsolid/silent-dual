@@ -1,6 +1,7 @@
 import React from "react"
 import styled from 'styled-components'
-import { gutter } from '../../styles/gutter'
+
+import { gutter } from '../../assets/styles/gutter'
 
 const RowLayout = styled.div`
   display: flex;
