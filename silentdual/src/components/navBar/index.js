@@ -30,14 +30,14 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background-color: black;
+	background-color: transparent;
 	color: white;
 
 	top: 0;
 	width: 100vw;
 	height: 60px;
 	box-sizing: border-box;
-	z-index: 100;
+	z-index: 1000;
 	
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 110px;
@@ -51,6 +51,11 @@ const SPLogo = styled(Link) `
 
 	width: 40px;
 	height: 40px;
+
+	opacity: ${({ isOpen }) => isOpen ? 0 : 1};
+	visibility:  ${({ isOpen }) => isOpen ? 'hidden' : 'visible'};
+
+	transition: .2s;
 	
 	@media screen and (min-width: ${breakpoints.large}px) {
 		width: 70px;
@@ -91,9 +96,17 @@ const CollapsedMenu = styled.div`
 	position: fixed;
 	width: 100%;
 	top: 80px;
-	height: calc(100vh - 60px);
+	height: 100vh;
 	box-sizing: border-box;
 	z-index: 100;
+
+	overflow: hidden;
+
+	top: 0;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		top: 110px;
+	}
 
 	opacity: 0;
 	visibility: hidden;
@@ -104,7 +117,7 @@ const CollapsedMenu = styled.div`
 		cursor: pointer;
 
 		display: flex;
-		justify-content: flex-center;
+		justify-content: center;
 		align-items: center;
 		height: 60px;
 		padding: 0;
@@ -126,13 +139,18 @@ const CollapsedItemsContainer = styled.div`
 `;
 
 //component:
-const NavBar = ({ data }) => {
+const NavBar = ({ data, modalIsOpen }) => {
 
 	const size = useWindowSize();
 	const navbar = data.navbar;
 
 	const [width, setWidth] = useState(null);
 	const [viewNavItems, setViewNavItems] = useState(false);
+
+	const handleBurgerClick = () => {
+		setViewNavItems(!viewNavItems)
+		modalIsOpen(!viewNavItems)
+	}
 
 	useEffect(() => {
 
@@ -176,8 +194,8 @@ const NavBar = ({ data }) => {
 						<Row>
 							<Column xs={12}>
 
-								<SPLogo to={"#hero"} onClick={() => setViewNavItems(false)} />
-								<Burger isOpen={viewNavItems} handleClick={setViewNavItems} />
+								<SPLogo isOpen={viewNavItems} to={"#hero"} onClick={() => setViewNavItems(false)} />
+								<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
 
 							</Column>
 						</Row>
@@ -185,18 +203,28 @@ const NavBar = ({ data }) => {
 				</NavBarContainer>
 
 				<CollapsedMenu id="menu">
-					<CollapsedItemsContainer>
-						{navbar.map((section, i) => (
-							<Link
-								key={i}
-								to={section.anchor}
-								onClick={() => setViewNavItems(!viewNavItems)}
-								className="navItem"
-							>
-								{section.name}
-							</Link>
-						))}
-					</CollapsedItemsContainer>
+
+					<Wrapper>
+						<Row>
+							<Column xs={12}>
+
+								<CollapsedItemsContainer>
+									{navbar.map((section, i) => (
+										<Link
+											key={i}
+											to={section.anchor}
+											onClick={() => setViewNavItems(!viewNavItems)}
+											className="navItem"
+										>
+											{section.name}
+										</Link>
+									))}
+								</CollapsedItemsContainer>
+
+							</Column>
+						</Row>
+					</Wrapper>
+
 				</CollapsedMenu>
 
 			</Navigator>

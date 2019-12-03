@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 
 import variables from "../../assets/styles/variables"
@@ -28,18 +28,24 @@ const GlobalStyle = createGlobalStyle`
     line-height: 24px;
     margin: 100px 0 0;
     padding: 0;
+    overflow: ${({ modalIsOpen }) => modalIsOpen === true ? 'hidden' : 'inherit'};
   }
 
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, modalIsOpen }) => {
+
+  const [handleScroll, setHandleScroll] = useState(null);
+
   return (
 
     <>
 
-      <GlobalStyle />
+      <GlobalStyle modalIsOpen={handleScroll} />
 
-      <NavBar data={data} />
+      <NavBar modalIsOpen={setHandleScroll} data={data} />
+
+      {console.log(setHandleScroll)}
 
       {children}
 
