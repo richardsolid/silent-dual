@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { breakpoints } from '../../styles/breakpoints';
-import { gutter } from '../../styles/gutter'
+import { breakpoints } from '../../assets/styles/breakpoints';
+import { gutter } from '../../assets/styles/gutter'
 
 const ColumnLayout = styled.div`
   display: flex;
   align-self: stretch;
-  ${({ align }) => align === "center" && "margin: 0 auto;"}
-  ${({ align }) => align === "left" && "margin-right: auto;"}
-  ${({ align }) => align === "right" && "margin-left: auto;"}
+  ${ ({ align }) => align === "center" && "margin: 0 auto;"}
+  ${ ({ align }) => align === "left" && "margin-right: auto;"}
+  ${ ({ align }) => align === "right" && "margin-left: auto;"}
   
   padding-left: ${gutter}px;
   padding-right: ${gutter}px;
@@ -37,13 +37,13 @@ const ColumnLayout = styled.div`
 
 const Column = ({ children, xs, sm, md, lg, xsOffset, smOffset, mdOffset, lgOffset, align }) => {
 
-    return (
-        <ColumnLayout xs={xs} sm={sm} md={md} lg={lg} xsOffset={xsOffset} smOffset={smOffset} mdOffset={mdOffset} lgOffset={lgOffset} align={align}>
+  return (
+    <ColumnLayout xs={xs} sm={sm} md={md} lg={lg} xsOffset={xsOffset} smOffset={smOffset} mdOffset={mdOffset} lgOffset={lgOffset} align={align}>
 
-            {children}
+      {children}
 
-        </ColumnLayout>
-    )
+    </ColumnLayout>
+  )
 }
 
 export default Column

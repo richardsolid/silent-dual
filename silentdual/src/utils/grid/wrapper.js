@@ -1,8 +1,8 @@
 import React from "react"
 import styled from 'styled-components'
 
-import { breakpoints, maxWidthContainer } from '../../styles/breakpoints'
-import { gutter } from '../../styles/gutter'
+import { breakpoints, maxWidthContainer } from '../../assets/styles/breakpoints'
+import { gutter } from '../../assets/styles/gutter'
 
 const WrapperContainer = styled.div`
   width: 100%;
@@ -29,11 +29,11 @@ const WrapperContainer = styled.div`
 
 const Wrapper = ({ children }) => {
 
-    return (
-        <WrapperContainer>
-            {children}
-        </WrapperContainer>
-    )
+  return (
+    <WrapperContainer>
+      {children}
+    </WrapperContainer>
+  )
 }
 
 export default Wrapper
