@@ -33,7 +33,7 @@ const HomeContainer = styled.section`
 	#instantFriendly,
 	#playButton {
 		position: absolute;
-		z-index: 10;
+		z-index: 15;
 		top: 25vh;
 	}
 
@@ -119,8 +119,8 @@ const HomeHeadingTitle = styled.h1`
 
 const HomeSubtitle = styled.h2``;
 
-const HomeHeadingLink = styled.span`
-	position: absolute;
+const HomeHeadingLink = styled.div`
+	position: relative;
 	top: calc(30vh + 20px);
 	z-index: 10;
 	color: white;
@@ -227,9 +227,7 @@ const HeroVideo = () => {
 					</video>
 				)}
 			</HomeBackground>
-
 			<img id="instantFriendly" src={instantFriendly} alt="instant friendly" />
-
 			<HomeHeading>
 				<HomeHeadingTitle>
 					SILENT <span>DUAL</span>
@@ -239,37 +237,22 @@ const HeroVideo = () => {
 					instalación.
 				</HomeSubtitle>
 			</HomeHeading>
-
-			<img id="playButton" src={playButton} alt="play button" />
-
 			<HeroLink to={"/#sliderSection"}>Descúbrelas</HeroLink>
-
-			{width < 768 && (
-				<HomeHeadingLink ref={linkVideo}>
-					view Video
-					<ModalSmoothOpener
-						modalContainer={linkVideo}
-						handleModalOpenened={handleModalOpenened}
-						background="rgba(0, 0, 0, .8)"
-					>
+			<HomeHeadingLink ref={linkVideo}>
+				<img id="playButton" src={playButton} alt="play button" />
+				<ModalSmoothOpener
+					modalContainer={linkVideo}
+					handleModalOpenened={handleModalOpenened}
+					background="rgba(0, 0, 0, .8)"
+				>
+					{width < 768 ? (
 						<HomeHeadingVideo
 							src="video_home_extend.mp4"
 							controls={true}
 							type="video/mp4"
 							crossOrigin="anonymous"
 						></HomeHeadingVideo>
-					</ModalSmoothOpener>
-				</HomeHeadingLink>
-			)}
-
-			{width >= 768 && (
-				<HomeHeadingLink ref={linkVideo}>
-					view Video
-					<ModalSmoothOpener
-						modalContainer={linkVideo}
-						handleModalOpenened={handleModalOpenened}
-						background="rgba(0, 0, 0, .8)"
-					>
+					) : (
 						<HomeHeadingVideo
 							playsinline
 							controls={true}
@@ -278,9 +261,9 @@ const HeroVideo = () => {
 						>
 							<source src="video_home_extend.mp4" type="video/mp4" />
 						</HomeHeadingVideo>
-					</ModalSmoothOpener>
-				</HomeHeadingLink>
-			)}
+					)}
+				</ModalSmoothOpener>
+			</HomeHeadingLink>
 		</HomeContainer>
 		// </Layout>
 	);
