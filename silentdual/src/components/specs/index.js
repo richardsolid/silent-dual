@@ -17,7 +17,6 @@ const Title = styled.h2`
 	text-align: center;
 	width: 792px;
 `;
-
 export default Specs = () => {
 	return (
 		<section id="specs">

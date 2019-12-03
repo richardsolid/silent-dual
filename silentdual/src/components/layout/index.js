@@ -1,5 +1,4 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { createGlobalStyle } from "styled-components";
 
 import "../../assets/fonts/fonts.scss";
