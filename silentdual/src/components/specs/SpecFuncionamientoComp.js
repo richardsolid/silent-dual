@@ -1,7 +1,7 @@
 import React from "react";
-import SpecImg from "../../images/spec-sensores.png";
+import SpecImg from "../../images/spec-funcionamiento.png";
 import styled from "styled-components";
-import IconsPNG from "../../images/spec-sensores-icons.png";
+import IconsPNG from "../../images/spec-funcionamiento-icons.png";
 
 const Img = styled.img`
   max-width: 100%;
@@ -9,24 +9,24 @@ const Img = styled.img`
 const CompContainer = styled.div`
   position: relative;
 `;
-const Icons = styled.img`
+const ImgIcons = styled.img`
   position: absolute;
-  right: 12%;
-  top: -27%;
+  right: -12%;
+  top: -23%;
   width: 41%;
 `;
 
 //Animación con Lottie
-const SpecIcons = () => {
-  return <Icons src={IconsPNG} alt="" />;
+const Icons = () => {
+  return <ImgIcons src={IconsPNG} alt="" />;
 };
-const SpecFuncionesComp = () => {
+const SpecSensoresComp = () => {
   return (
     <CompContainer>
       <Img src={SpecImg} alt="" />
-      <SpecIcons />
+      <Icons />
     </CompContainer>
   );
 };
 
-export default SpecFuncionesComp;
+export default SpecSensoresComp;

@@ -1,12 +1,12 @@
-import React from "react"
-import { createGlobalStyle } from "styled-components"
+import React from "react";
+import { createGlobalStyle } from "styled-components";
 
-import "../../assets/fonts/fonts.scss"
-import "./index.scss"
+import "../../assets/fonts/fonts.scss";
+import "./index.scss";
 
-import variables from "../../assets/styles/variables"
+import variables from "../../assets/styles/variables";
 
-import Header from "../../components/header"
+import Header from "../../components/header";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -21,19 +21,17 @@ const GlobalStyle = createGlobalStyle`
     line-height: 24px;
   }
 
-`
+`;
 
 const Layout = ({ children }) => {
-
   return (
     <>
-
       <Header />
 
       <GlobalStyle />
-
+      {children}
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
