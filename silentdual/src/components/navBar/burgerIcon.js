@@ -1,50 +1,62 @@
 import React from "react"
 import styled from "styled-components"
-import colors from '../../styles/colors'
-
 
 const BurgerContainer = styled.div`
-  height: 24px;
-  width: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-content: center;
+
+  margin: auto 0 auto auto;
+
+  height: 19px;
+  width: 27px;
   cursor: pointer;
 
+  position: relative;
+
   div {
-    height: 2px;
-    width: 20px;
-    background: ${colors.tertiary};
+    display: flex;
+    height: 3px;
     transition: all 0.2s ease;
+    background-color: white;
   }
 `
 
 const TopLine = styled.div`
-  transform: ${({isOpen}) => isOpen ? "rotate(45deg)" : "none"};
+  transform: ${({ isOpen }) => isOpen ? "rotate(45deg)" : "none"};
   transform-origin: top left;
-  margin-bottom: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: ${({ isOpen }) => isOpen ? "24px" : "100%"};
 `
 
 const MiddleLine = styled.div`
-  opacity: ${({isOpen}) => isOpen ? 0: 1};
-  transform: ${({isOpen}) => isOpen ? "translateX(-16px)" : "none"};
+  opacity: ${({ isOpen }) => isOpen ? 0 : 1};
+  transform: ${({ isOpen }) => isOpen ? "translateX(-16px)" : "none"};
+  width: 100%;
 `
 
 const BottomLine = styled.div`
-  transform: ${({isOpen}) => isOpen ? "translateX(-1px) rotate(-45deg)" : "none"};
-  transform-origin: top left;
-  margin-top: 5px;
+  transform: ${({ isOpen }) => isOpen ? "translateX(-1px) rotate(-45deg)" : "none"};
+  transform-origin: bottom left;
+  position: absolute;
+  bottom: 0;
+  left: ${({ isOpen }) => isOpen ? "1px" : "0"};
+
+  width: ${({ isOpen }) => isOpen ? "24px" : "100%"};
 `
-  
 
-const Burger = ({isOpen, handleClick}) => (
 
-    <BurgerContainer onClick={() => handleClick(!isOpen)}>
-      <TopLine isOpen={isOpen} />
-      <MiddleLine isOpen={isOpen} />
-      <BottomLine isOpen={isOpen} />
-    </BurgerContainer>
+const Burger = ({ isOpen, handleClick }) => (
+
+  <BurgerContainer onClick={() => handleClick(!isOpen)}>
+    <TopLine isOpen={isOpen} />
+    <MiddleLine isOpen={isOpen} />
+    <BottomLine isOpen={isOpen} />
+  </BurgerContainer>
 
 );
 

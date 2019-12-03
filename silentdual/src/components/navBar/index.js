@@ -10,8 +10,8 @@ import Column from "../../utils/grid/column";
 import useWindowSize from "../../utils/useWindowSize";
 
 //Assets
-import colors from "../../styles/colors";
-import { breakpoints } from "../../styles/breakpoints";
+import variables from "../../assets/styles/variables";
+import { breakpoints } from "../../assets/styles/breakpoints";
 import logo from "../../images/logo.svg";
 
 //Components
@@ -30,71 +30,53 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background-color: ${colors.primaryDark};
-	color: ${colors.tertiary};
+	background-color: black;
+	color: white;
 
 	top: 0;
 	width: 100vw;
-	height: 100px;
+	height: 60px;
 	box-sizing: border-box;
 	z-index: 100;
-
-	a {
-		text-decoration: none;
-		color: ${colors.tertiary};
-		font-size: 14px;
-		height: 21px;
-		line-height: 21px;
-		font-weight: bold;
-	}
-
+	
 	@media screen and (min-width: ${breakpoints.large}px) {
-		justify-content: space-evenly;
+		height: 110px;
 	}
-`;
-
-const Bar = styled.div`
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 `;
 
 const SPLogo = styled(Link) `
 	display: flex;
-	color: ${colors.tertiary};
-	width: 50px;
-	height: 50px !important;
+	background: url(${logo}) no-repeat center center;
+	background-size: contain;
 
-	::after {
-		content: "";
-		width: 50px;
-		height: 50px;
-		background-repeat: no-repeat;
-		background-image: url(${logo});
-		color: ${colors.tertiary};
+	width: 40px;
+	height: 40px;
+	
+	@media screen and (min-width: ${breakpoints.large}px) {
+		width: 70px;
+		height: 70px;
 	}
 `;
 
 const SectionsLinksBar = styled.div`
 	display: flex;
-	margin: auto 2%;
-	width: 100%;
-	justify-content: space-between;
-
-	@media screen and (min-width: ${breakpoints.large}px) {
-		justify-content: space-evenly;
-		width: 75%;
-	}
+	margin: 0 0 0 auto;
+	justify-content: center;
+	align-items: center;
 
 	a {
 		text-decoration: none;
-		color: ${colors.tertiary};
+		color: white;
+		opacity: 1;
 
 		transition: all 0.4s ease;
 
 		&:hover {
-			color: ${colors.tertiaryLight};
+			opacity: .8;
+		}
+
+		& + a {
+			margin-left: 40px;
 		}
 	}
 `;
@@ -103,8 +85,8 @@ const CollapsedMenu = styled.div`
 	display: flex;
 	margin: auto 0;
 	flex-direction: column;
-	color: ${colors.tertiary};
-	background-color: ${colors.primaryDark};
+	color: white;
+	background-color: ${variables.secondaryDark};
 	padding: 0;
 	position: fixed;
 	width: 100%;
@@ -118,7 +100,7 @@ const CollapsedMenu = styled.div`
 
 	a {
 		text-decoration: none;
-		color: ${colors.tertiary};
+		color: white;
 		cursor: pointer;
 
 		display: flex;
@@ -193,10 +175,10 @@ const NavBar = ({ data }) => {
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
-								<Bar>
-									<SPLogo to={"#hero"} onClick={() => setViewNavItems(false)} />
-									<Burger isOpen={viewNavItems} handleClick={setViewNavItems} />
-								</Bar>
+
+								<SPLogo to={"#hero"} onClick={() => setViewNavItems(false)} />
+								<Burger isOpen={viewNavItems} handleClick={setViewNavItems} />
+
 							</Column>
 						</Row>
 					</Wrapper>
@@ -227,6 +209,7 @@ const NavBar = ({ data }) => {
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
+
 						<SPLogo to={"#hero"} />
 						<SectionsLinksBar>
 							{navbar.map((section, i) => (
@@ -235,6 +218,7 @@ const NavBar = ({ data }) => {
 								</Link>
 							))}
 						</SectionsLinksBar>
+
 					</Column>
 				</Row>
 			</Wrapper>

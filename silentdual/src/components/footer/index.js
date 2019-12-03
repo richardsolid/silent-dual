@@ -11,6 +11,14 @@ import variables from "../../assets/styles/variables"
 
 const FooterSection = styled.footer`
   background: ${variables.secondary};
+  
+  color: white;
+  font-weight: bold;
+
+  p {
+    margin: 0 auto;
+    padding: 20px 0;
+  }
 `
 
 const Footer = ({ data }) => {
@@ -21,8 +29,8 @@ const Footer = ({ data }) => {
       <Wrapper>
         <Row>
 
-          <Column xs={12}>
-            {data.footer}
+          <Column xs={12} className="bodySmall">
+            <p>{data.footer}</p>
           </Column>
 
         </Row>
