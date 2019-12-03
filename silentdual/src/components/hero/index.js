@@ -1,24 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-// import { TweenLite, Expo } from "gsap";
 import { Link } from "gatsby";
 
 //utils:
-import ModalSmoothOpener from "../modalSmoothOpener";
 import useWindowSize from "../../utils/useWindowSize";
 
 //images:
 import instantFriendly from "../../images/instant-friendly.svg";
 import playButton from "../../images/play-button.svg";
-import heroBackground from "../../images/hero-background.jpg";
+import videoPoster from "../../images/video_poster.jpg";
 import arrowDown from "../../images/arrow_down.svg";
+
 //video:
 import Demovideo from "../../videos/demovideo.mp4";
 
 //styles:
 import colors from "../../styles/colors";
 
-// import Layout from "../layout";
+import VideoPlayer from "./videoPlayer";
 
 const HomeContainer = styled.section`
 	display: flex;
@@ -26,9 +25,8 @@ const HomeContainer = styled.section`
 	justify-content: center;
 	align-items: center;
 	flex: 1;
-	height: 100vh;
+	height: 90vh;
 	width: 100vw;
-	padding: 0 20px;
 	position: relative;
 	color: ${colors.tertiary};
 
@@ -41,6 +39,10 @@ const HomeContainer = styled.section`
 
 	#playButton {
 		top: 70vh;
+		cursor: pointer;
+		&:hover {
+			opacity: 0.9;
+		}
 	}
 
 	@media screen and (min-width: 768px) {
@@ -48,7 +50,7 @@ const HomeContainer = styled.section`
 	}
 `;
 
-const HomeHeading = styled.div`
+const HomeHeader = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -69,7 +71,7 @@ const HomeBackground = styled.div`
 	align-items: center;
 	overflow: hidden;
 	position: relative;
-	height: 60vh;
+	height: 100vh;
 	width: 100vw;
 
 	&:before {
@@ -104,7 +106,7 @@ const HomeBackground = styled.div`
 	}
 `;
 
-const HomeHeadingTitle = styled.h1`
+const HomeTitle = styled.h1`
 	color: white;
 	font-size: 48px;
 	font-weight: 700;
@@ -121,25 +123,6 @@ const HomeHeadingTitle = styled.h1`
 
 const HomeSubtitle = styled.h2``;
 
-const HomeHeadingLink = styled.div`
-	position: relative;
-	top: calc(30vh + 20px);
-	z-index: 100;
-	color: white;
-	font-size: 14px;
-	line-height: 1.29;
-	text-decoration: underline;
-
-	@media screen and (min-width: 768px) {
-		position: relative;
-		top: initial;
-		font-size: 20px;
-		line-height: 30px;
-		margin-bottom: auto;
-		z-index: 1;
-	}
-`;
-
 const HeroLinkDown = styled(Link)`
 	color: ${colors.tertiary};
 	text-decoration: none;
@@ -151,6 +134,7 @@ const HeroLinkDown = styled(Link)`
 	display: block;
 	padding-bottom: 40px;
 	z-index: 100;
+	background: black;
 
 	::after {
 		content: "";
@@ -181,24 +165,16 @@ const HeroLinkDown = styled(Link)`
 	}
 `;
 
-const HomeHeadingVideo = styled.video`
-	margin: auto;
-	max-width: 100%;
-	width: 100%;
-`;
-
 const Hero = () => {
 	const widthWindow = useWindowSize();
 
 	const [width, setWidth] = useState(null);
-	const [isTransparent, setIsTransparent] = useState(true);
-	const [isAbsolute, setIsAbsolute] = useState(false);
+	const [showVideo, setShowVideo] = useState(null);
 
-	const linkVideo = useRef(null);
-
-	const handleModalOpenened = () => {
-		setIsTransparent(!isTransparent);
-		setIsAbsolute(!isAbsolute);
+	const handlePlayButton = () => {
+		setShowVideo(true);
+		const video = document.querySelector("#videoPlayer");
+		video && video.focus();
 	};
 
 	useEffect(() => {
@@ -206,21 +182,15 @@ const Hero = () => {
 	}, [widthWindow]);
 
 	return (
-		// <Layout
-		// 	isTransparent={isTransparent}
-		// 	isAbsolute={isAbsolute}
-		// 	isHome={true}
-		// 	isVisible={true}
-		// >
 		<HomeContainer>
 			<HomeBackground>
 				{width < 768 ? (
-					<img src={heroBackground} alt="site title" />
+					<img src={videoPoster} alt="site title" />
 				) : (
 					<video
 						controls={false}
 						type="video/mp4"
-						poster={heroBackground}
+						poster={videoPoster}
 						autoPlay
 						muted
 						loop
@@ -230,44 +200,29 @@ const Hero = () => {
 				)}
 			</HomeBackground>
 			<img id="instantFriendly" src={instantFriendly} alt="instant friendly" />
-			<HomeHeading>
-				<HomeHeadingTitle>
+			<HomeHeader>
+				<HomeTitle>
 					SILENT <span>DUAL</span>
-				</HomeHeadingTitle>
+				</HomeTitle>
 				<HomeSubtitle>
 					Los extractores de baño más inteligentes diseñados para una fácil
 					instalación.
 				</HomeSubtitle>
-			</HomeHeading>
+			</HomeHeader>
 			<HeroLinkDown to={"/#specs"}>Descúbrelas</HeroLinkDown>
-			<HomeHeadingLink ref={linkVideo}>
-				<img id="playButton" src={playButton} alt="play button" />
-				<ModalSmoothOpener
-					modalContainer={linkVideo}
-					handleModalOpenened={handleModalOpenened}
-					background="rgba(0, 0, 0, .8)"
-				>
-					{width < 768 ? (
-						<HomeHeadingVideo
-							src="video_home_extend.mp4"
-							controls={true}
-							type="video/mp4"
-							crossOrigin="anonymous"
-						></HomeHeadingVideo>
-					) : (
-						<HomeHeadingVideo
-							playsinline
-							controls={true}
-							type="video/mp4"
-							poster={heroBackground}
-						>
-							<source src="video_home_extend.mp4" type="video/mp4" />
-						</HomeHeadingVideo>
-					)}
-				</ModalSmoothOpener>
-			</HomeHeadingLink>
+			<img
+				id="playButton"
+				onClick={handlePlayButton}
+				src={playButton}
+				alt="play button"
+			/>
+			<VideoPlayer
+				width={width}
+				showVideo={showVideo}
+				video={Demovideo}
+				setShowVideo={setShowVideo}
+			/>
 		</HomeContainer>
-		// </Layout>
 	);
 };
 

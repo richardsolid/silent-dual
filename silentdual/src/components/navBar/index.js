@@ -17,7 +17,6 @@ import logo from "../../images/logo.svg";
 //Components
 import Burger from "./burgerIcon.js";
 
-
 const Navigator = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -60,7 +59,7 @@ const Bar = styled.div`
 	align-items: center;
 `;
 
-const SPLogo = styled(Link) `
+const SPLogo = styled(Link)`
 	display: flex;
 	color: ${colors.tertiary};
 	width: 50px;
@@ -145,17 +144,14 @@ const CollapsedItemsContainer = styled.div`
 
 //component:
 const NavBar = ({ data }) => {
-
 	const size = useWindowSize();
-	const navbar = data.navbar;
+	console.log(data);
 
 	const [width, setWidth] = useState(null);
 	const [viewNavItems, setViewNavItems] = useState(false);
 
 	useEffect(() => {
-
 		if (viewNavItems) {
-
 			TweenMax.to("#menu", 0.3, {
 				autoAlpha: 1
 			});
@@ -172,12 +168,9 @@ const NavBar = ({ data }) => {
 				delay: 0.1,
 				ease: Back.easeOut
 			});
-
 		} else {
-
 			TweenMax.to("#menu, .navItem", 0.3, {
 				autoAlpha: 0
-
 			});
 		}
 
@@ -188,7 +181,6 @@ const NavBar = ({ data }) => {
 	if (width < breakpoints.large)
 		return (
 			<Navigator>
-
 				<NavBarContainer isPhone>
 					<Wrapper>
 						<Row>
@@ -204,41 +196,40 @@ const NavBar = ({ data }) => {
 
 				<CollapsedMenu id="menu">
 					<CollapsedItemsContainer>
-						{navbar.map((section, i) => (
-							<Link
-								key={i}
-								to={section.anchor}
-								onClick={() => setViewNavItems(!viewNavItems)}
-								className="navItem"
-							>
-								{section.name}
-							</Link>
-						))}
+						{data &&
+							data.map((section, i) => (
+								<Link
+									key={i}
+									to={section.anchor}
+									onClick={() => setViewNavItems(false)}
+									className="navItem"
+								>
+									{section.name}
+								</Link>
+							))}
 					</CollapsedItemsContainer>
 				</CollapsedMenu>
-
 			</Navigator>
 		);
 
 	//items on navbar:
 	return (
 		<NavBarContainer>
-
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
 						<SPLogo to={"#hero"} />
 						<SectionsLinksBar>
-							{navbar.map((section, i) => (
-								<Link key={i} to={section.anchor}>
-									{section.name}
-								</Link>
-							))}
+							{data &&
+								data.map((section, i) => (
+									<Link key={i} to={section.anchor}>
+										{section.name}
+									</Link>
+								))}
 						</SectionsLinksBar>
 					</Column>
 				</Row>
 			</Wrapper>
-
 		</NavBarContainer>
 	);
 };

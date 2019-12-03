@@ -163,6 +163,7 @@ const ModalSmoothOpener = ({
 
 	useEffect(() => {
 		modal.current && openModal(modal.current);
+		// eslint-disable-next-line
 	}, [isShowing]);
 
 	return (

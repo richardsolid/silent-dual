@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { createGlobalStyle } from "styled-components";
 
 import variables from "../../assets/styles/variables";
@@ -32,16 +32,18 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Layout = ({ children }) => {
+	const { navbar, footer } = data;
+
 	return (
-		<>
+		<Fragment>
 			<GlobalStyle />
 
-			<NavBar data={data} />
+			<NavBar data={navbar} />
 
 			{children}
 
-			<Footer data={data} />
-		</>
+			<Footer data={footer} />
+		</Fragment>
 	);
 };
 
