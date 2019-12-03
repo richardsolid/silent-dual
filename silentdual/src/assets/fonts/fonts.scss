@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'DIN';
+  src: url('./din-light_eot.eot?#iefix') format('embedded-opentype'),  url('./din-light_woff.woff') format('woff'), url('./din-light_ttf.ttf')  format('truetype'), url('./din-light_svg.svg#din-light') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'DIN';
+  src: url('./din-regular_eot.eot?#iefix') format('embedded-opentype'),  url('./din-regular_woff.woff') format('woff'), url('./din-regular_ttf.ttf')  format('truetype'), url('./din-regular_svg.svg#din-regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'DIN';
+  src: url('./din-bold_eot.eot?#iefix') format('embedded-opentype'),  url('./din-bold_woff.woff') format('woff'), url('./din-bold_ttf.ttf') format('truetype'), url('./din-bold_svg.svg#din-bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
