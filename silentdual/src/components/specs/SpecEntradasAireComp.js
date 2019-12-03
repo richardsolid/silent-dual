@@ -1,7 +1,7 @@
 import React from "react";
-import SpecImg from "../../images/spec-sensores.png";
+import SpecImg from "../../images/spec-entradas-aire.png";
 import styled from "styled-components";
-import IconsPNG from "../../images/spec-sensores-icons.png";
+import IconsPNG from "../../images/spec-entradas-aire-icons.png";
 
 const Img = styled.img`
   max-width: 100%;
@@ -20,7 +20,7 @@ const Icons = styled.img`
 const SpecIcons = () => {
   return <Icons src={IconsPNG} alt="" />;
 };
-const SpecFuncionesComp = () => {
+const SpecEntradasAireComp = () => {
   return (
     <CompContainer>
       <Img src={SpecImg} alt="" />
@@ -29,4 +29,4 @@ const SpecFuncionesComp = () => {
   );
 };
 
-export default SpecFuncionesComp;
+export default SpecEntradasAireComp;

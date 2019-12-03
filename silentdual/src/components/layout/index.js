@@ -1,5 +1,5 @@
-import React from "react"
-import { createGlobalStyle } from "styled-components"
+import React from "react";
+import { createGlobalStyle } from "styled-components";
 
 import variables from "../../assets/styles/variables"
 
@@ -30,10 +30,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-`
+`;
 
 const Layout = ({ children }) => {
-
   return (
 
     <>
@@ -51,4 +50,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default Layout;
