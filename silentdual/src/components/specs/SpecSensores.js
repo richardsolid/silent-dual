@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-//import fonts from "../../fonts";
-//import colors from "../../colors";
-import Wrapper from "../grid/wrapper";
-import Row from "../grid/row";
-import Column from "../grid/column";
+import Row from "../../utils/grid/row";
+import Column from "../../utils/grid/column";
 
 const Title = styled.h3`
   width: 139px;

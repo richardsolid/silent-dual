@@ -1,14 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { createGlobalStyle } from "styled-components"
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import { createGlobalStyle } from "styled-components";
 
-import "../../assets/fonts/fonts.scss"
-import "./index.scss"
+import "../../assets/fonts/fonts.scss";
+import "./index.scss";
 
-import variables from "../../assets/styles/variables"
+import variables from "../../assets/styles/variables";
 
-import Header from "../../components/header"
+import Header from "../../components/header";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 24px;
   }
 
-`
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -34,21 +34,20 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
-
       <Header siteTitle={data.site.siteMetadata.title} />
 
       <GlobalStyle />
-
+      {children}
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Layout
+export default Layout;
