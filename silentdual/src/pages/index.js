@@ -1,24 +1,16 @@
-import React, { Fragment } from "react";
-import { Link } from "gatsby";
-
+import React from "react";
 import Layout from "../components/layout";
-import NavBar from "../components/navBar/index";
-import HeroVideo from "../components/home/index";
+import Specs from "../components/specs";
 
-import Wrapper from "../utils/grid/wrapper"
-import Row from "../utils/grid/row"
-import Column from "../utils/grid/column"
+import Wrapper from "../utils/grid/wrapper";
+//import Row from "../utils/grid/row"
+//import Column from "../utils/grid/column"
 
 const IndexPage = () => (
-
   <Layout>
-
-    <Wrapper>
-
-    </Wrapper>
-
+    <Wrapper></Wrapper>
+    <Specs />
   </Layout>
-
-)
+);
 
 export default IndexPage;
