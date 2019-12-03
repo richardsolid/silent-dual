@@ -3,13 +3,12 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 
-import "../assets/fonts/fonts.scss"
-import "../assets/styles/_font-sizes.scss"
+import "../../assets/fonts/fonts.scss"
 import "./index.scss"
 
-import variables from "../assets/styles/variables"
+import variables from "../../assets/styles/variables"
 
-import Header from "../components/header"
+import Header from "../../components/header"
 
 const GlobalStyle = createGlobalStyle`
 
