@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { createGlobalStyle } from "styled-components";
 
-import variables from "../../assets/styles/variables"
+import variables from "../../assets/styles/variables";
 
 //Assets
-import "../../assets/fonts/fonts.scss"
-import "./index.scss"
+import "../../assets/fonts/fonts.scss";
+import "./index.scss";
 
 //Data
 import data from "../../data";
 
 //Components
-import NavBar from "../navBar"
-import Footer from "../footer"
-
+import NavBar from "../navBar";
+import Footer from "../footer";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -26,32 +25,32 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${variables.din};
     font-size: 16px;
     line-height: 24px;
-    margin: 100px 0 0;
+    margin: 0;
     padding: 0;
-    overflow: ${({ modalIsOpen }) => modalIsOpen === true ? 'hidden' : 'inherit'};
-  }
+    overflow: ${({ modalIsOpen }) =>
+			modalIsOpen === true ? "hidden" : "inherit"};
+    };
+     max-width: 100vw;
+    overflow-x: hidden;
 
 `;
 
 const Layout = ({ children, modalIsOpen }) => {
+	const { navbar, footer } = data;
 
-  const [handleScroll, setHandleScroll] = useState(null);
+	const [handleScroll, setHandleScroll] = useState(null);
 
-  return (
+	return (
+		<Fragment>
+			<GlobalStyle modalIsOpen={handleScroll} />
 
-    <>
+			<NavBar modalIsOpen={setHandleScroll} data={navbar} />
 
-      <GlobalStyle modalIsOpen={handleScroll} />
+			{children}
 
-      <NavBar modalIsOpen={setHandleScroll} data={data} />
-
-      {children}
-
-      <Footer data={data} />
-
-    </>
-
-  )
-}
+			<Footer data={footer} />
+		</Fragment>
+	);
+};
 
 export default Layout;

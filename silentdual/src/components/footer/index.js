@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 
 //Utils
@@ -7,37 +7,32 @@ import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
 
 //Assets
-import variables from "../../assets/styles/variables"
+import variables from "../../assets/styles/variables";
 
 const FooterSection = styled.footer`
-  background: ${variables.secondary};
-  
-  color: white;
-  font-weight: bold;
+	background: ${variables.secondary};
 
-  p {
-    margin: 0 auto;
-    padding: 20px 0;
-  }
-`
+	color: white;
+	font-weight: bold;
+
+	p {
+		margin: 0 auto;
+		padding: 20px 0;
+	}
+`;
 
 const Footer = ({ data }) => {
+	return (
+		<FooterSection>
+			<Wrapper>
+				<Row>
+					<Column xs={12} className="bodySmall">
+						<p>{data}</p>
+					</Column>
+				</Row>
+			</Wrapper>
+		</FooterSection>
+	);
+};
 
-  return (
-    <FooterSection>
-
-      <Wrapper>
-        <Row>
-
-          <Column xs={12} className="bodySmall">
-            <p>{data.footer}</p>
-          </Column>
-
-        </Row>
-      </Wrapper>
-
-    </FooterSection>
-  )
-}
-
-export default Footer
+export default Footer;

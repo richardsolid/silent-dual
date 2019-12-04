@@ -2,27 +2,27 @@ const data = {
 	navbar: [
 		{
 			name: "Descúbrelo",
-			anchor: "/#descubrelo"
+			anchor: "#descubrelo"
 		},
 		{
 			name: "Características",
-			anchor: "/#caracteristicas"
+			anchor: "#caracteristicas"
 		},
 		{
 			name: "Componentes",
-			anchor: "/#componentes"
+			anchor: "#componentes"
 		},
 		{
 			name: "Instalación",
-			anchor: "/#instalación"
+			anchor: "#instalación"
 		},
 		{
 			name: "Modelos",
-			anchor: "/#modelos"
+			anchor: "#modelos"
 		},
 		{
 			name: "Contacta",
-			anchor: "/#contacta"
+			anchor: "#contacta"
 		}
 	],
 	descubrelo: [],
@@ -32,6 +32,6 @@ const data = {
 	modelos: [],
 	contacta: [],
 	footer: "© 2019 S&P Sistemas de Ventilación S.L.U."
-}
+};
 
 export default data;

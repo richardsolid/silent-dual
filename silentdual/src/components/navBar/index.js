@@ -21,6 +21,7 @@ const Navigator = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	background: black;
 `;
 
 const NavBarContainer = styled.header`
@@ -29,9 +30,7 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background-color: black;
-	color: white;
-
+	background: ${({ isOpen }) => (isOpen ? "transparent" : "black")};
 	top: 0;
 	width: 100vw;
 	height: 60px;
@@ -117,10 +116,9 @@ const CollapsedMenu = styled.div`
 	padding: 0;
 	position: fixed;
 	width: 100%;
-	top: 80px;
 	height: 100vh;
 	box-sizing: border-box;
-	z-index: 100;
+	z-index: 999;
 
 	overflow: hidden;
 
@@ -163,7 +161,6 @@ const CollapsedItemsContainer = styled.div`
 //component:
 const NavBar = ({ data, modalIsOpen }) => {
 	const size = useWindowSize();
-	const navbar = data.navbar;
 
 	const [width, setWidth] = useState(null);
 	const [viewNavItems, setViewNavItems] = useState(false);
@@ -228,7 +225,7 @@ const NavBar = ({ data, modalIsOpen }) => {
 	if (width < breakpoints.large)
 		return (
 			<Navigator>
-				<NavBarContainer ref={navBarContainer} isPhone>
+				<NavBarContainer ref={navBarContainer} isPhone isOpen={viewNavItems}>
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
@@ -249,16 +246,17 @@ const NavBar = ({ data, modalIsOpen }) => {
 						<Row>
 							<Column xs={12}>
 								<CollapsedItemsContainer>
-									{navbar.map((section, i) => (
-										<Link
-											key={i}
-											to={section.anchor}
-											onClick={() => setViewNavItems(!viewNavItems)}
-											className="navItem"
-										>
-											{section.name}
-										</Link>
-									))}
+									{data &&
+										data.map((section, i) => (
+											<Link
+												key={i}
+												to={section.anchor}
+												onClick={() => setViewNavItems(!viewNavItems)}
+												className="navItem"
+											>
+												{section.name}
+											</Link>
+										))}
 								</CollapsedItemsContainer>
 							</Column>
 						</Row>
@@ -275,11 +273,12 @@ const NavBar = ({ data, modalIsOpen }) => {
 					<Column xs={12}>
 						<SPLogo ref={logoContainer} to={"#hero"} />
 						<SectionsLinksBar>
-							{navbar.map((section, i) => (
-								<Link key={i} to={section.anchor} className="bodySmall">
-									{section.name}
-								</Link>
-							))}
+							{data &&
+								data.map((section, i) => (
+									<Link key={i} to={section.anchor} className="bodySmall">
+										{section.name}
+									</Link>
+								))}
 						</SectionsLinksBar>
 					</Column>
 				</Row>
