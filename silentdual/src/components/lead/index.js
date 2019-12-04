@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
+
+//utils:
+import useWindowSize from "../../utils/useWindowSize";
 
 //grid:
 import Wrapper from "../../utils/grid/wrapper";
@@ -27,6 +30,7 @@ const LeadSection = styled.section`
 	background-color: gray;
 	position: relative;
 	color: white;
+	overflow: hidden;
 
 	img {
 		object-fit: cover;
@@ -35,7 +39,6 @@ const LeadSection = styled.section`
 		bottom: 0;
 		left: 0;
 		right: 0;
-		top: 0;
 		height: 100vh;
 		width: 100vw;
 
@@ -48,16 +51,20 @@ const LeadSection = styled.section`
 
 		&.leg {
 			z-index: 2;
-			transform: scale(1.5);
+			left: -3%;
+			bottom: 6%;
 		}
 
 		&.head {
 			z-index: 1;
+			bottom: 7%;
+			left: 9%;
 		}
 
 		&.bath {
-			transform: scale(1.5);
 			z-index: 3;
+			bottom: 20%;
+			left: 14%;
 		}
 	}
 
@@ -79,6 +86,7 @@ const LeadSection = styled.section`
 
 const BackgroundImage = styled.img`
 	z-index: 0;
+	top: 0 !important;
 `;
 
 const Description = styled.h2`
@@ -96,50 +104,78 @@ const Description = styled.h2`
 `;
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
-const legtrans = (x, y) => `translate3d(${x / 10}px,${y / 100}px,0)`;
-const headtrans = (x, y) => `translate3d(${x / 10}px,${y / 50}px,0)`;
-const bathtrans = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
+const legtrans = (x, y) => `translate3d(${x / 20}px,${y / 10}px,0) scale(1.1)`;
+const headtrans = (x, y) => `translate3d(${x / 25}px,${y / 50}px,0) scale(1.4)`;
+const bathtrans = (x, y) => `translate3d(${x / 20}px,${y / 80}px,0) scale(1.5)`;
 
 const Lead = () => {
+	const widthWindow = useWindowSize();
+
 	const { lead } = data;
+
+	const [width, setWidth] = useState(null);
+
+	useEffect(() => {
+		setWidth(widthWindow.width);
+	}, [widthWindow]);
 
 	const [props, set] = useSpring(() => ({
 		xy: [0, 0],
 		config: { mass: 10, tension: 550, friction: 140 }
 	}));
 
-	return (
-		<LeadSection
-			onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-		>
-			<BackgroundImage src={BackgroundImg} alt="background" />
-			<animated.img
-				class="leg"
-				style={{ transform: props.xy.interpolate(legtrans) }}
-				src={LegImg}
-				alt="leg"
-			/>
-			<animated.img
-				class="head"
-				src={HeadImg}
-				alt="head"
-				style={{ transform: props.xy.interpolate(headtrans) }}
-			/>
-			<animated.img
-				class="bath"
-				src={BathImg}
-				alt="bath"
-				style={{ transform: props.xy.interpolate(bathtrans) }}
-			/>
-			<Wrapper>
-				<Row>
-					<Column xs={12}>
-						<Description>{lead.description}</Description>
-					</Column>
-				</Row>
-			</Wrapper>
-		</LeadSection>
-	);
+	if (width && typeof width === "number") {
+		if (width > breakpoints.large) {
+			return (
+				<LeadSection
+					onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+				>
+					<BackgroundImage src={BackgroundImg} alt="background" />
+
+					<animated.img
+						className="leg"
+						src={LegImg}
+						alt="leg"
+						style={{ transform: props.xy.interpolate(legtrans) }}
+					/>
+					<animated.img
+						className="head"
+						src={HeadImg}
+						alt="head"
+						style={{ transform: props.xy.interpolate(headtrans) }}
+					/>
+					<animated.img
+						className="bath"
+						src={BathImg}
+						alt="bath"
+						style={{ transform: props.xy.interpolate(bathtrans) }}
+					/>
+
+					<Wrapper>
+						<Row>
+							<Column xs={12}>
+								<Description>{lead.description}</Description>
+							</Column>
+						</Row>
+					</Wrapper>
+				</LeadSection>
+			);
+		} else {
+			return (
+				<LeadSection>
+					<BackgroundImage src={BackgroundImg} alt="background" />
+					<Wrapper>
+						<Row>
+							<Column xs={12}>
+								<Description>{lead.description}</Description>
+							</Column>
+						</Row>
+					</Wrapper>
+				</LeadSection>
+			);
+		}
+	}
+	return <div>loading...</div>;
 };
 
 export default Lead;
