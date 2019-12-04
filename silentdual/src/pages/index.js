@@ -1,7 +1,10 @@
 import React from "react";
+
+//components:
 import Layout from "../components/layout";
-import Specs from "../components/specs";
 import Hero from "../components/hero";
+import Specs from "../components/specs";
+import Modelos from "../components/modelos";
 
 import Wrapper from "../utils/grid/wrapper";
 //import Row from "../utils/grid/row"
@@ -12,6 +15,7 @@ const IndexPage = () => (
 		<Hero />
 		<Wrapper>
 			<Specs />
+			<Modelos />
 		</Wrapper>
 	</Layout>
 );

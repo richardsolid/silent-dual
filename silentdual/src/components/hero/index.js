@@ -217,12 +217,10 @@ const Hero = () => {
 	const widthWindow = useWindowSize();
 
 	const [width, setWidth] = useState(null);
-	const [showVideo, setShowVideo] = useState(null);
+	const [showVideo, setShowVideo] = useState(false);
 
 	const handlePlayButton = () => {
 		setShowVideo(true);
-		const video = document.querySelector("#videoPlayer");
-		video && video.focus();
 	};
 
 	useEffect(() => {

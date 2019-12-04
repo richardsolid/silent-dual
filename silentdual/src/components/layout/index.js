@@ -29,8 +29,16 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     overflow: ${({ modalIsOpen }) =>
 			modalIsOpen === true ? "hidden" : "inherit"};
+    
+    overflow: inherit;
+
     };
-     max-width: 100vw;
+    
+    &.scrollDisabled {
+      overflow: hidden;
+    }
+    
+    max-width: 100vw;
     overflow-x: hidden;
 
 `;
