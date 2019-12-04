@@ -55,23 +55,31 @@ const CloseButton = styled.span`
 `;
 
 const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
+	const scrollWorking = () => {
+		document.getElementsByTagName("body")[0].classList.toggle("scrollDisabled");
+	};
+
 	const showingVideo = () => {
 		gsap.to("#" + id, {
 			duration: 1,
-			ease: "expo.out",
-			autoAlpha: 1
+			opacity: 1,
+			visibility: "visible"
 		});
-		document.getElementsByTagName("html")[0].style.overflow = "hidden";
+		scrollWorking();
 	};
 
 	const closingVideo = () => {
 		gsap.to("#" + id, {
 			duration: 1,
-			ease: "expo.out",
-			autoAlpha: 0
+			opacity: 0,
+			visibility: "hidden"
 		});
-		document.getElementsByTagName("html")[0].style.overflow = "auto";
+		scrollWorking();
 	};
+
+	useEffect(() => {
+		document.getElementsByTagName("body")[0].classList.add("scrollDisabled");
+	}, []);
 
 	useEffect(() => {
 		showVideo ? showingVideo() : closingVideo();
@@ -94,7 +102,6 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 						controls={true}
 						type="video/mp4"
 						crossOrigin="anonymous"
-						autoPlay
 						muted
 					>
 						{!isPhoneSize && <source src={video} type="video/mp4" />}
