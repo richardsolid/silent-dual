@@ -10,7 +10,7 @@ const Background = styled.span`
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.9);
 	top: 0;
 	z-index: 10000;
 	display: flex;
@@ -75,7 +75,7 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 
 	useEffect(() => {
 		showVideo ? showingVideo() : closingVideo();
-	}, [showVideo]);
+	});
 
 	const closePlayer = () => {
 		setShowVideo(false);
