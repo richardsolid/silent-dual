@@ -17,6 +17,12 @@ import Demovideo from "../../videos/demovideo.mp4";
 //styles:
 // import variables from "../../assets/styles/variables";
 
+//Utils
+import Wrapper from "../../utils/grid/wrapper";
+import Row from "../../utils/grid/row";
+import Column from "../../utils/grid/column";
+
+//components:
 import VideoPlayer from "./videoPlayer";
 
 const HomeContainer = styled.section`
@@ -25,47 +31,18 @@ const HomeContainer = styled.section`
 	justify-content: center;
 	align-items: center;
 	flex: 1;
-	height: 90vh;
+	/* height: calc(100vh - 60px); */
+	height: 100vh;
 	width: 100%;
 	position: relative;
 	color: white;
-
-	#instantFriendly,
-	#playButton {
-		position: absolute;
-		z-index: 15;
-		top: 25vh;
-	}
-
-	#playButton {
-		top: 70vh;
-		cursor: pointer;
-		&:hover {
-			opacity: 0.9;
-		}
-	}
-`;
-
-const HomeHeader = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	position: absolute;
-	z-index: 1;
-	text-align: center;
-
-	@media screen and (min-width: 768px) {
-		height: initial;
-		position: absolute;
-	}
 `;
 
 const HomeBackground = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 	height: 100vh;
 	width: 100vw;
@@ -78,6 +55,8 @@ const HomeBackground = styled.div`
 		right: 0;
 		top: 0;
 		z-index: 1;
+		height: 100vh;
+		width: 100vw;
 
 		background-color: #000;
 		opacity: 0.6;
@@ -102,22 +81,93 @@ const HomeBackground = styled.div`
 	}
 `;
 
-const HomeTitle = styled.h1`
-	color: white;
-	font-size: 48px;
-	font-weight: 700;
-	letter-spacing: -0.7px;
-	line-height: 1.13;
-	margin: -40px 0 0;
+const HeroContent = styled.div`
+	position: absolute;
+	width: calc(100% - 60px);
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
 
 	@media screen and (min-width: 768px) {
-		font-size: 100px;
-		letter-spacing: -0.62px;
-		line-height: 80px;
+		max-width: 50%;
 	}
 `;
 
-const HomeSubtitle = styled.h2``;
+const InstantFriendly = styled.img`
+	z-index: 2;
+	top: 75px;
+	height: 80px;
+	width: 70px;
+
+	@media screen and (min-width: 768px) {
+		height: 115px;
+		width: 100px;
+	}
+`;
+
+const HomeHeader = styled.div`
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	z-index: 2;
+	max-width: calc(100% - 60px);
+	margin: 0 auto;
+
+	@media screen and (min-width: 768px) {
+		height: initial;
+	}
+`;
+
+const HomeTitle = styled.h1`
+	margin: 0 auto 20px;
+	font-size: 57px;
+	letter-spacing: -1.02px;
+	line-height: 64px;
+	font-weight: bold;
+
+	span {
+		font-weight: normal;
+	}
+
+	@media screen and (min-width: 768px) {
+		font-size: 69px;
+		letter-spacing: -0.58px;
+		line-height: 78px;
+	}
+`;
+
+const HomeSubtitle = styled.h2`
+	font-size: 23px;
+	letter-spacing: 0px;
+	line-height: 29px;
+	font-weight: bold;
+	margin: 0 auto;
+
+	@media screen and (min-width: 768px) {
+		font-size: 33px;
+		letter-spacing: 0px;
+		line-height: 39px;
+	}
+`;
+
+const PlayButton = styled.img`
+	z-index: 2;
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+	top: 75vh;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	@media screen and (min-width: 768px) {
+		height: 60px;
+		width: 60px;
+	}
+`;
 
 const HeroLinkDown = styled(Link)`
 	color: white;
@@ -130,7 +180,6 @@ const HeroLinkDown = styled(Link)`
 	display: block;
 	padding-bottom: 40px;
 	z-index: 100;
-	background: black;
 
 	::after {
 		content: "";
@@ -195,23 +244,25 @@ const Hero = () => {
 					</video>
 				)}
 			</HomeBackground>
-			<img id="instantFriendly" src={instantFriendly} alt="instant friendly" />
-			<HomeHeader>
-				<HomeTitle>
-					SILENT <span>DUAL</span>
-				</HomeTitle>
-				<HomeSubtitle>
-					Los extractores de baño más inteligentes diseñados para una fácil
-					instalación.
-				</HomeSubtitle>
-			</HomeHeader>
+			<HeroContent>
+				<InstantFriendly src={instantFriendly} alt="instant friendly" />
+				<HomeHeader>
+					<HomeTitle>
+						SILENT <span>DUAL</span>
+					</HomeTitle>
+					<HomeSubtitle>
+						Los extractores de baño más inteligentes diseñados para una fácil
+						instalación.
+					</HomeSubtitle>
+				</HomeHeader>
+				<PlayButton
+					onClick={handlePlayButton}
+					src={playButton}
+					alt="play button"
+				/>
+			</HeroContent>
+
 			<HeroLinkDown to={"/#specs"}>Descúbrelas</HeroLinkDown>
-			<img
-				id="playButton"
-				onClick={handlePlayButton}
-				src={playButton}
-				alt="play button"
-			/>
 			<VideoPlayer
 				width={width}
 				showVideo={showVideo}

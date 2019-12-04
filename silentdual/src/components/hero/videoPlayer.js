@@ -7,10 +7,13 @@ import videoPoster from "../../images/video_poster.jpg";
 import crossIcon from "../../images/cross.svg";
 
 const Background = styled.span`
-	position: relative;
+	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	background: rgba(0, 0, 0, 0.4);
+	top: 0;
+	z-index: 10000;
+	display: flex;
 
 	opacity: 0;
 	visibility: hidden;
@@ -18,36 +21,30 @@ const Background = styled.span`
 	video[poster] {
 		object-fit: cover;
 	}
-
-	@media screen and (min-width: 768px) {
-		position: relative;
-		top: initial;
-		margin-bottom: auto;
-	}
 `;
 
 const VideoContainer = styled.div`
 	position: relative;
-	display: flex;
-	margin: 50px auto;
+	margin: auto;
 	max-width: 800px;
 	width: 100%;
 	z-index: 2000;
+	display: flex;
+	align-items: center;
 `;
 
 const HomeVideo = styled.video`
-	position: absolute;
+	position: relative;
 	width: inherit;
 `;
 
 const CloseButton = styled.span`
 	position: absolute;
-	right: 20px;
-	top: 20px;
+	right: 8px;
+	top: 8px;
 	width: 20px;
 	height: 20px;
 	z-index: 10000;
-	background: yellow;
 	background: url(${crossIcon}) no-repeat center center;
 	background-size: 100%;
 	cursor: pointer;
@@ -58,18 +55,26 @@ const CloseButton = styled.span`
 `;
 
 const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
+	const showingVideo = () => {
+		gsap.to("#videoPlayer", {
+			duration: 1,
+			ease: "expo.out",
+			autoAlpha: 1
+		});
+		document.getElementsByTagName("html")[0].style.overflow = "hidden";
+	};
+
+	const closingVideo = () => {
+		gsap.to("#videoPlayer", {
+			duration: 1,
+			ease: "expo.out",
+			autoAlpha: 0
+		});
+		document.getElementsByTagName("html")[0].style.overflow = "auto";
+	};
+
 	useEffect(() => {
-		showVideo
-			? gsap.to("#videoPlayer", 0, {
-					duration: 1,
-					// ease: "expo.out",
-					autoAlpha: 1
-			  })
-			: gsap.to("#videoPlayer", 0, {
-					duration: 0.6,
-					// ease: "expo.out",
-					autoAlpha: 0
-			  });
+		showVideo ? showingVideo() : closingVideo();
 	}, [showVideo]);
 
 	const closePlayer = () => {
