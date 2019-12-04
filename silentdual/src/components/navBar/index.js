@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { TweenMax, Back } from "gsap";
@@ -30,17 +30,26 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background: black;
-	color: white;
-
+	background: ${({ isOpen }) => (isOpen ? "transparent" : "black")};
 	top: 0;
 	width: 100vw;
 	height: 60px;
 	box-sizing: border-box;
 	z-index: 1000;
 
+	transition: 0.2s;
+
+	&.onTop {
+		background-color: transparent;
+		height: 80px;
+	}
+
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: 110px;
+		height: 80px;
+
+		&.onTop {
+			height: 100px;
+		}
 	}
 `;
 
@@ -52,14 +61,24 @@ const SPLogo = styled(Link)`
 	width: 40px;
 	height: 40px;
 
+	transition: 0.2s;
+
+	&.onTop {
+		width: 60px;
+		height: 60px;
+	}
+
 	opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
 	visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
 
-	transition: 0.2s;
-
 	@media screen and (min-width: ${breakpoints.large}px) {
-		width: 70px;
-		height: 70px;
+		width: 50px;
+		height: 50px;
+
+		&.onTop {
+			width: 70px;
+			height: 40px;
+		}
 	}
 `;
 
@@ -73,6 +92,8 @@ const SectionsLinksBar = styled.div`
 		text-decoration: none;
 		color: white;
 		opacity: 1;
+
+		font-weight: bold;
 
 		transition: all 0.4s ease;
 
@@ -95,10 +116,9 @@ const CollapsedMenu = styled.div`
 	padding: 0;
 	position: fixed;
 	width: 100%;
-	top: 80px;
 	height: 100vh;
 	box-sizing: border-box;
-	z-index: 100;
+	z-index: 999;
 
 	overflow: hidden;
 
@@ -145,6 +165,9 @@ const NavBar = ({ data, modalIsOpen }) => {
 	const [width, setWidth] = useState(null);
 	const [viewNavItems, setViewNavItems] = useState(false);
 
+	const navBarContainer = useRef(null);
+	const logoContainer = useRef(null);
+
 	const handleBurgerClick = () => {
 		setViewNavItems(!viewNavItems);
 		modalIsOpen(!viewNavItems);
@@ -155,13 +178,6 @@ const NavBar = ({ data, modalIsOpen }) => {
 			TweenMax.to("#menu", 0.3, {
 				autoAlpha: 1
 			});
-
-			// TweenMax.staggerTo(
-			// 	".navItem",
-			// 	0.5,
-			// 	{ autoAlpha: 1, delay: 0.1, ease: Back.easeOut },
-			// 	0.1
-			// );
 
 			TweenMax.to(".navItem", 0.5, {
 				autoAlpha: 1,
@@ -177,15 +193,44 @@ const NavBar = ({ data, modalIsOpen }) => {
 		setWidth(size.width);
 	}, [viewNavItems, size]);
 
+	const windowIsOnTop = () => {
+		if (window.pageYOffset !== 0) {
+			return false;
+		} else {
+			return true;
+		}
+	};
+
+	useEffect(() => {
+		navBarContainer && navBarContainer.current.classList.add("onTop");
+		logoContainer && logoContainer.current.classList.add("onTop");
+
+		if (typeof window !== "undefined") {
+			window.addEventListener("scroll", () => {
+				if (windowIsOnTop() === true) {
+					navBarContainer.current.classList.add("onTop");
+					logoContainer.current.classList.add("onTop");
+				} else {
+					navBarContainer.current.classList.contains("onTop") &&
+						navBarContainer.current.classList.remove("onTop");
+					logoContainer.current.classList.contains("onTop") &&
+						logoContainer.current.classList.remove("onTop");
+				}
+			});
+		}
+		return () => window.removeEventListener("scroll", windowIsOnTop);
+	}, []);
+
 	//collapsed menu:
 	if (width < breakpoints.large)
 		return (
 			<Navigator>
-				<NavBarContainer isPhone>
+				<NavBarContainer ref={navBarContainer} isPhone isOpen={viewNavItems}>
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
 								<SPLogo
+									ref={logoContainer}
 									isOpen={viewNavItems}
 									to={"#hero"}
 									onClick={() => setViewNavItems(false)}
@@ -222,15 +267,15 @@ const NavBar = ({ data, modalIsOpen }) => {
 
 	//items on navbar:
 	return (
-		<NavBarContainer>
+		<NavBarContainer ref={navBarContainer}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<SPLogo to={"#hero"} />
+						<SPLogo ref={logoContainer} to={"#hero"} />
 						<SectionsLinksBar>
 							{data &&
 								data.map((section, i) => (
-									<Link key={i} to={section.anchor}>
+									<Link key={i} to={section.anchor} className="bodySmall">
 										{section.name}
 									</Link>
 								))}

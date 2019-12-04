@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${variables.din};
     font-size: 16px;
     line-height: 24px;
-    margin: 100px 0 0;
+    margin: 0;
     padding: 0;
     overflow: ${({ modalIsOpen }) =>
 			modalIsOpen === true ? "hidden" : "inherit"};
@@ -50,7 +50,7 @@ const Layout = ({ children, modalIsOpen }) => {
 
 	return (
 		<Fragment>
-			<GlobalStyle modalIsOpen={modalIsOpen} />
+			<GlobalStyle modalIsOpen={handleScroll} />
 
 			<NavBar modalIsOpen={setHandleScroll} data={navbar} />
 

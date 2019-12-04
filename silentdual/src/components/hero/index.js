@@ -18,7 +18,7 @@ import Demovideo from "../../videos/demovideo.mp4";
 // import variables from "../../assets/styles/variables";
 
 //components:
-import VideoPlayer from "./videoPlayer";
+import VideoPlayer from "../videoPlayer";
 
 const HomeContainer = styled.section`
 	display: flex;
@@ -128,7 +128,7 @@ const HomeTitle = styled.h1`
 	font-size: 57px;
 	letter-spacing: -1.02px;
 	line-height: 64px;
-	font-weight: bold;
+	font-family: DINBold;
 
 	span {
 		font-weight: normal;
@@ -145,7 +145,7 @@ const HomeSubtitle = styled.h2`
 	font-size: 23px;
 	letter-spacing: 0px;
 	line-height: 29px;
-	font-weight: bold;
+	font-family: DINBold;
 	margin: 0 auto;
 
 	@media screen and (min-width: 768px) {
@@ -176,7 +176,7 @@ const HeroLinkDown = styled(Link)`
 	color: white;
 	text-decoration: none;
 	font-size: 14px;
-	font-weight: bold;
+	font-family: DINBold;
 	line-height: 21px;
 	position: absolute;
 	bottom: 0;
@@ -265,6 +265,7 @@ const Hero = () => {
 
 			<HeroLinkDown to={"/#specs"}>Descúbrelas</HeroLinkDown>
 			<VideoPlayer
+				id="videoPlayer"
 				width={width}
 				showVideo={showVideo}
 				video={Demovideo}

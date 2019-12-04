@@ -2,29 +2,33 @@ const data = {
 	navbar: [
 		{
 			name: "Descúbrelo",
-			anchor: "/#descubrelo"
+			anchor: "#descubrelo"
 		},
 		{
 			name: "Características",
-			anchor: "/#caracteristicas"
+			anchor: "#caracteristicas"
 		},
 		{
 			name: "Componentes",
-			anchor: "/#componentes"
+			anchor: "#componentes"
 		},
 		{
 			name: "Instalación",
-			anchor: "/#instalación"
+			anchor: "#instalación"
 		},
 		{
 			name: "Modelos",
-			anchor: "/#modelos"
+			anchor: "#modelos"
 		},
 		{
 			name: "Contacta",
-			anchor: "/#contacta"
+			anchor: "#contacta"
 		}
 	],
+	lead: {
+		description:
+			"Silent Dual, la nueva generación de extractores de baño inteligentes que se autoajustan para crear un ambiente óptimo."
+	},
 	descubrelo: [],
 	caracteristicas: [],
 	componentes: [],

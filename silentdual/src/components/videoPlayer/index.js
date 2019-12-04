@@ -10,7 +10,7 @@ const Background = styled.span`
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.9);
 	top: 0;
 	z-index: 10000;
 	display: flex;
@@ -54,13 +54,13 @@ const CloseButton = styled.span`
 	}
 `;
 
-const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
+const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 	const scrollWorking = () => {
 		document.getElementsByTagName("body")[0].classList.toggle("scrollDisabled");
 	};
 
 	const showingVideo = () => {
-		gsap.to("#videoPlayer", {
+		gsap.to("#" + id, {
 			duration: 1,
 			opacity: 1,
 			visibility: "visible"
@@ -69,7 +69,7 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
 	};
 
 	const closingVideo = () => {
-		gsap.to("#videoPlayer", {
+		gsap.to("#" + id, {
 			duration: 1,
 			opacity: 0,
 			visibility: "hidden"
@@ -83,7 +83,7 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
 
 	useEffect(() => {
 		showVideo ? showingVideo() : closingVideo();
-	}, [showVideo]);
+	});
 
 	const closePlayer = () => {
 		setShowVideo(false);
@@ -93,7 +93,7 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
 
 	if (showVideo)
 		return (
-			<Background id={"videoPlayer"}>
+			<Background id={id}>
 				<VideoContainer>
 					<HomeVideo
 						src={video}
