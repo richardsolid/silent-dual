@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { useSpring, animated as a } from "react-spring" 
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
 import SpecSensorComp from "./SpecSensoresComp";
 
-const Title = styled.h3`
+const Title = styled(a.h3)`
   width: 139px;
   height: 34px;
   color: rgb(0, 0, 0);
@@ -35,13 +36,29 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const SpecSensor = () => {
+
+const Container = styled.div`
+  position: fixed;
+  top: 40%;
+`
+
+const SpecSensores = ({ratio}) => {
+
+  const titleProps = useSpring({
+    from: {
+      opacity: 0, 
+    },
+    to: {
+      opacity: (ratio - 0.1) * 8 || 0,
+    },
+  })
+
   return (
-    <section id="specs">
+    <Container>
       <Row>
         <Column xs={12} md={6}>
           <Info>
-            <Title>2 sensores</Title>
+            <Title style={titleProps}>2 sensores</Title>
             <Subtitle>Presencia y humedad</Subtitle>
             <Description>
               Sensores de presencia y humedad, se activa automáticamente cuando
@@ -54,8 +71,8 @@ const SpecSensor = () => {
           <SpecSensorComp />
         </Column>
       </Row>
-    </section>
+    </Container>
   );
 };
 
-export default SpecSensor;
+export default SpecSensores;
