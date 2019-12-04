@@ -54,9 +54,9 @@ const CloseButton = styled.span`
 	}
 `;
 
-const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
+const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 	const showingVideo = () => {
-		gsap.to("#videoPlayer", {
+		gsap.to("#" + id, {
 			duration: 1,
 			ease: "expo.out",
 			autoAlpha: 1
@@ -65,7 +65,7 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
 	};
 
 	const closingVideo = () => {
-		gsap.to("#videoPlayer", {
+		gsap.to("#" + id, {
 			duration: 1,
 			ease: "expo.out",
 			autoAlpha: 0
@@ -85,7 +85,7 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo }) => {
 
 	if (showVideo)
 		return (
-			<Background id={"videoPlayer"}>
+			<Background id={id}>
 				<VideoContainer>
 					<HomeVideo
 						src={video}

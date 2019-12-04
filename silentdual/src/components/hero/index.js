@@ -18,7 +18,7 @@ import Demovideo from "../../videos/demovideo.mp4";
 // import variables from "../../assets/styles/variables";
 
 //components:
-import VideoPlayer from "./videoPlayer";
+import VideoPlayer from "../videoPlayer";
 
 const HomeContainer = styled.section`
 	display: flex;
@@ -267,6 +267,7 @@ const Hero = () => {
 
 			<HeroLinkDown to={"/#specs"}>Descúbrelas</HeroLinkDown>
 			<VideoPlayer
+				id="videoPlayer"
 				width={width}
 				showVideo={showVideo}
 				video={Demovideo}

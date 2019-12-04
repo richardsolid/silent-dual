@@ -2,17 +2,13 @@ import React from "react";
 import Layout from "../components/layout";
 import Specs from "../components/specs";
 import Hero from "../components/hero";
-
-import Wrapper from "../utils/grid/wrapper";
-//import Row from "../utils/grid/row"
-//import Column from "../utils/grid/column"
+import InstallSection from "../components/installSection";
 
 const IndexPage = () => (
 	<Layout className="layout" style={{ width: "100vw" }}>
 		<Hero />
-		<Wrapper>
-			<Specs />
-		</Wrapper>
+		<Specs />
+		<InstallSection />
 	</Layout>
 );
 
