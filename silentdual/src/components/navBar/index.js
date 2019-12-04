@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { TweenMax, Back } from "gsap";
@@ -17,11 +17,11 @@ import logo from "../../images/logo.svg";
 //Components
 import Burger from "./burgerIcon.js";
 
-
 const Navigator = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	background: black;
 `;
 
 const NavBarContainer = styled.header`
@@ -30,21 +30,30 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background-color: transparent;
-	color: white;
-
+	background: ${({ isOpen }) => (isOpen ? "transparent" : "black")};
 	top: 0;
 	width: 100vw;
 	height: 60px;
 	box-sizing: border-box;
 	z-index: 1000;
-	
+
+	transition: 0.2s;
+
+	&.onTop {
+		background-color: transparent;
+		height: 80px;
+	}
+
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: 110px;
+		height: 80px;
+
+		&.onTop {
+			height: 100px;
+		}
 	}
 `;
 
-const SPLogo = styled(Link) `
+const SPLogo = styled(Link)`
 	display: flex;
 	background: url(${logo}) no-repeat center center;
 	background-size: contain;
@@ -52,14 +61,24 @@ const SPLogo = styled(Link) `
 	width: 40px;
 	height: 40px;
 
-	opacity: ${({ isOpen }) => isOpen ? 0 : 1};
-	visibility:  ${({ isOpen }) => isOpen ? 'hidden' : 'visible'};
+	transition: 0.2s;
 
-	transition: .2s;
-	
+	&.onTop {
+		width: 60px;
+		height: 60px;
+	}
+
+	opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
+	visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
+
 	@media screen and (min-width: ${breakpoints.large}px) {
-		width: 70px;
-		height: 70px;
+		width: 50px;
+		height: 50px;
+
+		&.onTop {
+			width: 70px;
+			height: 40px;
+		}
 	}
 `;
 
@@ -74,10 +93,12 @@ const SectionsLinksBar = styled.div`
 		color: white;
 		opacity: 1;
 
+		font-weight: bold;
+
 		transition: all 0.4s ease;
 
 		&:hover {
-			opacity: .8;
+			opacity: 0.8;
 		}
 
 		& + a {
@@ -95,10 +116,9 @@ const CollapsedMenu = styled.div`
 	padding: 0;
 	position: fixed;
 	width: 100%;
-	top: 80px;
 	height: 100vh;
 	box-sizing: border-box;
-	z-index: 100;
+	z-index: 999;
 
 	overflow: hidden;
 
@@ -140,117 +160,129 @@ const CollapsedItemsContainer = styled.div`
 
 //component:
 const NavBar = ({ data, modalIsOpen }) => {
-
 	const size = useWindowSize();
-	const navbar = data.navbar;
 
 	const [width, setWidth] = useState(null);
 	const [viewNavItems, setViewNavItems] = useState(false);
 
+	const navBarContainer = useRef(null);
+	const logoContainer = useRef(null);
+
 	const handleBurgerClick = () => {
-		setViewNavItems(!viewNavItems)
-		modalIsOpen(!viewNavItems)
-	}
+		setViewNavItems(!viewNavItems);
+		modalIsOpen(!viewNavItems);
+	};
 
 	useEffect(() => {
-
 		if (viewNavItems) {
-
 			TweenMax.to("#menu", 0.3, {
 				autoAlpha: 1
 			});
-
-			// TweenMax.staggerTo(
-			// 	".navItem",
-			// 	0.5,
-			// 	{ autoAlpha: 1, delay: 0.1, ease: Back.easeOut },
-			// 	0.1
-			// );
 
 			TweenMax.to(".navItem", 0.5, {
 				autoAlpha: 1,
 				delay: 0.1,
 				ease: Back.easeOut
 			});
-
 		} else {
-
 			TweenMax.to("#menu, .navItem", 0.3, {
 				autoAlpha: 0
-
 			});
 		}
 
 		setWidth(size.width);
 	}, [viewNavItems, size]);
 
+	const windowIsOnTop = () => {
+		if (window.pageYOffset !== 0) {
+			return false;
+		} else {
+			return true;
+		}
+	};
+
+	useEffect(() => {
+		navBarContainer && navBarContainer.current.classList.add("onTop");
+		logoContainer && logoContainer.current.classList.add("onTop");
+
+		if (typeof window !== "undefined") {
+			window.addEventListener("scroll", () => {
+				if (windowIsOnTop() === true) {
+					navBarContainer.current.classList.add("onTop");
+					logoContainer.current.classList.add("onTop");
+				} else {
+					navBarContainer.current.classList.contains("onTop") &&
+						navBarContainer.current.classList.remove("onTop");
+					logoContainer.current.classList.contains("onTop") &&
+						logoContainer.current.classList.remove("onTop");
+				}
+			});
+		}
+		return () => window.removeEventListener("scroll", windowIsOnTop);
+	}, []);
+
 	//collapsed menu:
 	if (width < breakpoints.large)
 		return (
 			<Navigator>
-
-				<NavBarContainer isPhone>
+				<NavBarContainer ref={navBarContainer} isPhone isOpen={viewNavItems}>
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
-
-								<SPLogo isOpen={viewNavItems} to={"#hero"} onClick={() => setViewNavItems(false)} />
+								<SPLogo
+									ref={logoContainer}
+									isOpen={viewNavItems}
+									to={"#hero"}
+									onClick={() => setViewNavItems(false)}
+								/>
 								<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
-
 							</Column>
 						</Row>
 					</Wrapper>
 				</NavBarContainer>
 
 				<CollapsedMenu id="menu">
-
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
-
 								<CollapsedItemsContainer>
-									{navbar.map((section, i) => (
-										<Link
-											key={i}
-											to={section.anchor}
-											onClick={() => setViewNavItems(!viewNavItems)}
-											className="navItem"
-										>
-											{section.name}
-										</Link>
-									))}
+									{data &&
+										data.map((section, i) => (
+											<Link
+												key={i}
+												to={section.anchor}
+												onClick={() => setViewNavItems(!viewNavItems)}
+												className="navItem"
+											>
+												{section.name}
+											</Link>
+										))}
 								</CollapsedItemsContainer>
-
 							</Column>
 						</Row>
 					</Wrapper>
-
 				</CollapsedMenu>
-
 			</Navigator>
 		);
 
 	//items on navbar:
 	return (
-		<NavBarContainer>
-
+		<NavBarContainer ref={navBarContainer}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-
-						<SPLogo to={"#hero"} />
+						<SPLogo ref={logoContainer} to={"#hero"} />
 						<SectionsLinksBar>
-							{navbar.map((section, i) => (
-								<Link key={i} to={section.anchor}>
-									{section.name}
-								</Link>
-							))}
+							{data &&
+								data.map((section, i) => (
+									<Link key={i} to={section.anchor} className="bodySmall">
+										{section.name}
+									</Link>
+								))}
 						</SectionsLinksBar>
-
 					</Column>
 				</Row>
 			</Wrapper>
-
 		</NavBarContainer>
 	);
 };
