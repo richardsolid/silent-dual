@@ -31,13 +31,12 @@ const InstallSectionText = styled.div`
   }
 
   p {
-    margin: 0
+    margin: 0;
+    font-weight: lighter;
   }
 `
 
 const installSection = () => {
-
-
 
   return (
     <InstallSectionContainer>
@@ -50,8 +49,8 @@ const installSection = () => {
           </Column>
 
           <Column xs={12}>
-            <InstallSectionTitle>S&P diseña productos fáciles de instalar</InstallSectionTitle>
-            <InstallSectionSubTitle>S&P diseña productos fáciles de instalar</InstallSectionSubTitle>
+            <InstallSectionTitle className="headingMedium">S&P diseña productos fáciles de instalar</InstallSectionTitle>
+            <InstallSectionSubTitle className="headingTiny">S&P diseña productos fáciles de instalar</InstallSectionSubTitle>
           </Column>
 
           <Column xs={4}>
