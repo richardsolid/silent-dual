@@ -17,11 +17,6 @@ import Demovideo from "../../videos/demovideo.mp4";
 //styles:
 // import variables from "../../assets/styles/variables";
 
-//Utils
-import Wrapper from "../../utils/grid/wrapper";
-import Row from "../../utils/grid/row";
-import Column from "../../utils/grid/column";
-
 //components:
 import VideoPlayer from "./videoPlayer";
 
@@ -67,6 +62,14 @@ const HomeBackground = styled.div`
 		object-fit: cover;
 		min-width: 100%;
 		min-height: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: 0;
+		height: 100vh;
+		width: 100vw;
 	}
 
 	@media screen and (min-width: 768px) {
