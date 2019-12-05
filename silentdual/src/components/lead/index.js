@@ -21,6 +21,7 @@ import BathImg from "../../images/banyera_imatge_promo.png";
 const Parallax = styled.div``;
 const Fixed = styled(animated.div)`
   top: 0;
+  width: 100%;
   position: fixed;
   overflow: hidden;
 `;
@@ -37,6 +38,12 @@ const LeadSection = styled.section`
 
   img {
     width: 100%;
+    &.bg {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     &.leg {
       z-index: 2;
       position: absolute;
@@ -68,9 +75,9 @@ const Description = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,11 +97,12 @@ const Description = styled.div`
 `;
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
-const legtrans = (x, y) => `translate3d(${x / 40}px,${y / 30}px,0) scale(1.05)`;
+const bgtrans = (x, y) => `translate3d(${x / 60}px,${y / 40}px,0) scale(1.05)`;
+const legtrans = (x, y) => `translate3d(${x / 40}px,${y / 10}px,0) scale(1.05)`;
 const headtrans = (x, y) =>
-  `translate3d(${x / 60}px,${y / 40}px,0) scale(1.05)`;
+  `translate3d(${x / 60}px,${y / 15}px,0) scale(1.05)`;
 const bathtrans = (x, y) =>
-  `translate3d(${x / 50}px,${y / 30}px,0) scale(1.05)`;
+  `translate3d(${x / 40}px,${y / 20}px,0) scale(1.05)`;
 
 const Lead = () => {
   const { format } = new Intl.NumberFormat("en-US", {
@@ -147,6 +155,12 @@ const Lead = () => {
           <Fixed style={parallaxProps}>
             <Parallax>
               <BackgroundImage src={BackgroundImg} alt="background" />
+              <animated.img
+                className="bg"
+                src={BackgroundImg}
+                alt="background"
+                style={{ transform: props.xy.interpolate(bgtrans) }}
+              />
               <animated.img
                 className="leg"
                 src={LegImg}
