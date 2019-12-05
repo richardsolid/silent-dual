@@ -90,16 +90,16 @@ const BackgroundImage = styled.img`
 `;
 
 const Description = styled.h2`
-	font-family: DINBold;
-	font-size: 28px;
-	line-height: 34px;
+	font-weight: bold;
 	text-align: center;
-	position: absolute;
-	z-index: 1000;
+
 	width: 80%;
-	@media screen and (min-width: ${breakpoints.tablet}px) {
-		font-size: 33px;
-		line-height: 39px;
+	z-index: 2;
+	margin: 0 auto;
+
+	@media screen and (min-width: ${breakpoints.large}) {
+		position: absolute;
+		z-index: 1000;
 	}
 `;
 
@@ -154,7 +154,15 @@ const Lead = () => {
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
-								<Description>{lead.description}</Description>
+								<Description
+									className={
+										width > breakpoints.tablet
+											? "headingMedium"
+											: "headingSmall"
+									}
+								>
+									{lead.description}
+								</Description>
 							</Column>
 						</Row>
 					</Wrapper>
@@ -167,7 +175,15 @@ const Lead = () => {
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
-								<Description>{lead.description}</Description>
+								<Description
+									className={
+										width > breakpoints.tablet
+											? "headingMedium"
+											: "headingSmall"
+									}
+								>
+									{lead.description}
+								</Description>
 							</Column>
 						</Row>
 					</Wrapper>

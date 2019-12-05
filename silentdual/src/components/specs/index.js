@@ -11,19 +11,17 @@ import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled.section`
 	margin-top: 95vh;
-	margin-bottom: 310vh;
+	margin-bottom: 80vh;
 	height: fit-content;
 	position: relative;
+	padding-bottom: 190vh;
 `;
 const Title = styled(a.h2)`
 	position: fixed;
 	top: 10%;
 	left: 0;
 	right: 0;
-	color: rgb(0, 0, 0);
-	font-family: DINBold;
-	font-size: 33px;
-	line-height: 39px;
+	color: black;
 	text-align: center;
 	width: 100%;
 `;
@@ -58,7 +56,9 @@ const Specs = () => {
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<Title style={props}>La única opción doblemente inteligente</Title>
+						<Title style={props} className={"headingMedium"}>
+							La única opción doblemente inteligente
+						</Title>
 					</Column>
 				</Row>
 				<SpecSensores />

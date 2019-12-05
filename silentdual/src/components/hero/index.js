@@ -125,34 +125,14 @@ const HomeHeader = styled.div`
 
 const HomeTitle = styled.h1`
 	margin: 0 auto 20px;
-	font-size: 57px;
-	letter-spacing: -1.02px;
-	line-height: 64px;
-	font-family: DINBold;
 
 	span {
 		font-weight: normal;
 	}
-
-	@media screen and (min-width: 768px) {
-		font-size: 69px;
-		letter-spacing: -0.58px;
-		line-height: 78px;
-	}
 `;
 
 const HomeSubtitle = styled.h2`
-	font-size: 23px;
-	letter-spacing: 0px;
-	line-height: 29px;
-	font-family: DINBold;
 	margin: 0 auto;
-
-	@media screen and (min-width: 768px) {
-		font-size: 33px;
-		letter-spacing: 0px;
-		line-height: 39px;
-	}
 `;
 
 const PlayButton = styled.img`
@@ -175,9 +155,6 @@ const PlayButton = styled.img`
 const HeroLinkDown = styled(Link)`
 	color: white;
 	text-decoration: none;
-	font-size: 14px;
-	font-family: DINBold;
-	line-height: 21px;
 	position: absolute;
 	bottom: 0;
 	display: block;
@@ -248,10 +225,12 @@ const Hero = () => {
 			<HeroContent>
 				<InstantFriendly src={instantFriendly} alt="instant friendly" />
 				<HomeHeader>
-					<HomeTitle>
+					<HomeTitle className={width > 768 ? "displaySmall" : "displayTiny"}>
 						SILENT <span>DUAL</span>
 					</HomeTitle>
-					<HomeSubtitle>
+					<HomeSubtitle
+						className={width > 768 ? "headingMedium" : "headingTiny"}
+					>
 						Los extractores de baño más inteligentes diseñados para una fácil
 						instalación.
 					</HomeSubtitle>
@@ -263,7 +242,9 @@ const Hero = () => {
 				/>
 			</HeroContent>
 
-			<HeroLinkDown to={"/#specs"}>Descúbrelas</HeroLinkDown>
+			<HeroLinkDown to={"/#specs"} className={"bodySmall"}>
+				Descúbrelas
+			</HeroLinkDown>
 			<VideoPlayer
 				id="videoPlayer"
 				width={width}

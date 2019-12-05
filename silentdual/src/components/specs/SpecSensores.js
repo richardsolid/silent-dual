@@ -23,28 +23,12 @@ const Fixed = styled.div`
 	top: 30vh;
 `;
 
-const Title = styled(a.h3)`
-	color: rgb(0, 0, 0);
-	font-size: 28px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 34px;
-`;
+const Title = styled(a.h3)``;
 
-const Subtitle = styled(a.h4)`
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 30px;
-`;
+const Subtitle = styled(a.h4)``;
 
 const Description = styled(a.p)`
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINLightAlternate;
-	letter-spacing: 0px;
-	line-height: 30px;
+	font-weight: lighter;
 `;
 
 const Info = styled.div`
@@ -131,13 +115,16 @@ const SpecSensores = () => {
 					<Row>
 						<Column xs={12} md={6}>
 							<Info>
-								<Title style={titleProps}>2 sensores</Title>
-								<Subtitle style={subtitleProps}>Presencia y humedad</Subtitle>
-								<Description style={descriptionProps}>
+								<Title style={titleProps} className={"headingSmall"}>
+									2 sensores
+								</Title>
+								<Subtitle style={subtitleProps} className={"lead"}>
+									Presencia y humedad
+								</Subtitle>
+								<Description style={descriptionProps} className={"lead"}>
 									Sensores de presencia y humedad, se activa automáticamente
 									cuando detecta <strong>movimiento</strong> o un cambio en los
-									niveles de
-									<strong>saturación</strong>.
+									niveles de <strong>saturación</strong>.
 								</Description>
 							</Info>
 						</Column>

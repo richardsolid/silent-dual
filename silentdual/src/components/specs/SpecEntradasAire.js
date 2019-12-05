@@ -21,32 +21,10 @@ const Fixed = styled.div`
 	position: fixed;
 	top: 30%;
 `;
-const Title = styled(a.h3)`
-	width: 139px;
-	height: 34px;
-	color: rgb(0, 0, 0);
-	font-size: 28px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 34px;
-`;
-const Subtitle = styled(a.h4)`
-	width: 195px;
-	height: 30px;
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 30px;
-`;
+const Title = styled(a.h3)``;
+const Subtitle = styled(a.h4)``;
 const Description = styled(a.p)`
-	width: 460px;
-	height: 148px;
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINLightAlternate;
-	letter-spacing: 0px;
-	line-height: 30px;
+	font-weight: lighter;
 `;
 const Info = styled.div`
 	display: flex;
@@ -120,11 +98,16 @@ const SpecSensor = () => {
 					<Row>
 						<Column xs={12} md={6}>
 							<Info>
-								<Title style={titleProps}>2 entradas de aire</Title>
-								<Subtitle style={subtitleProps}>Frontal y perimetral</Subtitle>
-								<Description style={descriptionProps}>
+								<Title style={titleProps} className={"headingSmall"}>
+									2 entradas de aire
+								</Title>
+								<Subtitle style={subtitleProps} className={"lead"}>
+									Frontal y perimetral
+								</Subtitle>
+								<Description style={descriptionProps} className={"lead"}>
 									Prestaciones aerodinámicas que le proporcionan la entrada{" "}
-									<strong>frontal</strong>y <strong>perimetral</strong> de aire.
+									<strong>frontal</strong> y <strong>perimetral</strong> de
+									aire.
 								</Description>
 							</Info>
 						</Column>
