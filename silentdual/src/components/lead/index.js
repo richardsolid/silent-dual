@@ -13,6 +13,7 @@ import { breakpoints } from "../../assets/styles/breakpoints";
 import data from "../../data";
 
 //images:
+import FullImg from "../../images/imagen_chica_background.jpg";
 import BackgroundImg from "../../images/background_imatge_promo.png";
 import LegImg from "../../images/cama_imatge_promo.png";
 import HeadImg from "../../images/cap_imatge_promo.png";
@@ -127,7 +128,8 @@ const Lead = () => {
       opacity: 0
     },
     to: {
-      opacity: (ratio - 0.1) * 8 || 0
+      opacity: (ratio - 0.1) * 8 || 0,
+      zIndex: entry.intersectionRatio > 0 ? 100 : 0
     }
   });
 
@@ -155,7 +157,7 @@ const Lead = () => {
         >
           <Fixed style={parallaxProps}>
             <Parallax>
-              <BackgroundImage src={BackgroundImg} alt="background" />
+              <BackgroundImage src={FullImg} alt="background" />
               <animated.img
                 className="bg"
                 src={BackgroundImg}
@@ -190,7 +192,7 @@ const Lead = () => {
     } else {
       return (
         <LeadSection>
-          <BackgroundImage src={BackgroundImg} alt="background" />
+          <BackgroundImage src={FullImg} alt="background" />
           <Description>
             <h2>{lead.description}</h2>
           </Description>

@@ -250,7 +250,8 @@ const Hero = () => {
       opacity: 0
     },
     to: {
-      opacity: entry.intersectionRatio ? entry.intersectionRatio : 1
+      opacity: entry.intersectionRatio ? entry.intersectionRatio : 0,
+      zIndex: entry.intersectionRatio > 0 ? 100 : 0
     }
   });
 
