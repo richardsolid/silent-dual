@@ -20,7 +20,7 @@ const Container = styled.div`
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 30vh;
+	top: 23%;
 `;
 
 const Title = styled(a.h3)``;
@@ -36,19 +36,55 @@ const Info = styled.div`
 	flex-direction: column;
 `;
 
+const ImageContainer = styled.div`
+	position: relative;
+`;
+
 const Img = styled(a.img)`
 	width: 100%;
-	object-fit: contain;
 `;
 
 const Icons = styled(a.img)`
 	position: absolute;
-	right: 16%;
-	top: -31%;
-	width: 10rem;
+	top: 0;
+	left: 0;
+	width: 100%;
 `;
 
-const SpecSensores = () => {
+//RESPONSIVE:
+
+const ResponsiveInfo = styled.div``;
+
+const ResponsiveTitle = styled.h3`
+	margin-bottom: 20px;
+`;
+
+const ResponsiveSubtitle = styled.h4`
+	margin-bottom: 10px;
+`;
+
+const ResponsiveDescription = styled.p`
+	font-weight: lighter;
+	margin: 0 auto;
+`;
+
+const ResponsiveImageContainer = styled.div`
+	position: relative;
+	margin: 45px auto;
+`;
+
+const ResponsiveImg = styled.img`
+	width: 100%;
+`;
+
+const ResponsiveIcons = styled.img`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+`;
+
+const SpecSensores = ({ isResponsive }) => {
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -108,7 +144,31 @@ const SpecSensores = () => {
 		}
 	});
 
-	return (
+	return isResponsive ? (
+		<Row>
+			<Column xs={12} md={6}>
+				<ResponsiveInfo>
+					<ResponsiveTitle className={"headingSmall"}>
+						2 sensores
+					</ResponsiveTitle>
+					<ResponsiveSubtitle className={"lead"}>
+						Presencia y humedad
+					</ResponsiveSubtitle>
+					<ResponsiveDescription className={"lead"}>
+						Sensores de presencia y humedad, se activa automáticamente cuando
+						detecta <strong>movimiento</strong> o un cambio en los niveles de{" "}
+						<strong>saturación</strong>.
+					</ResponsiveDescription>
+				</ResponsiveInfo>
+			</Column>
+			<Column xs={12} md={6}>
+				<ResponsiveImageContainer>
+					<ResponsiveImg style={imageProps} src={SpecImg} alt="" />
+					<ResponsiveIcons style={iconsProps} src={IconsPNG} alt="" />
+				</ResponsiveImageContainer>
+			</Column>
+		</Row>
+	) : (
 		<Container ref={ref}>
 			<Fixed>
 				<Wrapper>
@@ -129,8 +189,10 @@ const SpecSensores = () => {
 							</Info>
 						</Column>
 						<Column xs={12} md={6}>
-							<Img style={imageProps} src={SpecImg} alt="" />
-							<Icons style={iconsProps} src={IconsPNG} alt="" />
+							<ImageContainer>
+								<Img style={imageProps} src={SpecImg} alt="" />
+								<Icons style={iconsProps} src={IconsPNG} alt="" />
+							</ImageContainer>
 						</Column>
 					</Row>
 				</Wrapper>

@@ -19,7 +19,7 @@ const Container = styled.div`
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 30vh;
+	top: 23%;
 `;
 
 const Title = styled(a.h3)``;
