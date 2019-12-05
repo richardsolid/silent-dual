@@ -11,15 +11,15 @@ import FormSection from "../components/formSection";
 import Lead from "../components/lead";
 
 const IndexPage = () => (
-	<Layout className="layout" style={{ width: "100vw" }}>
-		<Hero />
-		<Lead />
-		<Specs />
-		<DiscoverSection />
-		<InstallSection />
-		<Modelos />
-		<FormSection />
-	</Layout>
+  <Layout className="layout" style={{ width: "100vw" }}>
+    <Hero />
+    <Lead />
+    {/*<Specs />*/}
+    <DiscoverSection />
+    <InstallSection />
+    <Modelos />
+    <FormSection />
+  </Layout>
 );
 
 export default IndexPage;
