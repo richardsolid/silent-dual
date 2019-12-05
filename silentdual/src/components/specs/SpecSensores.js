@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import useIntersect from '../../utils/useIntersect'
-import { useSpring, animated as a } from "react-spring" 
+import useIntersect from "../../utils/useIntersect";
+import { useSpring, animated as a } from "react-spring";
 import Column from "../../utils/grid/column";
-import { gutter } from '../../assets/styles/gutter'
 import SpecImg from "../../images/spec-sensores.png";
 import IconsPNG from "../../images/spec-sensores-icons.png";
+import Wrapper from "../../utils/grid/wrapper";
+import Row from "../../utils/grid/row";
 
 const Title = styled(a.h3)`
   color: rgb(0, 0, 0);
@@ -36,36 +37,30 @@ const Info = styled.div`
 const Container = styled.div`
   position: relative;
   height: 1000px;
-`
+`;
 
-const RowS = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -${gutter}px;
-  margin-right: -${gutter}px;
+const Fixed = styled.div`
   position: fixed;
   top: 30%;
-  left: 0;
-  right: 0;
-  padding: 0 11%;
-`
+`;
 
 const Img = styled(a.img)`
   width: 100%;
   object-fit: contain;
-`
+`;
 
 const Icons = styled(a.img)`
   position: absolute;
   right: 16%;
   top: -31%;
   width: 10rem;
-`
+`;
 
 const SpecSensores = () => {
+  const { format } = new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: 2
+  });
 
-  const { format } = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
-  
   const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
   //useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
   //entry es el objeto con la información de la posición del elemento
@@ -74,73 +69,77 @@ const SpecSensores = () => {
     threshold: buildThresholdArray()
   });
 
-  const ratio = format(entry.intersectionRatio)
-
+  const ratio = format(entry.intersectionRatio);
 
   const titleProps = useSpring({
     from: {
-      opacity: 0,
+      opacity: 0
     },
     to: {
-      opacity: (ratio - 0.1) * 8 || 0,
-    },
-  })
+      opacity: (ratio - 0.1) * 8 || 0
+    }
+  });
 
   const subtitleProps = useSpring({
     from: {
-      opacity: 0,
+      opacity: 0
     },
     to: {
-      opacity: (ratio - 0.15) * 8 || 0,
-    },
-  })
+      opacity: (ratio - 0.15) * 8 || 0
+    }
+  });
 
   const descriptionProps = useSpring({
     from: {
-      opacity: 0,
+      opacity: 0
     },
     to: {
-      opacity: (ratio - 0.2) * 8 || 0,
-    },
-  })
+      opacity: (ratio - 0.2) * 8 || 0
+    }
+  });
 
   const imageProps = useSpring({
     from: {
-      opacity: 0,
+      opacity: 0
     },
     to: {
-      opacity: (ratio - 0.1) * 8 || 0,
-    },
-  })
+      opacity: (ratio - 0.1) * 8 || 0
+    }
+  });
 
   const iconsProps = useSpring({
     from: {
-      opacity: 0,
+      opacity: 0
     },
     to: {
-      opacity: (ratio - 0.2) * 8 || 0,
-    },
-  })
+      opacity: (ratio - 0.2) * 8 || 0
+    }
+  });
 
   return (
     <Container ref={ref}>
-      <RowS>
-        <Column xs={12} md={6}>
-          <Info>
-            <Title style={titleProps}>2 sensores</Title>
-            <Subtitle style={subtitleProps}>Presencia y humedad</Subtitle>
-            <Description style={descriptionProps}>
-              Sensores de presencia y humedad, se activa automáticamente cuando
-              detecta <strong>movimiento</strong> o un cambio en los niveles de
-              <strong>saturación</strong>.
-            </Description>
-          </Info>
-        </Column>
-        <Column xs={12} md={6}>
-          <Img style={imageProps} src={SpecImg} alt="" />
-          <Icons style={iconsProps} src={IconsPNG} alt=""/>
-        </Column>
-      </RowS>
+      <Fixed>
+        <Wrapper>
+          <Row>
+            <Column xs={12} md={6}>
+              <Info>
+                <Title style={titleProps}>2 sensores</Title>
+                <Subtitle style={subtitleProps}>Presencia y humedad</Subtitle>
+                <Description style={descriptionProps}>
+                  Sensores de presencia y humedad, se activa automáticamente
+                  cuando detecta <strong>movimiento</strong> o un cambio en los
+                  niveles de
+                  <strong>saturación</strong>.
+                </Description>
+              </Info>
+            </Column>
+            <Column xs={12} md={6}>
+              <Img style={imageProps} src={SpecImg} alt="" />
+              <Icons style={iconsProps} src={IconsPNG} alt="" />
+            </Column>
+          </Row>
+        </Wrapper>
+      </Fixed>
     </Container>
   );
 };

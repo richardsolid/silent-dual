@@ -1,25 +1,25 @@
 import React from "react";
-import{useSpring, animated as a} from "react-spring" 
-import useIntersect from '../../utils/useIntersect'
+import { useSpring, animated as a } from "react-spring";
+import useIntersect from "../../utils/useIntersect";
 import styled from "styled-components";
 import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
 import SpecSensores from "./SpecSensores";
-//import SpecFuncionamiento from "./SpecFuncionamiento";
-//import SpecEntradasAire from "./SpecEntradasAire";
+import SpecFuncionamiento from "./SpecFuncionamiento";
+import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled.section`
-  margin-top:500px;
-  margin-bottom:500px;
+  margin-top: 1000px;
+  margin-bottom: 500px;
   height: 3000px;
   position: relative;
-`
+`;
 const Title = styled(a.h2)`
   position: fixed;
   top: 10%;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   color: rgb(0, 0, 0);
   font-family: DINBold;
   font-size: 33px;
@@ -28,9 +28,10 @@ const Title = styled(a.h2)`
   width: 100%;
 `;
 const Specs = () => {
+  const { format } = new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: 2
+  });
 
-  const { format } = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
-  
   const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
   //useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
   //entry es el objeto con la información de la posición del elemento
@@ -39,16 +40,18 @@ const Specs = () => {
     threshold: buildThresholdArray()
   });
 
+  console.log(entry.intersectionRatio);
+
   const props = useSpring({
     from: {
-      opacity: 0, 
+      opacity: 0
       //transform: `translateY(200px)`
     },
     to: {
-      opacity: format(entry.intersectionRatio) * 8 || 0,
+      opacity: format(entry.intersectionRatio) * 8 || 0
       //transform: `translateY(${show ? 0 : 200}px)`
-    },
-  })
+    }
+  });
 
   return (
     <Section id="specs" ref={ref}>
@@ -59,8 +62,8 @@ const Specs = () => {
           </Column>
         </Row>
         <SpecSensores />
-        {/*<SpecFuncionamiento />
-        <SpecEntradasAire />*/}
+        <SpecFuncionamiento />
+        <SpecEntradasAire />
       </Wrapper>
     </Section>
   );
