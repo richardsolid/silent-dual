@@ -221,14 +221,13 @@ const Hero = () => {
 		threshold: buildThresholdArray()
 	});
 
-	const ratio = format(entry.intersectionRatio);
-
 	const heroProps = useSpring({
 		from: {
 			opacity: 0
 		},
 		to: {
-			opacity: entry.intersectionRatio ? entry.intersectionRatio : 1
+			opacity: entry.intersectionRatio ? entry.intersectionRatio : 0,
+			zIndex: entry.intersectionRatio > 0 ? 100 : 0
 		}
 	});
 
@@ -268,14 +267,10 @@ const Hero = () => {
 					<HeroContent>
 						<InstantFriendly src={instantFriendly} alt="instant friendly" />
 						<HomeHeader>
-							<HomeTitle
-								className={width > 768 ? "displaySmall" : "displayTiny"}
-							>
+							<HomeTitle>
 								SILENT <span>DUAL</span>
 							</HomeTitle>
-							<HomeSubtitle
-								className={width > 768 ? "headingMedium" : "headingTiny"}
-							>
+							<HomeSubtitle>
 								Los extractores de baño más inteligentes diseñados para una
 								fácil instalación.
 							</HomeSubtitle>
@@ -287,9 +282,7 @@ const Hero = () => {
 						/>
 					</HeroContent>
 
-					<HeroLinkDown to={"/#specs"} className={"bodySmall"}>
-						Descúbrelas
-					</HeroLinkDown>
+					<HeroLinkDown to={"/#specs"}>Descúbrelas</HeroLinkDown>
 					<VideoPlayer
 						id="videoPlayer"
 						width={width}
