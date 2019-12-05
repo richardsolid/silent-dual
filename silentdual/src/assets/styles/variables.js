@@ -16,13 +16,6 @@ export default {
   shadow: '0px 2px 25px 0px rgba(0, 0, 0, 0.21)',
 
 
-  //Ritmo vertical
-
-  spaceLarge: '80px',
-  spaceMedium: '40px',
-  spaceSmall: '20px',
-
-
   //Dividers Colors
 
   divider: '#CCCCCC',
