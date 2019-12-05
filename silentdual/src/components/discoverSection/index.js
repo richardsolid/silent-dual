@@ -25,14 +25,23 @@ import data from "../../data";
 //Components
 import HotspotItem from "../hotpost";
 
-const DiscoverSectionContainer = styled.section`
-	padding: 100vh 0;
+const DiscoverSectionContainer = styled(a.section)`
 	background-color: black;
 	color: white;
+	padding: 120px 0;
+
+	h2 {
+		width: 100%;
+		text-align: center;
+	}
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		padding: 100vh 0;
+	}
 `;
 
 const DiscoverSectionIntersect = styled.div`
-	height: 200vh;
+	height: 100vh;
 `;
 
 const Fixed = styled.div`
@@ -45,36 +54,49 @@ const Fixed = styled.div`
 `;
 
 const DiscoverSectionLayer = styled.div`
-	height: 100vh;
-	margin: auto;
+	height: calc(100vh - 240px);
+	margin: 120px auto 120px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 
 	color: white;
 `;
 
-const HotspotLayer = styled.div`
+const HotspotLayer = styled(a.div)`
 	position: relative;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		position: absolute;
+	}
 `;
 
 const ImgRef = styled(a.img)`
 	width: 100%;
 	height: auto;
-	opacity: 0;
+	opacity: 1;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		opacity: 0;
+	}
 `;
 
-const ImgExploded = styled.div`
+const ImgExploded = styled(a.div)`
 	position absolute;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
-	width: 100%;
 	margin: 0 auto;
 
 	display: flex;
@@ -100,6 +122,10 @@ const ImgExploded = styled.div`
 	}
 `;
 
+const ImgExplodedLayer = styled.div`
+	position: relative;
+`;
+
 const DiscoverSection = () => {
 	const size = useWindowSize();
 	const [width, setWidth] = useState(null);
@@ -119,41 +145,68 @@ const DiscoverSection = () => {
 
 	const ratio = format(entry.intersectionRatio);
 
-	console.log(format(entry.intersectionRatio));
+	console.log(ratio);
 
 	const propsExploded1 = useSpring({
 		from: {
-			opacity: 0
+			transform: `translateX(-100px)`
 		},
 		to: {
-			opacity: ratio * 2
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(-100px)`
 		}
 	});
 
 	const propsExploded2 = useSpring({
 		from: {
-			opacity: 0
+			transform: `translateX(-50px)`
 		},
 		to: {
-			opacity: ratio * 2
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(-50px)`
 		}
 	});
 
 	const propsExploded3 = useSpring({
 		from: {
-			opacity: 0
+			transform: `translateX(50px)`
 		},
 		to: {
-			opacity: ratio * 2
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(50px)`
 		}
 	});
 
 	const propsExploded4 = useSpring({
 		from: {
+			transform: `translateX(100px)`
+		},
+		to: {
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(100px)`
+		}
+	});
+
+	const hotspotsProps = useSpring({
+		from: {
 			opacity: 0
 		},
 		to: {
-			opacity: ratio * 2
+			opacity: ratio > 0.25 ? 1 : 0
+		}
+	});
+
+	const explodedProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratio > 0 ? 1 : 0
+		}
+	});
+
+	const sectionDiscover = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratio > 0 ? 1 : 0
 		}
 	});
 
@@ -162,46 +215,17 @@ const DiscoverSection = () => {
 	}, [size]);
 
 	return (
-		<DiscoverSectionContainer>
-			<DiscoverSectionIntersect ref={ref}>
-				<Fixed>
+		<>
+			{width < breakpoints.large ? (
+				<DiscoverSectionContainer>
 					<Wrapper>
 						<Row>
-							<Column xs={12}>
+							<Column xs={8} lg={12} align="center">
 								<h2 className="headingMedium">Descubre sus componentes</h2>
 							</Column>
 
 							<Column xs={12} direction="column">
-								<ImgExploded>
-									<a.img
-										style={propsExploded4}
-										src={exploded1}
-										className="exploded1"
-										alt="Discover exploded"
-									/>
-									<a.img
-										style={propsExploded3}
-										src={exploded2}
-										className="exploded2"
-										alt="Discover exploded"
-									/>
-									<a.img
-										style={propsExploded2}
-										src={exploded3}
-										className="exploded3"
-										alt="Discover exploded"
-									/>
-									<a.img
-										style={propsExploded1}
-										src={exploded4}
-										className="exploded4"
-										alt="Discover exploded"
-									/>
-								</ImgExploded>
-
 								<HotspotLayer>
-									<ImgRef src={exploded} alt="Discover exploded" />
-
 									{hotspots.map((hotspot, index) => (
 										<HotspotItem
 											key={`hotspot_${index}`}
@@ -209,25 +233,84 @@ const DiscoverSection = () => {
 											number={index + 1}
 										/>
 									))}
+									<ImgRef src={exploded} alt="Discover exploded" />
 								</HotspotLayer>
 							</Column>
 
 							<Column xs={12} direction="column">
-								{width < breakpoints.large &&
-									hotspots.map((hotspot, index) => (
-										<>
-											<h4 className="bodyNormal">
-												{index + 1 + ". " + hotspot.title}
-											</h4>
-											<p>{hotspot.text}</p>
-										</>
-									))}
+								{hotspots.map((hotspot, index) => (
+									<>
+										<h4 className="bodyNormal">
+											{index + 1 + ". " + hotspot.title}
+										</h4>
+										<p>{hotspot.text}</p>
+									</>
+								))}
 							</Column>
 						</Row>
 					</Wrapper>
-				</Fixed>
-			</DiscoverSectionIntersect>
-		</DiscoverSectionContainer>
+				</DiscoverSectionContainer>
+			) : (
+				<DiscoverSectionContainer style={sectionDiscover}>
+					<DiscoverSectionIntersect ref={ref}>
+						<Fixed>
+							<Wrapper>
+								<Row>
+									<DiscoverSectionLayer>
+										<Column xs={12}>
+											<h2 className="headingMedium">
+												Descubre sus componentes
+											</h2>
+										</Column>
+										<Column xs={12} direction="column">
+											<ImgExplodedLayer>
+												<ImgExploded style={explodedProps}>
+													<a.img
+														style={propsExploded4}
+														src={exploded1}
+														className="exploded1"
+														alt="Discover exploded"
+													/>
+													<a.img
+														style={propsExploded3}
+														src={exploded2}
+														className="exploded2"
+														alt="Discover exploded"
+													/>
+													<a.img
+														style={propsExploded2}
+														src={exploded3}
+														className="exploded3"
+														alt="Discover exploded"
+													/>
+													<a.img
+														style={propsExploded1}
+														src={exploded4}
+														className="exploded4"
+														alt="Discover exploded"
+													/>
+												</ImgExploded>
+												<ImgRef src={exploded} alt="Discover exploded" />
+
+												<HotspotLayer style={hotspotsProps}>
+													{hotspots.map((hotspot, index) => (
+														<HotspotItem
+															key={`hotspot_${index}`}
+															content={hotspot}
+															number={index + 1}
+														/>
+													))}
+												</HotspotLayer>
+											</ImgExplodedLayer>
+										</Column>
+									</DiscoverSectionLayer>
+								</Row>
+							</Wrapper>
+						</Fixed>
+					</DiscoverSectionIntersect>
+				</DiscoverSectionContainer>
+			)}
+		</>
 	);
 };
 

@@ -13,7 +13,6 @@ const HotspotItemContainer = styled.div`
 	position: absolute;
 	top: ${({ content }) => content.top}%;
 	left: ${({ content }) => content.left}%;
-	z-index: 10;
 `;
 
 const HotspotItemButton = styled.div`

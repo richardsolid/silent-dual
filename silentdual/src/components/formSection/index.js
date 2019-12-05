@@ -38,20 +38,17 @@ const Form = styled.div`
 	width: 100%;
 
 	fieldset {
-		max-width: inherit !important;
+		margin: 0 auto !important;
+		max-width: 100% !important;
 
-		margin-left: -${gutter}px !important;
-		margin-right: -${gutter}px !important;
+		@media screen and (min-width: ${breakpoints.large}px) {
+			max-width: 75% !important;
+		}
 	}
 
 	.field {
-		width: 100% !important;
 		box-sizing: border-box;
-
-		@media only screen and (min-width: ${breakpoints.desktop}px) {
-			padding: 0 15px !important;
-			//width: 50% !important;
-		}
+		padding: 0 15px !important;
 	}
 
 	.field label {
@@ -97,6 +94,17 @@ const Form = styled.div`
 		margin: 0 !important;
 	}
 
+	.hs_submit {
+		margin: 0 auto !important;
+		max-width: 100% !important;
+
+		padding: 0 15px;
+		box-sizing: border-box;
+
+		@media screen and (min-width: ${breakpoints.large}px) {
+			max-width: 75% !important;
+		}
+	}
 	.hs-button {
 		border: none !important;
 		background-color: ${variables.primary} !important;
@@ -124,7 +132,6 @@ const Form = styled.div`
 `;
 
 const FormSection = () => {
-
 	const { contacta } = data;
 
 	return (
