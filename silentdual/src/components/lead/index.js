@@ -32,8 +32,8 @@ const LeadSection = styled.section`
   overflow: hidden;
   line-height: 0;
   @media screen and (min-width: ${breakpoints.tablet}px) {
-    margin-bottom: 100%;
-    height: 2000px;
+    margin-bottom: 100vh;
+    height: 200vh;
   }
 
   img {
@@ -54,7 +54,7 @@ const LeadSection = styled.section`
     &.head {
       z-index: 1;
       position: absolute;
-      top: 0;
+      top: 1%;
       left: 0;
     }
 
@@ -77,11 +77,14 @@ const Description = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
+  @media screen and (min-width: ${breakpoints.tablet}px) {
+    height: 100vh;
+  }
   h2 {
     max-width: 70%;
     font-weight: bold;
@@ -127,8 +130,6 @@ const Lead = () => {
       opacity: (ratio - 0.1) * 8 || 0
     }
   });
-
-  console.log(ratio);
 
   const widthWindow = useWindowSize();
 

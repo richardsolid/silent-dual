@@ -14,7 +14,7 @@ const IndexPage = () => (
   <Layout className="layout" style={{ width: "100vw" }}>
     <Hero />
     <Lead />
-    <Specs />
+    {/*<Specs />*/}
     <DiscoverSection />
     <InstallSection />
     <Modelos />
