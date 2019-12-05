@@ -141,38 +141,40 @@ const Modelos = () => {
 	return (
 		<section id="modelos">
 			<Wrapper>
-
 				<Row>
+
 					<Column xs={12}>
 						<Title>{modelos.title}</Title>
 					</Column>
+
+					<ModelosContainer>
+						{modelos.cards.map((modelo, i) => (
+							<ModeloCard key={i}>
+								<ModeloImageBox>
+									<ModeloImage src={chooseImage(i)} alt="modelo image" />
+								</ModeloImageBox>
+								<ModeloTitle>{modelo.title}</ModeloTitle>
+								<ModeloDescription>
+									<p>{modelo.description.sizes}</p>
+									<p>{modelo.description.power}</p>
+								</ModeloDescription>
+							</ModeloCard>
+						))}
+					</ModelosContainer>
+
+
+					<Column xs={12}>
+						<DownloadButtonContainer href="#" target="_blank" >
+							<LeftButton>{modelos.button}</LeftButton>
+							<DonwloadIconBox>
+								<img src={downloadIcon} alt="download icon" />
+							</DonwloadIconBox>
+						</DownloadButtonContainer>
+					</Column>
+
+
 				</Row>
-
-				<ModelosContainer>
-					{modelos.cards.map((modelo, i) => (
-						<ModeloCard key={i}>
-							<ModeloImageBox>
-								<ModeloImage src={chooseImage(i)} alt="modelo image" />
-							</ModeloImageBox>
-							<ModeloTitle>{modelo.title}</ModeloTitle>
-							<ModeloDescription>
-								<p>{modelo.description.sizes}</p>
-								<p>{modelo.description.power}</p>
-							</ModeloDescription>
-						</ModeloCard>
-					))}
-				</ModelosContainer>
-
 			</Wrapper>
-
-			<Column xs={12}>
-				<DownloadButtonContainer href="#" target="_blank" >
-					<LeftButton>{modelos.button}</LeftButton>
-					<DonwloadIconBox>
-						<img src={downloadIcon} alt="download icon" />
-					</DonwloadIconBox>
-				</DownloadButtonContainer>
-			</Column>
 
 		</section>
 	);
