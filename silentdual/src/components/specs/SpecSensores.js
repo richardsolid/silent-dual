@@ -1,31 +1,27 @@
 import React from "react";
 import styled from "styled-components";
+import useIntersect from '../../utils/useIntersect'
 import { useSpring, animated as a } from "react-spring" 
-import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
-import SpecSensorComp from "./SpecSensoresComp";
+import { gutter } from '../../assets/styles/gutter'
+import SpecImg from "../../images/spec-sensores.png";
+import IconsPNG from "../../images/spec-sensores-icons.png";
 
 const Title = styled(a.h3)`
-  width: 139px;
-  height: 34px;
   color: rgb(0, 0, 0);
   font-size: 28px;
   font-family: DINBold;
   letter-spacing: 0px;
   line-height: 34px;
 `;
-const Subtitle = styled.h4`
-  width: 195px;
-  height: 30px;
+const Subtitle = styled(a.h4)`
   color: rgb(0, 0, 0);
   font-size: 20px;
   font-family: DINBold;
   letter-spacing: 0px;
   line-height: 30px;
 `;
-const Description = styled.p`
-  width: 460px;
-  height: 148px;
+const Description = styled(a.p)`
   color: rgb(0, 0, 0);
   font-size: 20px;
   font-family: DINLightAlternate;
@@ -38,29 +34,102 @@ const Info = styled.div`
 `;
 
 const Container = styled.div`
-  position: fixed;
-  top: 40%;
+  position: relative;
+  height: 1000px;
 `
 
-const SpecSensores = ({ratio}) => {
+const RowS = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -${gutter}px;
+  margin-right: -${gutter}px;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  right: 0;
+  padding: 0 11%;
+`
+
+const Img = styled(a.img)`
+  width: 100%;
+  object-fit: contain;
+`
+
+const Icons = styled(a.img)`
+  position: absolute;
+  right: 16%;
+  top: -31%;
+  width: 10rem;
+`
+
+const SpecSensores = () => {
+
+  const { format } = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
+  
+  const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
+  //useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
+  //entry es el objeto con la información de la posición del elemento
+  const [ref, entry] = useIntersect({
+    //threshold es la cantidad de elemento visible para que se dispare el evento
+    threshold: buildThresholdArray()
+  });
+
+  const ratio = format(entry.intersectionRatio)
+
 
   const titleProps = useSpring({
     from: {
-      opacity: 0, 
+      opacity: 0,
     },
     to: {
       opacity: (ratio - 0.1) * 8 || 0,
     },
   })
 
+  const subtitleProps = useSpring({
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: (ratio - 0.15) * 8 || 0,
+    },
+  })
+
+  const descriptionProps = useSpring({
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: (ratio - 0.2) * 8 || 0,
+    },
+  })
+
+  const imageProps = useSpring({
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: (ratio - 0.1) * 8 || 0,
+    },
+  })
+
+  const iconsProps = useSpring({
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: (ratio - 0.2) * 8 || 0,
+    },
+  })
+
   return (
-    <Container>
-      <Row>
+    <Container ref={ref}>
+      <RowS>
         <Column xs={12} md={6}>
           <Info>
             <Title style={titleProps}>2 sensores</Title>
-            <Subtitle>Presencia y humedad</Subtitle>
-            <Description>
+            <Subtitle style={subtitleProps}>Presencia y humedad</Subtitle>
+            <Description style={descriptionProps}>
               Sensores de presencia y humedad, se activa automáticamente cuando
               detecta <strong>movimiento</strong> o un cambio en los niveles de
               <strong>saturación</strong>.
@@ -68,9 +137,10 @@ const SpecSensores = ({ratio}) => {
           </Info>
         </Column>
         <Column xs={12} md={6}>
-          <SpecSensorComp />
+          <Img style={imageProps} src={SpecImg} alt="" />
+          <Icons style={iconsProps} src={IconsPNG} alt=""/>
         </Column>
-      </Row>
+      </RowS>
     </Container>
   );
 };

@@ -10,8 +10,8 @@ import SpecSensores from "./SpecSensores";
 //import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled.section`
-  margin-top:1000px;
-  margin-bottom:1000px;
+  margin-top:500px;
+  margin-bottom:500px;
   height: 3000px;
   position: relative;
 `
@@ -45,12 +45,10 @@ const Specs = () => {
       //transform: `translateY(200px)`
     },
     to: {
-      opacity: entry.intersectionRatio * 8 || 0,
+      opacity: format(entry.intersectionRatio) * 8 || 0,
       //transform: `translateY(${show ? 0 : 200}px)`
     },
   })
-
-  console.log(format(entry.intersectionRatio * 8))
 
   return (
     <Section id="specs" ref={ref}>
@@ -60,7 +58,7 @@ const Specs = () => {
             <Title style={props}>La única opción doblemente inteligente</Title>
           </Column>
         </Row>
-        <SpecSensores ratio={format(entry.intersectionRatio)} />
+        <SpecSensores />
         {/*<SpecFuncionamiento />
         <SpecEntradasAire />*/}
       </Wrapper>
