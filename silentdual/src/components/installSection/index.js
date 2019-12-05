@@ -99,21 +99,23 @@ const InstallSectionVideo = styled.div`
   }
 `;
 
-const DownloadButtonContainer = styled.div`
+const DownloadButtonContainer = styled.a`
 	background: ${variables.primary};
 	color: white;
 	margin: 40px auto 40px;
 	border-radius: 3px;
-	font-size: 15px;
-  line-height: 21px;
+  cursor: pointer;
+  text-decoration: none;
   
 	display: flex;
   flex-wrap: nowrap;
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
-		font-size: 16px;
-		line-height: 24px;
-	}
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    background: ${variables.primaryDark};
+  }
 `;
 
 const LeftButton = styled.div`
@@ -122,10 +124,10 @@ const LeftButton = styled.div`
 	align-items: center;
 	justify-content: center;
   text-align: center;
+  font-weight: bold;
 
   padding: 16px 20px;
 
-  font-weight: bold;
 `;
 
 const DonwloadIconBox = styled.div`
@@ -135,10 +137,6 @@ const DonwloadIconBox = styled.div`
   justify-content: center;
 
   padding: 20px;
-
-	img {
-		height: 15px;
-	}
 `;
 
 const InstallSection = () => {
@@ -183,7 +181,7 @@ const InstallSection = () => {
         </Row>
 
         <Row>
-          <Column xs={12} lg={4} xsOrder={2} lgOrder={1}>
+          <Column xs={12} lg={5} xsOrder={2} lgOrder={1}>
             <InstallSectionText>
               <h3 className="headingSmall">Conexionado a 2 hilos</h3>
               <p>
@@ -196,7 +194,7 @@ const InstallSection = () => {
             </InstallSectionText>
           </Column>
 
-          <Column xs={12} lg={8} xsOrder={1} lgOrder={2}>
+          <Column xs={12} lg={7} xsOrder={1} lgOrder={2}>
             <InstallSectionVideo>
               <PlayButton
                 onClick={handlePlayButton}
@@ -207,7 +205,7 @@ const InstallSection = () => {
           </Column>
 
           <Column xs={12} xsOrder={3}>
-            <DownloadButtonContainer>
+            <DownloadButtonContainer href="#" target="_blank" >
               <LeftButton>{instalacion.button}</LeftButton>
               <DonwloadIconBox>
                 <img src={downloadIcon} alt="download icon" />
