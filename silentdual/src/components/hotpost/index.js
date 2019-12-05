@@ -1,169 +1,170 @@
-import React, { useEffect, useRef } from "react"
-import styled from "styled-components"
-import { TweenMax, Power3 } from 'gsap'
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import { TweenMax, Power3 } from "gsap";
 
-import colors from '../../styles/colors'
-import fonts from "../../fonts"
+//Assets
+import variables from "../../assets/styles/variables";
+import { breakpoints } from "../../assets/styles/breakpoints";
 
-import hotspotButton from "../../images/hotspot.svg"
+//Utils
+import useWindowSize from "../../utils/useWindowSize";
 
 const HotspotItemContainer = styled.div`
-    position: absolute;
-    top: ${({ content }) => content.top}%;
-    left: ${({ content }) => content.left}%;
-`
+	position: absolute;
+	top: ${({ content }) => content.top}%;
+	left: ${({ content }) => content.left}%;
+`;
 
-const HotspotItemButton = styled.img`
-    box-shadow: 0px 2px 19px 0px rgba(0,0,0, 0);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: .4s;
+const HotspotItemButton = styled.div`
+	box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: 0.4s;
 
-    &:hover {
-        box-shadow: 0px 2px 19px 0px rgba(0,0,0, .2);
-    }
-`
+	background-color: ${variables.primary};
+
+	line-height: 36px;
+	width: 36px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-weight: 700;
+
+	&:hover {
+		box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.2);
+		background-color: ${variables.primaryDark};
+	}
+`;
 
 const HotspotItemContent = styled.div`
-    position: absolute;
-    
-    width: 250px;
-    padding: 20px;
-    background-color: white;
-    z-index: 100;
-    ${({ content }) => content.top > 50 ? "bottom: calc(100% + 10px)" : "top: calc(100% + 10px)"};
-    ${({ content }) => content.left > 50 ? "right: -25px" : "left: -25px"};
+	position: absolute;
 
-    &:before {
-        content: "";
-        position: absolute;
-        ${({ content }) => content.top > 50 ? "top: 100%" : "bottom: 100%"};
-        ${({ content }) => content.left > 50 ? "right: 37px" : "left: 37px"};
+	width: 250px;
+	padding: 20px;
+	background-color: white;
+	z-index: 100;
+	${({ content }) =>
+		content.top > 50 ? "bottom: calc(100% + 10px)" : "top: calc(100% + 10px)"};
+	${({ content }) => (content.left > 50 ? "right: -25px" : "left: -25px")};
 
-        ${({ content }) => content.top > 50 ?
-        "width: 0; height: 0; border-style: solid; border-width: 10px 7.5px 0 7.5px; border-color: white transparent transparent transparent;"
-        :
-        "width: 0; height: 0; border-style: solid; border-width: 0 7.5px 10px 7.5px; border-color: transparent transparent white transparent;"
-    }
-    }
+	&:before {
+		content: "";
+		position: absolute;
+		${({ content }) => (content.top > 50 ? "top: 100%" : "bottom: 100%")};
+		${({ content }) => (content.left > 50 ? "right: 37px" : "left: 37px")};
 
-    p {
-        color: ${colors.tertiaryDark};
-        font-size: 12px;
-        font-family: ${fonts.helvetica};
-        line-height: 18px;
-        margin: 0;
-    }
+		${({ content }) =>
+			content.top > 50
+				? "width: 0; height: 0; border-style: solid; border-width: 10px 7.5px 0 7.5px; border-color: white transparent transparent transparent;"
+				: "width: 0; height: 0; border-style: solid; border-width: 0 7.5px 10px 7.5px; border-color: transparent transparent white transparent;"}
+	}
 
-    a {
-        color: ${colors.tertiaryDark};
-        font-size: 12px;
-        font-family: ${fonts.helvetica};
-        font-weight: bold;
-        text-decoration: underline;
-        line-height: 18px;
+	h4 {
+		color: black;
+		margin: 0;
+	}
 
-        margin-top: 20px;
-        
-    }
-`
+	p {
+		color: black;
+		margin: 8px 0 0 0;
+	}
+`;
 
-const HotspotItem = ({ content }) => {
+const HotspotItem = ({ content, number }) => {
+	const size = useWindowSize();
 
-    const hotstopEl = useRef(null)
-    const hotstopButtonEl = useRef(null)
+	const [width, setWidth] = useState(null);
 
-    const resetHotspot = () => {
+	const hotstopEl = useRef(null);
+	const hotstopButtonEl = useRef(null);
 
-        const hotspotContent = document.querySelectorAll(".HotspotItemContent")
-        const hotspotButtons = document.querySelectorAll(".HotspotItemButton")
+	console.log(content);
 
-        for (var i = 0; i < hotspotContent.length; i++) {
+	const resetHotspot = () => {
+		const hotspotContent = document.querySelectorAll(".HotspotItemContent");
+		const hotspotButtons = document.querySelectorAll(".HotspotItemButton");
 
-            hotspotContent[i].classList.remove('open')
+		for (var i = 0; i < hotspotContent.length; i++) {
+			hotspotContent[i].classList.remove("open");
 
-            TweenMax.to(hotspotContent[i], .6, {
-                autoAlpha: 0,
-                opacity: 0,
-                x: 25,
-                ease: Power3.easeInOut
-            })
-        }
+			TweenMax.to(hotspotContent[i], 0.6, {
+				autoAlpha: 0,
+				opacity: 0,
+				x: 25,
+				ease: Power3.easeInOut
+			});
+		}
 
-        for (var j = 0; j < hotspotButtons.length; j++) {
+		for (var j = 0; j < hotspotButtons.length; j++) {
+			hotspotButtons[j].classList.remove("open");
 
-            hotspotButtons[j].classList.remove('open')
+			TweenMax.to(hotspotButtons[j], 0.2, {
+				rotation: 0,
+				transformOrigin: "50% 50%",
+				ease: Power3.easeInOut
+			});
+		}
+	};
 
-            TweenMax.to(hotspotButtons[j], .2, {
-                rotation: 0,
-                transformOrigin: "50% 50%",
-                ease: Power3.easeInOut
-            })
-        }
+	const handleClickHotspotButton = () => {
+		if (
+			hotstopEl.current.classList.contains("open") ||
+			hotstopButtonEl.current.classList.contains("open")
+		) {
+			resetHotspot();
+			TweenMax.to(hotstopEl.current, 0.6, {
+				autoAlpha: 0,
+				opacity: 0,
+				x: 25,
+				ease: Power3.easeInOut
+			});
+		} else {
+			resetHotspot();
+			TweenMax.to(hotstopEl.current, 0.6, {
+				autoAlpha: 1,
+				opacity: 1,
+				x: 0,
+				ease: Power3.easeInOut
+			});
 
-    }
+			hotstopEl.current.classList.add("open");
+			hotstopButtonEl.current.classList.add("open");
+		}
+	};
 
-    const handleClickHotspotButton = () => {
+	useEffect(() => {
+		resetHotspot();
+	}, []);
 
-        if (hotstopEl.current.classList.contains('open') || hotstopButtonEl.current.classList.contains('open')) {
+	useEffect(() => {
+		setWidth(size.width);
+	}, [size]);
 
-            resetHotspot()
-            TweenMax.to(hotstopEl.current, .6, {
-                autoAlpha: 0,
-                opacity: 0,
-                x: 25,
-                ease: Power3.easeInOut
-            })
+	return (
+		<HotspotItemContainer content={content}>
+			<HotspotItemButton
+				className="HotspotItemButton"
+				alt="button"
+				onClick={() => {
+					width >= breakpoints.large && handleClickHotspotButton();
+				}}
+				ref={hotstopButtonEl}
+			>
+				{number}
+			</HotspotItemButton>
 
-            TweenMax.to(hotstopButtonEl.current, .2, {
-                rotation: 0,
-                transformOrigin: "50% 50%",
-                ease: Power3.easeInOut
-            })
+			<HotspotItemContent
+				className="HotspotItemContent"
+				ref={hotstopEl}
+				content={content}
+			>
+				<h4 className="bodyNormal">{content.title}</h4>
+				<p className="bodySmall">{content.text}</p>
+			</HotspotItemContent>
+		</HotspotItemContainer>
+	);
+};
 
-        } else {
-
-            resetHotspot()
-            TweenMax.to(hotstopEl.current, .6, {
-                autoAlpha: 1,
-                opacity: 1,
-                x: 0,
-                ease: Power3.easeInOut
-            })
-
-            TweenMax.to(hotstopButtonEl.current, .2, {
-                rotation: 45,
-                transformOrigin: "50% 50%",
-                ease: Power3.easeInOut
-            })
-
-            hotstopEl.current.classList.add('open')
-            hotstopButtonEl.current.classList.add('open')
-        }
-
-    }
-
-    useEffect(() => {
-
-        resetHotspot()
-
-    }, [])
-
-    return (
-        <HotspotItemContainer content={content}>
-
-            <HotspotItemButton className="HotspotItemButton" alt="button" src={hotspotButton} ref={hotstopButtonEl} onClick={() => handleClickHotspotButton()} />
-
-            <HotspotItemContent className="HotspotItemContent" ref={hotstopEl} content={content}>
-
-                <p>{content.text}</p>
-
-                <a href={content.link} target="_blank" rel="noopener noreferrer">Ver más</a>
-
-            </HotspotItemContent>
-
-        </HotspotItemContainer>
-    )
-}
-
-export default HotspotItem
+export default HotspotItem;

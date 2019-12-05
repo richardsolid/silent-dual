@@ -10,6 +10,8 @@ const ColumnLayout = styled.div`
   ${({ align }) => align === "center" && "margin: 0 auto;"}
   ${({ align }) => align === "left" && "margin-right: auto;"}
   ${({ align }) => align === "right" && "margin-left: auto;"}
+	
+	${({ direction }) => direction === "column" && "flex-direction: column;"}
   
   padding-left: ${gutter}px;
   padding-right: ${gutter}px;
@@ -47,6 +49,7 @@ const Column = ({
 	mdOffset,
 	lgOffset,
 	align,
+	direction,
 	className
 }) => {
 	return (
@@ -60,6 +63,7 @@ const Column = ({
 			mdOffset={mdOffset}
 			lgOffset={lgOffset}
 			align={align}
+			direction={direction}
 			className={className}
 		>
 			{children}
