@@ -16,6 +16,7 @@ import Column from "../../utils/grid/column";
 import data from "../../data";
 
 const FormContainer = styled.div`
+	z-index: 0;
 	padding: 80px 0;
 
 	h2 {
@@ -36,6 +37,12 @@ const FormContainer = styled.div`
 
 const Form = styled.div`
 	width: 100%;
+
+	color: black;
+
+	option:disabled {
+		color: black;
+	}
 
 	fieldset {
 		margin: 0 auto !important;

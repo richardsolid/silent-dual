@@ -29,6 +29,7 @@ const Title = styled.h2`
 	text-align: center;
 	width: 100%;
 	margin: 100px auto 60px;
+	z-index: 0;
 
 	@media screen and (min-width: ${breakpoints.tablet}px) {
 		margin: 120px auto 80px;
@@ -88,24 +89,23 @@ const ModeloDescription = styled.div`
 	margin: 0 auto 25px;
 `;
 
-
 const DownloadButtonContainer = styled.a`
 	background: ${variables.primary};
 	color: white;
 	margin: 40px auto 40px;
 	border-radius: 3px;
-  cursor: pointer;
-  text-decoration: none;
-  
+	cursor: pointer;
+	text-decoration: none;
+
 	display: flex;
-  flex-wrap: nowrap;
+	flex-wrap: nowrap;
 
-  transition: .2s;
+	transition: 0.2s;
 
-  &:hover,
-  &:focus {
-    background: ${variables.primaryDark};
-  }
+	&:hover,
+	&:focus {
+		background: ${variables.primaryDark};
+	}
 `;
 
 const LeftButton = styled.div`
@@ -113,20 +113,19 @@ const LeftButton = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-  text-align: center;
-  font-weight: bold;
+	text-align: center;
+	font-weight: bold;
 
-  padding: 16px 20px;
-
+	padding: 16px 20px;
 `;
 
 const DonwloadIconBox = styled.div`
 	border-left: 1px solid white;
 	display: flex;
 	align-items: center;
-  justify-content: center;
+	justify-content: center;
 
-  padding: 20px;
+	padding: 20px;
 `;
 
 const Modelos = () => {
@@ -142,7 +141,6 @@ const Modelos = () => {
 		<section id="modelos">
 			<Wrapper>
 				<Row>
-
 					<Column xs={12}>
 						<Title>{modelos.title}</Title>
 					</Column>
@@ -162,20 +160,16 @@ const Modelos = () => {
 						))}
 					</ModelosContainer>
 
-
 					<Column xs={12}>
-						<DownloadButtonContainer href="#" target="_blank" >
+						<DownloadButtonContainer href="#" target="_blank">
 							<LeftButton>{modelos.button}</LeftButton>
 							<DonwloadIconBox>
 								<img src={downloadIcon} alt="download icon" />
 							</DonwloadIconBox>
 						</DownloadButtonContainer>
 					</Column>
-
-
 				</Row>
 			</Wrapper>
-
 		</section>
 	);
 };

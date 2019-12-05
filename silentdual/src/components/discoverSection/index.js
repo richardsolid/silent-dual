@@ -29,6 +29,7 @@ const DiscoverSectionContainer = styled(a.section)`
 	background-color: black;
 	color: white;
 	padding: 120px 0;
+	position: relative;
 
 	h2 {
 		width: 100%;
@@ -203,9 +204,11 @@ const DiscoverSection = () => {
 
 	const sectionDiscover = useSpring({
 		from: {
-			opacity: 0
+			opacity: 0,
+			zIndex: ratio > 0 ? 100 : -100
 		},
 		to: {
+			zIndex: ratio > 0 ? 100 : -100,
 			opacity: ratio > 0 ? 1 : 0
 		}
 	});
