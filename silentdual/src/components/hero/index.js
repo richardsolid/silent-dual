@@ -250,7 +250,7 @@ const Hero = () => {
       opacity: 0
     },
     to: {
-      opacity: ratio ? parseFloat(ratio) : 1
+      opacity: entry.intersectionRatio ? entry.intersectionRatio : 1
     }
   });
 
