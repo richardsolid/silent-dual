@@ -36,8 +36,12 @@ const ModelosContainer = styled.div`
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	margin: 0 auto 45px;
+
+	@media screen and (min-width: ${breakpoints.tablet}px) {
+		justify-content: space-between;
+	}
 `;
 
 const ModeloCard = styled.div`
@@ -46,6 +50,7 @@ const ModeloCard = styled.div`
 	text-align: center;
 	flex-basis: 100%;
 	width: 100%;
+	min-width: 300px;
 	max-width: 350px;
 	box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.1);
 	margin: 0 auto 20px;
