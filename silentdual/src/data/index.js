@@ -81,7 +81,9 @@ const data = {
 	},
 	caracteristicas: [],
 	componentes: [],
-	instalacion: [],
+	instalacion: {
+		button: "Descarga las características técnicas"
+	},
 	modelos: {
 		title: "Modelos disponibles",
 		cards: [

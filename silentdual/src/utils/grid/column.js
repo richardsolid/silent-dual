@@ -19,9 +19,7 @@ const ColumnLayout = styled.div`
 
 	width: 100%;
 
-	@media only screen and (min-width: ${breakpoints.phone}px ){
-		${({ xsOrder }) => xsOrder && "order: " + xsOrder + ";"}
-	}
+	${({ xsOrder }) => xsOrder && "order: " + xsOrder + ";"}
 
 	@media only screen and (min-width: ${breakpoints.tablet}px ){
 		${({ smOrder }) => smOrder && "order: " + smOrder + ";"}

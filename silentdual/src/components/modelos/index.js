@@ -6,6 +6,9 @@ import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
 
+//Assets
+import variables from "../../assets/styles/variables";
+
 //styles:
 import { breakpoints } from "../../assets/styles/breakpoints";
 
@@ -85,19 +88,17 @@ const ModeloDescription = styled.div`
 	margin: 0 auto 25px;
 `;
 
+
 const DownloadButtonContainer = styled.div`
-	background: #ea2c13;
+	background: ${variables.primary};
 	color: white;
-	margin: 0 auto 40px;
+	margin: 40px auto 40px;
 	border-radius: 3px;
 	font-size: 15px;
-	font-family: DINBold;
-	line-height: 21px;
+  line-height: 21px;
+  
 	display: flex;
-	flex-wrap: nowrap;
-	height: 52px;
-	width: 100%;
-	width: fit-content;
+  flex-wrap: nowrap;
 
 	@media screen and (min-width: ${breakpoints.tablet}px) {
 		font-size: 16px;
@@ -106,27 +107,24 @@ const DownloadButtonContainer = styled.div`
 `;
 
 const LeftButton = styled.div`
-	width: 220px;
 	height: inherit;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
-	@media screen and (min-width: ${breakpoints.tablet}px) {
-		width: 315px;
-	}
+  text-align: center;
+
+  padding: 16px 20px;
+
+  font-weight: bold;
 `;
 
 const DonwloadIconBox = styled.div`
-	height: inherit;
 	border-left: 1px solid white;
-	width: 42px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	@media screen and (min-width: ${breakpoints.tablet}px) {
-		width: 50px;
-	}
+  justify-content: center;
+
+  padding: 20px;
 
 	img {
 		height: 15px;
@@ -145,11 +143,13 @@ const Modelos = () => {
 	return (
 		<section id="modelos">
 			<Wrapper>
+
 				<Row>
 					<Column xs={12}>
 						<Title>{modelos.title}</Title>
 					</Column>
 				</Row>
+
 				<ModelosContainer>
 					{modelos.cards.map((modelo, i) => (
 						<ModeloCard key={i}>
@@ -164,13 +164,18 @@ const Modelos = () => {
 						</ModeloCard>
 					))}
 				</ModelosContainer>
+
 			</Wrapper>
-			<DownloadButtonContainer>
-				<LeftButton>{modelos.button}</LeftButton>
-				<DonwloadIconBox>
-					<img src={downloadIcon} alt="download icon" />
-				</DonwloadIconBox>
-			</DownloadButtonContainer>
+
+			<Column xs={12}>
+				<DownloadButtonContainer>
+					<LeftButton>{modelos.button}</LeftButton>
+					<DonwloadIconBox>
+						<img src={downloadIcon} alt="download icon" />
+					</DonwloadIconBox>
+				</DownloadButtonContainer>
+			</Column>
+
 		</section>
 	);
 };

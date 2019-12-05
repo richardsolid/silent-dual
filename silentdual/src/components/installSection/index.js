@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 //Assets
 import { breakpoints } from "../../assets/styles/breakpoints";
+import variables from "../../assets/styles/variables";
 
 //Utils
 import Wrapper from "../../utils/grid/wrapper";
@@ -13,12 +14,16 @@ import useWindowSize from "../../utils/useWindowSize";
 //images:
 import instantFriendly from "../../images/instant-friendly.svg";
 import conexionado from "../../images/conexionado.jpg";
+import downloadIcon from "../../images/download_icon.svg";
 
 //video:
 import Demovideo from "../../videos/demovideo.mp4";
 
 //components:
 import VideoPlayer from "../videoPlayer";
+
+//data:
+import data from "../../data";
 
 const InstallSectionContainer = styled.section`
 	display: flex;
@@ -52,15 +57,15 @@ const InstallSectionContainer = styled.section`
 
 const InstallSectionText = styled.div`
 	h3 {
-    margin-top: 0;
-		margin-bottom: 40px;
-		width: 100%;
+    width: 100%;
     text-align: center;
     
-    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-top: 80px;
 
 		@media screen and (min-width: ${breakpoints.large}px) {
       text-align: left;
+      margin-top: 60px;
 		}
 	}
 
@@ -87,10 +92,59 @@ const PlayButton = styled.img`
 `;
 
 const InstallSectionVideo = styled.div`
-  margin-top: 40px;
+  margin-top: 80px;
+
+  @media screen and (min-width: ${breakpoints.large}px) {
+    margin-top: 60px;
+  }
+`;
+
+const DownloadButtonContainer = styled.div`
+	background: ${variables.primary};
+	color: white;
+	margin: 40px auto 40px;
+	border-radius: 3px;
+	font-size: 15px;
+  line-height: 21px;
+  
+	display: flex;
+  flex-wrap: nowrap;
+
+	@media screen and (min-width: ${breakpoints.tablet}px) {
+		font-size: 16px;
+		line-height: 24px;
+	}
+`;
+
+const LeftButton = styled.div`
+	height: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  text-align: center;
+
+  padding: 16px 20px;
+
+  font-weight: bold;
+`;
+
+const DonwloadIconBox = styled.div`
+	border-left: 1px solid white;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+	img {
+		height: 15px;
+	}
 `;
 
 const InstallSection = () => {
+
+  const { instalacion } = data;
+
   const widthWindow = useWindowSize();
 
   const [width, setWidth] = useState(null);
@@ -150,6 +204,15 @@ const InstallSection = () => {
                 alt="conexionado"
               />
             </InstallSectionVideo>
+          </Column>
+
+          <Column xs={12} xsOrder={3}>
+            <DownloadButtonContainer>
+              <LeftButton>{instalacion.button}</LeftButton>
+              <DonwloadIconBox>
+                <img src={downloadIcon} alt="download icon" />
+              </DonwloadIconBox>
+            </DownloadButtonContainer>
           </Column>
 
         </Row>
