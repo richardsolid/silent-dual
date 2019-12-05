@@ -53,7 +53,7 @@ const NavBarContainer = styled.header`
 	}
 `;
 
-const SPLogo = styled(Link)`
+const SPLogo = styled(Link) `
 	display: flex;
 	background: url(${logo}) no-repeat center center;
 	background-size: contain;
@@ -159,7 +159,7 @@ const CollapsedItemsContainer = styled.div`
 `;
 
 //component:
-const NavBar = ({ data, modalIsOpen }) => {
+const NavBar = ({ data }) => {
 	const size = useWindowSize();
 
 	const [width, setWidth] = useState(null);
@@ -170,7 +170,7 @@ const NavBar = ({ data, modalIsOpen }) => {
 
 	const handleBurgerClick = () => {
 		setViewNavItems(!viewNavItems);
-		modalIsOpen(!viewNavItems);
+		document.getElementsByTagName("body")[0].classList.toggle("scrollDisabled");
 	};
 
 	useEffect(() => {

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 //Assets
 import { breakpoints } from "../../assets/styles/breakpoints";
+import variables from "../../assets/styles/variables";
 
 //Utils
 import Wrapper from "../../utils/grid/wrapper";
@@ -12,13 +13,17 @@ import useWindowSize from "../../utils/useWindowSize";
 
 //images:
 import instantFriendly from "../../images/instant-friendly.svg";
-import playButton from "../../images/play-button.svg";
+import conexionado from "../../images/conexionado.jpg";
+import downloadIcon from "../../images/download_icon.svg";
 
 //video:
 import Demovideo from "../../videos/demovideo.mp4";
 
 //components:
 import VideoPlayer from "../videoPlayer";
+
+//data:
+import data from "../../data";
 
 const InstallSectionContainer = styled.section`
 	display: flex;
@@ -45,34 +50,22 @@ const InstallSectionContainer = styled.section`
 	}
 
 	img {
+    margin-top: 40px;
 		margin: 0 auto;
-	}
-
-	.InstallSectionText {
-		order: 2;
-	}
-	.InstallSectionVideo {
-		order: 1;
-	}
-
-	@media screen and (min-width: ${breakpoints.large}px) {
-		.InstallSectionText {
-			order: 1;
-		}
-		.InstallSectionVideo {
-			order: 2;
-		}
 	}
 `;
 
 const InstallSectionText = styled.div`
 	h3 {
-		margin-bottom: 40px;
-		width: 100%;
-		text-align: center;
+    width: 100%;
+    text-align: center;
+    
+    margin-bottom: 20px;
+    margin-top: 80px;
 
 		@media screen and (min-width: ${breakpoints.large}px) {
-			text-align: left;
+      text-align: left;
+      margin-top: 60px;
 		}
 	}
 
@@ -89,97 +82,143 @@ const InstallSectionText = styled.div`
 `;
 
 const PlayButton = styled.img`
-	z-index: 2;
-	height: 50px;
-	width: 50px;
-	cursor: pointer;
-	top: 75vh;
+  cursor: pointer;
+  width: 100%;
+  height: auto;
 
 	&:hover {
 		opacity: 0.8;
 	}
-
-	@media screen and (min-width: 768px) {
-		height: 60px;
-		width: 60px;
-	}
 `;
 
-const InstallSectionVideo = styled.div``;
+const InstallSectionVideo = styled.div`
+  margin-top: 80px;
+
+  @media screen and (min-width: ${breakpoints.large}px) {
+    margin-top: 60px;
+  }
+`;
+
+const DownloadButtonContainer = styled.a`
+	background: ${variables.primary};
+	color: white;
+	margin: 40px auto 40px;
+	border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  
+	display: flex;
+  flex-wrap: nowrap;
+
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    background: ${variables.primaryDark};
+  }
+`;
+
+const LeftButton = styled.div`
+	height: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  text-align: center;
+  font-weight: bold;
+
+  padding: 16px 20px;
+
+`;
+
+const DonwloadIconBox = styled.div`
+	border-left: 1px solid white;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+`;
 
 const InstallSection = () => {
-	const widthWindow = useWindowSize();
 
-	const [width, setWidth] = useState(null);
-	const [showVideo, setShowVideo] = useState(null);
+  const { instalacion } = data;
 
-	const handlePlayButton = () => {
-		setShowVideo(true);
-		const video = document.querySelector("#videoPlayerInstall");
-		video && video.focus();
-	};
+  const widthWindow = useWindowSize();
 
-	useEffect(() => {
-		setWidth(widthWindow);
-	}, [widthWindow]);
+  const [width, setWidth] = useState(null);
+  const [showVideo, setShowVideo] = useState(null);
 
-	return (
-		<InstallSectionContainer>
-			<Wrapper>
-				<Row>
-					<Column xs={12}>
-						<img
-							id="instantFriendly"
-							src={instantFriendly}
-							alt="instant friendly"
-						/>
-					</Column>
+  const handlePlayButton = () => {
+    setShowVideo(true);
+    const video = document.querySelector("#videoPlayerInstall");
+    video && video.focus();
+  };
 
-					<Column xs={12}>
-						<h2 className="headingMedium">
-							S&P diseña productos fáciles de instalar
-						</h2>
-					</Column>
-					<Column xs={12}>
-						<p className="headingTiny">Plug & Play</p>
-					</Column>
-				</Row>
+  useEffect(() => {
+    setWidth(widthWindow);
+  }, [widthWindow]);
 
-				<Row>
-					<Column xs={12} lg={4} className="InstallSectionText">
-						<InstallSectionText>
-							<h3 className="headingSmall">Conexionado a 2 hilos</h3>
-							<p>
-								En S&P apostamos por la innovación en usabilidad, por eso SILENT
-								DUAL cuenta con el sello Install Friendly de garantía de calidad
-								técnica y de facilidad a la hora de realizarse la instalación.
-								El extractor de baño se coloca con una práctica instalación que
-								se realiza con una conexión directa de tan solo 2 hilos (L/N).
-							</p>
-						</InstallSectionText>
-					</Column>
+  return (
+    <InstallSectionContainer>
+      <Wrapper>
+        <Row>
+          <Column xs={12}>
+            <img
+              id="instantFriendly"
+              src={instantFriendly}
+              alt="instant friendly"
+            />
+          </Column>
 
-					<Column xs={12} lg={8} className="InstallSectionVideo">
-						<InstallSectionVideo>
-							<PlayButton
-								onClick={handlePlayButton}
-								src={playButton}
-								alt="play button"
-							/>
-						</InstallSectionVideo>
-					</Column>
-				</Row>
-			</Wrapper>
+          <Column xs={12}>
+            <h2 className="headingMedium">
+              {instalacion.title}
+            </h2>
+          </Column>
+          <Column xs={12}>
+            <p className="headingTiny">{instalacion.subtitle}</p>
+          </Column>
+        </Row>
 
-			<VideoPlayer
-				id="videoPlayerInstall"
-				width={width}
-				showVideo={showVideo}
-				video={Demovideo}
-				setShowVideo={setShowVideo}
-			/>
-		</InstallSectionContainer>
-	);
+        <Row>
+          <Column xs={12} lg={5} xsOrder={2} lgOrder={1}>
+            <InstallSectionText>
+              <h3 className="headingSmall">{instalacion.titleText}</h3>
+              <p>{instalacion.descriptionText}</p>
+            </InstallSectionText>
+          </Column>
+
+          <Column xs={12} lg={7} xsOrder={1} lgOrder={2}>
+            <InstallSectionVideo>
+              <PlayButton
+                onClick={handlePlayButton}
+                src={conexionado}
+                alt={instalacion.imgAlt}
+              />
+            </InstallSectionVideo>
+          </Column>
+
+          <Column xs={12} xsOrder={3}>
+            <DownloadButtonContainer href="#" target="_blank" >
+              <LeftButton>{instalacion.button}</LeftButton>
+              <DonwloadIconBox>
+                <img src={downloadIcon} alt={instalacion.buttonAlt} />
+              </DonwloadIconBox>
+            </DownloadButtonContainer>
+          </Column>
+
+        </Row>
+      </Wrapper>
+
+      <VideoPlayer
+        id="videoPlayerInstall"
+        width={width}
+        showVideo={showVideo}
+        video={Demovideo}
+        setShowVideo={setShowVideo}
+      />
+    </InstallSectionContainer>
+  );
 };
 
 export default InstallSection;

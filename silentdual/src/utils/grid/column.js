@@ -17,12 +17,28 @@ const ColumnLayout = styled.div`
   padding-right: ${gutter}px;
   box-sizing: border-box;
 
-  width: 100%;
+	width: 100%;
+
+	${({ xsOrder }) => xsOrder && "order: " + xsOrder + ";"}
+
+	@media only screen and (min-width: ${breakpoints.tablet}px ){
+		${({ smOrder }) => smOrder && "order: " + smOrder + ";"}
+	}
+
+	@media only screen and (min-width: ${breakpoints.desktop}px ){
+		${({ mdOrder }) => mdOrder && "order: " + mdOrder + ";"}
+	}
+
+	@media only screen and (min-width: ${breakpoints.large}px ){
+		${({ lgOrder }) => lgOrder && "order: " + lgOrder + ";"}
+	}
+	
+	
 
   @media only screen and (min-width: ${breakpoints.phone}px ){
     ${({ xs }) => xs && "width: " + (xs / 12) * 100 + "%"}
     ${({ xsOffset }) =>
-			xsOffset && "margin-left: " + (xsOffset / 12) * 100 + "%"}
+		xsOffset && "margin-left: " + (xsOffset / 12) * 100 + "%"}
   }
   
   @media only screen and (min-width: ${breakpoints.tablet}px ){
@@ -48,6 +64,10 @@ const Column = ({
 	smOffset,
 	mdOffset,
 	lgOffset,
+	xsOrder,
+	smOrder,
+	mdOrder,
+	lgOrder,
 	align,
 	direction,
 	className
@@ -62,6 +82,10 @@ const Column = ({
 			smOffset={smOffset}
 			mdOffset={mdOffset}
 			lgOffset={lgOffset}
+			xsOrder={xsOrder}
+			smOrder={smOrder}
+			mdOrder={mdOrder}
+			lgOrder={lgOrder}
 			align={align}
 			direction={direction}
 			className={className}

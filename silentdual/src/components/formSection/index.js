@@ -12,6 +12,9 @@ import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
 
+//data:
+import data from "../../data";
+
 const FormContainer = styled.div`
 	padding: 80px 0;
 
@@ -47,7 +50,7 @@ const Form = styled.div`
 
 		@media only screen and (min-width: ${breakpoints.desktop}px) {
 			padding: 0 15px !important;
-			width: 50% !important;
+			//width: 50% !important;
 		}
 	}
 
@@ -121,14 +124,17 @@ const Form = styled.div`
 `;
 
 const FormSection = () => {
+
+	const { contacta } = data;
+
 	return (
 		<FormContainer>
 			<Wrapper>
 				<Row>
 					<Column xs="12" direction="column">
-						<h2 className="headingMedium">Somos un equipo, tu equipo</h2>
-						<h3 className="headingTiny">Asesoramiento profesional gratuito</h3>
-						<p>Te ayudamos con tu proyecto, cuéntanos.</p>
+						<h2 className="headingMedium">{contacta.title}</h2>
+						<h3 className="headingTiny">{contacta.subtitle}</h3>
+						<p>{contacta.text}</p>
 					</Column>
 
 					<Form>
