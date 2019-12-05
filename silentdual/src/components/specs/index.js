@@ -40,8 +40,6 @@ const Specs = () => {
 		threshold: buildThresholdArray()
 	});
 
-	console.log(entry.intersectionRatio);
-
 	const props = useSpring({
 		from: {
 			opacity: 0

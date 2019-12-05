@@ -13,6 +13,7 @@ const HotspotItemContainer = styled.div`
 	position: absolute;
 	top: ${({ content }) => content.top}%;
 	left: ${({ content }) => content.left}%;
+	z-index: 10;
 `;
 
 const HotspotItemButton = styled.div`
@@ -79,8 +80,6 @@ const HotspotItem = ({ content, number }) => {
 
 	const hotstopEl = useRef(null);
 	const hotstopButtonEl = useRef(null);
-
-	console.log(content);
 
 	const resetHotspot = () => {
 		const hotspotContent = document.querySelectorAll(".HotspotItemContent");
