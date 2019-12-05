@@ -10,8 +10,8 @@ import SpecFuncionamiento from "./SpecFuncionamiento";
 import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled.section`
-	margin-top: 1000px;
-	margin-bottom: 500px;
+	margin-top: 95vh;
+	margin-bottom: 310vh;
 	height: fit-content;
 	position: relative;
 `;

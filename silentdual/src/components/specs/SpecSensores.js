@@ -14,12 +14,13 @@ import IconsPNG from "../../images/spec-sensores-icons.png";
 
 const Container = styled.div`
 	position: relative;
-	height: 150vh;
+	height: 100vh;
+	top: 10vh;
 `;
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 30%;
+	top: 30vh;
 `;
 
 const Title = styled(a.h3)`
@@ -92,7 +93,7 @@ const SpecSensores = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.15) * 8 || 0
+			opacity: (ratio - 0.2) * 8 || 0
 		}
 	});
 
@@ -101,7 +102,7 @@ const SpecSensores = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.4) * 8 || 0
 		}
 	});
 
@@ -110,7 +111,7 @@ const SpecSensores = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.1) * 8 || 0
+			opacity: (ratio - 0.5) * 8 || 0
 		}
 	});
 
@@ -119,7 +120,7 @@ const SpecSensores = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.6) * 8 || 0
 		}
 	});
 

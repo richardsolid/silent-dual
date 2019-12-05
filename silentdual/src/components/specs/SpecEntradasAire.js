@@ -13,7 +13,8 @@ import SpecEntradasAireComp from "./SpecEntradasAireComp";
 
 const Container = styled.div`
 	position: relative;
-	height: 150vh;
+	height: 100vh;
+	top: 197vh;
 `;
 
 const Fixed = styled.div`
@@ -81,7 +82,7 @@ const SpecSensor = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.15) * 8 || 0
+			opacity: (ratio - 0.2) * 8 || 0
 		}
 	});
 
@@ -90,7 +91,7 @@ const SpecSensor = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.4) * 8 || 0
 		}
 	});
 
@@ -99,7 +100,7 @@ const SpecSensor = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.1) * 8 || 0
+			opacity: (ratio - 0.5) * 8 || 0
 		}
 	});
 
@@ -108,9 +109,10 @@ const SpecSensor = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.6) * 8 || 0
 		}
 	});
+
 	return (
 		<Container ref={ref}>
 			<Fixed>

@@ -15,7 +15,7 @@ const Img = styled(a.img)`
 `;
 
 const ImgIcons = styled(a.img)`
-	position: absolute;
+	/* position: absolute; */
 	right: -12%;
 	top: -23%;
 	width: 41%;
