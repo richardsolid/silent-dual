@@ -4,7 +4,7 @@ import { animated as a } from "react-spring";
 
 //images:
 import SpecImg from "../../images/spec-entradas-aire.png";
-import IconsPNG from "../../images/spec-entradas-aire-icons.png";
+import IconsPNG from "../../images/spec-entradas-aire-icons.svg";
 
 const CompContainer = styled.div`
 	position: relative;

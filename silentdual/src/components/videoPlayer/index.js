@@ -78,10 +78,6 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 	};
 
 	useEffect(() => {
-		document.getElementsByTagName("body")[0].classList.add("scrollDisabled");
-	}, []);
-
-	useEffect(() => {
 		showVideo ? showingVideo() : closingVideo();
 	});
 

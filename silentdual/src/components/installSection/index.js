@@ -172,25 +172,19 @@ const InstallSection = () => {
 
           <Column xs={12}>
             <h2 className="headingMedium">
-              S&P diseña productos fáciles de instalar
-						</h2>
+              {instalacion.title}
+            </h2>
           </Column>
           <Column xs={12}>
-            <p className="headingTiny">Plug & Play</p>
+            <p className="headingTiny">{instalacion.subtitle}</p>
           </Column>
         </Row>
 
         <Row>
           <Column xs={12} lg={5} xsOrder={2} lgOrder={1}>
             <InstallSectionText>
-              <h3 className="headingSmall">Conexionado a 2 hilos</h3>
-              <p>
-                En S&P apostamos por la innovación en usabilidad, por eso SILENT
-								DUAL cuenta con el sello Install Friendly de garantía de calidad
-								técnica y de facilidad a la hora de realizarse la instalación.
-								El extractor de baño se coloca con una práctica instalación que
-								se realiza con una conexión directa de tan solo 2 hilos (L/N).
-							</p>
+              <h3 className="headingSmall">{instalacion.titleText}</h3>
+              <p>{instalacion.descriptionText}</p>
             </InstallSectionText>
           </Column>
 
@@ -199,7 +193,7 @@ const InstallSection = () => {
               <PlayButton
                 onClick={handlePlayButton}
                 src={conexionado}
-                alt="conexionado"
+                alt={instalacion.imgAlt}
               />
             </InstallSectionVideo>
           </Column>
@@ -208,7 +202,7 @@ const InstallSection = () => {
             <DownloadButtonContainer href="#" target="_blank" >
               <LeftButton>{instalacion.button}</LeftButton>
               <DonwloadIconBox>
-                <img src={downloadIcon} alt="download icon" />
+                <img src={downloadIcon} alt={instalacion.buttonAlt} />
               </DonwloadIconBox>
             </DownloadButtonContainer>
           </Column>

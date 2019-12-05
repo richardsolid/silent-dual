@@ -82,7 +82,13 @@ const data = {
 	caracteristicas: [],
 	componentes: [],
 	instalacion: {
-		button: "Descarga las características técnicas"
+		title: "S&P diseña productos fáciles de instalar",
+		subtitle: "Plug & Play",
+		titleText: "Conexionado a 2 hilos",
+		descriptionText: "En S&P apostamos por la innovación en usabilidad, por eso SILENT DUAL cuenta con el sello Install Friendly de garantía de calidad técnica y de facilidad a la hora de realizarse la instalación. El extractor de baño se coloca con una práctica instalación que se realiza con una conexión directa de tan solo 2 hilos(L / N).",
+		imgAlt: "conexionado",
+		buttonAlt: "download icon",
+		button: "Descargar el folleto de producto"
 	},
 	modelos: {
 		title: "Modelos disponibles",
@@ -102,7 +108,11 @@ const data = {
 		],
 		button: "Descarga las características técnicas"
 	},
-	contacta: [],
+	contacta: {
+		title: "Somos un equipo, tu equipo",
+		subtitle: "Asesoramiento profesional gratuito",
+		text: "Te ayudamos con tu proyecto, cuéntanos.",
+	},
 	footer: "© 2019 S&P Sistemas de Ventilación S.L.U."
 };
 
