@@ -53,7 +53,7 @@ const NavBarContainer = styled.header`
 	}
 `;
 
-const SPLogo = styled(Link) `
+const SPLogo = styled(Link)`
 	display: flex;
 	background: url(${logo}) no-repeat center center;
 	background-size: contain;

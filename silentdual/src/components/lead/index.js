@@ -33,43 +33,39 @@ const LeadSection = styled.section`
 	position: relative;
 	color: white;
 	overflow: hidden;
-
-	.bg {
-		object-fit: scale-down;
+	line-height: 0;
+	@media screen and (min-width: ${breakpoints.tablet}px) {
+		margin-bottom: 100vh;
+		height: 200vh;
 	}
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
-		margin-bottom: 100%;
-		height: 2000px;
+	img {
+		width: 100%;
+		&.bg {
+			z-index: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&.leg {
+			z-index: 2;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
 
-		img {
-			width: 100%;
-			&.bg {
-				z-index: 1;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-			&.leg {
-				z-index: 2;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
+		&.head {
+			z-index: 1;
+			position: absolute;
+			top: 1%;
+			left: 0;
+		}
 
-			&.head {
-				z-index: 1;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-
-			&.bath {
-				z-index: 3;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
+		&.bath {
+			z-index: 3;
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 	}
 `;
@@ -78,16 +74,31 @@ const BackgroundImage = styled.img`
 	width: 100%;
 `;
 
-const Description = styled.h2`
-	font-weight: bold;
-	text-align: center;
-
-	width: 80%;
-	z-index: 1000;
-	margin: 0 auto;
-
-	@media screen and (min-width: ${breakpoints.large}) {
-		position: absolute;
+const Description = styled.div`
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	@media screen and (min-width: ${breakpoints.tablet}px) {
+		height: 100vh;
+	}
+	h2 {
+		max-width: 70%;
+		font-weight: bold;
+		font-size: 28px;
+		line-height: 34px;
+		text-align: center;
+		@media screen and (min-width: ${breakpoints.tablet}px) {
+			max-width: 30%;
+			font-size: 33px;
+			line-height: 39px;
+		}
 	}
 `;
 
@@ -173,13 +184,8 @@ const Lead = () => {
 								style={{ transform: props.xy.interpolate(bathtrans) }}
 							/>
 						</Parallax>
-
-						<Description
-							className={
-								width > breakpoints.tablet ? "headingMedium" : "headingSmall"
-							}
-						>
-							{lead.description}
+						<Description>
+							<h2>{lead.description}</h2>
 						</Description>
 					</Fixed>
 				</LeadSection>
@@ -187,18 +193,9 @@ const Lead = () => {
 		} else {
 			return (
 				<LeadSection>
-					<BackgroundImage
-						src={BackgroundImg}
-						alt="background"
-						className={"bg"}
-					/>
-
-					<Description
-						className={
-							width > breakpoints.tablet ? "headingMedium" : "headingSmall"
-						}
-					>
-						{lead.description}
+					<BackgroundImage src={BackgroundImg} alt="background" />
+					<Description>
+						<h2>{lead.description}</h2>
 					</Description>
 				</LeadSection>
 			);

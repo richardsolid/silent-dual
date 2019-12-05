@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { useSpring, animated } from "react-spring";
+import useIntersect from "../../utils/useIntersect";
 
 //utils:
 import useWindowSize from "../../utils/useWindowSize";
-
+import { breakpoints } from "../../assets/styles/breakpoints";
 //images:
 import instantFriendly from "../../images/instant-friendly.svg";
 import playButton from "../../images/play-button.svg";
@@ -72,7 +74,7 @@ const HomeBackground = styled.div`
 		width: 100vw;
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: ${breakpoints.tablet}px) {
 		position: absolute;
 		height: 100vh;
 		top: 0;
@@ -93,7 +95,7 @@ const HeroContent = styled.div`
 	justify-content: space-evenly;
 	align-items: center;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: ${breakpoints.tablet}px) {
 		max-width: 50%;
 	}
 `;
@@ -104,7 +106,7 @@ const InstantFriendly = styled.img`
 	height: 80px;
 	width: 70px;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: ${breakpoints.tablet}px) {
 		height: 115px;
 		width: 100px;
 	}
@@ -118,7 +120,7 @@ const HomeHeader = styled.div`
 	max-width: calc(100% - 60px);
 	margin: 0 auto;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: ${breakpoints.tablet}px) {
 		height: initial;
 	}
 `;
@@ -146,7 +148,7 @@ const PlayButton = styled.img`
 		opacity: 0.8;
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: ${breakpoints.tablet}px) {
 		height: 60px;
 		width: 60px;
 	}
@@ -190,7 +192,46 @@ const HeroLinkDown = styled(Link)`
 	}
 `;
 
+const ScrollContainer = styled.div`
+	height: 100%;
+	@media screen and (min-width: ${breakpoints.tablet}px) {
+		height: 100vh;
+		margin-bottom: 100vh;
+	}
+`;
+const Fixed = styled(animated.div)`
+	position: static;
+	@media screen and (min-width: ${breakpoints.tablet}px) {
+		top: 0;
+		width: 100%;
+		position: fixed;
+	}
+`;
+
 const Hero = () => {
+	const { format } = new Intl.NumberFormat("en-US", {
+		maximumFractionDigits: 2
+	});
+
+	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
+	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
+	//entry es el objeto con la información de la posición del elemento
+	const [ref, entry] = useIntersect({
+		//threshold es la cantidad de elemento visible para que se dispare el evento
+		threshold: buildThresholdArray()
+	});
+
+	const ratio = format(entry.intersectionRatio);
+
+	const heroProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: entry.intersectionRatio ? entry.intersectionRatio : 1
+		}
+	});
+
 	const widthWindow = useWindowSize();
 
 	const [width, setWidth] = useState(null);
@@ -205,54 +246,60 @@ const Hero = () => {
 	}, [widthWindow]);
 
 	return (
-		<HomeContainer>
-			<HomeBackground>
-				{width < 768 ? (
-					<img src={videoPoster} alt="site title" />
-				) : (
-					<video
-						controls={false}
-						type="video/mp4"
-						poster={videoPoster}
-						autoPlay
-						muted
-						loop
-					>
-						<source src={Demovideo} type="video/mp4" />
-					</video>
-				)}
-			</HomeBackground>
-			<HeroContent>
-				<InstantFriendly src={instantFriendly} alt="instant friendly" />
-				<HomeHeader>
-					<HomeTitle className={width > 768 ? "displaySmall" : "displayTiny"}>
-						SILENT <span>DUAL</span>
-					</HomeTitle>
-					<HomeSubtitle
-						className={width > 768 ? "headingMedium" : "headingTiny"}
-					>
-						Los extractores de baño más inteligentes diseñados para una fácil
-						instalación.
-					</HomeSubtitle>
-				</HomeHeader>
-				<PlayButton
-					onClick={handlePlayButton}
-					src={playButton}
-					alt="play button"
-				/>
-			</HeroContent>
+		<ScrollContainer ref={ref}>
+			<Fixed style={heroProps}>
+				<HomeContainer>
+					<HomeBackground>
+						{width < 768 ? (
+							<img src={videoPoster} alt="site title" />
+						) : (
+							<video
+								controls={false}
+								type="video/mp4"
+								poster={videoPoster}
+								autoPlay
+								muted
+								loop
+							>
+								<source src={Demovideo} type="video/mp4" />
+							</video>
+						)}
+					</HomeBackground>
+					<HeroContent>
+						<InstantFriendly src={instantFriendly} alt="instant friendly" />
+						<HomeHeader>
+							<HomeTitle
+								className={width > 768 ? "displaySmall" : "displayTiny"}
+							>
+								SILENT <span>DUAL</span>
+							</HomeTitle>
+							<HomeSubtitle
+								className={width > 768 ? "headingMedium" : "headingTiny"}
+							>
+								Los extractores de baño más inteligentes diseñados para una
+								fácil instalación.
+							</HomeSubtitle>
+						</HomeHeader>
+						<PlayButton
+							onClick={handlePlayButton}
+							src={playButton}
+							alt="play button"
+						/>
+					</HeroContent>
 
-			<HeroLinkDown to={"/#specs"} className={"bodySmall"}>
-				Descúbrelas
-			</HeroLinkDown>
-			<VideoPlayer
-				id="videoPlayer"
-				width={width}
-				showVideo={showVideo}
-				video={Demovideo}
-				setShowVideo={setShowVideo}
-			/>
-		</HomeContainer>
+					<HeroLinkDown to={"/#specs"} className={"bodySmall"}>
+						Descúbrelas
+					</HeroLinkDown>
+					<VideoPlayer
+						id="videoPlayer"
+						width={width}
+						showVideo={showVideo}
+						video={Demovideo}
+						setShowVideo={setShowVideo}
+					/>
+				</HomeContainer>
+			</Fixed>
+		</ScrollContainer>
 	);
 };
 
