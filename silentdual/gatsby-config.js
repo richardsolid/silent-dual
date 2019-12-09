@@ -14,6 +14,22 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "YOUR_GOOGLE_TAGMANAGER_ID",
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        // Defaults to null
+        defaultDataLayer: { platform: "gatsby" }
+      }
+    },
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
