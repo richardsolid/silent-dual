@@ -220,7 +220,7 @@ const DiscoverSection = () => {
 	return (
 		<>
 			{width < breakpoints.large ? (
-				<DiscoverSectionContainer>
+				<DiscoverSectionContainer id="componentes">
 					<Wrapper>
 						<Row>
 							<Column xs={8} lg={12} align="center">
@@ -254,7 +254,7 @@ const DiscoverSection = () => {
 					</Wrapper>
 				</DiscoverSectionContainer>
 			) : (
-				<DiscoverSectionContainer style={sectionDiscover}>
+				<DiscoverSectionContainer id="componentes" style={sectionDiscover}>
 					<DiscoverSectionIntersect ref={ref}>
 						<Fixed>
 							<Wrapper>

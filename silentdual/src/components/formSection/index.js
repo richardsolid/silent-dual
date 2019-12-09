@@ -156,7 +156,7 @@ const FormSection = () => {
 	const { contacta } = data;
 
 	return (
-		<FormContainer>
+		<FormContainer id="contacta">
 			<Wrapper>
 				<Row>
 					<Column xs="12" direction="column">

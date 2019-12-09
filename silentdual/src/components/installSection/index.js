@@ -158,7 +158,7 @@ const InstallSection = () => {
 	}, [widthWindow]);
 
 	return (
-		<InstallSectionContainer>
+		<InstallSectionContainer id="instalación">
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
