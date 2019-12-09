@@ -18,271 +18,271 @@ import logo from "../../images/logo.svg";
 import Burger from "./burgerIcon.js";
 
 const Navigator = styled.div`
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	background: black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: black;
 `;
 
 const NavBarContainer = styled.header`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-	position: fixed;
-	background: ${({ isOpen }) => (isOpen ? "transparent" : "black")};
-	top: 0;
-	width: 100vw;
-	height: 60px;
-	box-sizing: border-box;
-	z-index: 1000;
+  position: fixed;
+  background: ${({ isOpen }) => (isOpen ? "transparent" : "black")};
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  box-sizing: border-box;
+  z-index: 1000;
 
-	transition: 0.2s;
+  transition: 0.2s;
 
-	&.onTop {
-		background-color: transparent;
-		height: 80px;
-	}
+  &.onTop {
+    background-color: transparent;
+    height: 80px;
+  }
 
-	@media screen and (min-width: ${breakpoints.large}px) {
-		height: 80px;
+  @media screen and (min-width: ${breakpoints.large}px) {
+    height: 80px;
 
-		&.onTop {
-			height: 100px;
-		}
-	}
+    &.onTop {
+      height: 100px;
+    }
+  }
 `;
 
 const SPLogo = styled(Link)`
-	display: flex;
-	background: url(${logo}) no-repeat center center;
-	background-size: contain;
+  display: flex;
+  background: url(${logo}) no-repeat center center;
+  background-size: contain;
 
-	width: 40px;
-	height: 40px;
+  width: 40px;
+  height: 40px;
 
-	transition: 0.2s;
+  transition: 0.2s;
 
-	&.onTop {
-		width: 60px;
-		height: 60px;
-	}
+  &.onTop {
+    width: 60px;
+    height: 60px;
+  }
 
-	opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
-	visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
+  opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
+  visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
 
-	@media screen and (min-width: ${breakpoints.large}px) {
-		width: 50px;
-		height: 50px;
+  @media screen and (min-width: ${breakpoints.large}px) {
+    width: 50px;
+    height: 50px;
 
-		&.onTop {
-			width: 70px;
-			height: 40px;
-		}
-	}
+    &.onTop {
+      width: 70px;
+      height: 40px;
+    }
+  }
 `;
 
 const SectionsLinksBar = styled.div`
-	display: flex;
-	margin: 0 0 0 auto;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  margin: 0 0 0 auto;
+  justify-content: center;
+  align-items: center;
 
-	a {
-		text-decoration: none;
-		color: white;
-		opacity: 1;
+  a {
+    text-decoration: none;
+    color: white;
+    opacity: 1;
 
-		font-weight: bold;
+    font-weight: bold;
 
-		transition: all 0.4s ease;
+    transition: all 0.4s ease;
 
-		&:hover {
-			opacity: 0.8;
-		}
+    &:hover {
+      opacity: 0.8;
+    }
 
-		& + a {
-			margin-left: 40px;
-		}
-	}
+    & + a {
+      margin-left: 40px;
+    }
+  }
 `;
 
 const CollapsedMenu = styled.div`
-	display: flex;
-	margin: auto 0;
-	flex-direction: column;
-	color: white;
-	background-color: ${variables.secondaryDark};
-	padding: 0;
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	box-sizing: border-box;
-	z-index: 999;
+  display: flex;
+  margin: auto 0;
+  flex-direction: column;
+  color: white;
+  background-color: ${variables.secondaryDark};
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  z-index: 999;
 
-	overflow: hidden;
+  overflow: hidden;
 
-	top: 0;
+  top: 0;
 
-	@media screen and (min-width: ${breakpoints.large}px) {
-		top: 110px;
-	}
+  @media screen and (min-width: ${breakpoints.large}px) {
+    top: 110px;
+  }
 
-	opacity: 0;
-	visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 
-	a {
-		text-decoration: none;
-		color: white;
-		cursor: pointer;
+  a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 60px;
-		padding: 0;
-		font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 0;
+    font-weight: bold;
 
-		position: relative;
+    position: relative;
 
-		opacity: 1;
-		transition: all 0.4s ease;
-	}
+    opacity: 1;
+    transition: all 0.4s ease;
+  }
 `;
 
 const CollapsedItemsContainer = styled.div`
-	width: 100%;
-	max-width: calc(100% - 60px);
-	margin: 80px auto;
+  width: 100%;
+  max-width: calc(100% - 60px);
+  margin: 80px auto;
 `;
 
 //component:
 const NavBar = ({ data }) => {
-	const size = useWindowSize();
+  const size = useWindowSize();
 
-	const [width, setWidth] = useState(null);
-	const [viewNavItems, setViewNavItems] = useState(false);
+  const [width, setWidth] = useState(null);
+  const [viewNavItems, setViewNavItems] = useState(false);
 
-	const navBarContainer = useRef(null);
-	const logoContainer = useRef(null);
+  const navBarContainer = useRef(null);
+  const logoContainer = useRef(null);
 
-	const handleBurgerClick = () => {
-		setViewNavItems(!viewNavItems);
-		document.getElementsByTagName("body")[0].classList.toggle("scrollDisabled");
-	};
+  const handleBurgerClick = () => {
+    setViewNavItems(!viewNavItems);
+    document.getElementsByTagName("body")[0].classList.toggle("scrollDisabled");
+  };
 
-	useEffect(() => {
-		if (viewNavItems) {
-			TweenMax.to("#menu", 0.3, {
-				autoAlpha: 1
-			});
+  useEffect(() => {
+    if (viewNavItems) {
+      TweenMax.to("#menu", 0.3, {
+        autoAlpha: 1
+      });
 
-			TweenMax.to(".navItem", 0.5, {
-				autoAlpha: 1,
-				delay: 0.1,
-				ease: Back.easeOut
-			});
-		} else {
-			TweenMax.to("#menu, .navItem", 0.3, {
-				autoAlpha: 0
-			});
-		}
+      TweenMax.to(".navItem", 0.5, {
+        autoAlpha: 1,
+        delay: 0.1,
+        ease: Back.easeOut
+      });
+    } else {
+      TweenMax.to("#menu, .navItem", 0.3, {
+        autoAlpha: 0
+      });
+    }
 
-		setWidth(size.width);
-	}, [viewNavItems, size]);
+    setWidth(size.width);
+  }, [viewNavItems, size]);
 
-	const windowIsOnTop = () => {
-		if (window.pageYOffset !== 0) {
-			return false;
-		} else {
-			return true;
-		}
-	};
+  const windowIsOnTop = () => {
+    if (window.pageYOffset !== 0) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
-	useEffect(() => {
-		navBarContainer && navBarContainer.current.classList.add("onTop");
-		logoContainer && logoContainer.current.classList.add("onTop");
+  useEffect(() => {
+    navBarContainer && navBarContainer.current.classList.add("onTop");
+    logoContainer && logoContainer.current.classList.add("onTop");
 
-		if (typeof window !== "undefined") {
-			window.addEventListener("scroll", () => {
-				if (windowIsOnTop() === true) {
-					navBarContainer.current.classList.add("onTop");
-					logoContainer.current.classList.add("onTop");
-				} else {
-					navBarContainer.current.classList.contains("onTop") &&
-						navBarContainer.current.classList.remove("onTop");
-					logoContainer.current.classList.contains("onTop") &&
-						logoContainer.current.classList.remove("onTop");
-				}
-			});
-		}
-		return () => window.removeEventListener("scroll", windowIsOnTop);
-	}, []);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () => {
+        if (windowIsOnTop() === true) {
+          navBarContainer.current.classList.add("onTop");
+          logoContainer.current.classList.add("onTop");
+        } else {
+          navBarContainer.current.classList.contains("onTop") &&
+            navBarContainer.current.classList.remove("onTop");
+          logoContainer.current.classList.contains("onTop") &&
+            logoContainer.current.classList.remove("onTop");
+        }
+      });
+    }
+    return () => window.removeEventListener("scroll", windowIsOnTop);
+  }, []);
 
-	//collapsed menu:
-	if (width < breakpoints.large)
-		return (
-			<Navigator>
-				<NavBarContainer ref={navBarContainer} isPhone isOpen={viewNavItems}>
-					<Wrapper>
-						<Row>
-							<Column xs={12}>
-								<SPLogo
-									ref={logoContainer}
-									isOpen={viewNavItems}
-									to={"/#hero"}
-									onClick={() => setViewNavItems(false)}
-								/>
-								<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
-							</Column>
-						</Row>
-					</Wrapper>
-				</NavBarContainer>
+  //collapsed menu:
+  if (width < breakpoints.large)
+    return (
+      <Navigator>
+        <NavBarContainer ref={navBarContainer} isPhone isOpen={viewNavItems}>
+          <Wrapper>
+            <Row>
+              <Column xs={12}>
+                <SPLogo
+                  ref={logoContainer}
+                  isOpen={viewNavItems}
+                  to={"/#hero"}
+                  onClick={() => setViewNavItems(false)}
+                />
+                <Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
+              </Column>
+            </Row>
+          </Wrapper>
+        </NavBarContainer>
 
-				<CollapsedMenu id="menu">
-					<Wrapper>
-						<Row>
-							<Column xs={12}>
-								<CollapsedItemsContainer>
-									{data &&
-										data.map((section, i) => (
-											<Link
-												key={i}
-												to={`/${section.anchor}`}
-												onClick={handleBurgerClick}
-												className="navItem"
-											>
-												{section.name}
-											</Link>
-										))}
-								</CollapsedItemsContainer>
-							</Column>
-						</Row>
-					</Wrapper>
-				</CollapsedMenu>
-			</Navigator>
-		);
+        <CollapsedMenu id="menu">
+          <Wrapper>
+            <Row>
+              <Column xs={12}>
+                <CollapsedItemsContainer>
+                  {data &&
+                    data.map((section, i) => (
+                      <Link
+                        key={i}
+                        to={`/${section.anchor}`}
+                        onClick={handleBurgerClick}
+                        className="navItem"
+                      >
+                        {section.name}
+                      </Link>
+                    ))}
+                </CollapsedItemsContainer>
+              </Column>
+            </Row>
+          </Wrapper>
+        </CollapsedMenu>
+      </Navigator>
+    );
 
-	//items on navbar:
-	return (
-		<NavBarContainer ref={navBarContainer}>
-			<Wrapper>
-				<Row>
-					<Column xs={12}>
-						<SPLogo ref={logoContainer} to={"#hero"} />
-						<SectionsLinksBar>
-							{data &&
-								data.map((section, i) => (
-									<Link key={i} to={`/${section.anchor}`} className="bodySmall">
-										{section.name}
-									</Link>
-								))}
-						</SectionsLinksBar>
-					</Column>
-				</Row>
-			</Wrapper>
-		</NavBarContainer>
-	);
+  //items on navbar:
+  return (
+    <NavBarContainer ref={navBarContainer}>
+      <Wrapper>
+        <Row>
+          <Column xs={12}>
+            <SPLogo ref={logoContainer} to={"#hero"} />
+            <SectionsLinksBar>
+              {data &&
+                data.map((section, i) => (
+                  <Link key={i} to={`/${section.anchor}`} className="bodySmall">
+                    {section.name}
+                  </Link>
+                ))}
+            </SectionsLinksBar>
+          </Column>
+        </Row>
+      </Wrapper>
+    </NavBarContainer>
+  );
 };
 
 export default NavBar;
