@@ -64,6 +64,12 @@ const Form = styled.div`
 	.field {
 		box-sizing: border-box;
 		padding: 0 15px !important;
+
+		& + .field {
+			@media screen and (max-width: ${breakpoints.tablet + 1}px) {
+				margin-top: 20px;
+			}
+		}
 	}
 
 	.field > label {
