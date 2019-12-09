@@ -85,7 +85,7 @@ const ResponsiveImageContainer = styled.div`
 	margin: 45px auto 140px;
 
 	@media screen and (min-width: ${breakpoints.tablet}px) {
-		margin: 45px auto;
+		margin: 45px 60px;
 	}
 `;
 

@@ -125,7 +125,7 @@ const Modelos = () => {
 						<Title className={"headingMedium"}>{modelos.title}</Title>
 					</Column>
 					{modelos.cards.map((modelo, i) => (
-						<Column xs={12} sm={6} md={4}>
+						<Column xs={12} md={4}>
 							<ModeloCard key={i}>
 								<ModeloImageBox>
 									<ModeloImage src={chooseImage(i)} alt="modelo image" />
