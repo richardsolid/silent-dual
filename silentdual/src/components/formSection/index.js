@@ -15,6 +15,7 @@ import Column from "../../utils/grid/column";
 import data from "../../data";
 
 const FormContainer = styled.div`
+	position: relative;
 	z-index: 0;
 	padding: 80px 0;
 
