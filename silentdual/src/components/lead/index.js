@@ -155,6 +155,7 @@ const Lead = () => {
 		if (width > breakpoints.tablet) {
 			return (
 				<LeadSection
+					id="descubrelo"
 					ref={ref}
 					onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
 				>
@@ -194,7 +195,7 @@ const Lead = () => {
 			);
 		} else {
 			return (
-				<LeadSection>
+				<LeadSection id="descubrelo">
 					<BackgroundImage src={FullImg} alt="background" />
 					<Description>
 						<h2>{lead.description}</h2>

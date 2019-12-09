@@ -245,7 +245,7 @@ const Hero = () => {
 	}, [widthWindow]);
 
 	return (
-		<ScrollContainer ref={ref}>
+		<ScrollContainer ref={ref} id={"hero"}>
 			<Fixed style={heroProps}>
 				<HomeContainer>
 					<HomeBackground>
@@ -282,7 +282,7 @@ const Hero = () => {
 						/>
 					</HeroContent>
 
-					<HeroLinkDown to={"/#specs"}>Descúbrelas</HeroLinkDown>
+					<HeroLinkDown to={"/#descubrelo"}>Descúbrelas</HeroLinkDown>
 					<VideoPlayer
 						id="videoPlayer"
 						width={width}

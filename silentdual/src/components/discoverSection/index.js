@@ -71,7 +71,7 @@ const DiscoverSection = () => {
 	}, [size]);
 
 	return (
-		<DiscoverSectionContainer>
+		<DiscoverSectionContainer id="componentes">
 			<Wrapper>
 				<Row>
 					<Column xs={12}>

@@ -77,7 +77,7 @@ const Specs = () => {
 	const isResponsive = width < breakpoints.tablet;
 
 	return isResponsive ? (
-		<SectionResponsive id="specs">
+		<SectionResponsive id="caracteristicas">
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
@@ -92,7 +92,7 @@ const Specs = () => {
 			</Wrapper>
 		</SectionResponsive>
 	) : (
-		<Section id="specs" ref={ref}>
+		<Section id="caracteristicas" ref={ref}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>

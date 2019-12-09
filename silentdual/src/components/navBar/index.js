@@ -230,7 +230,7 @@ const NavBar = ({ data }) => {
 								<SPLogo
 									ref={logoContainer}
 									isOpen={viewNavItems}
-									to={"#hero"}
+									to={"/#hero"}
 									onClick={() => setViewNavItems(false)}
 								/>
 								<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
@@ -248,8 +248,8 @@ const NavBar = ({ data }) => {
 										data.map((section, i) => (
 											<Link
 												key={i}
-												to={section.anchor}
-												onClick={() => setViewNavItems(!viewNavItems)}
+												to={`/${section.anchor}`}
+												onClick={handleBurgerClick}
 												className="navItem"
 											>
 												{section.name}
@@ -273,7 +273,7 @@ const NavBar = ({ data }) => {
 						<SectionsLinksBar>
 							{data &&
 								data.map((section, i) => (
-									<Link key={i} to={section.anchor} className="bodySmall">
+									<Link key={i} to={`/${section.anchor}`} className="bodySmall">
 										{section.name}
 									</Link>
 								))}
