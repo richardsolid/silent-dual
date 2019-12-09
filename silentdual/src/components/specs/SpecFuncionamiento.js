@@ -33,7 +33,24 @@ const Info = styled.div`
 	flex-direction: column;
 `;
 
-const SpecFuncionamiento = () => {
+//RESPONSIVE:
+
+const ResponsiveInfo = styled.div``;
+
+const ResponsiveTitle = styled.h3`
+	margin-bottom: 20px;
+`;
+
+const ResponsiveSubtitle = styled.h4`
+	margin-bottom: 10px;
+`;
+
+const ResponsiveDescription = styled.p`
+	font-weight: lighter;
+	margin: 0 auto;
+`;
+
+const SpecFuncionamiento = ({ isResponsive }) => {
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -93,13 +110,39 @@ const SpecFuncionamiento = () => {
 		}
 	});
 
-	return (
+	return isResponsive ? (
+		<Row>
+			<Column xs={12} md={6}>
+				<ResponsiveInfo>
+					<ResponsiveTitle className={"headingSmall"}>
+						2 modos de funcionamiento
+					</ResponsiveTitle>
+					<ResponsiveSubtitle className={"lead"}>
+						Contínuo e intermitente
+					</ResponsiveSubtitle>
+					<ResponsiveDescription className={"lead"}>
+						<strong>Funcionamiento contínuo </strong>
+						cuando los sensores no detectan presencia ni cambios de humedad,{" "}
+						<strong>funcionamiento intermitente</strong> cuando uno de los
+						sensores se activa.
+						<strong>saturación</strong>.
+					</ResponsiveDescription>
+				</ResponsiveInfo>
+			</Column>
+			<SpecFuncionesComp
+				isResponsive={isResponsive}
+				imageProps={imageProps}
+				iconsProps={iconsProps}
+			/>
+		</Row>
+	) : (
 		<Container ref={ref}>
 			<Fixed>
 				<Wrapper>
 					<Row>
 						<Column xs={12} md={6}>
 							<SpecFuncionesComp
+								isResponsive={isResponsive}
 								imageProps={imageProps}
 								iconsProps={iconsProps}
 							/>

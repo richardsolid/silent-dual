@@ -32,14 +32,6 @@ const Title = styled.h2`
 	}
 `;
 
-const ModelosContainer = styled.div`
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: 0 auto 45px;
-`;
-
 const ModeloCard = styled.div`
 	display: flex;
 	flex-direction: column;

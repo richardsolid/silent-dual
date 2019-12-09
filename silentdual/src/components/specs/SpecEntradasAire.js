@@ -31,7 +31,24 @@ const Info = styled.div`
 	flex-direction: column;
 `;
 
-const SpecSensor = () => {
+//RESPONSIVE:
+
+const ResponsiveInfo = styled.div``;
+
+const ResponsiveTitle = styled.h3`
+	margin-bottom: 20px;
+`;
+
+const ResponsiveSubtitle = styled.h4`
+	margin-bottom: 10px;
+`;
+
+const ResponsiveDescription = styled.p`
+	font-weight: lighter;
+	margin: 0 auto;
+`;
+
+const SpecSensor = ({ isResponsive }) => {
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -91,7 +108,29 @@ const SpecSensor = () => {
 		}
 	});
 
-	return (
+	return isResponsive ? (
+		<Row>
+			<Column xs={12} md={6}>
+				<ResponsiveInfo>
+					<ResponsiveTitle className={"headingSmall"}>
+						2 entradas de aire
+					</ResponsiveTitle>
+					<ResponsiveSubtitle className={"lead"}>
+						Frontal y perimetral
+					</ResponsiveSubtitle>
+					<ResponsiveDescription className={"lead"}>
+						Prestaciones aerodinámicas que le proporcionan la entrada{" "}
+						<strong>frontal</strong> y <strong>perimetral</strong> de aire.
+					</ResponsiveDescription>
+				</ResponsiveInfo>
+			</Column>
+			<SpecEntradasAireComp
+				isResponsive={isResponsive}
+				imageProps={imageProps}
+				iconsProps={iconsProps}
+			/>
+		</Row>
+	) : (
 		<Container ref={ref}>
 			<Fixed>
 				<Wrapper>
@@ -113,6 +152,7 @@ const SpecSensor = () => {
 						</Column>
 						<Column xs={12} md={6}>
 							<SpecEntradasAireComp
+								isResponsive={isResponsive}
 								imageProps={imageProps}
 								iconsProps={iconsProps}
 							/>
