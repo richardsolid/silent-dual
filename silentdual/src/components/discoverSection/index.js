@@ -90,7 +90,7 @@ const ImgRef = styled(a.img)`
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		opacity: 0;
-		height: calc(100vh - 320px);
+		max-height: 60vh;
 	}
 `;
 
@@ -108,7 +108,8 @@ const ImgExploded = styled(a.div)`
 
 	img {
 		position: absolute;
-		height: 100%;
+		height: auto;
+		max-width: 100%;
 	}
 
 	.exploded1 {
