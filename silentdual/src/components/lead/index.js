@@ -221,7 +221,7 @@ const Lead = () => {
       return (
         <LeadSection id="descubrelo">
           <Description>
-            <h2>{lead.description}</h2>
+            <DescriptionH2>{lead.description}</DescriptionH2>
           </Description>
         </LeadSection>
       );
