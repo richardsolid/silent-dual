@@ -47,9 +47,18 @@ const Form = styled.div`
 		margin: 0 auto !important;
 		max-width: 100% !important;
 
-		@media screen and (min-width: ${breakpoints.large}px) {
-			max-width: 75% !important;
+		+ fieldset {
+			padding-top: 20px !important;
 		}
+
+		&:nth-child(10),
+		&:nth-child(11) {
+			padding-top: 0 !important;
+		}
+	}
+
+	.form-columns-1 .field + .field {
+		margin-top: 20px;
 	}
 
 	.field {
@@ -57,15 +66,32 @@ const Form = styled.div`
 		padding: 0 15px !important;
 	}
 
-	.field label {
+	.field > label {
 		color: black;
 		font-size: 16px;
 		line-height: 24px;
 		margin: 0 0 8px 0;
+		font-weight: bold;
+		margin-bottom: 5px;
+		display: flex;
 	}
 
 	.input {
 		margin: 0 !important;
+	}
+
+	.inputs-list,
+	.inputs-list .hs-error-msgs {
+		list-style: none;
+		padding: 0;
+	}
+
+	.inputs-list {
+		margin: 0;
+	}
+
+	.inputs-list .hs-error-msgs {
+		margin: 10px 0 20px;
 	}
 
 	.input > .hs-input {
@@ -76,9 +102,11 @@ const Form = styled.div`
 		border-radius: 3px;
 		border: 1px solid rgb(204, 204, 204);
 
-		padding: 25px 20px;
+		padding: 17px;
+		font-size: 16px;
+		line-height: 24px;
 
-		color: black !important;
+		color: #545454 !important;
 	}
 
 	select.hs-input {
@@ -90,8 +118,10 @@ const Form = styled.div`
 	}
 
 	.hs-error-msgs {
-		margin-top: 8px !important;
+		margin: 10px 0 20px !important;
+		color: #f54b5e;
 	}
+
 	.hs-form-booleancheckbox-display {
 		display: flex !important;
 
@@ -115,11 +145,12 @@ const Form = styled.div`
 
 		padding: 0 15px;
 		box-sizing: border-box;
-
-		@media screen and (min-width: ${breakpoints.large}px) {
-			max-width: 75% !important;
-		}
 	}
+
+	.hs_submit {
+		margin-top: 20px !important;
+	}
+
 	.hs-button {
 		border: none !important;
 		background-color: ${variables.primary} !important;
@@ -150,6 +181,29 @@ const Form = styled.div`
 			width: 100% !important;
 		}
 	}
+
+	.hs-form-checkbox-display {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.hs-form-checkbox {
+		margin-top: 10px;
+	}
+
+	input[type="checkbox"] {
+		margin-right: 10px;
+		border: 1px solid ${variables.divider};
+		height: 20px !important;
+		width: 20px !important;
+		display: inline-flex;
+		border-radius: 3px;
+	}
+
+	.legal-consent-container .hs-richtext {
+		display: none;
+	}
 `;
 
 const FormSection = () => {
@@ -168,7 +222,7 @@ const FormSection = () => {
 					<Form>
 						<HubspotForm
 							portalId="2009592"
-							formId="f6e5dab3-a22c-47c6-bac3-b51a284f25f9"
+							formId="dedcb341-d7ef-4a5a-bd74-05693345fd3f"
 							onSubmit={() => console.log("Submit!")}
 							onReady={form => console.log("Form ready!")}
 							loading={<div>Loading...</div>}
