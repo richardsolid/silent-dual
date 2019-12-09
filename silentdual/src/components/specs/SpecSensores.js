@@ -15,40 +15,50 @@ import IconsPNG from "../../images/spec-sensores-icons.png";
 const Container = styled.div`
 	position: relative;
 	height: 100vh;
-	top: 10vh;
 `;
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 23%;
+	top: 220px;
 `;
 
-const Title = styled(a.h3)``;
+const Title = styled(a.h3)`
+	margin: 0 0 32px 0;
+`;
 
-const Subtitle = styled(a.h4)``;
+const Subtitle = styled(a.h4)`
+	margin: 0 0 14px 0;
+`;
 
 const Description = styled(a.p)`
 	font-weight: lighter;
+	margin: 0;
 `;
 
 const Info = styled.div`
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 `;
 
 const ImageContainer = styled.div`
 	position: relative;
+	height: calc(100vh - 280px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
 const Img = styled(a.img)`
-	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
 `;
 
 const Icons = styled(a.img)`
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
 `;
 
 //RESPONSIVE:
@@ -56,21 +66,21 @@ const Icons = styled(a.img)`
 const ResponsiveInfo = styled.div``;
 
 const ResponsiveTitle = styled.h3`
-	margin-bottom: 20px;
+	margin: 0 auto 20px;
 `;
 
 const ResponsiveSubtitle = styled.h4`
-	margin-bottom: 10px;
+	margin: 0 auto 10px;
 `;
 
 const ResponsiveDescription = styled.p`
 	font-weight: lighter;
-	margin: 0 auto;
+	margin: 0 auto 5px;
 `;
 
 const ResponsiveImageContainer = styled.div`
 	position: relative;
-	margin: 45px auto;
+	margin: 45px auto 140px;
 `;
 
 const ResponsiveImg = styled.img`
@@ -140,7 +150,7 @@ const SpecSensores = ({ isResponsive }) => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.6) * 8 || 0
+			opacity: (ratio - 0.65) * 8 || 0
 		}
 	});
 

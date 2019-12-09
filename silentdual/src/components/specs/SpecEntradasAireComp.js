@@ -9,24 +9,29 @@ import IconsPNG from "../../images/spec-entradas-aire-icons.png";
 
 const CompContainer = styled.div`
 	position: relative;
+	height: calc(100vh - 280px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
 const Img = styled(a.img)`
-	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
 `;
 
 const Icons = styled(a.img)`
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
 `;
 
 //RESPONSIVE style:
 
 const ResponsiveImageContainer = styled.div`
 	position: relative;
-	margin: 45px auto;
+	margin: 45px auto 70px;
 `;
 
 const ResponsiveImg = styled.img`
