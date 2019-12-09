@@ -28,7 +28,7 @@ const Title = styled.h2`
 	margin: 100px auto 60px;
 	z-index: 0;
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		margin: 120px auto 80px;
 	}
 `;
@@ -44,7 +44,7 @@ const ModeloCard = styled.div`
 	box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.1);
 	margin: 0 auto 20px;
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		flex-basis: 30%;
 	}
 `;
@@ -125,7 +125,7 @@ const Modelos = () => {
 						<Title className={"headingMedium"}>{modelos.title}</Title>
 					</Column>
 					{modelos.cards.map((modelo, i) => (
-						<Column xs={12} sm={6} md={4}>
+						<Column xs={12} md={4}>
 							<ModeloCard key={i}>
 								<ModeloImageBox>
 									<ModeloImage src={chooseImage(i)} alt="modelo image" />

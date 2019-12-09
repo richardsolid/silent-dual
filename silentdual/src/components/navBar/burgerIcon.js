@@ -51,7 +51,7 @@ const BottomLine = styled.div`
 `;
 
 const Burger = ({ isOpen, handleClick }) => (
-	<BurgerContainer onClick={() => handleClick(!isOpen)}>
+	<BurgerContainer onClick={handleClick}>
 		<TopLine isOpen={isOpen} />
 		<MiddleLine isOpen={isOpen} />
 		<BottomLine isOpen={isOpen} />

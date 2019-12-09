@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { animated as a } from "react-spring";
 import Column from "../../utils/grid/column";
+import { breakpoints } from "../../assets/styles/breakpoints";
 
 //images:
 import SpecImg from "../../images/spec-funcionamiento.png";
@@ -32,6 +33,10 @@ const Icons = styled(a.img)`
 const ResponsiveImageContainer = styled.div`
 	position: relative;
 	margin: 45px auto 140px;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		margin: 45px 60px 70px;
+	}
 `;
 
 const ResponsiveImg = styled.img`

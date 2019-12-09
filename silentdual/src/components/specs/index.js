@@ -16,6 +16,7 @@ import SpecFuncionamiento from "./SpecFuncionamiento";
 import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled(a.section)`
+	margin: 120vh 0 150vh;
 	position: relative;
 `;
 const Title = styled(a.h2)`
@@ -82,7 +83,7 @@ const Specs = () => {
 		}
 	});
 
-	const isResponsive = width < breakpoints.tablet;
+	const isResponsive = width < breakpoints.desktop;
 
 	return isResponsive ? (
 		<SectionResponsive id="caracteristicas">

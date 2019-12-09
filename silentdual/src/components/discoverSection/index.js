@@ -34,6 +34,7 @@ const DiscoverSectionContainer = styled(a.section)`
 	h2 {
 		width: 100%;
 		text-align: center;
+		margin: 0 0 40px;
 	}
 
 	@media screen and (min-width: ${breakpoints.large}px) {
@@ -61,6 +62,7 @@ const DiscoverSectionLayer = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	width: 100%;
 
 	color: white;
 `;
@@ -83,12 +85,12 @@ const HotspotLayer = styled(a.div)`
 `;
 
 const ImgRef = styled(a.img)`
-	width: 100%;
-	height: auto;
 	opacity: 1;
+	max-width: 100%;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		opacity: 0;
+		max-height: 60vh;
 	}
 `;
 
@@ -106,7 +108,8 @@ const ImgExploded = styled(a.div)`
 
 	img {
 		position: absolute;
-		height: 100%;
+		height: auto;
+		max-width: 100%;
 	}
 
 	.exploded1 {
@@ -125,6 +128,12 @@ const ImgExploded = styled(a.div)`
 
 const ImgExplodedLayer = styled.div`
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: fit-content;
+	margin: 0 auto;
 `;
 
 const DiscoverSection = () => {
