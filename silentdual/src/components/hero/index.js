@@ -74,7 +74,7 @@ const HomeBackground = styled.div`
 		width: 100vw;
 	}
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		position: absolute;
 		height: 100vh;
 		top: 0;
@@ -95,7 +95,7 @@ const HeroContent = styled.div`
 	justify-content: space-evenly;
 	align-items: center;
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		max-width: 50%;
 	}
 `;
@@ -106,7 +106,7 @@ const InstantFriendly = styled.img`
 	height: 80px;
 	width: 70px;
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 115px;
 		width: 100px;
 	}
@@ -120,7 +120,7 @@ const HomeHeader = styled.div`
 	max-width: calc(100% - 60px);
 	margin: 0 auto;
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		height: initial;
 	}
 `;
@@ -136,7 +136,7 @@ const HomeTitle = styled.h1`
 		font-weight: normal;
 	}
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		font-size: 69px;
 		text-align: center;
 		letter-spacing: -0.58px;
@@ -151,7 +151,7 @@ const HomeSubtitle = styled.h2`
 	letter-spacing: 0px;
 	line-height: 29px;
 	margin: 0 auto;
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		font-size: 33px;
 		text-align: center;
 		letter-spacing: 0px;
@@ -170,7 +170,7 @@ const PlayButton = styled.img`
 		opacity: 0.8;
 	}
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 60px;
 		width: 60px;
 	}
@@ -216,14 +216,14 @@ const HeroLinkDown = styled(Link)`
 
 const ScrollContainer = styled(animated.div)`
 	height: 100%;
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 100vh;
 		margin-bottom: 100vh;
 	}
 `;
 const Fixed = styled(animated.div)`
 	position: static;
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		top: 0;
 		width: 100%;
 		position: fixed;

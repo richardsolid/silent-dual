@@ -28,7 +28,7 @@ const Title = styled.h2`
 	margin: 100px auto 60px;
 	z-index: 0;
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		margin: 120px auto 80px;
 	}
 `;
@@ -44,7 +44,7 @@ const ModeloCard = styled.div`
 	box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.1);
 	margin: 0 auto 20px;
 
-	@media screen and (min-width: ${breakpoints.tablet}px) {
+	@media screen and (min-width: ${breakpoints.large}px) {
 		flex-basis: 30%;
 	}
 `;
