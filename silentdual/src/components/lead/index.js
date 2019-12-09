@@ -2,17 +2,9 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import useIntersect from "../../utils/useIntersect";
-
-//utils:
 import useWindowSize from "../../utils/useWindowSize";
-
-//styles:
 import { breakpoints } from "../../assets/styles/breakpoints";
-
-//data:
 import data from "../../data";
-
-//images:
 import FullImg from "../../images/imagen_chica_background.jpg";
 import BackgroundImg from "../../images/background_imatge_promo.png";
 import LegImg from "../../images/cama_imatge_promo.png";
@@ -77,7 +69,7 @@ const BackgroundImage = styled.img`
   width: 100%;
 `;
 
-const Description = styled.div`
+const Description = styled(animated.div)`
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
@@ -91,17 +83,18 @@ const Description = styled.div`
   @media screen and (min-width: ${breakpoints.tablet}px) {
     height: 100vh;
   }
-  h2 {
-    max-width: 70%;
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 34px;
-    text-align: center;
-    @media screen and (min-width: ${breakpoints.tablet}px) {
-      max-width: 30%;
-      font-size: 33px;
-      line-height: 39px;
-    }
+`;
+
+const DescriptionH2 = styled(animated.h2)`
+  max-width: 70%;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+  @media screen and (min-width: ${breakpoints.tablet}px) {
+    max-width: 30%;
+    font-size: 33px;
+    line-height: 39px;
   }
 `;
 
@@ -125,19 +118,32 @@ const Lead = () => {
     //threshold es la cantidad de elemento visible para que se dispare el evento
     threshold: buildThresholdArray()
   });
-
   const ratio = format(entry.intersectionRatio);
 
+  //Ratio para opacidad de 0 a 1
+  const opacityRatio = ratio * 2;
+
+  //Formula cambio de rango para ajustar a otras animaciones
+  //Ratio de escala de 0.8 a 1
   const scaleRatio = ((ratio - 0) * (1 - 0.8)) / (1 - 0) + 0.8;
 
-  console.log(scaleRatio);
+  const descriptionProps = useSpring({
+    from: {
+      opacity: 0,
+      transform: `scale(0.8)`
+    },
+    to: {
+      opacity: opacityRatio || 0,
+      transform: `scale(${scaleRatio ? scaleRatio : 1})`
+    }
+  });
 
   const parallaxProps = useSpring({
     from: {
       opacity: 0
     },
     to: {
-      opacity: (ratio - 0.1) * 8 || 0,
+      opacity: opacityRatio || 0,
       zIndex: entry.intersectionRatio > 0 ? 100 : 0
     }
   });
@@ -204,7 +210,9 @@ const Lead = () => {
               />
             </Parallax>
             <Description>
-              <h2>{lead.description}</h2>
+              <DescriptionH2 style={descriptionProps}>
+                {lead.description}
+              </DescriptionH2>
             </Description>
           </Fixed>
         </LeadSection>
