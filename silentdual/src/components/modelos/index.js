@@ -22,28 +22,13 @@ import Model3 from "../../images/model3.png";
 import downloadIcon from "../../images/download_icon.svg";
 
 const Title = styled.h2`
-	color: rgb(0, 0, 0);
-	font-family: DINBold;
-	font-size: 33px;
-	line-height: 39px;
+	color: black;
 	text-align: center;
 	width: 100%;
 	margin: 100px auto 60px;
 
 	@media screen and (min-width: ${breakpoints.tablet}px) {
 		margin: 120px auto 80px;
-	}
-`;
-
-const ModelosContainer = styled.div`
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: 0 auto 45px;
-
-	@media screen and (min-width: ${breakpoints.tablet}px) {
-		justify-content: space-between;
 	}
 `;
 
@@ -74,38 +59,32 @@ const ModeloImageBox = styled.div`
 const ModeloImage = styled.img``;
 
 const ModeloTitle = styled.h3`
-	font-size: 16px;
-	font-family: DINBold;
-	line-height: 24px;
 	margin: 30px auto 8px;
 `;
 
 const ModeloDescription = styled.div`
-	font-size: 16px;
 	font-weight: light;
-	line-height: 24px;
 	padding: 20px auto;
 	margin: 0 auto 25px;
 `;
-
 
 const DownloadButtonContainer = styled.a`
 	background: ${variables.primary};
 	color: white;
 	margin: 40px auto 40px;
 	border-radius: 3px;
-  cursor: pointer;
-  text-decoration: none;
-  
+	cursor: pointer;
+	text-decoration: none;
+
 	display: flex;
-  flex-wrap: nowrap;
+	flex-wrap: nowrap;
 
-  transition: .2s;
+	transition: 0.2s;
 
-  &:hover,
-  &:focus {
-    background: ${variables.primaryDark};
-  }
+	&:hover,
+	&:focus {
+		background: ${variables.primaryDark};
+	}
 `;
 
 const LeftButton = styled.div`
@@ -113,20 +92,19 @@ const LeftButton = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-  text-align: center;
-  font-weight: bold;
+	text-align: center;
+	font-weight: bold;
 
-  padding: 16px 20px;
-
+	padding: 16px 20px;
 `;
 
 const DonwloadIconBox = styled.div`
 	border-left: 1px solid white;
 	display: flex;
 	align-items: center;
-  justify-content: center;
+	justify-content: center;
 
-  padding: 20px;
+	padding: 20px;
 `;
 
 const Modelos = () => {
@@ -142,40 +120,39 @@ const Modelos = () => {
 		<section id="modelos">
 			<Wrapper>
 				<Row>
-
 					<Column xs={12}>
-						<Title>{modelos.title}</Title>
+						<Title className={"headingMedium"}>{modelos.title}</Title>
 					</Column>
 
-					<ModelosContainer>
+					<Row>
 						{modelos.cards.map((modelo, i) => (
-							<ModeloCard key={i}>
-								<ModeloImageBox>
-									<ModeloImage src={chooseImage(i)} alt="modelo image" />
-								</ModeloImageBox>
-								<ModeloTitle>{modelo.title}</ModeloTitle>
-								<ModeloDescription>
-									<p>{modelo.description.sizes}</p>
-									<p>{modelo.description.power}</p>
-								</ModeloDescription>
-							</ModeloCard>
+							<Column xs={12} sm={6} md={4}>
+								<ModeloCard key={i}>
+									<ModeloImageBox>
+										<ModeloImage src={chooseImage(i)} alt="modelo image" />
+									</ModeloImageBox>
+									<ModeloTitle className={"bodyNormal"}>
+										{modelo.title}
+									</ModeloTitle>
+									<ModeloDescription>
+										<p>{modelo.description.sizes}</p>
+										<p>{modelo.description.power}</p>
+									</ModeloDescription>
+								</ModeloCard>
+							</Column>
 						))}
-					</ModelosContainer>
-
+					</Row>
 
 					<Column xs={12}>
-						<DownloadButtonContainer href="#" target="_blank" >
+						<DownloadButtonContainer href="#" target="_blank">
 							<LeftButton>{modelos.button}</LeftButton>
 							<DonwloadIconBox>
 								<img src={downloadIcon} alt="download icon" />
 							</DonwloadIconBox>
 						</DownloadButtonContainer>
 					</Column>
-
-
 				</Row>
 			</Wrapper>
-
 		</section>
 	);
 };
