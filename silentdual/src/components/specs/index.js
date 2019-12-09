@@ -18,6 +18,10 @@ import SpecEntradasAire from "./SpecEntradasAire";
 const Section = styled(a.section)`
 	margin: 120vh 0 150vh;
 	position: relative;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		margin: 100vh 0 80vh;
+	}
 `;
 const Title = styled(a.h2)`
 	position: fixed;

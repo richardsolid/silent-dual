@@ -263,8 +263,8 @@ const DiscoverSection = () => {
 					</Wrapper>
 				</DiscoverSectionContainer>
 			) : (
-				<DiscoverSectionContainer id="componentes" style={sectionDiscover}>
-					<DiscoverSectionIntersect ref={ref}>
+				<DiscoverSectionContainer style={sectionDiscover}>
+					<DiscoverSectionIntersect ref={ref} id="componentes">
 						<Fixed>
 							<Wrapper>
 								<Row>
