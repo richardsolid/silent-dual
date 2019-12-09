@@ -9,17 +9,22 @@ import IconsPNG from "../../images/spec-funcionamiento-icons.png";
 
 const CompContainer = styled.div`
 	position: relative;
+	height: calc(100vh - 280px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
 const Img = styled(a.img)`
-	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
 `;
 
 const Icons = styled(a.img)`
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
 `;
 
 //RESPONSIVE style:
