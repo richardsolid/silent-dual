@@ -82,7 +82,7 @@ const Specs = () => {
 		}
 	});
 
-	const isResponsive = width < breakpoints.tablet;
+	const isResponsive = width < breakpoints.desktop;
 
 	return isResponsive ? (
 		<SectionResponsive id="caracteristicas">

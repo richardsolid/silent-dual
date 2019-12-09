@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { useSpring, animated as a } from "react-spring";
 
+import { breakpoints } from "../../assets/styles/breakpoints";
+
 //utils:
 import useIntersect from "../../utils/useIntersect";
 import Column from "../../utils/grid/column";
@@ -81,6 +83,10 @@ const ResponsiveDescription = styled.p`
 const ResponsiveImageContainer = styled.div`
 	position: relative;
 	margin: 45px auto 140px;
+
+	@media screen and (min-width: ${breakpoints.tablet}px) {
+		margin: 45px auto;
+	}
 `;
 
 const ResponsiveImg = styled.img`
