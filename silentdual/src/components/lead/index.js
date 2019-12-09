@@ -5,9 +5,6 @@ import useIntersect from "../../utils/useIntersect";
 
 //utils:
 import useWindowSize from "../../utils/useWindowSize";
-import Wrapper from "../../utils/grid/wrapper";
-import Row from "../../utils/grid/row";
-import Column from "../../utils/grid/column";
 
 //styles:
 import { breakpoints } from "../../assets/styles/breakpoints";
@@ -29,13 +26,18 @@ const Fixed = styled(animated.div)`
 	position: fixed;
 	overflow: hidden;
 `;
-const LeadSection = styled.section`
+const LeadSection = styled(animated.section)`
 	height: auto;
 	position: relative;
 	color: white;
 	overflow: hidden;
 	line-height: 0;
+	height: 100vh;
+	background-image: url(${FullImg});
+	background-size: cover;
+	background-position: 30% center;
 	@media screen and (min-width: ${breakpoints.tablet}px) {
+		background-image: none;
 		margin-bottom: 100vh;
 		height: 200vh;
 	}
@@ -136,6 +138,15 @@ const Lead = () => {
 		}
 	});
 
+	const sectionProps = useSpring({
+		from: {
+			zIndex: -1
+		},
+		to: {
+			zIndex: entry.intersectionRatio > 0 ? 100 : -1
+		}
+	});
+
 	const widthWindow = useWindowSize();
 
 	const { lead } = data;
@@ -158,6 +169,7 @@ const Lead = () => {
 					id="descubrelo"
 					ref={ref}
 					onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+					style={sectionProps}
 				>
 					<Fixed style={parallaxProps}>
 						<Parallax>
@@ -196,7 +208,6 @@ const Lead = () => {
 		} else {
 			return (
 				<LeadSection id="descubrelo">
-					<BackgroundImage src={FullImg} alt="background" />
 					<Description>
 						<h2>{lead.description}</h2>
 					</Description>

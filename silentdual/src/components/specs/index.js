@@ -15,7 +15,7 @@ import SpecSensores from "./SpecSensores";
 import SpecFuncionamiento from "./SpecFuncionamiento";
 import SpecEntradasAire from "./SpecEntradasAire";
 
-const Section = styled.section`
+const Section = styled(a.section)`
 	margin-top: 95vh;
 	margin-bottom: 80vh;
 	height: fit-content;
@@ -74,6 +74,15 @@ const Specs = () => {
 		}
 	});
 
+	const sectionProps = useSpring({
+		from: {
+			zIndex: -1
+		},
+		to: {
+			zIndex: entry.intersectionRatio > 0 ? 100 : -1
+		}
+	});
+
 	const isResponsive = width < breakpoints.tablet;
 
 	return isResponsive ? (
@@ -92,7 +101,7 @@ const Specs = () => {
 			</Wrapper>
 		</SectionResponsive>
 	) : (
-		<Section id="caracteristicas" ref={ref}>
+		<Section id="caracteristicas" ref={ref} style={sectionProps}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>

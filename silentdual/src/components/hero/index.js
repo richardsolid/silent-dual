@@ -192,7 +192,7 @@ const HeroLinkDown = styled(Link)`
 	}
 `;
 
-const ScrollContainer = styled.div`
+const ScrollContainer = styled(animated.div)`
 	height: 100%;
 	@media screen and (min-width: ${breakpoints.tablet}px) {
 		height: 100vh;
@@ -209,10 +209,6 @@ const Fixed = styled(animated.div)`
 `;
 
 const Hero = () => {
-	const { format } = new Intl.NumberFormat("en-US", {
-		maximumFractionDigits: 2
-	});
-
 	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
 	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
 	//entry es el objeto con la información de la posición del elemento
@@ -223,11 +219,20 @@ const Hero = () => {
 
 	const heroProps = useSpring({
 		from: {
-			opacity: 0
+			opacity: -1
 		},
 		to: {
 			opacity: entry.intersectionRatio ? entry.intersectionRatio : 0,
-			zIndex: entry.intersectionRatio > 0 ? 100 : 0
+			zIndex: entry.intersectionRatio > 0 ? 100 : -1
+		}
+	});
+
+	const sectionProps = useSpring({
+		from: {
+			zIndex: -1
+		},
+		to: {
+			zIndex: entry.intersectionRatio > 0 ? 100 : -1
 		}
 	});
 
@@ -245,7 +250,7 @@ const Hero = () => {
 	}, [widthWindow]);
 
 	return (
-		<ScrollContainer ref={ref} id={"hero"}>
+		<ScrollContainer ref={ref} style={sectionProps} id={"hero"}>
 			<Fixed style={heroProps}>
 				<HomeContainer>
 					<HomeBackground>
