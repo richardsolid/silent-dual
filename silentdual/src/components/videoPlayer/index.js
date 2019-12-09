@@ -79,6 +79,7 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 
 	useEffect(() => {
 		showVideo ? showingVideo() : closingVideo();
+		// eslint-disable-next-line
 	}, [showVideo]);
 
 	const closePlayer = () => {

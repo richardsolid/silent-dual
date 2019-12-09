@@ -37,7 +37,9 @@ const SectionResponsive = styled.section`
 	text-align: center;
 `;
 
-const TitleResponsive = styled.h2``;
+const TitleResponsive = styled.h2`
+	margin: 0 auto 60px;
+`;
 
 const Specs = () => {
 	const [width, setWidth] = useState(null);

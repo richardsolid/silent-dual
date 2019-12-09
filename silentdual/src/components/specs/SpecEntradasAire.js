@@ -45,16 +45,16 @@ const Info = styled.div`
 const ResponsiveInfo = styled.div``;
 
 const ResponsiveTitle = styled.h3`
-	margin-bottom: 20px;
+	margin: 0 auto 20px;
 `;
 
 const ResponsiveSubtitle = styled.h4`
-	margin-bottom: 10px;
+	margin: 0 auto 10px;
 `;
 
 const ResponsiveDescription = styled.p`
 	font-weight: lighter;
-	margin: 0 auto;
+	margin: 0 auto 5px;
 `;
 
 const SpecSensor = ({ isResponsive }) => {

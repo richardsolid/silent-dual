@@ -66,21 +66,21 @@ const Icons = styled(a.img)`
 const ResponsiveInfo = styled.div``;
 
 const ResponsiveTitle = styled.h3`
-	margin-bottom: 20px;
+	margin: 0 auto 20px;
 `;
 
 const ResponsiveSubtitle = styled.h4`
-	margin-bottom: 10px;
+	margin: 0 auto 10px;
 `;
 
 const ResponsiveDescription = styled.p`
 	font-weight: lighter;
-	margin: 0 auto;
+	margin: 0 auto 5px;
 `;
 
 const ResponsiveImageContainer = styled.div`
 	position: relative;
-	margin: 45px auto;
+	margin: 45px auto 140px;
 `;
 
 const ResponsiveImg = styled.img`

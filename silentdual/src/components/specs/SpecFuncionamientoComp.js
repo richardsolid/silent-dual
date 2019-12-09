@@ -31,7 +31,7 @@ const Icons = styled(a.img)`
 
 const ResponsiveImageContainer = styled.div`
 	position: relative;
-	margin: 45px auto;
+	margin: 45px auto 140px;
 `;
 
 const ResponsiveImg = styled.img`
