@@ -1,33 +1,56 @@
-import React from "react";
-import { useSpring, animated as a } from "react-spring";
-import useIntersect from "../../utils/useIntersect";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useSpring, animated as a } from "react-spring";
+
+//utils:
+import useWindowSize from "../../utils/useWindowSize";
+import useIntersect from "../../utils/useIntersect";
 import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
+import { breakpoints } from "../../assets/styles/breakpoints";
+
+//components:
 import SpecSensores from "./SpecSensores";
 import SpecFuncionamiento from "./SpecFuncionamiento";
 import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled.section`
-	margin-top: 1000px;
-	margin-bottom: 500px;
+	margin-top: 95vh;
+	margin-bottom: 80vh;
 	height: fit-content;
 	position: relative;
+	padding-bottom: 190vh;
 `;
 const Title = styled(a.h2)`
 	position: fixed;
 	top: 10%;
 	left: 0;
 	right: 0;
-	color: rgb(0, 0, 0);
-	font-family: DINBold;
-	font-size: 33px;
-	line-height: 39px;
+	color: black;
 	text-align: center;
 	width: 100%;
 `;
+
+const SectionResponsive = styled.section`
+	display: flex;
+	height: fit-content;
+	padding: 100px 0;
+	color: black;
+	text-align: center;
+`;
+
+const TitleResponsive = styled.h2``;
+
 const Specs = () => {
+	const [width, setWidth] = useState(null);
+
+	const widthWindow = useWindowSize();
+
+	useEffect(() => {
+		setWidth(widthWindow.width);
+	}, [widthWindow]);
+
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -51,17 +74,36 @@ const Specs = () => {
 		}
 	});
 
-	return (
+	const isResponsive = width < breakpoints.tablet;
+
+	return isResponsive ? (
+		<SectionResponsive id="specs">
+			<Wrapper>
+				<Row>
+					<Column xs={12}>
+						<TitleResponsive className={"headingMedium"}>
+							La única opción doblemente inteligente
+						</TitleResponsive>
+					</Column>
+				</Row>
+				<SpecSensores isResponsive={isResponsive} />
+				<SpecFuncionamiento isResponsive={isResponsive} />
+				<SpecEntradasAire isResponsive={isResponsive} />
+			</Wrapper>
+		</SectionResponsive>
+	) : (
 		<Section id="specs" ref={ref}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<Title style={props}>La única opción doblemente inteligente</Title>
+						<Title style={props} className={"headingMedium"}>
+							La única opción doblemente inteligente
+						</Title>
 					</Column>
 				</Row>
-				<SpecSensores />
-				<SpecFuncionamiento />
-				<SpecEntradasAire />
+				<SpecSensores isResponsive={isResponsive} />
+				<SpecFuncionamiento isResponsive={isResponsive} />
+				<SpecEntradasAire isResponsive={isResponsive} />
 			</Wrapper>
 		</Section>
 	);

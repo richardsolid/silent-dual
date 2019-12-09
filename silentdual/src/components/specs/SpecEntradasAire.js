@@ -13,46 +13,42 @@ import SpecEntradasAireComp from "./SpecEntradasAireComp";
 
 const Container = styled.div`
 	position: relative;
-	height: 150vh;
+	height: 100vh;
+	top: 197vh;
 `;
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 30%;
+	top: 23%;
 `;
-const Title = styled(a.h3)`
-	width: 139px;
-	height: 34px;
-	color: rgb(0, 0, 0);
-	font-size: 28px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 34px;
-`;
-const Subtitle = styled(a.h4)`
-	width: 195px;
-	height: 30px;
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 30px;
-`;
+const Title = styled(a.h3)``;
+const Subtitle = styled(a.h4)``;
 const Description = styled(a.p)`
-	width: 460px;
-	height: 148px;
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINLightAlternate;
-	letter-spacing: 0px;
-	line-height: 30px;
+	font-weight: lighter;
 `;
 const Info = styled.div`
 	display: flex;
 	flex-direction: column;
 `;
 
-const SpecSensor = () => {
+//RESPONSIVE:
+
+const ResponsiveInfo = styled.div``;
+
+const ResponsiveTitle = styled.h3`
+	margin-bottom: 20px;
+`;
+
+const ResponsiveSubtitle = styled.h4`
+	margin-bottom: 10px;
+`;
+
+const ResponsiveDescription = styled.p`
+	font-weight: lighter;
+	margin: 0 auto;
+`;
+
+const SpecSensor = ({ isResponsive }) => {
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -81,7 +77,7 @@ const SpecSensor = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.15) * 8 || 0
+			opacity: (ratio - 0.2) * 8 || 0
 		}
 	});
 
@@ -90,7 +86,7 @@ const SpecSensor = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.4) * 8 || 0
 		}
 	});
 
@@ -99,7 +95,7 @@ const SpecSensor = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.1) * 8 || 0
+			opacity: (ratio - 0.5) * 8 || 0
 		}
 	});
 
@@ -108,26 +104,55 @@ const SpecSensor = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.6) * 8 || 0
 		}
 	});
-	return (
+
+	return isResponsive ? (
+		<Row>
+			<Column xs={12} md={6}>
+				<ResponsiveInfo>
+					<ResponsiveTitle className={"headingSmall"}>
+						2 entradas de aire
+					</ResponsiveTitle>
+					<ResponsiveSubtitle className={"lead"}>
+						Frontal y perimetral
+					</ResponsiveSubtitle>
+					<ResponsiveDescription className={"lead"}>
+						Prestaciones aerodinámicas que le proporcionan la entrada{" "}
+						<strong>frontal</strong> y <strong>perimetral</strong> de aire.
+					</ResponsiveDescription>
+				</ResponsiveInfo>
+			</Column>
+			<SpecEntradasAireComp
+				isResponsive={isResponsive}
+				imageProps={imageProps}
+				iconsProps={iconsProps}
+			/>
+		</Row>
+	) : (
 		<Container ref={ref}>
 			<Fixed>
 				<Wrapper>
 					<Row>
 						<Column xs={12} md={6}>
 							<Info>
-								<Title style={titleProps}>2 entradas de aire</Title>
-								<Subtitle style={subtitleProps}>Frontal y perimetral</Subtitle>
-								<Description style={descriptionProps}>
+								<Title style={titleProps} className={"headingSmall"}>
+									2 entradas de aire
+								</Title>
+								<Subtitle style={subtitleProps} className={"lead"}>
+									Frontal y perimetral
+								</Subtitle>
+								<Description style={descriptionProps} className={"lead"}>
 									Prestaciones aerodinámicas que le proporcionan la entrada{" "}
-									<strong>frontal</strong>y <strong>perimetral</strong> de aire.
+									<strong>frontal</strong> y <strong>perimetral</strong> de
+									aire.
 								</Description>
 							</Info>
 						</Column>
 						<Column xs={12} md={6}>
 							<SpecEntradasAireComp
+								isResponsive={isResponsive}
 								imageProps={imageProps}
 								iconsProps={iconsProps}
 							/>

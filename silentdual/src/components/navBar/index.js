@@ -141,8 +141,6 @@ const CollapsedMenu = styled.div`
 		align-items: center;
 		height: 60px;
 		padding: 0;
-		line-height: 24px;
-		font-size: 16px;
 		font-weight: bold;
 
 		position: relative;

@@ -22,10 +22,7 @@ import Model3 from "../../images/model3.png";
 import downloadIcon from "../../images/download_icon.svg";
 
 const Title = styled.h2`
-	color: rgb(0, 0, 0);
-	font-family: DINBold;
-	font-size: 33px;
-	line-height: 39px;
+	color: black;
 	text-align: center;
 	width: 100%;
 	margin: 100px auto 60px;
@@ -33,18 +30,6 @@ const Title = styled.h2`
 
 	@media screen and (min-width: ${breakpoints.tablet}px) {
 		margin: 120px auto 80px;
-	}
-`;
-
-const ModelosContainer = styled.div`
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: 0 auto 45px;
-
-	@media screen and (min-width: ${breakpoints.tablet}px) {
-		justify-content: space-between;
 	}
 `;
 
@@ -75,16 +60,11 @@ const ModeloImageBox = styled.div`
 const ModeloImage = styled.img``;
 
 const ModeloTitle = styled.h3`
-	font-size: 16px;
-	font-family: DINBold;
-	line-height: 24px;
 	margin: 30px auto 8px;
 `;
 
 const ModeloDescription = styled.div`
-	font-size: 16px;
 	font-weight: light;
-	line-height: 24px;
 	padding: 20px auto;
 	margin: 0 auto 25px;
 `;
@@ -142,23 +122,24 @@ const Modelos = () => {
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<Title>{modelos.title}</Title>
+						<Title className={"headingMedium"}>{modelos.title}</Title>
 					</Column>
-
-					<ModelosContainer>
-						{modelos.cards.map((modelo, i) => (
+					{modelos.cards.map((modelo, i) => (
+						<Column xs={12} sm={6} md={4}>
 							<ModeloCard key={i}>
 								<ModeloImageBox>
 									<ModeloImage src={chooseImage(i)} alt="modelo image" />
 								</ModeloImageBox>
-								<ModeloTitle>{modelo.title}</ModeloTitle>
+								<ModeloTitle className={"bodyNormal"}>
+									{modelo.title}
+								</ModeloTitle>
 								<ModeloDescription>
 									<p>{modelo.description.sizes}</p>
 									<p>{modelo.description.power}</p>
 								</ModeloDescription>
 							</ModeloCard>
-						))}
-					</ModelosContainer>
+						</Column>
+					))}
 
 					<Column xs={12}>
 						<DownloadButtonContainer href="#" target="_blank">

@@ -13,40 +13,19 @@ import SpecFuncionesComp from "./SpecFuncionamientoComp";
 
 const Container = styled.div`
 	position: relative;
-	height: 150vh;
+	height: 100vh;
+	top: 107vh;
 `;
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 30%;
+	top: 23%;
 `;
 
-const Title = styled(a.h3)`
-	width: 139px;
-	height: 34px;
-	color: rgb(0, 0, 0);
-	font-size: 28px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 34px;
-`;
-const Subtitle = styled(a.h4)`
-	width: 195px;
-	height: 30px;
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 30px;
-`;
+const Title = styled(a.h3)``;
+const Subtitle = styled(a.h4)``;
 const Description = styled(a.p)`
-	width: 460px;
-	height: 148px;
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINLightAlternate;
-	letter-spacing: 0px;
-	line-height: 30px;
+	font-weight: lighter;
 `;
 
 const Info = styled.div`
@@ -54,7 +33,24 @@ const Info = styled.div`
 	flex-direction: column;
 `;
 
-const SpecFuncionamiento = () => {
+//RESPONSIVE:
+
+const ResponsiveInfo = styled.div``;
+
+const ResponsiveTitle = styled.h3`
+	margin-bottom: 20px;
+`;
+
+const ResponsiveSubtitle = styled.h4`
+	margin-bottom: 10px;
+`;
+
+const ResponsiveDescription = styled.p`
+	font-weight: lighter;
+	margin: 0 auto;
+`;
+
+const SpecFuncionamiento = ({ isResponsive }) => {
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -83,7 +79,7 @@ const SpecFuncionamiento = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.15) * 8 || 0
+			opacity: (ratio - 0.2) * 8 || 0
 		}
 	});
 
@@ -92,7 +88,7 @@ const SpecFuncionamiento = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.4) * 8 || 0
 		}
 	});
 
@@ -101,7 +97,7 @@ const SpecFuncionamiento = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.1) * 8 || 0
+			opacity: (ratio - 0.5) * 8 || 0
 		}
 	});
 
@@ -110,29 +106,57 @@ const SpecFuncionamiento = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.6) * 8 || 0
 		}
 	});
 
-	return (
+	return isResponsive ? (
+		<Row>
+			<Column xs={12} md={6}>
+				<ResponsiveInfo>
+					<ResponsiveTitle className={"headingSmall"}>
+						2 modos de funcionamiento
+					</ResponsiveTitle>
+					<ResponsiveSubtitle className={"lead"}>
+						Contínuo e intermitente
+					</ResponsiveSubtitle>
+					<ResponsiveDescription className={"lead"}>
+						<strong>Funcionamiento contínuo </strong>
+						cuando los sensores no detectan presencia ni cambios de humedad,{" "}
+						<strong>funcionamiento intermitente</strong> cuando uno de los
+						sensores se activa.
+						<strong>saturación</strong>.
+					</ResponsiveDescription>
+				</ResponsiveInfo>
+			</Column>
+			<SpecFuncionesComp
+				isResponsive={isResponsive}
+				imageProps={imageProps}
+				iconsProps={iconsProps}
+			/>
+		</Row>
+	) : (
 		<Container ref={ref}>
 			<Fixed>
 				<Wrapper>
 					<Row>
 						<Column xs={12} md={6}>
 							<SpecFuncionesComp
+								isResponsive={isResponsive}
 								imageProps={imageProps}
 								iconsProps={iconsProps}
 							/>
 						</Column>
 						<Column xs={12} md={6}>
 							<Info>
-								<Title style={titleProps}>2 modos de funcionamiento</Title>
-								<Subtitle style={subtitleProps}>
+								<Title style={titleProps} className={"headingSmall"}>
+									2 modos de funcionamiento
+								</Title>
+								<Subtitle style={subtitleProps} className={"lead"}>
 									Contínuo e intermitente
 								</Subtitle>
-								<Description style={descriptionProps}>
-									<strong>Funcionamiento contínuo</strong>
+								<Description style={descriptionProps} className={"lead"}>
+									<strong>Funcionamiento contínuo </strong>
 									cuando los sensores no detectan presencia ni cambios de
 									humedad, <strong>funcionamiento intermitente</strong> cuando
 									uno de los sensores se activa.

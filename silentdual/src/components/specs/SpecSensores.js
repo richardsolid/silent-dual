@@ -14,36 +14,21 @@ import IconsPNG from "../../images/spec-sensores-icons.png";
 
 const Container = styled.div`
 	position: relative;
-	height: 150vh;
+	height: 100vh;
+	top: 10vh;
 `;
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 30%;
+	top: 23%;
 `;
 
-const Title = styled(a.h3)`
-	color: rgb(0, 0, 0);
-	font-size: 28px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 34px;
-`;
+const Title = styled(a.h3)``;
 
-const Subtitle = styled(a.h4)`
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINBold;
-	letter-spacing: 0px;
-	line-height: 30px;
-`;
+const Subtitle = styled(a.h4)``;
 
 const Description = styled(a.p)`
-	color: rgb(0, 0, 0);
-	font-size: 20px;
-	font-family: DINLightAlternate;
-	letter-spacing: 0px;
-	line-height: 30px;
+	font-weight: lighter;
 `;
 
 const Info = styled.div`
@@ -51,19 +36,55 @@ const Info = styled.div`
 	flex-direction: column;
 `;
 
+const ImageContainer = styled.div`
+	position: relative;
+`;
+
 const Img = styled(a.img)`
 	width: 100%;
-	object-fit: contain;
 `;
 
 const Icons = styled(a.img)`
 	position: absolute;
-	right: 16%;
-	top: -31%;
-	width: 10rem;
+	top: 0;
+	left: 0;
+	width: 100%;
 `;
 
-const SpecSensores = () => {
+//RESPONSIVE:
+
+const ResponsiveInfo = styled.div``;
+
+const ResponsiveTitle = styled.h3`
+	margin-bottom: 20px;
+`;
+
+const ResponsiveSubtitle = styled.h4`
+	margin-bottom: 10px;
+`;
+
+const ResponsiveDescription = styled.p`
+	font-weight: lighter;
+	margin: 0 auto;
+`;
+
+const ResponsiveImageContainer = styled.div`
+	position: relative;
+	margin: 45px auto;
+`;
+
+const ResponsiveImg = styled.img`
+	width: 100%;
+`;
+
+const ResponsiveIcons = styled.img`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+`;
+
+const SpecSensores = ({ isResponsive }) => {
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -92,7 +113,7 @@ const SpecSensores = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.15) * 8 || 0
+			opacity: (ratio - 0.2) * 8 || 0
 		}
 	});
 
@@ -101,7 +122,7 @@ const SpecSensores = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.4) * 8 || 0
 		}
 	});
 
@@ -110,7 +131,7 @@ const SpecSensores = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.1) * 8 || 0
+			opacity: (ratio - 0.5) * 8 || 0
 		}
 	});
 
@@ -119,30 +140,59 @@ const SpecSensores = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.2) * 8 || 0
+			opacity: (ratio - 0.6) * 8 || 0
 		}
 	});
 
-	return (
+	return isResponsive ? (
+		<Row>
+			<Column xs={12} md={6}>
+				<ResponsiveInfo>
+					<ResponsiveTitle className={"headingSmall"}>
+						2 sensores
+					</ResponsiveTitle>
+					<ResponsiveSubtitle className={"lead"}>
+						Presencia y humedad
+					</ResponsiveSubtitle>
+					<ResponsiveDescription className={"lead"}>
+						Sensores de presencia y humedad, se activa automáticamente cuando
+						detecta <strong>movimiento</strong> o un cambio en los niveles de{" "}
+						<strong>saturación</strong>.
+					</ResponsiveDescription>
+				</ResponsiveInfo>
+			</Column>
+			<Column xs={12} md={6}>
+				<ResponsiveImageContainer>
+					<ResponsiveImg style={imageProps} src={SpecImg} alt="" />
+					<ResponsiveIcons style={iconsProps} src={IconsPNG} alt="" />
+				</ResponsiveImageContainer>
+			</Column>
+		</Row>
+	) : (
 		<Container ref={ref}>
 			<Fixed>
 				<Wrapper>
 					<Row>
 						<Column xs={12} md={6}>
 							<Info>
-								<Title style={titleProps}>2 sensores</Title>
-								<Subtitle style={subtitleProps}>Presencia y humedad</Subtitle>
-								<Description style={descriptionProps}>
+								<Title style={titleProps} className={"headingSmall"}>
+									2 sensores
+								</Title>
+								<Subtitle style={subtitleProps} className={"lead"}>
+									Presencia y humedad
+								</Subtitle>
+								<Description style={descriptionProps} className={"lead"}>
 									Sensores de presencia y humedad, se activa automáticamente
 									cuando detecta <strong>movimiento</strong> o un cambio en los
-									niveles de
-									<strong>saturación</strong>.
+									niveles de <strong>saturación</strong>.
 								</Description>
 							</Info>
 						</Column>
 						<Column xs={12} md={6}>
-							<Img style={imageProps} src={SpecImg} alt="" />
-							<Icons style={iconsProps} src={IconsPNG} alt="" />
+							<ImageContainer>
+								<Img style={imageProps} src={SpecImg} alt="" />
+								<Icons style={iconsProps} src={IconsPNG} alt="" />
+							</ImageContainer>
 						</Column>
 					</Row>
 				</Wrapper>
