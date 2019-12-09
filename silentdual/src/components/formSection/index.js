@@ -4,7 +4,6 @@ import HubspotForm from "react-hubspot-form";
 
 //Assets
 import variables from "../../assets/styles/variables";
-import { gutter } from "../../assets/styles/gutter";
 import { breakpoints } from "../../assets/styles/breakpoints";
 
 //Utils
@@ -77,9 +76,17 @@ const Form = styled.div`
 		border-radius: 3px;
 		border: 1px solid rgb(204, 204, 204);
 
-		padding: 20px;
+		padding: 25px 20px;
 
 		color: black !important;
+	}
+
+	select.hs-input {
+		height: 52px;
+	}
+
+	textarea.hs-input {
+		height: 152px;
 	}
 
 	.hs-error-msgs {
@@ -101,7 +108,8 @@ const Form = styled.div`
 		margin: 0 !important;
 	}
 
-	.hs_submit {
+	.hs_submit,
+	.hs_error_rollup {
 		margin: 0 auto !important;
 		max-width: 100% !important;
 
@@ -134,6 +142,12 @@ const Form = styled.div`
 			outline: 0 !important;
 			box-shadow: none !important;
 			text-shadow: none !important;
+		}
+	}
+
+	.hs-form-field {
+		@media screen and (max-width: ${breakpoints.tablet + 1}px) {
+			width: 100% !important;
 		}
 	}
 `;
