@@ -32,7 +32,7 @@ const Icons = styled(a.img)`
 
 const ResponsiveImageContainer = styled.div`
 	position: relative;
-	margin: 45px auto 140px;
+	margin: 45px auto 80px;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		margin: 45px 60px 70px;
