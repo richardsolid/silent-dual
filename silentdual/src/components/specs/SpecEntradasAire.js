@@ -57,7 +57,7 @@ const ResponsiveDescription = styled.p`
 	margin: 0 auto 5px;
 `;
 
-const SpecSensor = ({ isResponsive }) => {
+const SpecSensor = ({ isResponsive, data }) => {
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -121,16 +121,18 @@ const SpecSensor = ({ isResponsive }) => {
 		<Row>
 			<Column xs={12} md={6}>
 				<ResponsiveInfo>
-					<ResponsiveTitle className={"headingSmall"}>
-						2 entradas de aire
-					</ResponsiveTitle>
-					<ResponsiveSubtitle className={"lead"}>
-						Frontal y perimetral
-					</ResponsiveSubtitle>
-					<ResponsiveDescription className={"lead"}>
-						Prestaciones aerodinámicas que le proporcionan la entrada{" "}
-						<strong>frontal</strong> y <strong>perimetral</strong> de aire.
-					</ResponsiveDescription>
+					<ResponsiveTitle
+						className={"headingSmall"}
+						dangerouslySetInnerHTML={{ __html: data.title }}
+					/>
+					<ResponsiveSubtitle
+						className={"lead"}
+						dangerouslySetInnerHTML={{ __html: data.subtitle }}
+					/>
+					<ResponsiveDescription
+						className={"lead"}
+						dangerouslySetInnerHTML={{ __html: data.description }}
+					/>
 				</ResponsiveInfo>
 			</Column>
 			<SpecEntradasAireComp
@@ -146,17 +148,21 @@ const SpecSensor = ({ isResponsive }) => {
 					<Row>
 						<Column xs={12} md={6}>
 							<Info>
-								<Title style={titleProps} className={"headingSmall"}>
-									2 entradas de aire
-								</Title>
-								<Subtitle style={subtitleProps} className={"lead"}>
-									Frontal y perimetral
-								</Subtitle>
-								<Description style={descriptionProps} className={"lead"}>
-									Prestaciones aerodinámicas que le proporcionan la entrada{" "}
-									<strong>frontal</strong> y <strong>perimetral</strong> de
-									aire.
-								</Description>
+								<Title
+									style={titleProps}
+									className={"headingSmall"}
+									dangerouslySetInnerHTML={{ __html: data.title }}
+								/>
+								<Subtitle
+									style={subtitleProps}
+									className={"lead"}
+									dangerouslySetInnerHTML={{ __html: data.subtitle }}
+								/>
+								<Description
+									style={descriptionProps}
+									className={"lead"}
+									dangerouslySetInnerHTML={{ __html: data.description }}
+								/>
 							</Info>
 						</Column>
 						<Column xs={12} md={6}>

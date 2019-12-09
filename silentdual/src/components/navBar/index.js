@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { TweenMax, Back } from "gsap";
@@ -30,26 +30,19 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background: ${({ isOpen }) => (isOpen ? "transparent" : "black")};
+	background: ${({ isOpen, isTop }) =>
+		isOpen || isTop ? "transparent" : "black"};
 	top: 0;
 	width: 100vw;
-	height: 60px;
+	height: ${({ isTop }) => (isTop ? "80px" : "60px")};
 	box-sizing: border-box;
 	z-index: 1000;
+	border-bottom: 1px solid #6e6e6e;
 
 	transition: 0.2s;
 
-	&.onTop {
-		background-color: transparent;
-		height: 80px;
-	}
-
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: 80px;
-
-		&.onTop {
-			height: 100px;
-		}
+		height: ${({ isTop }) => (isTop ? "80px" : "100px")};
 	}
 `;
 
@@ -58,27 +51,17 @@ const SPLogo = styled(Link)`
 	background: url(${logo}) no-repeat center center;
 	background-size: contain;
 
-	width: 40px;
-	height: 40px;
+	width: ${({ isTop }) => (isTop ? "60px" : "40px")};
+	height: ${({ isTop }) => (isTop ? "60px" : "40px")};
 
 	transition: 0.2s;
-
-	&.onTop {
-		width: 60px;
-		height: 60px;
-	}
 
 	opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
 	visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		width: 50px;
-		height: 50px;
-
-		&.onTop {
-			width: 70px;
-			height: 40px;
-		}
+		width: ${({ isTop }) => (isTop ? "70px" : "50px")};
+		height: ${({ isTop }) => (isTop ? "50px" : "40px")};
 	}
 `;
 
@@ -162,18 +145,15 @@ const NavBar = ({ data }) => {
 
 	const [width, setWidth] = useState(null);
 	const [viewNavItems, setViewNavItems] = useState(false);
-
-	const navBarContainer = useRef(null);
-	const logoContainer = useRef(null);
+	const [isTop, setIsTop] = useState(true);
 
 	const handleBurgerClick = () => {
-		if (windowIsOnTop()) {
-			navBarContainer.current.classList.add("onTop");
-			logoContainer.current.classList.add("onTop");
-		}
+		!window.pageYOffset && setIsTop(true);
 		setViewNavItems(!viewNavItems);
 		document.getElementsByTagName("body")[0].classList.toggle("scrollDisabled");
 	};
+
+	const isTopOnScroll = () => setIsTop(!window.pageYOffset);
 
 	useEffect(() => {
 		if (viewNavItems) {
@@ -195,42 +175,27 @@ const NavBar = ({ data }) => {
 		setWidth(size.width);
 	}, [viewNavItems, size]);
 
-	const windowIsOnTop = () => !window.pageYOffset;
-
 	useEffect(() => {
-		navBarContainer && navBarContainer.current.classList.add("onTop");
-		logoContainer && logoContainer.current.classList.add("onTop");
+		setIsTop(true);
 
 		if (typeof window !== "undefined") {
 			window.addEventListener("scroll", () => {
-				if (windowIsOnTop()) {
-					navBarContainer.current.classList.add("onTop");
-					logoContainer.current.classList.add("onTop");
-				} else {
-					navBarContainer.current.classList.contains("onTop") &&
-						navBarContainer.current.classList.remove("onTop");
-					logoContainer.current.classList.contains("onTop") &&
-						logoContainer.current.classList.remove("onTop");
-				}
+				isTopOnScroll();
 			});
 		}
-		return () => window.removeEventListener("scroll", windowIsOnTop());
+		return () => window.removeEventListener("scroll", isTopOnScroll);
 	}, []);
-
-	useEffect(() => {
-		if (viewNavItems) console.log(window.pageYOffset);
-	}, [viewNavItems]);
 
 	//collapsed menu:
 	if (width < breakpoints.large)
 		return (
 			<Navigator>
-				<NavBarContainer ref={navBarContainer} isPhone isOpen={viewNavItems}>
+				<NavBarContainer isTop={isTop} isPhone isOpen={viewNavItems}>
 					<Wrapper>
 						<Row>
 							<Column xs={12}>
 								<SPLogo
-									ref={logoContainer}
+									isTop={isTop}
 									isOpen={viewNavItems}
 									to={"/#hero"}
 									onClick={() => setViewNavItems(false)}
@@ -267,11 +232,11 @@ const NavBar = ({ data }) => {
 
 	//items on navbar:
 	return (
-		<NavBarContainer ref={navBarContainer}>
+		<NavBarContainer isTop={isTop}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<SPLogo ref={logoContainer} to={"#hero"} />
+						<SPLogo isTop={isTop} to={"#hero"} />
 						<SectionsLinksBar>
 							{data &&
 								data.map((section, i) => (

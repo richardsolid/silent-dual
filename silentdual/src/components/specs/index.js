@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useSpring, animated as a } from "react-spring";
+import data from "../../data";
 
 //utils:
 import useWindowSize from "../../utils/useWindowSize";
@@ -47,6 +48,7 @@ const TitleResponsive = styled.h2`
 `;
 
 const Specs = () => {
+	const { caracteristicas } = data;
 	const [width, setWidth] = useState(null);
 
 	const widthWindow = useWindowSize();
@@ -94,14 +96,24 @@ const Specs = () => {
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<TitleResponsive className={"headingMedium"}>
-							La única opción doblemente inteligente
-						</TitleResponsive>
+						<TitleResponsive
+							className={"headingMedium"}
+							dangerouslySetInnerHTML={{ __html: caracteristicas.sectionTitle }}
+						/>
 					</Column>
 				</Row>
-				<SpecSensores isResponsive={isResponsive} />
-				<SpecFuncionamiento isResponsive={isResponsive} />
-				<SpecEntradasAire isResponsive={isResponsive} />
+				<SpecSensores
+					isResponsive={isResponsive}
+					data={caracteristicas.specs[0]}
+				/>
+				<SpecFuncionamiento
+					isResponsive={isResponsive}
+					data={caracteristicas.specs[1]}
+				/>
+				<SpecEntradasAire
+					isResponsive={isResponsive}
+					data={caracteristicas.specs[2]}
+				/>
 			</Wrapper>
 		</SectionResponsive>
 	) : (
@@ -109,14 +121,25 @@ const Specs = () => {
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<Title style={props} className={"headingMedium"}>
-							La única opción doblemente inteligente
-						</Title>
+						<Title
+							style={props}
+							className={"headingMedium"}
+							dangerouslySetInnerHTML={{ __html: caracteristicas.sectionTitle }}
+						/>
 					</Column>
 				</Row>
-				<SpecSensores isResponsive={isResponsive} />
-				<SpecFuncionamiento isResponsive={isResponsive} />
-				<SpecEntradasAire isResponsive={isResponsive} />
+				<SpecSensores
+					isResponsive={isResponsive}
+					data={caracteristicas.specs[0]}
+				/>
+				<SpecFuncionamiento
+					isResponsive={isResponsive}
+					data={caracteristicas.specs[1]}
+				/>
+				<SpecEntradasAire
+					isResponsive={isResponsive}
+					data={caracteristicas.specs[2]}
+				/>
 			</Wrapper>
 		</Section>
 	);
