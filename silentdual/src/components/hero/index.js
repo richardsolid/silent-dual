@@ -210,9 +210,10 @@ const HeroLinkDown = styled(Link)`
 `;
 
 const ScrollContainer = styled(animated.div)`
-	position: relative;
 	height: 100%;
 	@media screen and (min-width: ${breakpoints.large}px) {
+		position: relative;
+		z-index: 0;
 		height: 100vh;
 		margin-bottom: 100vh;
 	}
@@ -233,15 +234,6 @@ const Hero = () => {
 	const [ref, entry] = useIntersect({
 		//threshold es la cantidad de elemento visible para que se dispare el evento
 		threshold: buildThresholdArray()
-	});
-
-	const sectionProps = useSpring({
-		from: {
-			zIndex: -1
-		},
-		to: {
-			zIndex: entry.intersectionRatio > 0 ? 100 : -1
-		}
 	});
 
 	const widthWindow = useWindowSize();
