@@ -4,7 +4,6 @@ import HubspotForm from "react-hubspot-form";
 
 //Assets
 import variables from "../../assets/styles/variables";
-import { gutter } from "../../assets/styles/gutter";
 import { breakpoints } from "../../assets/styles/breakpoints";
 
 //Utils
@@ -16,6 +15,7 @@ import Column from "../../utils/grid/column";
 import data from "../../data";
 
 const FormContainer = styled.div`
+	z-index: 0;
 	padding: 80px 0;
 
 	h2 {
@@ -37,21 +37,24 @@ const FormContainer = styled.div`
 const Form = styled.div`
 	width: 100%;
 
-	fieldset {
-		max-width: inherit !important;
+	color: black;
 
-		margin-left: -${gutter}px !important;
-		margin-right: -${gutter}px !important;
+	option:disabled {
+		color: black;
+	}
+
+	fieldset {
+		margin: 0 auto !important;
+		max-width: 100% !important;
+
+		@media screen and (min-width: ${breakpoints.large}px) {
+			max-width: 75% !important;
+		}
 	}
 
 	.field {
-		width: 100% !important;
 		box-sizing: border-box;
-
-		@media only screen and (min-width: ${breakpoints.desktop}px) {
-			padding: 0 15px !important;
-			//width: 50% !important;
-		}
+		padding: 0 15px !important;
 	}
 
 	.field label {
@@ -73,9 +76,17 @@ const Form = styled.div`
 		border-radius: 3px;
 		border: 1px solid rgb(204, 204, 204);
 
-		padding: 20px;
+		padding: 25px 20px;
 
 		color: black !important;
+	}
+
+	select.hs-input {
+		height: 52px;
+	}
+
+	textarea.hs-input {
+		height: 152px;
 	}
 
 	.hs-error-msgs {
@@ -97,6 +108,18 @@ const Form = styled.div`
 		margin: 0 !important;
 	}
 
+	.hs_submit,
+	.hs_error_rollup {
+		margin: 0 auto !important;
+		max-width: 100% !important;
+
+		padding: 0 15px;
+		box-sizing: border-box;
+
+		@media screen and (min-width: ${breakpoints.large}px) {
+			max-width: 75% !important;
+		}
+	}
 	.hs-button {
 		border: none !important;
 		background-color: ${variables.primary} !important;
@@ -119,6 +142,12 @@ const Form = styled.div`
 			outline: 0 !important;
 			box-shadow: none !important;
 			text-shadow: none !important;
+		}
+	}
+
+	.hs-form-field {
+		@media screen and (max-width: ${breakpoints.tablet + 1}px) {
+			width: 100% !important;
 		}
 	}
 `;

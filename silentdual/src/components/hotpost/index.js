@@ -80,8 +80,6 @@ const HotspotItem = ({ content, number }) => {
 	const hotstopEl = useRef(null);
 	const hotstopButtonEl = useRef(null);
 
-	console.log(content);
-
 	const resetHotspot = () => {
 		const hotspotContent = document.querySelectorAll(".HotspotItemContent");
 		const hotspotButtons = document.querySelectorAll(".HotspotItemButton");

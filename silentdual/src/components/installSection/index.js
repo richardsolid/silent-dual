@@ -29,6 +29,7 @@ const InstallSectionContainer = styled.section`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 0;
 
 	background-color: #eceded;
 	color: black;

@@ -31,8 +31,8 @@ const data = {
 				title: "Detector de presencia",
 				text:
 					"Sensor de presencia integrado con un amplio ángulo de detección.",
-				top: 10,
-				left: 62
+				top: 12,
+				left: 64
 			},
 
 			{

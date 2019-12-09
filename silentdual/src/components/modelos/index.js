@@ -26,6 +26,7 @@ const Title = styled.h2`
 	text-align: center;
 	width: 100%;
 	margin: 100px auto 60px;
+	z-index: 0;
 
 	@media screen and (min-width: ${breakpoints.tablet}px) {
 		margin: 120px auto 80px;
@@ -123,25 +124,22 @@ const Modelos = () => {
 					<Column xs={12}>
 						<Title className={"headingMedium"}>{modelos.title}</Title>
 					</Column>
-
-					<Row>
-						{modelos.cards.map((modelo, i) => (
-							<Column xs={12} sm={6} md={4}>
-								<ModeloCard key={i}>
-									<ModeloImageBox>
-										<ModeloImage src={chooseImage(i)} alt="modelo image" />
-									</ModeloImageBox>
-									<ModeloTitle className={"bodyNormal"}>
-										{modelo.title}
-									</ModeloTitle>
-									<ModeloDescription>
-										<p>{modelo.description.sizes}</p>
-										<p>{modelo.description.power}</p>
-									</ModeloDescription>
-								</ModeloCard>
-							</Column>
-						))}
-					</Row>
+					{modelos.cards.map((modelo, i) => (
+						<Column xs={12} sm={6} md={4}>
+							<ModeloCard key={i}>
+								<ModeloImageBox>
+									<ModeloImage src={chooseImage(i)} alt="modelo image" />
+								</ModeloImageBox>
+								<ModeloTitle className={"bodyNormal"}>
+									{modelo.title}
+								</ModeloTitle>
+								<ModeloDescription>
+									<p>{modelo.description.sizes}</p>
+									<p>{modelo.description.power}</p>
+								</ModeloDescription>
+							</ModeloCard>
+						</Column>
+					))}
 
 					<Column xs={12}>
 						<DownloadButtonContainer href="#" target="_blank">
