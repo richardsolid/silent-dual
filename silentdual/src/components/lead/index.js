@@ -32,7 +32,12 @@ const LeadSection = styled.section`
   color: white;
   overflow: hidden;
   line-height: 0;
+  height: 100vh;
+  background-image: url(${FullImg});
+  background-size: cover;
+  background-position: 30% center;
   @media screen and (min-width: ${breakpoints.tablet}px) {
+    background-image: none;
     margin-bottom: 100vh;
     height: 200vh;
   }
@@ -192,7 +197,6 @@ const Lead = () => {
     } else {
       return (
         <LeadSection>
-          <BackgroundImage src={FullImg} alt="background" />
           <Description>
             <h2>{lead.description}</h2>
           </Description>
