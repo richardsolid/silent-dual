@@ -39,14 +39,8 @@ const ModeloCard = styled.div`
 	text-align: center;
 	flex-basis: 100%;
 	width: 100%;
-	min-width: 300px;
-	max-width: 350px;
 	box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.1);
 	margin: 0 auto 20px;
-
-	@media screen and (min-width: ${breakpoints.large}px) {
-		flex-basis: 30%;
-	}
 `;
 
 const ModeloImageBox = styled.div`
