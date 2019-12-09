@@ -195,7 +195,6 @@ const Form = styled.div`
 	input[type="checkbox"] {
 		margin-right: 10px;
 		border: 1px solid ${variables.divider};
-		-webkit-appearance: none
 		height: 20px !important;
 		width: 20px !important;
 		display: inline-flex;

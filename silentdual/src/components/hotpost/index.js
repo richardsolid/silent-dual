@@ -13,6 +13,12 @@ const HotspotItemContainer = styled.div`
 	position: absolute;
 	top: ${({ content }) => content.top}%;
 	left: ${({ content }) => content.left}%;
+
+	overflow: hidden;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		overflow: visible;
+	}
 `;
 
 const HotspotItemButton = styled.div`
