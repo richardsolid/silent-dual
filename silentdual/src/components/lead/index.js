@@ -29,7 +29,7 @@ const Fixed = styled(animated.div)`
   position: fixed;
   overflow: hidden;
 `;
-const LeadSection = styled.section`
+const LeadSection = styled(animated.section)`
   height: auto;
   position: relative;
   color: white;
@@ -141,6 +141,15 @@ const Lead = () => {
     }
   });
 
+  const sectionProps = useSpring({
+    from: {
+      zIndex: -1
+    },
+    to: {
+      zIndex: entry.intersectionRatio > 0 ? 100 : -1
+    }
+  });
+
   const widthWindow = useWindowSize();
 
   const { lead } = data;
@@ -162,6 +171,7 @@ const Lead = () => {
         <LeadSection
           ref={ref}
           onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+          style={sectionProps}
         >
           <Fixed style={parallaxProps}>
             <Parallax>
