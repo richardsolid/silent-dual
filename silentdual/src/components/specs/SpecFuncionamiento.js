@@ -133,7 +133,6 @@ const SpecFuncionamiento = ({ isResponsive }) => {
 						cuando los sensores no detectan presencia ni cambios de humedad,{" "}
 						<strong>funcionamiento intermitente</strong> cuando uno de los
 						sensores se activa.
-						<strong>saturación</strong>.
 					</ResponsiveDescription>
 				</ResponsiveInfo>
 			</Column>
