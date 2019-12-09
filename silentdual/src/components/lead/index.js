@@ -28,7 +28,7 @@ const LeadSection = styled(animated.section)`
   background-image: url(${FullImg});
   background-size: cover;
   background-position: 30% center;
-  @media screen and (min-width: ${breakpoints.tablet}px) {
+  @media screen and (min-width: ${breakpoints.large}px) {
     background-image: none;
     margin-bottom: 100vh;
     height: 200vh;
@@ -80,7 +80,7 @@ const Description = styled(animated.div)`
   justify-content: center;
   align-items: center;
   z-index: 10;
-  @media screen and (min-width: ${breakpoints.tablet}px) {
+  @media screen and (min-width: ${breakpoints.large}px) {
     height: 100vh;
   }
 `;
@@ -91,7 +91,7 @@ const DescriptionH2 = styled(animated.h2)`
   font-size: 28px;
   line-height: 34px;
   text-align: center;
-  @media screen and (min-width: ${breakpoints.tablet}px) {
+  @media screen and (min-width: ${breakpoints.large}px) {
     max-width: 30%;
     font-size: 33px;
     line-height: 39px;
@@ -173,7 +173,7 @@ const Lead = () => {
   }));
 
   if (width && typeof width === "number") {
-    if (width > breakpoints.tablet) {
+    if (width > breakpoints.large) {
       return (
         <LeadSection
           id="descubrelo"
