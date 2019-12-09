@@ -14,7 +14,7 @@ import videoPoster from "../../images/video_poster.jpg";
 import arrowDown from "../../images/arrow_down.svg";
 
 //video:
-import Demovideo from "../../videos/demovideo.mp4";
+import Demovideo from "../../videos/hero-silent-dual.mp4";
 
 //styles:
 // import variables from "../../assets/styles/variables";
