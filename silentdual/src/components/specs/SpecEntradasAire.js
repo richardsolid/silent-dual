@@ -14,21 +14,30 @@ import SpecEntradasAireComp from "./SpecEntradasAireComp";
 const Container = styled.div`
 	position: relative;
 	height: 100vh;
-	top: 197vh;
+	margin-bottom: 90vh;
 `;
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 23%;
+	top: 220px;
 `;
-const Title = styled(a.h3)``;
-const Subtitle = styled(a.h4)``;
+const Title = styled(a.h3)`
+	margin: 0 0 32px 0;
+`;
+
+const Subtitle = styled(a.h4)`
+	margin: 0 0 14px 0;
+`;
+
 const Description = styled(a.p)`
 	font-weight: lighter;
+	margin: 0;
 `;
+
 const Info = styled.div`
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 `;
 
 //RESPONSIVE:
@@ -36,16 +45,16 @@ const Info = styled.div`
 const ResponsiveInfo = styled.div``;
 
 const ResponsiveTitle = styled.h3`
-	margin-bottom: 20px;
+	margin: 0 auto 20px;
 `;
 
 const ResponsiveSubtitle = styled.h4`
-	margin-bottom: 10px;
+	margin: 0 auto 10px;
 `;
 
 const ResponsiveDescription = styled.p`
 	font-weight: lighter;
-	margin: 0 auto;
+	margin: 0 auto 5px;
 `;
 
 const SpecSensor = ({ isResponsive }) => {
@@ -104,7 +113,7 @@ const SpecSensor = ({ isResponsive }) => {
 			opacity: 0
 		},
 		to: {
-			opacity: (ratio - 0.6) * 8 || 0
+			opacity: (ratio - 0.65) * 8 || 0
 		}
 	});
 

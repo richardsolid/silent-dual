@@ -16,20 +16,17 @@ import SpecFuncionamiento from "./SpecFuncionamiento";
 import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled(a.section)`
-	margin-top: 95vh;
-	margin-bottom: 80vh;
-	height: fit-content;
 	position: relative;
-	padding-bottom: 190vh;
 `;
 const Title = styled(a.h2)`
 	position: fixed;
-	top: 10%;
+	top: 120px;
 	left: 0;
 	right: 0;
 	color: black;
 	text-align: center;
 	width: 100%;
+	margin: 0;
 `;
 
 const SectionResponsive = styled.section`
@@ -40,7 +37,9 @@ const SectionResponsive = styled.section`
 	text-align: center;
 `;
 
-const TitleResponsive = styled.h2``;
+const TitleResponsive = styled.h2`
+	margin: 0 auto 60px;
+`;
 
 const Specs = () => {
 	const [width, setWidth] = useState(null);
