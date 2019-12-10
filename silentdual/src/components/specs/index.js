@@ -117,7 +117,6 @@ const Specs = () => {
 
   return isResponsive ? (
     <SectionResponsive id="caracteristicas">
-      <Background style={backgroundProps} />
       <Wrapper>
         <Row>
           <Column xs={12}>
@@ -154,6 +153,7 @@ const Specs = () => {
     >
       <Wrapper>
         <a.div id="caracteristicas" ref={ref}>
+          <Background id="background" style={backgroundProps} />
           <Row>
             <Column xs={12}>
               <Title
