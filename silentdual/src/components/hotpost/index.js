@@ -153,7 +153,10 @@ const HotspotItem = ({ content, number }) => {
 			<HotspotItemButton
 				className="HotspotItemButton"
 				alt="button"
-				onClick={() => {
+				onMouseEnter={() => {
+					width >= breakpoints.large && handleClickHotspotButton();
+				}}
+				onMouseLeave={() => {
 					width >= breakpoints.large && handleClickHotspotButton();
 				}}
 				ref={hotstopButtonEl}

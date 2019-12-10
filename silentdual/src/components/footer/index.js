@@ -11,6 +11,8 @@ import variables from "../../assets/styles/variables";
 
 const FooterSection = styled.footer`
 	background: ${variables.secondary};
+	position: relative;
+	z-index: 0;
 
 	color: white;
 	font-weight: bold;

@@ -38,7 +38,7 @@ const DiscoverSectionContainer = styled(a.section)`
 	}
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		padding: 100vh 0;
+		padding: 100vh 0 0;
 	}
 `;
 
@@ -313,7 +313,7 @@ const DiscoverSection = () => {
 					<Wrapper>
 						<Row>
 							<DiscoverSectionLayer>
-								<Column xs={12}>
+								<Column xs={12} align="top">
 									<h2 className="headingMedium">Descubre sus componentes</h2>
 								</Column>
 								<Column xs={12} direction="column">

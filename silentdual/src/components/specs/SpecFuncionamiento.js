@@ -23,7 +23,7 @@ const Container = styled.div`
 	position: relative;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: 100vh;
+		height: 200vh;
 		margin: 100vh 0;
 	}
 `;
@@ -102,7 +102,7 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 		threshold: buildThresholdArray()
 	});
 
-	const ratio = parseFloat(format(entry.intersectionRatio));
+	const ratio = parseFloat(format(entry.intersectionRatio)) * 2;
 
 	const titleProps = useSpring({
 		from: {

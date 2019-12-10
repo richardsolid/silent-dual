@@ -9,7 +9,9 @@ const ColumnLayout = styled.div`
   align-self: stretch;
   ${({ align }) => align === "center" && "margin: 0 auto;"}
   ${({ align }) => align === "left" && "margin-right: auto;"}
-  ${({ align }) => align === "right" && "margin-left: auto;"}
+	${({ align }) => align === "right" && "margin-left: auto;"}
+	${({ align }) => align === "bottom" && "margin-top: auto;"}
+  ${({ align }) => align === "top" && "margin-bottom: auto;"}
 	
 	${({ direction }) => direction === "column" && "flex-direction: column;"}
   
@@ -38,7 +40,7 @@ const ColumnLayout = styled.div`
   @media only screen and (min-width: ${breakpoints.phone}px ){
     ${({ xs }) => xs && "width: " + (xs / 12) * 100 + "%"}
     ${({ xsOffset }) =>
-		xsOffset && "margin-left: " + (xsOffset / 12) * 100 + "%"}
+			xsOffset && "margin-left: " + (xsOffset / 12) * 100 + "%"}
   }
   
   @media only screen and (min-width: ${breakpoints.tablet}px ){
