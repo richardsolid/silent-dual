@@ -144,6 +144,15 @@ const Lead = () => {
 		}
 	});
 
+	const mobileProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: entry.intersectionRatio > 0.5 ? 1 : 0
+		}
+	});
+
 	const widthWindow = useWindowSize();
 
 	const { lead } = data;
@@ -211,9 +220,11 @@ const Lead = () => {
 			);
 		} else {
 			return (
-				<LeadSection id="descubrelo">
+				<LeadSection ref={ref} id="descubrelo">
 					<Description>
-						<DescriptionH2>{lead.description}</DescriptionH2>
+						<DescriptionH2 style={mobileProps}>
+							{lead.description}
+						</DescriptionH2>
 					</Description>
 				</LeadSection>
 			);

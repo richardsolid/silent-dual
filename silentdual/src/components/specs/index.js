@@ -44,7 +44,7 @@ const SectionResponsive = styled.section`
 	text-align: center;
 `;
 
-const TitleResponsive = styled.h2`
+const TitleResponsive = styled(a.h2)`
 	margin: 0 auto 60px;
 `;
 
@@ -75,11 +75,18 @@ const Specs = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: entry.intersectionRatio > 0.1 ? 1 : 0
+			opacity: format(entry.intersectionRatio) > 0.1 ? 1 : 0
 		}
 	});
 
-	console.log(format(entry.intersectionRatio));
+	const mobileTitleProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: format(entry.intersectionRatio) > 0.5 ? 1 : 0
+		}
+	});
 
 	const isResponsive = width < breakpoints.desktop;
 
@@ -89,6 +96,8 @@ const Specs = () => {
 				<Row>
 					<Column xs={12}>
 						<TitleResponsive
+							ref={ref}
+							style={mobileTitleProps}
 							className={"headingMedium"}
 							dangerouslySetInnerHTML={{ __html: caracteristicas.sectionTitle }}
 						/>
