@@ -100,10 +100,12 @@ const InstantFriendly = styled.img`
 	top: 75px;
 	height: 80px;
 	width: 70px;
+	margin-top: 40px;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 115px;
 		width: 100px;
+		margin-top: 0;
 	}
 `;
 
