@@ -16,9 +16,6 @@ import arrowDown from "../../images/arrow_down.svg";
 //video:
 import Demovideo from "../../videos/hero-silent-dual.mp4";
 
-//styles:
-// import variables from "../../assets/styles/variables";
-
 //components:
 import VideoPlayer from "../videoPlayer";
 
@@ -28,7 +25,6 @@ const HomeContainer = styled.section`
 	justify-content: center;
 	align-items: center;
 	flex: 1;
-	/* height: calc(100vh - 60px); */
 	height: 100vh;
 	width: 100%;
 	position: relative;
@@ -39,7 +35,6 @@ const HomeBackground = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* overflow: hidden; */
 	position: relative;
 	height: 100vh;
 	width: 100vw;
@@ -215,6 +210,7 @@ const HeroLinkDown = styled(Link)`
 `;
 
 const ScrollContainer = styled(animated.div)`
+	position: relative;
 	height: 100%;
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 100vh;
@@ -239,23 +235,9 @@ const Hero = () => {
 		threshold: buildThresholdArray()
 	});
 
-	const heroProps = useSpring({
-		from: {
-			opacity: -1
-		},
-		to: {
-			opacity: entry.intersectionRatio ? entry.intersectionRatio : 0,
-			zIndex: entry.intersectionRatio > 0 ? 100 : -1
-		}
-	});
-
-	const sectionProps = useSpring({
-		from: {
-			zIndex: -1
-		},
-		to: {
-			zIndex: entry.intersectionRatio > 0 ? 100 : -1
-		}
+	const { o } = useSpring({
+		from: { o: 0 },
+		o: entry.intersectionRatio > 0 ? 0 : 1
 	});
 
 	const widthWindow = useWindowSize();
@@ -272,8 +254,14 @@ const Hero = () => {
 	}, [widthWindow]);
 
 	return (
-		<ScrollContainer ref={ref} style={sectionProps} id={"hero"}>
-			<Fixed style={heroProps}>
+		<ScrollContainer
+			ref={ref}
+			id={"hero"}
+			style={{
+				visibility: o.interpolate(o => (o === 1 ? "hidden" : "visible"))
+			}}
+		>
+			<Fixed>
 				<HomeContainer>
 					<HomeBackground>
 						{width < 768 ? (

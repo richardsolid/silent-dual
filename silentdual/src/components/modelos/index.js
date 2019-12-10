@@ -26,6 +26,7 @@ const Title = styled.h2`
 	text-align: center;
 	width: 100%;
 	margin: 100px auto 60px;
+	position: relative;
 	z-index: 0;
 	line-height: 39px;
 
