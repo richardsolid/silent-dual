@@ -37,6 +37,7 @@ const NavBarContainer = styled.header`
 	height: ${({ isTop }) => (isTop ? "80px" : "60px")};
 	box-sizing: border-box;
 	z-index: 1000;
+	border-bottom: 1px solid #6e6e6e;
 
 	transition: 0.2s;
 

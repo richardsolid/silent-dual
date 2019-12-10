@@ -210,10 +210,9 @@ const HeroLinkDown = styled(Link)`
 `;
 
 const ScrollContainer = styled(animated.div)`
+	position: relative;
 	height: 100%;
 	@media screen and (min-width: ${breakpoints.large}px) {
-		position: relative;
-		z-index: 0;
 		height: 100vh;
 		margin-bottom: 100vh;
 	}
@@ -236,6 +235,11 @@ const Hero = () => {
 		threshold: buildThresholdArray()
 	});
 
+	const { o } = useSpring({
+		from: { o: 0 },
+		o: entry.intersectionRatio > 0 ? 0 : 1
+	});
+
 	const widthWindow = useWindowSize();
 
 	const [width, setWidth] = useState(null);
@@ -250,7 +254,13 @@ const Hero = () => {
 	}, [widthWindow]);
 
 	return (
-		<ScrollContainer ref={ref} id={"hero"}>
+		<ScrollContainer
+			ref={ref}
+			id={"hero"}
+			style={{
+				visibility: o.interpolate(o => (o === 1 ? "hidden" : "visible"))
+			}}
+		>
 			<Fixed>
 				<HomeContainer>
 					<HomeBackground>

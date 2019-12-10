@@ -135,17 +135,16 @@ const Lead = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: entry.intersectionRatio > 0 ? 1 : 0,
-			zIndex: entry.intersectionRatio > 0 ? 100 : 0
+			opacity: entry.intersectionRatio > 0 ? 1 : 0
 		}
 	});
 
 	const sectionProps = useSpring({
 		from: {
-			zIndex: 0
+			opacity: 0
 		},
 		to: {
-			zIndex: entry.intersectionRatio > 0 ? 100 : 0
+			opacity: entry.intersectionRatio > 0 ? 1 : 0
 		}
 	});
 
@@ -171,7 +170,12 @@ const Lead = () => {
 					id="descubrelo"
 					ref={ref}
 					onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-					style={sectionProps}
+					style={{
+						...sectionProps,
+						visibility: sectionProps.opacity.interpolate(o =>
+							o === 0 ? "hidden" : "visible"
+						)
+					}}
 				>
 					<Fixed style={parallaxProps}>
 						<Parallax>

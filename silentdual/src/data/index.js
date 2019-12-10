@@ -79,14 +79,36 @@ const data = {
 		description:
 			"Silent Dual, la nueva generación de extractores de baño inteligentes que se autoajustan para crear un ambiente óptimo."
 	},
-	caracteristicas: [],
+	caracteristicas: {
+		sectionTitle: "La única opción doblemente inteligente",
+		specs: [
+			{
+				title: "2 sensores",
+				subtitle: "Presencia y humedad",
+				description:
+					"Sensores de presencia y humedad, se activa automáticamente cuando detecta <strong>movimiento</strong> o un cambio en los niveles de <strong>saturación</strong>."
+			},
+			{
+				title: "2 modos de funcionamiento",
+				subtitle: "Contínuo e intermitente",
+				description:
+					"<strong>Funcionamiento contínuo </strong> cuando los sensores no detectan presencia ni cambios de humedad, <strong>funcionamiento intermitente</strong> cuando uno de los sensores se activa."
+			},
+			{
+				title: "2 entradas de aire",
+				subtitle: "Frontal y perimetral",
+				description:
+					"Prestaciones aerodinámicas que le proporcionan la entrada <strong>frontal</strong> y <strong>perimetral</strong> de aire."
+			}
+		]
+	},
 	componentes: [],
 	instalacion: {
 		title: "S&P diseña productos fáciles de instalar",
 		subtitle: "Plug & Play",
 		titleText: "Conexionado a 2 hilos",
 		descriptionText:
-			"En S&P apostamos por la innovación en usabilidad, por eso SILENT DUAL cuenta con el sello Install Friendly de garantía de calidad técnica y de facilidad a la hora de realizarse la instalación. El extractor de baño se coloca con una práctica instalación que se realiza con una conexión directa de tan solo 2 hilos(L / N).",
+			"En S&P apostamos por la innovación en usabilidad, por eso SILENT DUAL cuenta con el sello Install Friendly de garantía de calidad técnica y de facilidad a la hora de realizarse la instalación.<br/><br/>El extractor de baño se coloca con una práctica instalación que se realiza con una conexión directa de tan solo 2 hilos(L / N).",
 		imgAlt: "conexionado",
 		buttonAlt: "download icon",
 		button: "Descargar el folleto de producto"

@@ -182,7 +182,11 @@ const InstallSection = () => {
 					<Column xs={12} lg={5} xsOrder={2} lgOrder={1}>
 						<InstallSectionText>
 							<h3 className="headingSmall">{instalacion.titleText}</h3>
-							<p>{instalacion.descriptionText}</p>
+							<p
+								dangerouslySetInnerHTML={{
+									__html: instalacion.descriptionText
+								}}
+							/>
 						</InstallSectionText>
 					</Column>
 

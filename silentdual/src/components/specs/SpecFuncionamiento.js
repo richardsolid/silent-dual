@@ -58,7 +58,7 @@ const ResponsiveDescription = styled.p`
 	margin: 0 auto 5px;
 `;
 
-const SpecFuncionamiento = ({ isResponsive }) => {
+const SpecFuncionamiento = ({ isResponsive, data }) => {
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
@@ -122,19 +122,18 @@ const SpecFuncionamiento = ({ isResponsive }) => {
 		<Row>
 			<Column xs={12} md={6}>
 				<ResponsiveInfo>
-					<ResponsiveTitle className={"headingSmall"}>
-						2 modos de funcionamiento
-					</ResponsiveTitle>
-					<ResponsiveSubtitle className={"lead"}>
-						Contínuo e intermitente
-					</ResponsiveSubtitle>
-					<ResponsiveDescription className={"lead"}>
-						<strong>Funcionamiento contínuo </strong>
-						cuando los sensores no detectan presencia ni cambios de humedad,{" "}
-						<strong>funcionamiento intermitente</strong> cuando uno de los
-						sensores se activa.
-						<strong>saturación</strong>.
-					</ResponsiveDescription>
+					<ResponsiveTitle
+						className={"headingSmall"}
+						dangerouslySetInnerHTML={{ __html: data.title }}
+					/>
+					<ResponsiveSubtitle
+						className={"lead"}
+						dangerouslySetInnerHTML={{ __html: data.subtitle }}
+					/>
+					<ResponsiveDescription
+						className={"lead"}
+						dangerouslySetInnerHTML={{ __html: data.description }}
+					/>
 				</ResponsiveInfo>
 			</Column>
 			<SpecFuncionesComp
@@ -157,18 +156,27 @@ const SpecFuncionamiento = ({ isResponsive }) => {
 						</Column>
 						<Column xs={12} md={6}>
 							<Info>
-								<Title style={titleProps} className={"headingSmall"}>
-									2 modos de funcionamiento
-								</Title>
-								<Subtitle style={subtitleProps} className={"lead"}>
-									Contínuo e intermitente
-								</Subtitle>
-								<Description style={descriptionProps} className={"lead"}>
-									<strong>Funcionamiento contínuo </strong>
-									cuando los sensores no detectan presencia ni cambios de
-									humedad, <strong>funcionamiento intermitente</strong> cuando
-									uno de los sensores se activa.
-								</Description>
+								<Title
+									style={titleProps}
+									className={"headingSmall"}
+									dangerouslySetInnerHTML={{
+										__html: data.title
+									}}
+								/>
+								<Subtitle
+									style={subtitleProps}
+									className={"lead"}
+									dangerouslySetInnerHTML={{
+										__html: data.subtitle
+									}}
+								/>
+								<Description
+									style={descriptionProps}
+									className={"lead"}
+									dangerouslySetInnerHTML={{
+										__html: data.description
+									}}
+								/>
 							</Info>
 						</Column>
 					</Row>
