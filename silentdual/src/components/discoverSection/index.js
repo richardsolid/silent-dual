@@ -316,7 +316,7 @@ const DiscoverSection = () => {
 								<Column xs={12} align="top">
 									<h2 className="headingMedium">Descubre sus componentes</h2>
 								</Column>
-								<Column xs={12} direction="column">
+								<Column xs={12} direction="column" align="top">
 									<ImgExplodedLayer>
 										<ImgExploded style={explodedProps}>
 											<a.img
