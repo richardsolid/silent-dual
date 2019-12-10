@@ -29,13 +29,18 @@ const InstallSectionContainer = styled.section`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	position: relative;
 	z-index: 0;
 
 	background-color: #eceded;
 	color: black;
 
-	padding: 120px 0;
+	padding: 100px 0;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		padding: 120px 0;
+	}
 
 	h2 {
 		margin-bottom: 20px;
@@ -104,7 +109,7 @@ const InstallSectionVideo = styled.div`
 const DownloadButtonContainer = styled.a`
 	background: ${variables.primary};
 	color: white;
-	margin: 40px auto 40px;
+	margin: 40px auto 0;
 	border-radius: 3px;
 	cursor: pointer;
 	text-decoration: none;
@@ -117,6 +122,9 @@ const DownloadButtonContainer = styled.a`
 	&:hover,
 	&:focus {
 		background: ${variables.primaryDark};
+	}
+	@media screen and (min-width: ${breakpoints.large}px) {
+		margin: 40px auto 40px;
 	}
 `;
 

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HubspotForm from "react-hubspot-form";
+import selectCaret from "../../images/caret.svg";
 
 //Assets
 import variables from "../../assets/styles/variables";
@@ -117,7 +118,13 @@ const Form = styled.div`
 	}
 
 	select.hs-input {
-		height: 52px;
+		-webkit-appearance: none;
+		background-repeat: no-repeat;
+		background-position: 94% center;
+		background-image: url(${selectCaret});
+		@media screen and (min-width: ${breakpoints.large}px) {
+			background-position: 98% center;
+		}
 	}
 
 	textarea.hs-input {
