@@ -23,6 +23,12 @@ import downloadIcon from "../../images/download_icon.svg";
 //Components
 import ModeloCard from "./modelosCard";
 
+const ModelosContainer = styled.section`
+	background: white;
+	position: relative;
+	z-index: 0;
+`;
+
 const Title = styled(a.h2)`
 	color: black;
 	text-align: center;
@@ -124,7 +130,7 @@ const Modelos = () => {
 	});
 
 	return (
-		<section id="modelos" ref={ref}>
+		<ModelosContainer id="modelos" ref={ref}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
@@ -151,7 +157,7 @@ const Modelos = () => {
 					</Column>
 				</Row>
 			</Wrapper>
-		</section>
+		</ModelosContainer>
 	);
 };
 

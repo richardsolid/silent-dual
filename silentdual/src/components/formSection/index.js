@@ -17,13 +17,14 @@ import useIntersect from "../../utils/useIntersect";
 //data:
 import data from "../../data";
 
-const FormContainer = styled.div`
+const FormContainer = styled.section`
 	position: relative;
 	z-index: 0;
-	padding: 80px 0;
+	padding: 0 0 80px 0;
+	background: white;
 
 	h2 {
-		margin: 0 0 40px;
+		margin: 120px 0 40px;
 		text-align: center;
 	}
 

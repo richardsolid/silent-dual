@@ -42,7 +42,7 @@ const NavBarContainer = styled.header`
 	transition: 0.2s;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: ${({ isTop }) => (isTop ? "80px" : "100px")};
+		height: ${({ isTop }) => (isTop ? "100px" : "80px")};
 	}
 `;
 
