@@ -107,10 +107,6 @@ const bathtrans = (x, y) =>
 	`translate3d(${x / 40}px,${y / 20}px,0) scale(1.05)`;
 
 const Lead = () => {
-	const { format } = new Intl.NumberFormat("en-US", {
-		maximumFractionDigits: 2
-	});
-
 	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
 	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
 	//entry es el objeto con la información de la posición del elemento

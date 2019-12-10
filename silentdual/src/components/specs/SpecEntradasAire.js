@@ -14,7 +14,8 @@ import SpecEntradasAireComp from "./SpecEntradasAireComp";
 const Container = styled.div`
 	position: relative;
 	height: 100vh;
-	margin-bottom: 90vh;
+
+	margin: 100vh 0;
 `;
 
 const Fixed = styled.div`

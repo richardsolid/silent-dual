@@ -17,12 +17,12 @@ import SpecFuncionamiento from "./SpecFuncionamiento";
 import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled(a.section)`
-	padding: 120vh 0 150vh;
+	padding: 120px 0;
 	position: relative;
 	background: white;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		padding: 100vh 0 80vh;
+		padding: 100vh 0 0;
 	}
 `;
 const Title = styled(a.h2)`
@@ -54,13 +54,13 @@ const Specs = () => {
 
 	const widthWindow = useWindowSize();
 
-	useEffect(() => {
-		setWidth(widthWindow.width);
-	}, [widthWindow]);
-
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
+
+	useEffect(() => {
+		setWidth(widthWindow.width);
+	}, [widthWindow]);
 
 	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
 	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
@@ -70,21 +70,12 @@ const Specs = () => {
 		threshold: buildThresholdArray()
 	});
 
-	const props = useSpring({
-		from: {
-			opacity: 0
-		},
-		to: {
-			opacity: format(entry.intersectionRatio) === 0.13 ? 1 : 0
-		}
-	});
-
 	const sectionProps = useSpring({
 		from: {
 			opacity: 0
 		},
 		to: {
-			opacity: entry.intersectionRatio >= 0.13 ? 1 : 0
+			opacity: entry.intersectionRatio > 0.1 ? 1 : 0
 		}
 	});
 

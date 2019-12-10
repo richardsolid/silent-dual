@@ -12,9 +12,10 @@ import useIntersect from "../../utils/useIntersect";
 import SpecFuncionesComp from "./SpecFuncionamientoComp";
 
 const Container = styled.div`
-	margin: 80vh auto;
 	position: relative;
 	height: 100vh;
+
+	margin: 100vh 0;
 `;
 
 const Fixed = styled.div`

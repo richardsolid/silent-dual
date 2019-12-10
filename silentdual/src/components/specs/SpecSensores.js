@@ -17,6 +17,8 @@ import IconsPNG from "../../images/spec-sensores-icons.png";
 const Container = styled.div`
 	position: relative;
 	height: 100vh;
+
+	margin: 100vh 0;
 `;
 
 const Fixed = styled.div`
