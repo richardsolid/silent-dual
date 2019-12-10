@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSpring, animated as a } from "react-spring";
 import styled from "styled-components";
 
 //Assets
@@ -10,6 +11,7 @@ import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
 import useWindowSize from "../../utils/useWindowSize";
+import useIntersect from "../../utils/useIntersect";
 
 //images:
 import instantFriendly from "../../images/instant-friendly.svg";
@@ -166,57 +168,99 @@ const InstallSection = () => {
 		setWidth(widthWindow);
 	}, [widthWindow]);
 
+	const { format } = new Intl.NumberFormat("en-US", {
+		maximumFractionDigits: 2
+	});
+
+	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
+	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
+	//entry es el objeto con la información de la posición del elemento
+	const [refTop, entryTop] = useIntersect({
+		//threshold es la cantidad de elemento visible para que se dispare el evento
+		threshold: buildThresholdArray()
+	});
+
+	const [refBottom, entryBottom] = useIntersect({
+		//threshold es la cantidad de elemento visible para que se dispare el evento
+		threshold: buildThresholdArray()
+	});
+
+	const ratioTop = format(entryTop.intersectionRatio);
+	const ratioBottom = format(entryBottom.intersectionRatio);
+
+	const topProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratioTop > 0.5 ? 1 : 0
+		}
+	});
+
+	const bottomProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratioBottom > 0.5 ? 1 : 0
+		}
+	});
+
 	return (
 		<InstallSectionContainer id="instalación">
 			<Wrapper>
-				<Row>
-					<Column xs={12}>
-						<img
-							id="instantFriendly"
-							src={instantFriendly}
-							alt="instant friendly"
-						/>
-					</Column>
-
-					<Column xs={12}>
-						<h2 className="headingMedium">{instalacion.title}</h2>
-					</Column>
-					<Column xs={12}>
-						<p className="headingTiny">{instalacion.subtitle}</p>
-					</Column>
-				</Row>
-
-				<Row>
-					<Column xs={12} lg={5} xsOrder={2} lgOrder={1}>
-						<InstallSectionText>
-							<h3 className="headingSmall">{instalacion.titleText}</h3>
-							<p
-								dangerouslySetInnerHTML={{
-									__html: instalacion.descriptionText
-								}}
+				<a.div ref={refTop} style={topProps}>
+					<Row>
+						<Column xs={12}>
+							<img
+								id="instantFriendly"
+								src={instantFriendly}
+								alt="instant friendly"
 							/>
-						</InstallSectionText>
-					</Column>
+						</Column>
 
-					<Column xs={12} lg={7} xsOrder={1} lgOrder={2}>
-						<InstallSectionVideo>
-							<PlayButton
-								onClick={handlePlayButton}
-								src={conexionado}
-								alt={instalacion.imgAlt}
-							/>
-						</InstallSectionVideo>
-					</Column>
+						<Column xs={12}>
+							<h2 className="headingMedium">{instalacion.title}</h2>
+						</Column>
+						<Column xs={12}>
+							<p className="headingTiny">{instalacion.subtitle}</p>
+						</Column>
+					</Row>
+				</a.div>
 
-					<Column xs={12} xsOrder={3}>
-						<DownloadButtonContainer href="#" target="_blank">
-							<LeftButton>{instalacion.button}</LeftButton>
-							<DonwloadIconBox>
-								<img src={downloadIcon} alt={instalacion.buttonAlt} />
-							</DonwloadIconBox>
-						</DownloadButtonContainer>
-					</Column>
-				</Row>
+				<a.div ref={refBottom} style={bottomProps}>
+					<Row>
+						<Column xs={12} lg={5} xsOrder={2} lgOrder={1}>
+							<InstallSectionText>
+								<h3 className="headingSmall">{instalacion.titleText}</h3>
+								<p
+									dangerouslySetInnerHTML={{
+										__html: instalacion.descriptionText
+									}}
+								/>
+							</InstallSectionText>
+						</Column>
+
+						<Column xs={12} lg={7} xsOrder={1} lgOrder={2}>
+							<InstallSectionVideo>
+								<PlayButton
+									onClick={handlePlayButton}
+									src={conexionado}
+									alt={instalacion.imgAlt}
+								/>
+							</InstallSectionVideo>
+						</Column>
+
+						<Column xs={12} xsOrder={3}>
+							<DownloadButtonContainer href="#" target="_blank">
+								<LeftButton>{instalacion.button}</LeftButton>
+								<DonwloadIconBox>
+									<img src={downloadIcon} alt={instalacion.buttonAlt} />
+								</DonwloadIconBox>
+							</DownloadButtonContainer>
+						</Column>
+					</Row>
+				</a.div>
 			</Wrapper>
 
 			<VideoPlayer

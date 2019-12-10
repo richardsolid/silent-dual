@@ -28,7 +28,7 @@ const Container = styled.div`
 
 const Fixed = styled.div`
   position: fixed;
-  top: 220px;
+  top: 300px;
 `;
 
 const Title = styled(a.h3)`
@@ -52,7 +52,7 @@ const Info = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  height: calc(100vh - 280px);
+  height: calc(100vh - 360px);
   display: flex;
   justify-content: center;
   align-items: center;

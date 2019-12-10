@@ -1,4 +1,5 @@
 import React from "react";
+import { useSpring, animated as a } from "react-spring";
 import styled from "styled-components";
 import HubspotForm from "react-hubspot-form";
 import selectCaret from "../../images/caret.svg";
@@ -11,6 +12,7 @@ import { breakpoints } from "../../assets/styles/breakpoints";
 import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
+import useIntersect from "../../utils/useIntersect";
 
 //data:
 import data from "../../data";
@@ -223,24 +225,65 @@ const Form = styled.div`
 const FormSection = () => {
 	const { contacta } = data;
 
+	const { format } = new Intl.NumberFormat("en-US", {
+		maximumFractionDigits: 2
+	});
+
+	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
+	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
+	//entry es el objeto con la información de la posición del elemento
+	const [refTop, entryTop] = useIntersect({
+		//threshold es la cantidad de elemento visible para que se dispare el evento
+		threshold: buildThresholdArray()
+	});
+
+	const [refBottom, entryBottom] = useIntersect({
+		//threshold es la cantidad de elemento visible para que se dispare el evento
+		threshold: buildThresholdArray()
+	});
+
+	const ratioTop = format(entryTop.intersectionRatio);
+	const ratioBottom = format(entryBottom.intersectionRatio);
+
+	const topProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratioTop > 0.5 ? 1 : 0
+		}
+	});
+
+	const bottomProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratioBottom > 0.15 ? 1 : 0
+		}
+	});
+
 	return (
 		<FormContainer id="contacta">
 			<Wrapper>
 				<Row>
 					<Column xs="12" direction="column">
-						<h2 className="headingMedium">{contacta.title}</h2>
-						<h3 className="headingTiny">{contacta.subtitle}</h3>
-						<p>{contacta.text}</p>
+						<a.div style={topProps} ref={refTop}>
+							<h2 className="headingMedium">{contacta.title}</h2>
+							<h3 className="headingTiny">{contacta.subtitle}</h3>
+							<p>{contacta.text}</p>
+						</a.div>
 					</Column>
-
 					<Form>
-						<HubspotForm
-							portalId="2009592"
-							formId="dedcb341-d7ef-4a5a-bd74-05693345fd3f"
-							onSubmit={() => console.log("Submit!")}
-							onReady={form => console.log("Form ready!")}
-							loading={<div>Loading...</div>}
-						/>
+						<a.div style={bottomProps} ref={refBottom}>
+							<HubspotForm
+								portalId="2009592"
+								formId="dedcb341-d7ef-4a5a-bd74-05693345fd3f"
+								onSubmit={() => console.log("Submit!")}
+								onReady={form => console.log("Form ready!")}
+								loading={<div>Loading...</div>}
+							/>
+						</a.div>
 					</Form>
 				</Row>
 			</Wrapper>

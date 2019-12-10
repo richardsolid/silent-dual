@@ -19,17 +19,18 @@ import SpecEntradasAire from "./SpecEntradasAire";
 const Section = styled(a.section)`
 	padding: 120px 0;
 	position: relative;
-	background: white;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		padding: 100vh 0 0;
 	}
 `;
+
 const Title = styled(a.h2)`
 	position: fixed;
-	top: 120px;
+	top: inherit;
 	left: 0;
 	right: 0;
+	bottom: calc(100vh - 260px);
 	color: black;
 	text-align: center;
 	width: 100%;
@@ -75,7 +76,7 @@ const Specs = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: format(entry.intersectionRatio) > 0.1 ? 1 : 0
+			opacity: format(entry.intersectionRatio) > 0 ? 1 : 0
 		}
 	});
 
@@ -119,8 +120,6 @@ const Specs = () => {
 		</SectionResponsive>
 	) : (
 		<Section
-			id="caracteristicas"
-			ref={ref}
 			style={{
 				...sectionProps,
 				visibility: sectionProps.opacity.interpolate(o =>
@@ -129,26 +128,30 @@ const Specs = () => {
 			}}
 		>
 			<Wrapper>
-				<Row>
-					<Column xs={12}>
-						<Title
-							className={"headingMedium"}
-							dangerouslySetInnerHTML={{ __html: caracteristicas.sectionTitle }}
-						/>
-					</Column>
-				</Row>
-				<SpecSensores
-					isResponsive={isResponsive}
-					data={caracteristicas.specs[0]}
-				/>
-				<SpecFuncionamiento
-					isResponsive={isResponsive}
-					data={caracteristicas.specs[1]}
-				/>
-				<SpecEntradasAire
-					isResponsive={isResponsive}
-					data={caracteristicas.specs[2]}
-				/>
+				<a.div id="caracteristicas" ref={ref}>
+					<Row>
+						<Column xs={12}>
+							<Title
+								className={"headingMedium"}
+								dangerouslySetInnerHTML={{
+									__html: caracteristicas.sectionTitle
+								}}
+							/>
+						</Column>
+					</Row>
+					<SpecSensores
+						isResponsive={isResponsive}
+						data={caracteristicas.specs[0]}
+					/>
+					<SpecFuncionamiento
+						isResponsive={isResponsive}
+						data={caracteristicas.specs[1]}
+					/>
+					<SpecEntradasAire
+						isResponsive={isResponsive}
+						data={caracteristicas.specs[2]}
+					/>
+				</a.div>
 			</Wrapper>
 		</Section>
 	);

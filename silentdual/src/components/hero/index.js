@@ -100,10 +100,12 @@ const InstantFriendly = styled.img`
 	top: 75px;
 	height: 80px;
 	width: 70px;
+	margin-top: 40px;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 115px;
 		width: 100px;
+		margin-top: 0;
 	}
 `;
 
@@ -214,7 +216,7 @@ const ScrollContainer = styled(animated.div)`
 	height: 100%;
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 100vh;
-		margin-bottom: 100vh;
+		margin-bottom: 1px;
 	}
 `;
 const Fixed = styled(animated.div)`
@@ -237,7 +239,7 @@ const Hero = () => {
 
 	const { o } = useSpring({
 		from: { o: 0 },
-		o: entry.intersectionRatio > 0 ? 0 : 1
+		o: entry.intersectionRatio > 0.95 ? 0 : 1
 	});
 
 	const widthWindow = useWindowSize();
