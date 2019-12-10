@@ -31,7 +31,8 @@ const LeadSection = styled(animated.section)`
 
   @media screen and (min-width: ${breakpoints.large}px) {
     background-image: none;
-    height: 100vh;
+    height: 250vh;
+    margin-top: 100vh;
   }
 
   img {
