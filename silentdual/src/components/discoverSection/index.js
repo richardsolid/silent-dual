@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useSpring, animated as a } from "react-spring";
 import useIntersect from "../../utils/useIntersect";
 import styled from "styled-components";
@@ -95,7 +95,7 @@ const ImgRef = styled(a.img)`
 `;
 
 const ImgExploded = styled(a.div)`
-	position absolute;
+	position: absolute;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -103,7 +103,7 @@ const ImgExploded = styled(a.div)`
 	margin: 0 auto;
 
 	display: flex;
-	justify: content: center;
+	justify-content: center;
 	align-items: center;
 
 	img {
@@ -113,16 +113,16 @@ const ImgExploded = styled(a.div)`
 	}
 
 	.exploded1 {
-		z-index: 4
+		z-index: 4;
 	}
 	.exploded2 {
-		z-index: 3
+		z-index: 3;
 	}
 	.exploded3 {
-		z-index: 2
+		z-index: 2;
 	}
 	.exploded4 {
-		z-index: 1
+		z-index: 1;
 	}
 `;
 
@@ -134,6 +134,13 @@ const ImgExplodedLayer = styled.div`
 
 	width: fit-content;
 	margin: 0 auto;
+`;
+
+const HotspotTitle = styled.h4`
+	margin-bottom: 0;
+`;
+const HotspotText = styled.p`
+	margin: 0;
 `;
 
 const DiscoverSection = () => {
@@ -226,103 +233,102 @@ const DiscoverSection = () => {
 		setWidth(size.width);
 	}, [size]);
 
-	return (
-		<>
-			{width < breakpoints.large ? (
-				<DiscoverSectionContainer id="componentes">
+	return width < breakpoints.large ? (
+		<DiscoverSectionContainer id="componentes">
+			<Wrapper>
+				<Row>
+					<Column xs={8} lg={12} align="center">
+						<h2 className="headingMedium">Descubre sus componentes</h2>
+					</Column>
+
+					<Column xs={12} direction="column">
+						<HotspotLayer>
+							{hotspots.map((hotspot, index) => (
+								<HotspotItem
+									key={`hotspot_${index}`}
+									content={hotspot}
+									number={index + 1}
+								/>
+							))}
+							<ImgRef src={exploded} alt="Discover exploded" />
+						</HotspotLayer>
+					</Column>
+
+					<Column xs={12} direction="column">
+						{hotspots.map((hotspot, index) => (
+							<Fragment>
+								<HotspotTitle
+									className="bodyNormal"
+									dangerouslySetInnerHTML={{
+										__html: index + 1 + ". " + hotspot.title
+									}}
+								/>
+								<HotspotText
+									dangerouslySetInnerHTML={{ __html: hotspot.text }}
+								/>
+							</Fragment>
+						))}
+					</Column>
+				</Row>
+			</Wrapper>
+		</DiscoverSectionContainer>
+	) : (
+		<DiscoverSectionContainer style={sectionDiscover}>
+			<DiscoverSectionIntersect ref={ref} id="componentes">
+				<Fixed>
 					<Wrapper>
 						<Row>
-							<Column xs={8} lg={12} align="center">
-								<h2 className="headingMedium">Descubre sus componentes</h2>
-							</Column>
+							<DiscoverSectionLayer>
+								<Column xs={12}>
+									<h2 className="headingMedium">Descubre sus componentes</h2>
+								</Column>
+								<Column xs={12} direction="column">
+									<ImgExplodedLayer>
+										<ImgExploded style={explodedProps}>
+											<a.img
+												style={propsExploded4}
+												src={exploded1}
+												className="exploded1"
+												alt="Discover exploded"
+											/>
+											<a.img
+												style={propsExploded3}
+												src={exploded2}
+												className="exploded2"
+												alt="Discover exploded"
+											/>
+											<a.img
+												style={propsExploded2}
+												src={exploded3}
+												className="exploded3"
+												alt="Discover exploded"
+											/>
+											<a.img
+												style={propsExploded1}
+												src={exploded4}
+												className="exploded4"
+												alt="Discover exploded"
+											/>
+										</ImgExploded>
+										<ImgRef src={exploded} alt="Discover exploded" />
 
-							<Column xs={12} direction="column">
-								<HotspotLayer>
-									{hotspots.map((hotspot, index) => (
-										<HotspotItem
-											key={`hotspot_${index}`}
-											content={hotspot}
-											number={index + 1}
-										/>
-									))}
-									<ImgRef src={exploded} alt="Discover exploded" />
-								</HotspotLayer>
-							</Column>
-
-							<Column xs={12} direction="column">
-								{hotspots.map((hotspot, index) => (
-									<>
-										<h4 className="bodyNormal">
-											{index + 1 + ". " + hotspot.title}
-										</h4>
-										<p>{hotspot.text}</p>
-									</>
-								))}
-							</Column>
+										<HotspotLayer style={hotspotsProps}>
+											{hotspots.map((hotspot, index) => (
+												<HotspotItem
+													key={`hotspot_${index}`}
+													content={hotspot}
+													number={index + 1}
+												/>
+											))}
+										</HotspotLayer>
+									</ImgExplodedLayer>
+								</Column>
+							</DiscoverSectionLayer>
 						</Row>
 					</Wrapper>
-				</DiscoverSectionContainer>
-			) : (
-				<DiscoverSectionContainer style={sectionDiscover}>
-					<DiscoverSectionIntersect ref={ref} id="componentes">
-						<Fixed>
-							<Wrapper>
-								<Row>
-									<DiscoverSectionLayer>
-										<Column xs={12}>
-											<h2 className="headingMedium">
-												Descubre sus componentes
-											</h2>
-										</Column>
-										<Column xs={12} direction="column">
-											<ImgExplodedLayer>
-												<ImgExploded style={explodedProps}>
-													<a.img
-														style={propsExploded4}
-														src={exploded1}
-														className="exploded1"
-														alt="Discover exploded"
-													/>
-													<a.img
-														style={propsExploded3}
-														src={exploded2}
-														className="exploded2"
-														alt="Discover exploded"
-													/>
-													<a.img
-														style={propsExploded2}
-														src={exploded3}
-														className="exploded3"
-														alt="Discover exploded"
-													/>
-													<a.img
-														style={propsExploded1}
-														src={exploded4}
-														className="exploded4"
-														alt="Discover exploded"
-													/>
-												</ImgExploded>
-												<ImgRef src={exploded} alt="Discover exploded" />
-
-												<HotspotLayer style={hotspotsProps}>
-													{hotspots.map((hotspot, index) => (
-														<HotspotItem
-															key={`hotspot_${index}`}
-															content={hotspot}
-															number={index + 1}
-														/>
-													))}
-												</HotspotLayer>
-											</ImgExplodedLayer>
-										</Column>
-									</DiscoverSectionLayer>
-								</Row>
-							</Wrapper>
-						</Fixed>
-					</DiscoverSectionIntersect>
-				</DiscoverSectionContainer>
-			)}
-		</>
+				</Fixed>
+			</DiscoverSectionIntersect>
+		</DiscoverSectionContainer>
 	);
 };
 

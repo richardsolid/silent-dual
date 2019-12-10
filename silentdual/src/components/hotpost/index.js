@@ -15,9 +15,11 @@ const HotspotItemContainer = styled.div`
 	left: ${({ content }) => content.left}%;
 
 	overflow: hidden;
+	pointer-events: none;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		overflow: visible;
+		pointer-events: initial;
 	}
 `;
 
