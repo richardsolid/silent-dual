@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { useSpring, animated as a } from "react-spring";
 
-import { breakpoints } from "../../assets/styles/breakpoints";
-
 //utils:
 import useIntersect from "../../utils/useIntersect";
 import Column from "../../utils/grid/column";
 import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
+
+//Assets
+import { breakpoints } from "../../assets/styles/breakpoints";
 
 //images:
 import SpecImg from "../../images/spec-sensores.png";
@@ -16,7 +17,11 @@ import IconsPNG from "../../images/spec-sensores-icons.png";
 
 const Container = styled.div`
 	position: relative;
-	height: 100vh;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		height: 100vh;
+		margin: 100vh 0;
+	}
 `;
 
 const Fixed = styled.div`
@@ -67,15 +72,15 @@ const Icons = styled(a.img)`
 
 const ResponsiveInfo = styled.div``;
 
-const ResponsiveTitle = styled.h3`
+const ResponsiveTitle = styled(a.h3)`
 	margin: 0 auto 20px;
 `;
 
-const ResponsiveSubtitle = styled.h4`
+const ResponsiveSubtitle = styled(a.h4)`
 	margin: 0 auto 10px;
 `;
 
-const ResponsiveDescription = styled.p`
+const ResponsiveDescription = styled(a.p)`
 	font-weight: lighter;
 	margin: 0 auto 5px;
 `;
@@ -89,11 +94,11 @@ const ResponsiveImageContainer = styled.div`
 	}
 `;
 
-const ResponsiveImg = styled.img`
+const ResponsiveImg = styled(a.img)`
 	width: 100%;
 `;
 
-const ResponsiveIcons = styled.img`
+const ResponsiveIcons = styled(a.img)`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -161,30 +166,35 @@ const SpecSensores = ({ isResponsive, data }) => {
 	});
 
 	return isResponsive ? (
-		<Row>
-			<Column xs={12} md={6}>
-				<ResponsiveInfo>
-					<ResponsiveTitle
-						className={"headingSmall"}
-						dangerouslySetInnerHTML={{ __html: data.title }}
-					/>
-					<ResponsiveSubtitle
-						className={"lead"}
-						dangerouslySetInnerHTML={{ __html: data.subtitle }}
-					/>
-					<ResponsiveDescription
-						className={"lead"}
-						dangerouslySetInnerHTML={{ __html: data.description }}
-					/>
-				</ResponsiveInfo>
-			</Column>
-			<Column xs={12} md={6}>
-				<ResponsiveImageContainer>
-					<ResponsiveImg style={imageProps} src={SpecImg} alt="" />
-					<ResponsiveIcons style={iconsProps} src={IconsPNG} alt="" />
-				</ResponsiveImageContainer>
-			</Column>
-		</Row>
+		<Container ref={ref}>
+			<Row>
+				<Column xs={12} md={6}>
+					<ResponsiveInfo>
+						<ResponsiveTitle
+							style={titleProps}
+							className={"headingSmall"}
+							dangerouslySetInnerHTML={{ __html: data.title }}
+						/>
+						<ResponsiveSubtitle
+							style={subtitleProps}
+							className={"lead"}
+							dangerouslySetInnerHTML={{ __html: data.subtitle }}
+						/>
+						<ResponsiveDescription
+							style={descriptionProps}
+							className={"lead"}
+							dangerouslySetInnerHTML={{ __html: data.description }}
+						/>
+					</ResponsiveInfo>
+				</Column>
+				<Column xs={12} md={6}>
+					<ResponsiveImageContainer>
+						<ResponsiveImg style={imageProps} src={SpecImg} alt="" />
+						<ResponsiveIcons style={iconsProps} src={IconsPNG} alt="" />
+					</ResponsiveImageContainer>
+				</Column>
+			</Row>
+		</Container>
 	) : (
 		<Container ref={ref}>
 			<Fixed>

@@ -17,11 +17,12 @@ import SpecFuncionamiento from "./SpecFuncionamiento";
 import SpecEntradasAire from "./SpecEntradasAire";
 
 const Section = styled(a.section)`
-	margin: 120vh 0 150vh;
+	padding: 120px 0;
 	position: relative;
+	background: white;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		margin: 100vh 0 80vh;
+		padding: 100vh 0 0;
 	}
 `;
 const Title = styled(a.h2)`
@@ -43,7 +44,7 @@ const SectionResponsive = styled.section`
 	text-align: center;
 `;
 
-const TitleResponsive = styled.h2`
+const TitleResponsive = styled(a.h2)`
 	margin: 0 auto 60px;
 `;
 
@@ -53,13 +54,13 @@ const Specs = () => {
 
 	const widthWindow = useWindowSize();
 
-	useEffect(() => {
-		setWidth(widthWindow.width);
-	}, [widthWindow]);
-
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
 	});
+
+	useEffect(() => {
+		setWidth(widthWindow.width);
+	}, [widthWindow]);
 
 	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
 	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
@@ -69,23 +70,21 @@ const Specs = () => {
 		threshold: buildThresholdArray()
 	});
 
-	const props = useSpring({
+	const sectionProps = useSpring({
 		from: {
 			opacity: 0
-			//transform: `translateY(200px)`
 		},
 		to: {
-			opacity: format(entry.intersectionRatio) * 8 || 0
-			//transform: `translateY(${show ? 0 : 200}px)`
+			opacity: format(entry.intersectionRatio) > 0.1 ? 1 : 0
 		}
 	});
 
-	const sectionProps = useSpring({
+	const mobileTitleProps = useSpring({
 		from: {
-			zIndex: -1
+			opacity: 0
 		},
 		to: {
-			zIndex: entry.intersectionRatio > 0 ? 100 : -1
+			opacity: format(entry.intersectionRatio) > 0.5 ? 1 : 0
 		}
 	});
 
@@ -97,6 +96,8 @@ const Specs = () => {
 				<Row>
 					<Column xs={12}>
 						<TitleResponsive
+							ref={ref}
+							style={mobileTitleProps}
 							className={"headingMedium"}
 							dangerouslySetInnerHTML={{ __html: caracteristicas.sectionTitle }}
 						/>
@@ -117,12 +118,20 @@ const Specs = () => {
 			</Wrapper>
 		</SectionResponsive>
 	) : (
-		<Section id="caracteristicas" ref={ref} style={sectionProps}>
+		<Section
+			id="caracteristicas"
+			ref={ref}
+			style={{
+				...sectionProps,
+				visibility: sectionProps.opacity.interpolate(o =>
+					o === 0 ? "hidden" : "visible"
+				)
+			}}
+		>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
 						<Title
-							style={props}
 							className={"headingMedium"}
 							dangerouslySetInnerHTML={{ __html: caracteristicas.sectionTitle }}
 						/>

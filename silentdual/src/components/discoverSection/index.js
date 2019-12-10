@@ -162,8 +162,6 @@ const DiscoverSection = () => {
 
 	const ratio = format(entry.intersectionRatio);
 
-	console.log(ratio);
-
 	const propsExploded1 = useSpring({
 		from: {
 			transform: `translateX(-100px)`
@@ -220,11 +218,9 @@ const DiscoverSection = () => {
 
 	const sectionDiscover = useSpring({
 		from: {
-			opacity: 0,
-			zIndex: ratio > 0 ? 100 : -100
+			opacity: 0
 		},
 		to: {
-			zIndex: ratio > 0 ? 100 : -100,
 			opacity: ratio > 0 ? 1 : 0
 		}
 	});
