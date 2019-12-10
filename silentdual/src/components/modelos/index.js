@@ -1,10 +1,12 @@
 import React from "react";
+import { useSpring, animated as a } from "react-spring";
 import styled from "styled-components";
 
-//grid:
+//Utils
 import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
+import useIntersect from "../../utils/useIntersect";
 
 //Assets
 import variables from "../../assets/styles/variables";
@@ -16,12 +18,12 @@ import { breakpoints } from "../../assets/styles/breakpoints";
 import data from "../../data";
 
 //images:
-import Model1 from "../../images/model1.png";
-import Model2 from "../../images/model2.png";
-import Model3 from "../../images/model3.png";
 import downloadIcon from "../../images/download_icon.svg";
 
-const Title = styled.h2`
+//Components
+import ModeloCard from "./modelosCard";
+
+const Title = styled(a.h2)`
 	color: black;
 	text-align: center;
 	width: 100%;
@@ -35,40 +37,7 @@ const Title = styled.h2`
 	}
 `;
 
-const ModeloCard = styled.div`
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	flex-basis: 100%;
-	width: 100%;
-	box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.1);
-	margin: 0 auto 20px;
-`;
-
-const ModeloImageBox = styled.div`
-	background: #eceded;
-	height: 300px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
-
-const ModeloImage = styled.img``;
-
-const ModeloTitle = styled.h3`
-	margin: 30px auto 8px;
-`;
-
-const ModeloDescription = styled.div`
-	font-weight: light;
-	padding: 20px auto;
-	margin: 0 auto 30px;
-	p {
-		margin: 0;
-	}
-`;
-
-const DownloadButtonContainer = styled.a`
+const DownloadButtonContainer = styled(a.a)`
 	background: ${variables.primary};
 	color: white;
 	margin: 40px auto 40px;
@@ -116,38 +85,66 @@ const DonwloadIconBox = styled.div`
 const Modelos = () => {
 	const { modelos } = data;
 
-	const chooseImage = i => {
-		if (i === 0) return Model1;
-		else if (i === 1) return Model2;
-		else if (i === 2) return Model3;
-	};
+	const { format } = new Intl.NumberFormat("en-US", {
+		maximumFractionDigits: 2
+	});
+
+	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
+	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
+	//entry es el objeto con la información de la posición del elemento
+	const [ref, entry] = useIntersect({
+		//threshold es la cantidad de elemento visible para que se dispare el evento
+		threshold: buildThresholdArray()
+	});
+
+	const [refButton, entryButton] = useIntersect({
+		//threshold es la cantidad de elemento visible para que se dispare el evento
+		threshold: 0.5
+	});
+
+	const ratio = format(entry.intersectionRatio);
+	const ratioButton = format(entryButton.intersectionRatio);
+
+	const titleProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratio > 0.1 ? 1 : 0
+		}
+	});
+
+	const buttonProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratioButton > 0.5 ? 1 : 0
+		}
+	});
+
+	console.log(ratio);
 
 	return (
-		<section id="modelos">
+		<section id="modelos" ref={ref}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<Title className={"headingMedium"}>{modelos.title}</Title>
+						<Title style={titleProps} className={"headingMedium"}>
+							{modelos.title}
+						</Title>
 					</Column>
 					{modelos.cards.map((modelo, i) => (
-						<Column xs={12} md={4}>
-							<ModeloCard key={i}>
-								<ModeloImageBox>
-									<ModeloImage src={chooseImage(i)} alt="modelo image" />
-								</ModeloImageBox>
-								<ModeloTitle className={"bodyNormal"}>
-									{modelo.title}
-								</ModeloTitle>
-								<ModeloDescription>
-									<p>{modelo.description.sizes}</p>
-									<p>{modelo.description.power}</p>
-								</ModeloDescription>
-							</ModeloCard>
-						</Column>
+						<ModeloCard key={i} modelo={modelo} index={i} />
 					))}
 
 					<Column xs={12}>
-						<DownloadButtonContainer href="#" target="_blank">
+						<DownloadButtonContainer
+							ref={refButton}
+							style={buttonProps}
+							href="#"
+							target="_blank"
+						>
 							<LeftButton>{modelos.button}</LeftButton>
 							<DonwloadIconBox>
 								<img src={downloadIcon} alt="download icon" />

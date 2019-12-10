@@ -1,12 +1,12 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
-import useIntersect from "../../utils/useIntersect";
 import styled from "styled-components";
 
 //Utils
 import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
+import useIntersect from "../../utils/useIntersect";
 import useWindowSize from "../../utils/useWindowSize";
 
 //Assets
@@ -225,20 +225,49 @@ const DiscoverSection = () => {
 		}
 	});
 
+	const titleProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratio > 0.1 ? 1 : 0
+		}
+	});
+
+	const ImgProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratio > 0.35 ? 1 : 0
+		}
+	});
+
+	const textProps = useSpring({
+		from: {
+			opacity: 0
+		},
+		to: {
+			opacity: ratio > 0.5 ? 1 : 0
+		}
+	});
+
 	useEffect(() => {
 		setWidth(size.width);
 	}, [size]);
 
 	return width < breakpoints.large ? (
-		<DiscoverSectionContainer id="componentes">
+		<DiscoverSectionContainer id="componentes" ref={ref}>
 			<Wrapper>
 				<Row>
 					<Column xs={8} lg={12} align="center">
-						<h2 className="headingMedium">Descubre sus componentes</h2>
+						<a.h2 style={titleProps} className="headingMedium">
+							Descubre sus componentes
+						</a.h2>
 					</Column>
 
 					<Column xs={12} direction="column">
-						<HotspotLayer>
+						<HotspotLayer style={ImgProps}>
 							{hotspots.map((hotspot, index) => (
 								<HotspotItem
 									key={`hotspot_${index}`}
@@ -252,7 +281,7 @@ const DiscoverSection = () => {
 
 					<Column xs={12} direction="column">
 						{hotspots.map((hotspot, index) => (
-							<Fragment>
+							<a.div style={textProps}>
 								<HotspotTitle
 									className="bodyNormal"
 									dangerouslySetInnerHTML={{
@@ -262,7 +291,7 @@ const DiscoverSection = () => {
 								<HotspotText
 									dangerouslySetInnerHTML={{ __html: hotspot.text }}
 								/>
-							</Fragment>
+							</a.div>
 						))}
 					</Column>
 				</Row>
