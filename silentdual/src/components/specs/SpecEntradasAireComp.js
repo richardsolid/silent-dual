@@ -6,64 +6,72 @@ import { breakpoints } from "../../assets/styles/breakpoints";
 
 //images:
 import SpecImg from "../../images/spec-entradas-aire.png";
-import IconsPNG from "../../images/spec-entradas-aire-icons.png";
+import Icon1PNG from "../../images/spec-entradas-aire-icons1.png";
+import Icon2PNG from "../../images/spec-entradas-aire-icons2.png";
 
 const CompContainer = styled.div`
-	position: relative;
-	height: calc(100vh - 280px);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  position: relative;
+  height: calc(100vh - 280px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Img = styled(a.img)`
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 `;
 
 const Icons = styled(a.img)`
-	position: absolute;
-	max-width: 100%;
-	max-height: 100%;
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 //RESPONSIVE style:
 
 const ResponsiveImageContainer = styled.div`
-	position: relative;
-	margin: 45px auto 40px;
+  position: relative;
+  margin: 45px auto 40px;
 
-	@media screen and (min-width: ${breakpoints.large}px) {
-		margin: 45px 60px 70px;
-	}
+  @media screen and (min-width: ${breakpoints.large}px) {
+    margin: 45px 60px 70px;
+  }
 `;
 
 const ResponsiveImg = styled.img`
-	width: 100%;
+  width: 100%;
 `;
 
 const ResponsiveIcons = styled.img`
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 `;
 
-const SpecEntradasAireComp = ({ imageProps, iconsProps, isResponsive }) => {
-	return isResponsive ? (
-		<Column xs={12} md={6}>
-			<ResponsiveImageContainer>
-				<ResponsiveImg style={imageProps} src={SpecImg} alt="" />
-				<ResponsiveIcons style={iconsProps} src={IconsPNG} alt="" />
-			</ResponsiveImageContainer>
-		</Column>
-	) : (
-		<CompContainer>
-			<Img src={SpecImg} alt="image" style={imageProps} />
-			<Icons src={IconsPNG} alt="icons" style={iconsProps} />
-		</CompContainer>
-	);
+const SpecEntradasAireComp = ({
+  imageProps,
+  icon1Props,
+  icon2Props,
+  isResponsive
+}) => {
+  return isResponsive ? (
+    <Column xs={12} md={6}>
+      <ResponsiveImageContainer>
+        <ResponsiveImg style={imageProps} src={SpecImg} alt="" />
+        <ResponsiveIcons style={icon1Props} src={Icon1PNG} alt="" />
+        <ResponsiveIcons style={icon2Props} src={Icon2PNG} alt="" />
+      </ResponsiveImageContainer>
+    </Column>
+  ) : (
+    <CompContainer>
+      <Img src={SpecImg} alt="image" style={imageProps} />
+      <Icons src={Icon1PNG} alt="icons" style={icon1Props} />
+      <Icons src={Icon2PNG} alt="icons" style={icon2Props} />
+    </CompContainer>
+  );
 };
 
 export default SpecEntradasAireComp;
