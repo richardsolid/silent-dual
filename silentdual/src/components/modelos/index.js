@@ -28,6 +28,7 @@ const Title = styled.h2`
 	margin: 100px auto 60px;
 	position: relative;
 	z-index: 0;
+	line-height: 39px;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		margin: 120px auto 80px;
@@ -61,7 +62,10 @@ const ModeloTitle = styled.h3`
 const ModeloDescription = styled.div`
 	font-weight: light;
 	padding: 20px auto;
-	margin: 0 auto 25px;
+	margin: 0 auto 30px;
+	p {
+		margin: 0;
+	}
 `;
 
 const DownloadButtonContainer = styled.a`
@@ -71,11 +75,17 @@ const DownloadButtonContainer = styled.a`
 	border-radius: 3px;
 	cursor: pointer;
 	text-decoration: none;
+	line-height: 24px !important;
 
 	display: flex;
 	flex-wrap: nowrap;
 
 	transition: 0.2s;
+
+	@media screen and (max-width: ${breakpoints.phone}px) {
+		font-size: 14px;
+		line-height: 21px;
+	}
 
 	&:hover,
 	&:focus {
@@ -95,7 +105,7 @@ const LeftButton = styled.div`
 `;
 
 const DonwloadIconBox = styled.div`
-	border-left: 1px solid white;
+	border-left: 1px solid #ff7968;
 	display: flex;
 	align-items: center;
 	justify-content: center;
