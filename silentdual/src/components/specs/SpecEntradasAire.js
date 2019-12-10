@@ -23,13 +23,13 @@ const Container = styled.div`
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 100vh;
-		margin: 100vh 0;
+		margin: 100vh 0 0;
 	}
 `;
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 220px;
+	top: 300px;
 `;
 const Title = styled(a.h3)`
 	margin: 0 0 32px 0;

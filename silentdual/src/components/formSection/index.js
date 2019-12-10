@@ -267,15 +267,15 @@ const FormSection = () => {
 		<FormContainer id="contacta">
 			<Wrapper>
 				<Row>
-					<a.div style={topProps} ref={refTop}>
-						<Column xs="12" direction="column">
+					<Column xs="12" direction="column">
+						<a.div style={topProps} ref={refTop}>
 							<h2 className="headingMedium">{contacta.title}</h2>
 							<h3 className="headingTiny">{contacta.subtitle}</h3>
 							<p>{contacta.text}</p>
-						</Column>
-					</a.div>
-					<a.div style={bottomProps} ref={refBottom}>
-						<Form>
+						</a.div>
+					</Column>
+					<Form>
+						<a.div style={bottomProps} ref={refBottom}>
 							<HubspotForm
 								portalId="2009592"
 								formId="dedcb341-d7ef-4a5a-bd74-05693345fd3f"
@@ -283,8 +283,8 @@ const FormSection = () => {
 								onReady={form => console.log("Form ready!")}
 								loading={<div>Loading...</div>}
 							/>
-						</Form>
-					</a.div>
+						</a.div>
+					</Form>
 				</Row>
 			</Wrapper>
 		</FormContainer>

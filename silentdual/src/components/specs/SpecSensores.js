@@ -20,13 +20,13 @@ const Container = styled.div`
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 100vh;
-		margin: 100vh 0;
+		margin: 0 0 100vh 0;
 	}
 `;
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 220px;
+	top: 300px;
 `;
 
 const Title = styled(a.h3)`
@@ -50,7 +50,7 @@ const Info = styled.div`
 
 const ImageContainer = styled.div`
 	position: relative;
-	height: calc(100vh - 280px);
+	height: calc(100vh - 360px);
 	display: flex;
 	justify-content: center;
 	align-items: center;

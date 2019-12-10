@@ -252,6 +252,8 @@ const DiscoverSection = () => {
 		}
 	});
 
+	console.log(entry.intersectionRatio);
+
 	useEffect(() => {
 		setWidth(size.width);
 	}, [size]);
@@ -298,7 +300,14 @@ const DiscoverSection = () => {
 			</Wrapper>
 		</DiscoverSectionContainer>
 	) : (
-		<DiscoverSectionContainer style={sectionDiscover}>
+		<DiscoverSectionContainer
+			style={{
+				...sectionDiscover,
+				visibility: sectionDiscover.opacity.interpolate(o =>
+					o === 0 ? "hidden" : "visible"
+				)
+			}}
+		>
 			<DiscoverSectionIntersect ref={ref} id="componentes">
 				<Fixed>
 					<Wrapper>

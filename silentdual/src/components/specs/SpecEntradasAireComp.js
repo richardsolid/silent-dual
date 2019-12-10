@@ -10,7 +10,7 @@ import IconsPNG from "../../images/spec-entradas-aire-icons.png";
 
 const CompContainer = styled.div`
 	position: relative;
-	height: calc(100vh - 280px);
+	height: calc(100vh - 360px);
 	display: flex;
 	justify-content: center;
 	align-items: center;

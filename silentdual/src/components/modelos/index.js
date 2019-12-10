@@ -123,8 +123,6 @@ const Modelos = () => {
 		}
 	});
 
-	console.log(ratio);
-
 	return (
 		<section id="modelos" ref={ref}>
 			<Wrapper>
