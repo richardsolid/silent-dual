@@ -36,8 +36,8 @@ const NavBarContainer = styled.header`
 	width: 100vw;
 	height: ${({ isTop }) => (isTop ? "80px" : "60px")};
 	box-sizing: border-box;
-	z-index: 1000;
-	border-bottom: 1px solid #6e6e6e;
+	z-index: 999;
+	border-bottom: ${({ isTop }) => !isTop && "1px solid #6e6e6e"};
 
 	transition: 0.2s;
 
@@ -50,6 +50,7 @@ const SPLogo = styled(Link)`
 	display: flex;
 	background: url(${logo}) no-repeat center center;
 	background-size: contain;
+	z-index: 1000;
 
 	width: ${({ isTop }) => (isTop ? "60px" : "40px")};
 	height: ${({ isTop }) => (isTop ? "60px" : "40px")};
@@ -70,6 +71,7 @@ const SectionsLinksBar = styled.div`
 	margin: 0 0 0 auto;
 	justify-content: center;
 	align-items: center;
+	z-index: 1000;
 
 	a {
 		text-decoration: none;
@@ -176,6 +178,10 @@ const NavBar = ({ data }) => {
 	}, [viewNavItems, size]);
 
 	useEffect(() => {
+		console.log({ width }, { breakpointlarge: breakpoints.large });
+	}, [width]);
+
+	useEffect(() => {
 		setIsTop(true);
 
 		if (typeof window !== "undefined") {
@@ -187,51 +193,48 @@ const NavBar = ({ data }) => {
 	}, []);
 
 	//collapsed menu:
-	if (width < breakpoints.large)
-		return (
-			<Navigator>
-				<NavBarContainer isTop={isTop} isPhone isOpen={viewNavItems}>
-					<Wrapper>
-						<Row>
-							<Column xs={12}>
-								<SPLogo
-									isTop={isTop}
-									isOpen={viewNavItems}
-									to={"/#hero"}
-									onClick={() => setViewNavItems(false)}
-								/>
-								<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
-							</Column>
-						</Row>
-					</Wrapper>
-				</NavBarContainer>
+	return width < breakpoints.large ? (
+		<Navigator>
+			<NavBarContainer isTop={isTop} isPhone isOpen={viewNavItems}>
+				<Wrapper>
+					<Row>
+						<Column xs={12}>
+							<SPLogo
+								isTop={isTop}
+								isOpen={viewNavItems}
+								to={"/#hero"}
+								onClick={() => setViewNavItems(false)}
+							/>
+							<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
+						</Column>
+					</Row>
+				</Wrapper>
+			</NavBarContainer>
 
-				<CollapsedMenu id="menu">
-					<Wrapper>
-						<Row>
-							<Column xs={12}>
-								<CollapsedItemsContainer>
-									{data &&
-										data.map((section, i) => (
-											<Link
-												key={i}
-												to={`/${section.anchor}`}
-												onClick={handleBurgerClick}
-												className="navItem"
-											>
-												{section.name}
-											</Link>
-										))}
-								</CollapsedItemsContainer>
-							</Column>
-						</Row>
-					</Wrapper>
-				</CollapsedMenu>
-			</Navigator>
-		);
-
-	//items on navbar:
-	return (
+			<CollapsedMenu id="menu">
+				<Wrapper>
+					<Row>
+						<Column xs={12}>
+							<CollapsedItemsContainer>
+								{data &&
+									data.map((section, i) => (
+										<Link
+											key={i}
+											to={`/${section.anchor}`}
+											onClick={handleBurgerClick}
+											className="navItem"
+										>
+											{section.name}
+										</Link>
+									))}
+							</CollapsedItemsContainer>
+						</Column>
+					</Row>
+				</Wrapper>
+			</CollapsedMenu>
+		</Navigator>
+	) : (
+		//navItems on navbar:
 		<NavBarContainer isTop={isTop}>
 			<Wrapper>
 				<Row>

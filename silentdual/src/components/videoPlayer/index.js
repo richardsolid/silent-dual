@@ -10,7 +10,8 @@ const Background = styled.span`
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(0, 0, 0, 0.9);
+	background: ${({ isPhone }) =>
+		isPhone ? "rgba(0, 0, 0, 0.9)" : "rgba(0, 0, 0, 0.8)"};
 	top: 0;
 	z-index: 10000;
 	display: flex;
@@ -88,27 +89,24 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 
 	const isPhoneSize = width < 768;
 
-	if (showVideo)
-		return (
-			<Background id={id}>
-				<VideoContainer>
-					<HomeVideo
-						src={video}
-						poster={videoPoster}
-						playsinline={!isPhoneSize}
-						controls={true}
-						type="video/mp4"
-						crossOrigin="anonymous"
-						muted
-					>
-						{!isPhoneSize && <source src={video} type="video/mp4" />}
-						Your browser can't play this video
-					</HomeVideo>
-					<CloseButton onClick={closePlayer} />
-				</VideoContainer>
-			</Background>
-		);
-	return null;
+	return showVideo ? (
+		<Background id={id} isPhone={isPhoneSize}>
+			<VideoContainer>
+				<HomeVideo
+					src={video}
+					poster={videoPoster}
+					playsinline={!isPhoneSize}
+					controls={true}
+					type="video/mp4"
+					crossOrigin="anonymous"
+				>
+					{!isPhoneSize && <source src={video} type="video/mp4" />}
+					Your browser can't play this video
+				</HomeVideo>
+				<CloseButton onClick={closePlayer} />
+			</VideoContainer>
+		</Background>
+	) : null;
 };
 
 export default VideoPlayer;

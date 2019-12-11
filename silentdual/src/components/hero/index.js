@@ -177,7 +177,7 @@ const HeroLinkDown = styled(Link)`
 	color: white;
 	text-decoration: none;
 	position: absolute;
-	bottom: 0;
+	bottom: 10px;
 	display: block;
 	padding-bottom: 40px;
 	z-index: 100;
@@ -220,9 +220,8 @@ const ScrollContainer = styled(animated.div)`
 const Fixed = styled(animated.div)`
 	position: static;
 	@media screen and (min-width: ${breakpoints.large}px) {
-		top: 0;
 		width: 100%;
-		position: fixed;
+		top: 0;
 	}
 `;
 
@@ -297,7 +296,7 @@ const Hero = () => {
 						/>
 					</HeroContent>
 
-					<HeroLinkDown to={"/#descubrelo"}>Descúbrelas</HeroLinkDown>
+					<HeroLinkDown to={"/#descubrelo"}>Descúbrelos</HeroLinkDown>
 					<VideoPlayer
 						id="videoPlayer"
 						width={width}
@@ -346,7 +345,7 @@ const Hero = () => {
 						/>
 					</HeroContent>
 
-					<HeroLinkDown to={"/#descubrelo"}>Descúbrelas</HeroLinkDown>
+					<HeroLinkDown to={"/#descubrelo"}>Descúbrelos</HeroLinkDown>
 					<VideoPlayer
 						id="videoPlayer"
 						width={width}
