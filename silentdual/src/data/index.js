@@ -111,7 +111,7 @@ const data = {
 			"En S&P apostamos por la innovación en usabilidad, por eso SILENT DUAL cuenta con el sello Install Friendly de garantía de calidad técnica y de facilidad a la hora de realizarse la instalación.<br/><br/>El extractor de baño se coloca con una práctica instalación que se realiza con una conexión directa de tan solo 2 hilos(L / N).",
 		imgAlt: "conexionado",
 		buttonAlt: "download icon",
-		button: "Descargar el folleto de producto"
+		button: "Descargar el manual de instalación"
 	},
 	modelos: {
 		title: "Modelos disponibles",
@@ -129,7 +129,7 @@ const data = {
 				description: { sizes: "232x195mm", power: "1010-2120 RPM" }
 			}
 		],
-		button: "Descarga las características técnicas"
+		button: "Descargar las características técnicas"
 	},
 	contacta: {
 		title: "Somos un equipo, tu equipo",

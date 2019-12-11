@@ -21,6 +21,9 @@ import downloadIcon from "../../images/download_icon.svg";
 //video:
 import Demovideo from "../../videos/hero-silent-dual.mp4";
 
+//docs:
+import Instalacion from "../../docs/instalacion.pdf";
+
 //components:
 import VideoPlayer from "../videoPlayer";
 
@@ -115,6 +118,7 @@ const DownloadButtonContainer = styled.a`
 	border-radius: 3px;
 	cursor: pointer;
 	text-decoration: none;
+	line-height: 24px;
 
 	display: flex;
 	flex-wrap: nowrap;
@@ -125,6 +129,12 @@ const DownloadButtonContainer = styled.a`
 	&:focus {
 		background: ${variables.primaryDark};
 	}
+
+	@media screen and (max-width: ${breakpoints.phone}px) {
+		font-size: 14px;
+		line-height: 21px;
+	}
+
 	@media screen and (min-width: ${breakpoints.large}px) {
 		margin: 40px auto 40px;
 	}
@@ -142,7 +152,7 @@ const LeftButton = styled.div`
 `;
 
 const DonwloadIconBox = styled.div`
-	border-left: 1px solid white;
+	border-left: 1px solid #ff7968;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -267,7 +277,12 @@ const InstallSection = () => {
 						</Column>
 
 						<Column xs={12} xsOrder={3}>
-							<DownloadButtonContainer href="#" target="_blank">
+							<DownloadButtonContainer
+								href={Instalacion}
+								target="_blank"
+								download="instalacion"
+								rel="noopener noreferrer"
+							>
 								<LeftButton>{instalacion.button}</LeftButton>
 								<DonwloadIconBox>
 									<img src={downloadIcon} alt={instalacion.buttonAlt} />
