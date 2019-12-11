@@ -24,6 +24,10 @@ import DemoVideo from "../../videos/SilentDual_CAST.mp4";
 //components:
 import VideoPlayer from "../videoPlayer";
 
+//data
+
+import data from "../../data";
+
 const HomeContainer = styled.section`
 	display: flex;
 	flex-direction: column;
@@ -228,6 +232,8 @@ const Fixed = styled(animated.div)`
 `;
 
 const Hero = () => {
+	const hero = data.hero;
+
 	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
 	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
 	//entry es el objeto con la información de la posición del elemento
@@ -280,12 +286,9 @@ const Hero = () => {
 						<InstantFriendly src={instantFriendly} alt="instant friendly" />
 						<HomeHeader>
 							<HomeTitle>
-								SILENT <span>DUAL</span>
+								{hero.title1} <span>{hero.title2}</span>
 							</HomeTitle>
-							<HomeSubtitle>
-								Los extractores de baño más inteligentes diseñados para una
-								fácil instalación
-							</HomeSubtitle>
+							<HomeSubtitle>{hero.subtitle}</HomeSubtitle>
 						</HomeHeader>
 						<PlayButton
 							onClick={handlePlayButton}
@@ -294,7 +297,7 @@ const Hero = () => {
 						/>
 					</HeroContent>
 
-					<HeroLinkDown to={"/#descubrelo"}>Descúbrelos</HeroLinkDown>
+					<HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
 					<VideoPlayer
 						id="videoPlayer"
 						width={width}
@@ -316,12 +319,9 @@ const Hero = () => {
 						<InstantFriendly src={instantFriendly} alt="instant friendly" />
 						<HomeHeader>
 							<HomeTitle>
-								SILENT <span>DUAL</span>
+								{hero.title1} <span>{hero.title2}</span>
 							</HomeTitle>
-							<HomeSubtitle>
-								Los extractores de baño más inteligentes diseñados para una
-								fácil instalación
-							</HomeSubtitle>
+							<HomeSubtitle>{hero.subtitle}</HomeSubtitle>
 						</HomeHeader>
 						<PlayButton
 							onClick={handlePlayButton}
@@ -330,7 +330,7 @@ const Hero = () => {
 						/>
 					</HeroContent>
 
-					<HeroLinkDown to={"/#descubrelo"}>Descúbrelos</HeroLinkDown>
+					<HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
 					<VideoPlayer
 						id="videoPlayer"
 						width={width}

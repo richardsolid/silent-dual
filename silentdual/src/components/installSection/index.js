@@ -44,7 +44,7 @@ const InstallSectionContainer = styled.section`
 	padding: 100px 0;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		padding: 120px 0;
+		padding: 180px 0 120px;
 	}
 
 	h2 {
@@ -232,7 +232,7 @@ const InstallSection = () => {
 	});
 
 	return (
-		<InstallSectionContainer id="instalación" ref={ref}>
+		<InstallSectionContainer id={instalacion.id} ref={ref}>
 			<Wrapper>
 				<a.div ref={refTop} style={topProps}>
 					<Row>

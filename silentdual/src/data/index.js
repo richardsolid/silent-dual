@@ -14,7 +14,7 @@ const data = {
 		},
 		{
 			name: "Instalación",
-			anchor: "#instalación"
+			anchor: "#instalacion"
 		},
 		{
 			name: "Modelos",
@@ -25,7 +25,17 @@ const data = {
 			anchor: "#contacta"
 		}
 	],
+	hero: {
+		title1: "SILENT",
+		title2: "DUAL",
+		subtitle:
+			"Los extractores de baño más inteligentes diseñados para una fácil instalación",
+		linkText: "Descúbrelos",
+		link: "#descubrelo"
+	},
 	descubrelo: {
+		id: "componentes",
+		title: "Descubre sus componentes",
 		hotspots: [
 			{
 				title: "Detector de presencia",
@@ -80,6 +90,7 @@ const data = {
 			"Silent Dual, la nueva generación de extractores de baño inteligentes que se autoajustan para crear un ambiente óptimo."
 	},
 	caracteristicas: {
+		id: "caracteristicas",
 		sectionTitle: "La única opción doblemente inteligente",
 		specs: [
 			{
@@ -102,8 +113,8 @@ const data = {
 			}
 		]
 	},
-	componentes: [],
 	instalacion: {
+		id: "instalacion",
 		title: "S&P diseña productos fáciles de instalar",
 		subtitle: "Plug & Play",
 		titleText: "Conexionado a 2 hilos",
@@ -114,6 +125,7 @@ const data = {
 		button: "Descargar el manual de instalación"
 	},
 	modelos: {
+		id: "modelos",
 		title: "Modelos disponibles",
 		cards: [
 			{
@@ -132,6 +144,7 @@ const data = {
 		button: "Descargar las características técnicas"
 	},
 	contacta: {
+		id: "contacta",
 		title: "Somos un equipo, tu equipo",
 		subtitle: "Asesoramiento profesional gratuito",
 		text: "Te ayudamos con tu proyecto, cuéntanos."

@@ -146,7 +146,7 @@ const HotspotText = styled.p`
 const DiscoverSection = () => {
 	const size = useWindowSize();
 	const [width, setWidth] = useState(null);
-	const hotspots = data.descubrelo.hotspots;
+	const descubrelo = data.descubrelo;
 
 	const { format } = new Intl.NumberFormat("en-US", {
 		maximumFractionDigits: 2
@@ -266,18 +266,18 @@ const DiscoverSection = () => {
 	}, [size]);
 
 	return width < breakpoints.large ? (
-		<DiscoverSectionContainer id="componentes" ref={ref}>
+		<DiscoverSectionContainer id={descubrelo.id} ref={ref}>
 			<Wrapper>
 				<Row>
 					<Column xs={8} lg={12} align="center">
 						<a.h2 style={titleProps} className="headingMedium">
-							Descubre sus componentes
+							{descubrelo.title}
 						</a.h2>
 					</Column>
 
 					<Column xs={12} direction="column">
 						<HotspotLayer style={ImgProps}>
-							{hotspots.map((hotspot, index) => (
+							{descubrelo.hotspots.map((hotspot, index) => (
 								<HotspotItem
 									key={`hotspot_${index}`}
 									content={hotspot}
@@ -289,7 +289,7 @@ const DiscoverSection = () => {
 					</Column>
 
 					<Column xs={12} direction="column">
-						{hotspots.map((hotspot, index) => (
+						{descubrelo.hotspots.map((hotspot, index) => (
 							<a.div style={textProps}>
 								<HotspotTitle
 									className="bodyNormal"
@@ -315,13 +315,13 @@ const DiscoverSection = () => {
 				)
 			}}
 		>
-			<DiscoverSectionIntersect ref={ref} id="componentes">
+			<DiscoverSectionIntersect ref={ref} id={descubrelo.id}>
 				<Fixed style={fixed} className="changePosition">
 					<Wrapper>
 						<Row>
 							<DiscoverSectionLayer>
 								<Column xs={12} align="top">
-									<h2 className="headingMedium">Descubre sus componentes</h2>
+									<h2 className="headingMedium">{descubrelo.title}</h2>
 								</Column>
 								<Column xs={12} direction="column" align="top">
 									<ImgExplodedLayer>
@@ -354,7 +354,7 @@ const DiscoverSection = () => {
 										<ImgRef src={exploded} alt="Discover exploded" />
 
 										<HotspotLayer style={hotspotsProps}>
-											{hotspots.map((hotspot, index) => (
+											{descubrelo.hotspots.map((hotspot, index) => (
 												<HotspotItem
 													key={`hotspot_${index}`}
 													content={hotspot}
