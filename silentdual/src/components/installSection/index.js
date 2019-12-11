@@ -256,7 +256,7 @@ const InstallSection = () => {
 							</InstallSectionText>
 						</Column>
 
-						<Column xs={12} lg={7} xsOrder={1} lgOrder={2}>
+						<Column xs={12} align="right" lg={6} xsOrder={1} lgOrder={2}>
 							<InstallSectionVideo>
 								<PlayButton
 									onClick={handlePlayButton}
