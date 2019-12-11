@@ -220,7 +220,7 @@ const ScrollContainer = styled(animated.div)`
 	}
 `;
 const Fixed = styled(animated.div)`
-	position: static;
+	position: fixed;
 	@media screen and (min-width: ${breakpoints.large}px) {
 		width: 100%;
 		top: 0;

@@ -178,10 +178,6 @@ const NavBar = ({ data }) => {
 	}, [viewNavItems, size]);
 
 	useEffect(() => {
-		console.log({ width }, { breakpointlarge: breakpoints.large });
-	}, [width]);
-
-	useEffect(() => {
 		setIsTop(true);
 
 		if (typeof window !== "undefined") {
