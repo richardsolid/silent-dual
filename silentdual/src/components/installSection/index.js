@@ -185,6 +185,21 @@ const InstallSection = () => {
 	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
 	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
 	//entry es el objeto con la información de la posición del elemento
+	const [ref, entry] = useIntersect({
+		//threshold es la cantidad de elemento visible para que se dispare el evento
+		threshold: buildThresholdArray()
+	});
+
+	useEffect(() => {
+		const element = document.querySelector(".changePosition");
+
+		if (entry.intersectionRatio > 0) {
+			if (element) element.style.position = "inherit";
+		} else {
+			if (element) element.style.position = "fixed";
+		}
+	}, [entry]);
+
 	const [refTop, entryTop] = useIntersect({
 		//threshold es la cantidad de elemento visible para que se dispare el evento
 		threshold: buildThresholdArray()
@@ -217,7 +232,7 @@ const InstallSection = () => {
 	});
 
 	return (
-		<InstallSectionContainer id="instalación">
+		<InstallSectionContainer id="instalación" ref={ref}>
 			<Wrapper>
 				<a.div ref={refTop} style={topProps}>
 					<Row>

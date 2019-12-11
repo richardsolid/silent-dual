@@ -316,7 +316,7 @@ const DiscoverSection = () => {
 			}}
 		>
 			<DiscoverSectionIntersect ref={ref} id="componentes">
-				<Fixed style={fixed}>
+				<Fixed style={fixed} className="changePosition">
 					<Wrapper>
 						<Row>
 							<DiscoverSectionLayer>
