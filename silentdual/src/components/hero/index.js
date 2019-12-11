@@ -14,7 +14,8 @@ import videoPoster from "../../images/video_poster.jpg";
 import arrowDown from "../../images/arrow_down.svg";
 
 //video:
-import Demovideo from "../../videos/hero-silent-dual.mp4";
+import BackgroundVideo from "../../videos/hero-silent-dual.mp4";
+import DemoVideo from "../../videos/SilentDual_CAST.mp4";
 
 //components:
 import VideoPlayer from "../videoPlayer";
@@ -277,7 +278,7 @@ const Hero = () => {
                 muted
                 loop
               >
-                <source src={Demovideo} type="video/mp4" />
+                <source src={BackgroundVideo} type="video/mp4" />
               </video>
             )}
           </HomeBackground>
@@ -304,7 +305,7 @@ const Hero = () => {
             id="videoPlayer"
             width={width}
             showVideo={showVideo}
-            video={Demovideo}
+            video={DemoVideo}
             setShowVideo={setShowVideo}
           />
         </HomeContainer>
