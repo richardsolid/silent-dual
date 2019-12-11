@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import { useSpring, animated } from "react-spring";
 import useIntersect from "../../utils/useIntersect";
 
@@ -179,7 +178,7 @@ const PlayButton = styled.img`
 	}
 `;
 
-const HeroLinkDown = styled(Link)`
+const HeroLinkDown = styled.a`
 	color: white;
 	text-decoration: none;
 	position: absolute;
@@ -298,7 +297,7 @@ const Hero = () => {
 						/>
 					</HeroContent>
 
-					<HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
+					<HeroLinkDown href={hero.link}>{hero.linkText}</HeroLinkDown>
 					<VideoPlayer
 						id="videoPlayer"
 						width={width}
@@ -330,7 +329,7 @@ const Hero = () => {
 					/>
 				</HeroContent>
 
-				<HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
+				<HeroLinkDown href={hero.link}>{hero.linkText}</HeroLinkDown>
 				<VideoPlayer
 					id="videoPlayer"
 					width={width}
