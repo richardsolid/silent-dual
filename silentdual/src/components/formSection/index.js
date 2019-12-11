@@ -41,6 +41,11 @@ const FormContainer = styled.section`
 
 const Form = styled.div`
 	width: 100%;
+	margin: 0 auto;
+
+	@media screen and (min-width: ${breakpoints.tablet}px) {
+		width: 66.66%;
+	}
 
 	color: black;
 
@@ -268,7 +273,7 @@ const FormSection = () => {
 		<FormContainer id={contacta.id}>
 			<Wrapper>
 				<Row>
-					<Column xs="12" direction="column">
+					<Column xs="12" sm={8} align="center" direction="column">
 						<a.div style={topProps} ref={refTop}>
 							<h2 className="headingMedium">{contacta.title}</h2>
 							<h3 className="headingTiny">{contacta.subtitle}</h3>

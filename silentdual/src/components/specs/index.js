@@ -126,7 +126,7 @@ const Specs = () => {
 		<SectionResponsive id={caracteristicas.id}>
 			<Wrapper>
 				<Row>
-					<Column xs={12}>
+					<Column xs={12} sm={8} align="center">
 						<TitleResponsive
 							ref={ref}
 							style={mobileTitleProps}
