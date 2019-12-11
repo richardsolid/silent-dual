@@ -30,19 +30,19 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background: ${({ isOpen, isTop }) =>
-		isOpen || isTop ? "transparent" : "black"};
+	background: ${({ isOpen, istop }) =>
+		isOpen || istop ? "transparent" : "black"};
 	top: 0;
 	width: 100vw;
-	height: ${({ isTop }) => (isTop ? "80px" : "60px")};
+	height: ${({ istop }) => (istop ? "80px" : "60px")};
 	box-sizing: border-box;
-	z-index: 999;
-	border-bottom: ${({ isTop }) => !isTop && "1px solid #6e6e6e"};
+	z-index: 1000;
+	border-bottom: ${({ istop }) => !istop && "1px solid #6e6e6e"};
 
 	transition: 0.2s;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: ${({ isTop }) => (isTop ? "100px" : "80px")};
+		height: ${({ istop }) => (istop ? "100px" : "80px")};
 	}
 `;
 
@@ -52,8 +52,8 @@ const SPLogo = styled(Link)`
 	background-size: contain;
 	z-index: 1000;
 
-	width: ${({ isTop }) => (isTop ? "60px" : "40px")};
-	height: ${({ isTop }) => (isTop ? "60px" : "40px")};
+	width: ${({ istop }) => (istop ? "60px" : "40px")};
+	height: ${({ istop }) => (istop ? "60px" : "40px")};
 
 	transition: 0.2s;
 
@@ -61,8 +61,8 @@ const SPLogo = styled(Link)`
 	visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		width: ${({ isTop }) => (isTop ? "70px" : "50px")};
-		height: ${({ isTop }) => (isTop ? "50px" : "40px")};
+		width: ${({ istop }) => (istop ? "70px" : "50px")};
+		height: ${({ istop }) => (istop ? "50px" : "40px")};
 	}
 `;
 
@@ -191,12 +191,12 @@ const NavBar = ({ data }) => {
 	//collapsed menu:
 	return width < breakpoints.large ? (
 		<Navigator>
-			<NavBarContainer isTop={isTop} isPhone isOpen={viewNavItems}>
+			<NavBarContainer istop={isTop} isPhone isOpen={viewNavItems}>
 				<Wrapper>
 					<Row>
 						<Column xs={12}>
 							<SPLogo
-								isTop={isTop}
+								istop={isTop}
 								isOpen={viewNavItems}
 								to={"/#hero"}
 								onClick={() => setViewNavItems(false)}
@@ -231,11 +231,11 @@ const NavBar = ({ data }) => {
 		</Navigator>
 	) : (
 		//navItems on navbar:
-		<NavBarContainer isTop={isTop}>
+		<NavBarContainer istop={isTop}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<SPLogo isTop={isTop} to={"#hero"} />
+						<SPLogo istop={isTop} to={"#hero"} />
 						<SectionsLinksBar>
 							{data &&
 								data.map((section, i) => (

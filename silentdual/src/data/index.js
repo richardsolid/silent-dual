@@ -147,7 +147,8 @@ const data = {
 		id: "contacta",
 		title: "Somos un equipo, tu equipo",
 		subtitle: "Asesoramiento profesional gratuito",
-		text: "Te ayudamos con tu proyecto, cuéntanos."
+		text: "Te ayudamos con tu proyecto, cuéntanos.",
+		loading: "Cargando"
 	},
 	footer: "© 2019 S&P Sistemas de Ventilación S.L.U."
 };

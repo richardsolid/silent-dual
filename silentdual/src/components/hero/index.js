@@ -310,36 +310,34 @@ const Hero = () => {
 		</ScrollContainer>
 	) : (
 		<ScrollContainer id={"hero"}>
-			<Fixed>
-				<HomeContainer>
-					<HomeBackground>
-						<img src={videoPoster} alt="site title" />
-					</HomeBackground>
-					<HeroContent>
-						<InstantFriendly src={instantFriendly} alt="instant friendly" />
-						<HomeHeader>
-							<HomeTitle>
-								{hero.title1} <span>{hero.title2}</span>
-							</HomeTitle>
-							<HomeSubtitle>{hero.subtitle}</HomeSubtitle>
-						</HomeHeader>
-						<PlayButton
-							onClick={handlePlayButton}
-							src={playButton}
-							alt="play button"
-						/>
-					</HeroContent>
-
-					<HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
-					<VideoPlayer
-						id="videoPlayer"
-						width={width}
-						showVideo={showVideo}
-						video={DemoVideo}
-						setShowVideo={setShowVideo}
+			<HomeContainer>
+				<HomeBackground>
+					<img src={videoPoster} alt="site title" />
+				</HomeBackground>
+				<HeroContent>
+					<InstantFriendly src={instantFriendly} alt="instant friendly" />
+					<HomeHeader>
+						<HomeTitle>
+							{hero.title1} <span>{hero.title2}</span>
+						</HomeTitle>
+						<HomeSubtitle>{hero.subtitle}</HomeSubtitle>
+					</HomeHeader>
+					<PlayButton
+						onClick={handlePlayButton}
+						src={playButton}
+						alt="play button"
 					/>
-				</HomeContainer>
-			</Fixed>
+				</HeroContent>
+
+				<HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
+				<VideoPlayer
+					id="videoPlayer"
+					width={width}
+					showVideo={showVideo}
+					video={DemoVideo}
+					setShowVideo={setShowVideo}
+				/>
+			</HomeContainer>
 		</ScrollContainer>
 	);
 };
