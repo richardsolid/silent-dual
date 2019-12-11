@@ -236,7 +236,7 @@ const InstallSection = () => {
 			<Wrapper>
 				<a.div ref={refTop} style={topProps}>
 					<Row>
-						<Column xs={12}>
+						<Column xs={12} sm={8} align="center">
 							<img
 								id="instantFriendly"
 								src={instantFriendly}
@@ -244,10 +244,10 @@ const InstallSection = () => {
 							/>
 						</Column>
 
-						<Column xs={12}>
+						<Column xs={12} sm={8} align="center">
 							<h2 className="headingMedium">{instalacion.title}</h2>
 						</Column>
-						<Column xs={12}>
+						<Column xs={12} sm={8} align="center">
 							<p className="headingTiny">{instalacion.subtitle}</p>
 						</Column>
 					</Row>
@@ -255,7 +255,14 @@ const InstallSection = () => {
 
 				<a.div ref={refBottom} style={bottomProps}>
 					<Row>
-						<Column xs={12} lg={5} xsOrder={2} lgOrder={1}>
+						<Column
+							xs={12}
+							sm={8}
+							align="center"
+							lg={5}
+							xsOrder={2}
+							lgOrder={1}
+						>
 							<InstallSectionText>
 								<h3 className="headingSmall">{instalacion.titleText}</h3>
 								<p
@@ -276,7 +283,7 @@ const InstallSection = () => {
 							</InstallSectionVideo>
 						</Column>
 
-						<Column xs={12} xsOrder={3}>
+						<Column xs={12} sm={8} align="center" xsOrder={3}>
 							<DownloadButtonContainer
 								href={Instalacion}
 								target="_blank"

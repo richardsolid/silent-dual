@@ -67,15 +67,17 @@ const ModeloCard = ({ modelo, index }) => {
 
 	const cardsProps = useSpring({
 		from: {
-			opacity: 0
+			opacity: 0,
+			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio > 0.5 ? 1 : 0
+			opacity: ratio > 0.5 ? 1 : 0,
+			transform: ratio >= 0.3 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
 	return (
-		<Column xs={12} md={4}>
+		<Column xs={12} sm={8} align="center" md={4}>
 			<ModeloCardContainer ref={ref} style={cardsProps}>
 				<ModeloImageBox>
 					<ModeloImage src={chooseImage(index)} alt="modelo image" />

@@ -126,78 +126,73 @@ const SpecSensores = ({ isResponsive, data }) => {
 	const titleProps = useSpring({
 		from: {
 			opacity: 0,
-			transform: `translate(-100px, 0px)`
+			transform: `translate(0px, 100px)`
 		},
 		to: {
 			opacity: ratio >= 0.1 ? 1 : 0,
-			transform:
-				ratio >= 0.1 ? `translate(0px, 0px)` : `translate(-100px, 0px);`
+			transform: ratio >= 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
 	const subtitleProps = useSpring({
 		from: {
 			opacity: 0,
-			transform: `translate(-100px, 0px)`
+			transform: `translate(0px, 100px)`
 		},
 		to: {
 			opacity: ratio >= 0.2 ? 1 : 0,
-			transform:
-				ratio >= 0.2 ? `translate(0px, 0px)` : `translate(-100px, 0px);`
+			transform: ratio >= 0.2 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
 	const descriptionProps = useSpring({
 		from: {
 			opacity: 0,
-			transform: `translate(-100px, 0px)`
+			transform: `translate(0px, 100px)`
 		},
 		to: {
 			opacity: ratio >= 0.3 ? 1 : 0,
-			transform:
-				ratio >= 0.3 ? `translate(0px, 0px)` : `translate(-100px, 0px);`
+			transform: ratio >= 0.3 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
 	const imageProps = useSpring({
 		from: {
 			opacity: 0,
-			transform: `scale(0.6)`
+			transform: `translate(0px, 100px)`
 		},
 		to: {
 			opacity: ratio >= 0.4 ? 1 : 0,
-			transform: ratio >= 0.4 ? `scale(1)` : `scale(0.6)`
+			transform: ratio >= 0.4 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
 	const icon1Props = useSpring({
 		from: {
 			opacity: 0,
-			transform: `translate(0px, -100px)`
+			transform: `translate(0px, 100px)`
 		},
 		to: {
 			opacity: ratio >= 0.5 ? 1 : 0,
-			transform:
-				ratio >= 0.5 ? `translate(0px, 0px)` : `translate(0px, -100px);`
+			transform: ratio >= 0.5 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
 	const icon2Props = useSpring({
 		from: {
 			opacity: 0,
-			transform: `translate(0px, -100px)`
+			transform: `translate(0px, 100px)`
 		},
 		to: {
 			opacity: ratio >= 0.6 ? 1 : 0,
-			transform:
-				ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, -100px);`
+			transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
 	return isResponsive ? (
 		<Container ref={ref}>
 			<Row>
-				<Column xs={12} md={6}>
+				<Column xs={12} sm={8} align="center">
 					<ResponsiveInfo>
 						<ResponsiveTitle
 							style={titleProps}
@@ -216,7 +211,7 @@ const SpecSensores = ({ isResponsive, data }) => {
 						/>
 					</ResponsiveInfo>
 				</Column>
-				<Column xs={12} md={6}>
+				<Column xs={12} sm={8} align="center">
 					<ResponsiveImageContainer>
 						<ResponsiveImg style={imageProps} src={SpecImg} alt="" />
 						<ResponsiveIcons style={icon1Props} src={Icon1PNG} alt="" />

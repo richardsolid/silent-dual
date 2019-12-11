@@ -50,11 +50,11 @@ const BottomLine = styled.div`
 	width: ${({ isOpen }) => (isOpen ? "24px" : "100%")};
 `;
 
-const Burger = ({ isOpen, handleClick }) => (
+const Burger = ({ isOpenBurger, handleClick }) => (
 	<BurgerContainer onClick={handleClick}>
-		<TopLine isOpen={isOpen} />
-		<MiddleLine isOpen={isOpen} />
-		<BottomLine isOpen={isOpen} />
+		<TopLine isOpen={isOpenBurger} />
+		<MiddleLine isOpen={isOpenBurger} />
+		<BottomLine isOpen={isOpenBurger} />
 	</BurgerContainer>
 );
 

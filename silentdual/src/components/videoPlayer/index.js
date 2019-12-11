@@ -56,17 +56,17 @@ const CloseButton = styled.span`
 `;
 
 const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
-	const scrollWorking = () => {
-		document.getElementsByTagName("body")[0].classList.toggle("scrollDisabled");
-	};
-
 	const showingVideo = () => {
 		gsap.to("#" + id, {
 			duration: 1,
 			opacity: 1,
 			visibility: "visible"
 		});
-		scrollWorking();
+
+		!document
+			.getElementsByTagName("body")[0]
+			.classList.contains("scrollDisabled") &&
+			document.getElementsByTagName("body")[0].classList.add("scrollDisabled");
 	};
 
 	const closingVideo = () => {
@@ -75,11 +75,17 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 			opacity: 0,
 			visibility: "hidden"
 		});
-		scrollWorking();
+
+		document
+			.getElementsByTagName("body")[0]
+			.classList.contains("scrollDisabled") &&
+			document
+				.getElementsByTagName("body")[0]
+				.classList.remove("scrollDisabled");
 	};
 
 	useEffect(() => {
-		showVideo ? showingVideo() : closingVideo();
+		showVideo === true ? showingVideo() : closingVideo();
 		// eslint-disable-next-line
 	}, [showVideo]);
 

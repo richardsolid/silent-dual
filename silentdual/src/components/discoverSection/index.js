@@ -269,7 +269,7 @@ const DiscoverSection = () => {
 		<DiscoverSectionContainer id={descubrelo.id} ref={ref}>
 			<Wrapper>
 				<Row>
-					<Column xs={8} lg={12} align="center">
+					<Column xs={8} align="center">
 						<a.h2 style={titleProps} className="headingMedium">
 							{descubrelo.title}
 						</a.h2>
@@ -288,9 +288,9 @@ const DiscoverSection = () => {
 						</HotspotLayer>
 					</Column>
 
-					<Column xs={12} direction="column">
+					<Column xs={8} align="center" direction="column">
 						{descubrelo.hotspots.map((hotspot, index) => (
-							<a.div style={textProps}>
+							<a.div key={`hotspot_${index}`} style={textProps}>
 								<HotspotTitle
 									className="bodyNormal"
 									dangerouslySetInnerHTML={{

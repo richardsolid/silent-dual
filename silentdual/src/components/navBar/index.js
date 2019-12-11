@@ -191,12 +191,12 @@ const NavBar = ({ data }) => {
 	//collapsed menu:
 	return width < breakpoints.large ? (
 		<Navigator>
-			<NavBarContainer istop={isTop} isPhone isOpen={viewNavItems}>
+			<NavBarContainer isTop={isTop} isPhone isOpen={viewNavItems}>
 				<Wrapper>
 					<Row>
 						<Column xs={12}>
 							<SPLogo
-								istop={isTop}
+								isTop={isTop}
 								isOpen={viewNavItems}
 								to={"/#hero"}
 								onClick={() => setViewNavItems(false)}
@@ -231,11 +231,11 @@ const NavBar = ({ data }) => {
 		</Navigator>
 	) : (
 		//navItems on navbar:
-		<NavBarContainer istop={isTop}>
+		<NavBarContainer isTop={isTop}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<SPLogo istop={isTop} to={"#hero"} />
+						<SPLogo isTop={isTop} to={"#hero"} />
 						<SectionsLinksBar>
 							{data &&
 								data.map((section, i) => (
