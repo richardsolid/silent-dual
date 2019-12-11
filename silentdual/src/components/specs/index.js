@@ -9,6 +9,8 @@ import useIntersect from "../../utils/useIntersect";
 import Wrapper from "../../utils/grid/wrapper";
 import Row from "../../utils/grid/row";
 import Column from "../../utils/grid/column";
+
+//assets
 import { breakpoints } from "../../assets/styles/breakpoints";
 
 //components:
@@ -42,7 +44,7 @@ const Background = styled(a.div)`
 
 const Title = styled(a.h2)`
 	position: fixed;
-	top: 120px;
+	top: 180px;
 	left: 0;
 	right: 0;
 	bottom: inherit;
