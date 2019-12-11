@@ -58,6 +58,11 @@ const SectionResponsive = styled.section`
 	padding: 100px 0;
 	color: black;
 	text-align: center;
+	overflow: hidden;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		overflow: inherit;
+	}
 `;
 
 const TitleResponsive = styled(a.h2)`
