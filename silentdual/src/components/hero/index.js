@@ -6,7 +6,11 @@ import useIntersect from "../../utils/useIntersect";
 
 //utils:
 import useWindowSize from "../../utils/useWindowSize";
+
+//assets
 import { breakpoints } from "../../assets/styles/breakpoints";
+import variables from "../../assets/styles/variables";
+
 //images:
 import instantFriendly from "../../images/instant-friendly.svg";
 import playButton from "../../images/play-button.svg";
@@ -58,15 +62,7 @@ const HomeBackground = styled.div`
 	video {
 		object-fit: cover;
 		min-width: 100%;
-		min-height: 100%;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		top: 0;
-		z-index: 0;
-		height: 100vh;
-		width: 100vw;
+		min-height: 102%;
 	}
 
 	@media screen and (min-width: ${breakpoints.large}px) {
@@ -160,8 +156,12 @@ const PlayButton = styled.img`
 	z-index: 2;
 	height: 50px;
 	width: 50px;
+	border-radius: 25px;
 	cursor: pointer;
 	top: 75vh;
+	box-shadow: ${variables.shadowLight};
+
+	transition: 0.2s;
 
 	&:hover {
 		opacity: 0.8;
@@ -170,6 +170,7 @@ const PlayButton = styled.img`
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 60px;
 		width: 60px;
+		border-radius: 30px;
 	}
 `;
 
@@ -250,7 +251,7 @@ const Hero = () => {
 	};
 
 	useEffect(() => {
-		setWidth(widthWindow);
+		setWidth(widthWindow.width);
 	}, [widthWindow]);
 
 	return width >= breakpoints.large ? (
@@ -264,20 +265,16 @@ const Hero = () => {
 			<Fixed>
 				<HomeContainer>
 					<HomeBackground>
-						{width < 768 ? (
-							<img src={videoPoster} alt="site title" />
-						) : (
-							<video
-								controls={false}
-								type="video/mp4"
-								poster={videoPoster}
-								autoPlay
-								muted
-								loop
-							>
-								<source src={Demovideo} type="video/mp4" />
-							</video>
-						)}
+						<video
+							controls={false}
+							type="video/mp4"
+							poster={videoPoster}
+							autoPlay
+							muted
+							loop
+						>
+							<source src={Demovideo} type="video/mp4" />
+						</video>
 					</HomeBackground>
 					<HeroContent>
 						<InstantFriendly src={instantFriendly} alt="instant friendly" />
@@ -287,7 +284,7 @@ const Hero = () => {
 							</HomeTitle>
 							<HomeSubtitle>
 								Los extractores de baño más inteligentes diseñados para una
-								fácil instalación.
+								fácil instalación
 							</HomeSubtitle>
 						</HomeHeader>
 						<PlayButton
@@ -313,20 +310,7 @@ const Hero = () => {
 			<Fixed>
 				<HomeContainer>
 					<HomeBackground>
-						{width < 768 ? (
-							<img src={videoPoster} alt="site title" />
-						) : (
-							<video
-								controls={false}
-								type="video/mp4"
-								poster={videoPoster}
-								autoPlay
-								muted
-								loop
-							>
-								<source src={Demovideo} type="video/mp4" />
-							</video>
-						)}
+						<img src={videoPoster} alt="site title" />
 					</HomeBackground>
 					<HeroContent>
 						<InstantFriendly src={instantFriendly} alt="instant friendly" />
@@ -336,7 +320,7 @@ const Hero = () => {
 							</HomeTitle>
 							<HomeSubtitle>
 								Los extractores de baño más inteligentes diseñados para una
-								fácil instalación.
+								fácil instalación
 							</HomeSubtitle>
 						</HomeHeader>
 						<PlayButton
