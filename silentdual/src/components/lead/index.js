@@ -117,11 +117,14 @@ const Lead = () => {
   const descriptionProps = useSpring({
     from: {
       opacity: 0,
-      transform: `scale(0.8)`
+      transform: `translate(0px, 100px)`
     },
     to: {
       opacity: entry.intersectionRatio > 0 ? 1 : 0,
-      transform: entry.intersectionRatio > 0 ? `scale(1)` : `scale(0.8)`
+      transform:
+        entry.intersectionRatio > 0
+          ? `translate(0px, 0px)`
+          : `translate(0px, 100px)`
     }
   });
 
