@@ -44,7 +44,7 @@ const Background = styled(a.div)`
 
 const Title = styled(a.h2)`
 	position: fixed;
-	top: 120px;
+	top: 180px;
 	left: 0;
 	right: 0;
 	bottom: inherit;

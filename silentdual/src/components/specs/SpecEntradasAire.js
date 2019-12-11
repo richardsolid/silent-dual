@@ -211,7 +211,7 @@ const SpecSensor = ({ isResponsive, data }) => {
 			<Fixed>
 				<Wrapper>
 					<Row>
-						<Column xs={12} md={6}>
+						<Column xs={12} md={5}>
 							<Info>
 								<Title
 									style={titleProps}
@@ -230,7 +230,7 @@ const SpecSensor = ({ isResponsive, data }) => {
 								/>
 							</Info>
 						</Column>
-						<Column xs={12} md={6}>
+						<Column xs={12} md={6} align="center">
 							<SpecEntradasAireComp
 								isResponsive={isResponsive}
 								imageProps={imageProps}

@@ -252,7 +252,14 @@ const DiscoverSection = () => {
 		}
 	});
 
-	console.log(entry.intersectionRatio);
+	const fixed = useSpring({
+		from: {
+			position: "fixed"
+		},
+		to: {
+			position: ratio > 0 ? "fixed" : "inherit"
+		}
+	});
 
 	useEffect(() => {
 		setWidth(size.width);
@@ -309,7 +316,7 @@ const DiscoverSection = () => {
 			}}
 		>
 			<DiscoverSectionIntersect ref={ref} id="componentes">
-				<Fixed>
+				<Fixed style={fixed}>
 					<Wrapper>
 						<Row>
 							<DiscoverSectionLayer>
