@@ -87,12 +87,8 @@ const HeroContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  position: absolute;
-
-  @media screen and (min-width: ${breakpoints.large}px) {
-    max-width: 50%;
-  }
+  width: 100%;
+  height: 100vh;
 `;
 
 const InstantFriendly = styled.img`
@@ -154,6 +150,7 @@ const HomeSubtitle = styled.h2`
     text-align: center;
     letter-spacing: 0px;
     line-height: 39px;
+    max-width: 60%;
   }
 `;
 
@@ -219,7 +216,7 @@ const HeroLinkDown = styled(Link)`
 
 const ScrollContainer = styled(animated.div)`
   @media screen and (min-width: ${breakpoints.large}px) {
-    height: 100vh;
+    height: 200vh;
     margin-bottom: 1px;
   }
 `;
@@ -242,9 +239,13 @@ const Hero = () => {
     threshold: buildThresholdArray()
   });
 
+  const ratio = (Math.round(entry.intersectionRatio * 100) / 100) * 2;
+
+  console.log(ratio);
+
   const { o } = useSpring({
     from: { o: 0 },
-    o: entry.intersectionRatio > 0.95 ? 0 : 1
+    o: ratio
   });
 
   const widthWindow = useWindowSize();
@@ -253,7 +254,6 @@ const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
 
   const handlePlayButton = () => {
-    console.log("btn");
     setShowVideo(true);
   };
 
@@ -266,9 +266,24 @@ const Hero = () => {
       ref={ref}
       id={"hero"}
       style={{
-        visibility: o.interpolate(o => (o === 1 ? "hidden" : "visible"))
+        visibility: o.interpolate(o => (o === 0 ? "hidden" : "visible")),
+        opacity: o.interpolate([1, 0], [1, 0])
       }}
     >
+      <HeroContent>
+        <InstantFriendly src={instantFriendly} alt="instant friendly" />
+        <HomeHeader>
+          <HomeTitle>
+            {hero.title1} <span>{hero.title2}</span>
+          </HomeTitle>
+          <HomeSubtitle>{hero.subtitle}</HomeSubtitle>
+        </HomeHeader>
+        <PlayButton
+          onClick={handlePlayButton}
+          src={playButton}
+          alt="play button"
+        />
+      </HeroContent>
       <Fixed>
         <HomeContainer>
           <HomeBackground>
@@ -283,20 +298,6 @@ const Hero = () => {
               <source src={BackgroundVideo} type="video/mp4" />
             </video>
           </HomeBackground>
-          <HeroContent>
-            <InstantFriendly src={instantFriendly} alt="instant friendly" />
-            <HomeHeader>
-              <HomeTitle>
-                {hero.title1} <span>{hero.title2}</span>
-              </HomeTitle>
-              <HomeSubtitle>{hero.subtitle}</HomeSubtitle>
-            </HomeHeader>
-            <PlayButton
-              onClick={handlePlayButton}
-              src={playButton}
-              alt="play button"
-            />
-          </HeroContent>
 
           <HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
           <VideoPlayer
