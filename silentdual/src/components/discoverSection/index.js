@@ -56,8 +56,8 @@ const Fixed = styled.div`
 `;
 
 const DiscoverSectionLayer = styled.div`
-	height: calc(100vh - 240px);
-	margin: 120px auto 120px;
+	height: calc(100vh - 280px);
+	margin: 180px auto 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
