@@ -14,7 +14,7 @@ const data = {
 		},
 		{
 			name: "Instalación",
-			anchor: "#instalación"
+			anchor: "#instalacion"
 		},
 		{
 			name: "Modelos",
@@ -25,7 +25,17 @@ const data = {
 			anchor: "#contacta"
 		}
 	],
+	hero: {
+		title1: "SILENT",
+		title2: "DUAL",
+		subtitle:
+			"Los extractores de baño más inteligentes diseñados para una fácil instalación",
+		linkText: "Descúbrelos",
+		link: "#descubrelo"
+	},
 	descubrelo: {
+		id: "componentes",
+		title: "Descubre sus componentes",
 		hotspots: [
 			{
 				title: "Detector de presencia",
@@ -80,6 +90,7 @@ const data = {
 			"Silent Dual, la nueva generación de extractores de baño inteligentes que se autoajustan para crear un ambiente óptimo."
 	},
 	caracteristicas: {
+		id: "caracteristicas",
 		sectionTitle: "La única opción doblemente inteligente",
 		specs: [
 			{
@@ -102,8 +113,8 @@ const data = {
 			}
 		]
 	},
-	componentes: [],
 	instalacion: {
+		id: "instalacion",
 		title: "S&P diseña productos fáciles de instalar",
 		subtitle: "Plug & Play",
 		titleText: "Conexionado a 2 hilos",
@@ -111,9 +122,10 @@ const data = {
 			"En S&P apostamos por la innovación en usabilidad, por eso SILENT DUAL cuenta con el sello Install Friendly de garantía de calidad técnica y de facilidad a la hora de realizarse la instalación.<br/><br/>El extractor de baño se coloca con una práctica instalación que se realiza con una conexión directa de tan solo 2 hilos(L / N).",
 		imgAlt: "conexionado",
 		buttonAlt: "download icon",
-		button: "Descargar el folleto de producto"
+		button: "Descargar el manual de instalación"
 	},
 	modelos: {
+		id: "modelos",
 		title: "Modelos disponibles",
 		cards: [
 			{
@@ -129,12 +141,14 @@ const data = {
 				description: { sizes: "232x195mm", power: "1010-2120 RPM" }
 			}
 		],
-		button: "Descarga las características técnicas"
+		button: "Descargar las características técnicas"
 	},
 	contacta: {
+		id: "contacta",
 		title: "Somos un equipo, tu equipo",
 		subtitle: "Asesoramiento profesional gratuito",
-		text: "Te ayudamos con tu proyecto, cuéntanos."
+		text: "Te ayudamos con tu proyecto, cuéntanos.",
+		loading: "Cargando"
 	},
 	footer: "© 2019 S&P Sistemas de Ventilación S.L.U."
 };

@@ -20,6 +20,9 @@ import data from "../../data";
 //images:
 import downloadIcon from "../../images/download_icon.svg";
 
+//docs:
+import Caracteristicas from "../../docs/caracteristicas.pdf";
+
 //Components
 import ModeloCard from "./modelosCard";
 
@@ -39,7 +42,7 @@ const Title = styled(a.h2)`
 	line-height: 39px;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		margin: 120px auto 80px;
+		margin: 180px auto 80px;
 	}
 `;
 
@@ -50,7 +53,7 @@ const DownloadButtonContainer = styled(a.a)`
 	border-radius: 3px;
 	cursor: pointer;
 	text-decoration: none;
-	line-height: 24px !important;
+	line-height: 24px;
 
 	display: flex;
 	flex-wrap: nowrap;
@@ -130,7 +133,7 @@ const Modelos = () => {
 	});
 
 	return (
-		<ModelosContainer id="modelos" ref={ref}>
+		<ModelosContainer id={modelos.id} ref={ref}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
@@ -146,8 +149,10 @@ const Modelos = () => {
 						<DownloadButtonContainer
 							ref={refButton}
 							style={buttonProps}
-							href="#"
+							href={Caracteristicas}
 							target="_blank"
+							download="caracteristicas"
+							rel="noopener noreferrer"
 						>
 							<LeftButton>{modelos.button}</LeftButton>
 							<DonwloadIconBox>

@@ -24,7 +24,7 @@ const FormContainer = styled.section`
 	background: white;
 
 	h2 {
-		margin: 120px 0 40px;
+		margin: 180px 0 40px;
 		text-align: center;
 	}
 
@@ -265,7 +265,7 @@ const FormSection = () => {
 	});
 
 	return (
-		<FormContainer id="contacta">
+		<FormContainer id={contacta.id}>
 			<Wrapper>
 				<Row>
 					<Column xs="12" direction="column">
@@ -280,9 +280,7 @@ const FormSection = () => {
 							<HubspotForm
 								portalId="2009592"
 								formId="dedcb341-d7ef-4a5a-bd74-05693345fd3f"
-								onSubmit={() => console.log("Submit!")}
-								onReady={form => console.log("Form ready!")}
-								loading={<div>Loading...</div>}
+								loading={<div>{contacta.loading}</div>}
 							/>
 						</a.div>
 					</Form>

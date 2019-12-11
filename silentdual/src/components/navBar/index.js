@@ -30,19 +30,19 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background: ${({ isOpen, isTop }) =>
-		isOpen || isTop ? "transparent" : "black"};
+	background: ${({ isOpen, istop }) =>
+		isOpen || istop ? "transparent" : "black"};
 	top: 0;
 	width: 100vw;
-	height: ${({ isTop }) => (isTop ? "80px" : "60px")};
+	height: ${({ istop }) => (istop ? "80px" : "60px")};
 	box-sizing: border-box;
 	z-index: 1000;
-	border-bottom: 1px solid #6e6e6e;
+	border-bottom: ${({ istop }) => !istop && "1px solid #6e6e6e"};
 
 	transition: 0.2s;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: ${({ isTop }) => (isTop ? "100px" : "80px")};
+		height: ${({ istop }) => (istop ? "100px" : "80px")};
 	}
 `;
 
@@ -50,9 +50,10 @@ const SPLogo = styled(Link)`
 	display: flex;
 	background: url(${logo}) no-repeat center center;
 	background-size: contain;
+	z-index: 1000;
 
-	width: ${({ isTop }) => (isTop ? "60px" : "40px")};
-	height: ${({ isTop }) => (isTop ? "60px" : "40px")};
+	width: ${({ istop }) => (istop ? "60px" : "40px")};
+	height: ${({ istop }) => (istop ? "60px" : "40px")};
 
 	transition: 0.2s;
 
@@ -60,8 +61,8 @@ const SPLogo = styled(Link)`
 	visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		width: ${({ isTop }) => (isTop ? "70px" : "50px")};
-		height: ${({ isTop }) => (isTop ? "50px" : "40px")};
+		width: ${({ istop }) => (istop ? "70px" : "50px")};
+		height: ${({ istop }) => (istop ? "50px" : "40px")};
 	}
 `;
 
@@ -70,6 +71,7 @@ const SectionsLinksBar = styled.div`
 	margin: 0 0 0 auto;
 	justify-content: center;
 	align-items: center;
+	z-index: 1000;
 
 	a {
 		text-decoration: none;
@@ -187,56 +189,53 @@ const NavBar = ({ data }) => {
 	}, []);
 
 	//collapsed menu:
-	if (width < breakpoints.large)
-		return (
-			<Navigator>
-				<NavBarContainer isTop={isTop} isPhone isOpen={viewNavItems}>
-					<Wrapper>
-						<Row>
-							<Column xs={12}>
-								<SPLogo
-									isTop={isTop}
-									isOpen={viewNavItems}
-									to={"/#hero"}
-									onClick={() => setViewNavItems(false)}
-								/>
-								<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
-							</Column>
-						</Row>
-					</Wrapper>
-				</NavBarContainer>
+	return width < breakpoints.large ? (
+		<Navigator>
+			<NavBarContainer istop={isTop} isPhone isOpen={viewNavItems}>
+				<Wrapper>
+					<Row>
+						<Column xs={12}>
+							<SPLogo
+								istop={isTop}
+								isOpen={viewNavItems}
+								to={"/#hero"}
+								onClick={() => setViewNavItems(false)}
+							/>
+							<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
+						</Column>
+					</Row>
+				</Wrapper>
+			</NavBarContainer>
 
-				<CollapsedMenu id="menu">
-					<Wrapper>
-						<Row>
-							<Column xs={12}>
-								<CollapsedItemsContainer>
-									{data &&
-										data.map((section, i) => (
-											<Link
-												key={i}
-												to={`/${section.anchor}`}
-												onClick={handleBurgerClick}
-												className="navItem"
-											>
-												{section.name}
-											</Link>
-										))}
-								</CollapsedItemsContainer>
-							</Column>
-						</Row>
-					</Wrapper>
-				</CollapsedMenu>
-			</Navigator>
-		);
-
-	//items on navbar:
-	return (
-		<NavBarContainer isTop={isTop}>
+			<CollapsedMenu id="menu">
+				<Wrapper>
+					<Row>
+						<Column xs={12}>
+							<CollapsedItemsContainer>
+								{data &&
+									data.map((section, i) => (
+										<Link
+											key={i}
+											to={`/${section.anchor}`}
+											onClick={handleBurgerClick}
+											className="navItem"
+										>
+											{section.name}
+										</Link>
+									))}
+							</CollapsedItemsContainer>
+						</Column>
+					</Row>
+				</Wrapper>
+			</CollapsedMenu>
+		</Navigator>
+	) : (
+		//navItems on navbar:
+		<NavBarContainer istop={isTop}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<SPLogo isTop={isTop} to={"#hero"} />
+						<SPLogo istop={isTop} to={"#hero"} />
 						<SectionsLinksBar>
 							{data &&
 								data.map((section, i) => (

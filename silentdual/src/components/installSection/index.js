@@ -21,6 +21,9 @@ import downloadIcon from "../../images/download_icon.svg";
 //video:
 import Demovideo from "../../videos/hero-silent-dual.mp4";
 
+//docs:
+import Instalacion from "../../docs/instalacion.pdf";
+
 //components:
 import VideoPlayer from "../videoPlayer";
 
@@ -41,7 +44,7 @@ const InstallSectionContainer = styled.section`
   padding: 100px 0;
 
   @media screen and (min-width: ${breakpoints.large}px) {
-    padding: 120px 0;
+    padding: 180px 0 120px;
   }
 
   h2 {
@@ -115,6 +118,7 @@ const DownloadButtonContainer = styled.a`
   border-radius: 3px;
   cursor: pointer;
   text-decoration: none;
+  line-height: 24px;
 
   display: flex;
   flex-wrap: nowrap;
@@ -125,6 +129,12 @@ const DownloadButtonContainer = styled.a`
   &:focus {
     background: ${variables.primaryDark};
   }
+
+  @media screen and (max-width: ${breakpoints.phone}px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
   @media screen and (min-width: ${breakpoints.large}px) {
     margin: 40px auto 40px;
   }
@@ -142,7 +152,7 @@ const LeftButton = styled.div`
 `;
 
 const DonwloadIconBox = styled.div`
-  border-left: 1px solid white;
+  border-left: 1px solid #ff7968;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,6 +185,21 @@ const InstallSection = () => {
   const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
   //useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
   //entry es el objeto con la información de la posición del elemento
+  const [ref, entry] = useIntersect({
+    //threshold es la cantidad de elemento visible para que se dispare el evento
+    threshold: buildThresholdArray()
+  });
+
+  useEffect(() => {
+    const element = document.querySelector(".changePosition");
+
+    if (entry.intersectionRatio > 0) {
+      if (element) element.style.position = "inherit";
+    } else {
+      if (element) element.style.position = "fixed";
+    }
+  }, [entry]);
+
   const [refTop, entryTop] = useIntersect({
     //threshold es la cantidad de elemento visible para que se dispare el evento
     threshold: buildThresholdArray()
@@ -195,8 +220,7 @@ const InstallSection = () => {
     },
     to: {
       opacity: ratioTop > 0.5 ? 1 : 0,
-      transform:
-        ratioTop > 0.5 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+      transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, 100px)`
     }
   });
 
@@ -207,13 +231,12 @@ const InstallSection = () => {
     },
     to: {
       opacity: ratioBottom > 0.5 ? 1 : 0,
-      transform:
-        ratioBottom > 0.5 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+      transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, 100px)`
     }
   });
 
   return (
-    <InstallSectionContainer id="instalación">
+    <InstallSectionContainer id={instalacion.id} ref={ref}>
       <Wrapper>
         <a.div ref={refTop} style={topProps}>
           <Row>
@@ -247,7 +270,7 @@ const InstallSection = () => {
               </InstallSectionText>
             </Column>
 
-            <Column xs={12} lg={7} xsOrder={1} lgOrder={2}>
+            <Column xs={12} align="right" lg={6} xsOrder={1} lgOrder={2}>
               <InstallSectionVideo>
                 <PlayButton
                   onClick={handlePlayButton}
@@ -258,7 +281,12 @@ const InstallSection = () => {
             </Column>
 
             <Column xs={12} xsOrder={3}>
-              <DownloadButtonContainer href="#" target="_blank">
+              <DownloadButtonContainer
+                href={Instalacion}
+                target="_blank"
+                download="instalacion"
+                rel="noopener noreferrer"
+              >
                 <LeftButton>{instalacion.button}</LeftButton>
                 <DonwloadIconBox>
                   <img src={downloadIcon} alt={instalacion.buttonAlt} />

@@ -24,6 +24,10 @@ import DemoVideo from "../../videos/SilentDual_CAST.mp4";
 //components:
 import VideoPlayer from "../videoPlayer";
 
+//data
+
+import data from "../../data";
+
 const HomeContainer = styled.section`
 	display: flex;
 	flex-direction: column;
@@ -179,7 +183,7 @@ const HeroLinkDown = styled(Link)`
 	color: white;
 	text-decoration: none;
 	position: absolute;
-	bottom: 0;
+	bottom: 10px;
 	display: block;
 	padding-bottom: 40px;
 	z-index: 100;
@@ -220,15 +224,16 @@ const ScrollContainer = styled(animated.div)`
 	}
 `;
 const Fixed = styled(animated.div)`
-	position: static;
+	position: fixed;
 	@media screen and (min-width: ${breakpoints.large}px) {
-		top: 0;
 		width: 100%;
-		position: fixed;
+		top: 0;
 	}
 `;
 
 const Hero = () => {
+	const hero = data.hero;
+
 	const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
 	//useIntersect devulve ref y entry. ref es la referencia del elemento del cual queremos controlar su visualización en el viewport
 	//entry es el objeto con la información de la posición del elemento
@@ -281,12 +286,9 @@ const Hero = () => {
 						<InstantFriendly src={instantFriendly} alt="instant friendly" />
 						<HomeHeader>
 							<HomeTitle>
-								SILENT <span>DUAL</span>
+								{hero.title1} <span>{hero.title2}</span>
 							</HomeTitle>
-							<HomeSubtitle>
-								Los extractores de baño más inteligentes diseñados para una
-								fácil instalación
-							</HomeSubtitle>
+							<HomeSubtitle>{hero.subtitle}</HomeSubtitle>
 						</HomeHeader>
 						<PlayButton
 							onClick={handlePlayButton}
@@ -295,7 +297,7 @@ const Hero = () => {
 						/>
 					</HeroContent>
 
-					<HeroLinkDown to={"/#descubrelo"}>Descúbrelas</HeroLinkDown>
+					<HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
 					<VideoPlayer
 						id="videoPlayer"
 						width={width}
@@ -308,39 +310,34 @@ const Hero = () => {
 		</ScrollContainer>
 	) : (
 		<ScrollContainer id={"hero"}>
-			<Fixed>
-				<HomeContainer>
-					<HomeBackground>
-						<img src={videoPoster} alt="site title" />
-					</HomeBackground>
-					<HeroContent>
-						<InstantFriendly src={instantFriendly} alt="instant friendly" />
-						<HomeHeader>
-							<HomeTitle>
-								SILENT <span>DUAL</span>
-							</HomeTitle>
-							<HomeSubtitle>
-								Los extractores de baño más inteligentes diseñados para una
-								fácil instalación
-							</HomeSubtitle>
-						</HomeHeader>
-						<PlayButton
-							onClick={handlePlayButton}
-							src={playButton}
-							alt="play button"
-						/>
-					</HeroContent>
-
-					<HeroLinkDown to={"/#descubrelo"}>Descúbrelas</HeroLinkDown>
-					<VideoPlayer
-						id="videoPlayer"
-						width={width}
-						showVideo={showVideo}
-						video={DemoVideo}
-						setShowVideo={setShowVideo}
+			<HomeContainer>
+				<HomeBackground>
+					<img src={videoPoster} alt="site title" />
+				</HomeBackground>
+				<HeroContent>
+					<InstantFriendly src={instantFriendly} alt="instant friendly" />
+					<HomeHeader>
+						<HomeTitle>
+							{hero.title1} <span>{hero.title2}</span>
+						</HomeTitle>
+						<HomeSubtitle>{hero.subtitle}</HomeSubtitle>
+					</HomeHeader>
+					<PlayButton
+						onClick={handlePlayButton}
+						src={playButton}
+						alt="play button"
 					/>
-				</HomeContainer>
-			</Fixed>
+				</HeroContent>
+
+				<HeroLinkDown to={hero.link}>{hero.linkText}</HeroLinkDown>
+				<VideoPlayer
+					id="videoPlayer"
+					width={width}
+					showVideo={showVideo}
+					video={DemoVideo}
+					setShowVideo={setShowVideo}
+				/>
+			</HomeContainer>
 		</ScrollContainer>
 	);
 };

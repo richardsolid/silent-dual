@@ -123,7 +123,7 @@ const Specs = () => {
 	const isResponsive = width < breakpoints.desktop;
 
 	return isResponsive ? (
-		<SectionResponsive id="caracteristicas">
+		<SectionResponsive id={caracteristicas.id}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
@@ -159,7 +159,7 @@ const Specs = () => {
 			}}
 		>
 			<Wrapper>
-				<a.div id="caracteristicas" ref={ref}>
+				<a.div id={caracteristicas.id} ref={ref}>
 					<Background id="background" style={backgroundProps} />
 					<Row>
 						<Column xs={12}>
