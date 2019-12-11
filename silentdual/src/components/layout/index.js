@@ -37,19 +37,19 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Layout = ({ children }) => {
-  const { navbar, footer } = data;
+	const { navbar, footer } = data;
 
-  return (
-    <>
-      <GlobalStyle />
+	return (
+		<>
+			<GlobalStyle />
 
-      <NavBar data={navbar} />
+			<NavBar data={navbar} />
 
-      {children}
+			{children}
 
-      <Footer data={footer} />
-    </>
-  );
+			<Footer data={footer} />
+		</>
+	);
 };
 
 export default Layout;
