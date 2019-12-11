@@ -184,9 +184,9 @@ const InstallSection = () => {
 		const element = document.querySelector(".changePosition");
 
 		if (entry.intersectionRatio > 0) {
-			element.style.position = "inherit";
+			if (element) element.style.position = "inherit";
 		} else {
-			element.style.position = "fixed";
+			if (element) element.style.position = "fixed";
 		}
 	}, [entry]);
 
