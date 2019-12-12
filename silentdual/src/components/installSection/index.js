@@ -115,6 +115,8 @@ const PlayButton = styled.img`
 
 const InstallSectionVideo = styled.div`
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-top: 80px;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
