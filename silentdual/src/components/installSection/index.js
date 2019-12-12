@@ -68,16 +68,26 @@ const InstallSectionContainer = styled.section`
 `;
 
 const InstallSectionText = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	margin-top: 80px;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		margin-top: 60px;
+	}
+
 	h3 {
 		width: 100%;
 		text-align: center;
 
 		margin-bottom: 20px;
-		margin-top: 80px;
+		margin-top: 0;
 
 		@media screen and (min-width: ${breakpoints.large}px) {
 			text-align: left;
-			margin-top: 60px;
 		}
 	}
 
@@ -104,6 +114,7 @@ const PlayButton = styled.img`
 `;
 
 const InstallSectionVideo = styled.div`
+	display: flex;
 	margin-top: 80px;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
@@ -114,7 +125,7 @@ const InstallSectionVideo = styled.div`
 const DownloadButtonContainer = styled.a`
 	background: ${variables.primary};
 	color: white;
-	margin: 40px auto 0;
+	margin: 80px auto 0;
 	border-radius: 3px;
 	cursor: pointer;
 	text-decoration: none;
@@ -136,7 +147,7 @@ const DownloadButtonContainer = styled.a`
 	}
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		margin: 40px auto 40px;
+		margin: 60px auto 0;
 	}
 `;
 

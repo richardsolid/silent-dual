@@ -24,7 +24,7 @@ const FormContainer = styled.section`
 	background: white;
 
 	h2 {
-		margin: 180px 0 40px;
+		margin: 100px 0 40px;
 		text-align: center;
 	}
 
