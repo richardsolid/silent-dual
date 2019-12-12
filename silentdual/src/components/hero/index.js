@@ -237,6 +237,7 @@ const Hero = () => {
     threshold: buildThresholdArray()
   });
 
+  //convertir intersectionRatio en valor con dos decimales
   const ratio = (Math.round(entry.intersectionRatio * 100) / 100) * 2;
 
   const { o } = useSpring({
