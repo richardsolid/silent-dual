@@ -12,10 +12,15 @@ import Icon2PNG from "../../images/spec-entradas-aire-icons2.png";
 const CompContainer = styled.div`
 	position: relative;
 	height: calc(100vh - 400px);
-	margin: 0 0 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	margin: 0 auto;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		margin: 0 0 0 auto;
+	}
 `;
 
 const Img = styled(a.img)`

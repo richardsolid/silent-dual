@@ -35,7 +35,7 @@ const DiscoverSectionContainer = styled(a.section)`
 	h2 {
 		width: 100%;
 		text-align: center;
-		margin: 0 0 40px;
+		margin: 0 0;
 	}
 
 	@media screen and (min-width: ${breakpoints.large}px) {
@@ -57,8 +57,8 @@ const Fixed = styled.div`
 `;
 
 const DiscoverSectionLayer = styled.div`
-	height: calc(100vh - 280px);
-	margin: 180px auto 100px;
+	height: calc(100vh - 220px);
+	margin: 180px auto 40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -91,7 +91,7 @@ const ImgRef = styled(a.img)`
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		opacity: 0;
-		max-height: calc(100vh - 400px);
+		max-height: calc(100vh - 340px);
 	}
 `;
 
