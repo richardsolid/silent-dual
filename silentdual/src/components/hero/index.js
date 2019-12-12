@@ -241,8 +241,6 @@ const Hero = () => {
 
   const ratio = (Math.round(entry.intersectionRatio * 100) / 100) * 2;
 
-  console.log(ratio);
-
   const { o } = useSpring({
     from: { o: 0 },
     o: ratio

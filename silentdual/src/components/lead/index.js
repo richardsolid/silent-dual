@@ -31,7 +31,7 @@ const LeadSection = styled(animated.section)`
 
   @media screen and (min-width: ${breakpoints.large}px) {
     background-image: none;
-    height: 150vh;
+    height: 100vh;
   }
 
   img {
@@ -114,19 +114,11 @@ const Lead = () => {
     threshold: buildThresholdArray()
   });
 
-  const descriptionProps = useSpring({
-    from: {
-      opacity: 0,
-      transform: `translate(0px, 100px)`
-    },
-    to: {
-      opacity: entry.intersectionRatio > 0 ? 1 : 0,
-      transform:
-        entry.intersectionRatio > 0
-          ? `translate(0px, 0px)`
-          : `translate(0px, 100px)`
-    }
-  });
+  //convertir intersectionRatio en valor con dos decimales
+  const ratio = Math.round(entry.intersectionRatio * 100) / 100;
+  const propsDescription = useSpring({ x: ratio ? ratio : 0 });
+
+  console.log(ratio);
 
   const parallaxProps = useSpring({
     from: {
@@ -213,7 +205,20 @@ const Lead = () => {
               />
             </Parallax>
             <Description>
-              <DescriptionH2 style={descriptionProps}>
+              <DescriptionH2
+                style={{
+                  opacity: propsDescription.x.interpolate({
+                    range: [0, 0.5, 1],
+                    output: [0, 1, 1]
+                  }),
+                  transform: propsDescription.x
+                    .interpolate({
+                      range: [0, 0.5, 1],
+                      output: [100, 0, 0]
+                    })
+                    .interpolate(x => `translate(0, ${x}px)`)
+                }}
+              >
                 {lead.description}
               </DescriptionH2>
             </Description>
