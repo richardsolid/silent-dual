@@ -29,7 +29,7 @@ import HotspotItem from "../hotpost";
 const DiscoverSectionContainer = styled(a.section)`
 	background-color: black;
 	color: white;
-	padding: 120px 0;
+	padding: 100px 0;
 	position: relative;
 
 	h2 {
@@ -91,7 +91,7 @@ const ImgRef = styled(a.img)`
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		opacity: 0;
-		max-height: 60vh;
+		max-height: calc(100vh - 400px);
 	}
 `;
 

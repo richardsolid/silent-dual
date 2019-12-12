@@ -53,7 +53,7 @@ const Info = styled.div`
 const ImageContainer = styled.div`
 	position: relative;
 	height: calc(100vh - 400px);
-	margin: 0 auto;
+	margin: 0 0 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
