@@ -41,15 +41,15 @@ const data = {
 				title: "Detector de presencia",
 				text:
 					"Sensor de presencia integrado con un amplio ángulo de detección.",
-				top: 12,
-				left: 64
+				top: 17,
+				left: 67
 			},
 
 			{
 				title: "Piloto funcionamiento LED",
 				text: "Indicador de funcionamiento integrado.",
 				top: 40,
-				left: 18
+				left: 15
 			},
 
 			{
@@ -57,7 +57,7 @@ const data = {
 				text:
 					"Rejilla con diseño aerodinámico para optimizar la entrada del flujo de aire y mejorar prestaciones.",
 				top: 50,
-				left: 40
+				left: 35
 			},
 
 			{

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import { TweenMax, Back } from "gsap";
 
@@ -30,30 +29,30 @@ const NavBarContainer = styled.header`
 	justify-content: space-between;
 
 	position: fixed;
-	background: ${({ isOpen, istop }) =>
-		isOpen || istop ? "transparent" : "black"};
+	background: ${({ isOpen, isTop }) =>
+		isOpen || isTop ? "transparent" : "black"};
 	top: 0;
 	width: 100vw;
-	height: ${({ istop }) => (istop ? "80px" : "60px")};
+	height: ${({ isTop }) => (isTop ? "80px" : "60px")};
 	box-sizing: border-box;
 	z-index: 1000;
-	border-bottom: ${({ istop }) => !istop && "1px solid #6e6e6e"};
+	border-bottom: ${({ isTop }) => !isTop && "1px solid #6e6e6e"};
 
 	transition: 0.2s;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: ${({ istop }) => (istop ? "100px" : "80px")};
+		height: ${({ isTop }) => (isTop ? "100px" : "80px")};
 	}
 `;
 
-const SPLogo = styled(Link)`
+const SPLogo = styled.a`
 	display: flex;
 	background: url(${logo}) no-repeat center center;
 	background-size: contain;
 	z-index: 1000;
 
-	width: ${({ istop }) => (istop ? "60px" : "40px")};
-	height: ${({ istop }) => (istop ? "60px" : "40px")};
+	width: ${({ isTop }) => (isTop ? "60px" : "40px")};
+	height: ${({ isTop }) => (isTop ? "60px" : "40px")};
 
 	transition: 0.2s;
 
@@ -61,8 +60,8 @@ const SPLogo = styled(Link)`
 	visibility: ${({ isOpen }) => (isOpen ? "hidden" : "visible")};
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		width: ${({ istop }) => (istop ? "70px" : "50px")};
-		height: ${({ istop }) => (istop ? "50px" : "40px")};
+		width: ${({ isTop }) => (isTop ? "70px" : "50px")};
+		height: ${({ isTop }) => (isTop ? "50px" : "40px")};
 	}
 `;
 
@@ -196,9 +195,9 @@ const NavBar = ({ data }) => {
 					<Row>
 						<Column xs={12}>
 							<SPLogo
-								isTop={isTop}
+								isTop={isTop ? true : false}
 								isOpen={viewNavItems}
-								to={"/#hero"}
+								href={"#hero"}
 								onClick={() => setViewNavItems(false)}
 							/>
 							<Burger isOpen={viewNavItems} handleClick={handleBurgerClick} />
@@ -214,14 +213,14 @@ const NavBar = ({ data }) => {
 							<CollapsedItemsContainer>
 								{data &&
 									data.map((section, i) => (
-										<Link
+										<a
 											key={i}
-											to={`/${section.anchor}`}
+											href={section.anchor}
 											onClick={handleBurgerClick}
 											className="navItem"
 										>
 											{section.name}
-										</Link>
+										</a>
 									))}
 							</CollapsedItemsContainer>
 						</Column>
@@ -230,18 +229,17 @@ const NavBar = ({ data }) => {
 			</CollapsedMenu>
 		</Navigator>
 	) : (
-		//navItems on navbar:
 		<NavBarContainer isTop={isTop}>
 			<Wrapper>
 				<Row>
 					<Column xs={12}>
-						<SPLogo isTop={isTop} to={"#hero"} />
+						<SPLogo isTop={isTop ? true : false} href={"#hero"} />
 						<SectionsLinksBar>
 							{data &&
 								data.map((section, i) => (
-									<Link key={i} to={`/${section.anchor}`} className="bodySmall">
+									<a key={i} href={section.anchor} className="bodySmall">
 										{section.name}
-									</Link>
+									</a>
 								))}
 						</SectionsLinksBar>
 					</Column>

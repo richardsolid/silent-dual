@@ -244,7 +244,7 @@ const SpecSensores = ({ isResponsive, data }) => {
 								/>
 							</Info>
 						</Column>
-						<Column xs={12} md={6} align="center">
+						<Column xs={12} md={6} align="right">
 							<ImageContainer>
 								<Img style={imageProps} src={SpecImg} alt="" />
 								<Icons style={icon1Props} src={Icon1PNG} alt="" />

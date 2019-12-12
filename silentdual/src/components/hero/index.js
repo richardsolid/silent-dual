@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import { useSpring, animated } from "react-spring";
 import useIntersect from "../../utils/useIntersect";
 
@@ -44,9 +43,11 @@ const HomeBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   height: 100vh;
   width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   &:before {
     content: "";
@@ -63,22 +64,19 @@ const HomeBackground = styled.div`
     opacity: 0.6;
   }
 
+  @media screen and (min-width: ${breakpoints.large}px) {
+    position: relative;
+
+    &:before {
+      opacity: 0.5;
+    }
+  }
+
   img,
   video {
     object-fit: cover;
     min-width: 100%;
     min-height: 102%;
-  }
-
-  @media screen and (min-width: ${breakpoints.large}px) {
-    position: absolute;
-    height: 100vh;
-    top: 0;
-    left: 0;
-
-    &:before {
-      opacity: 0.5;
-    }
   }
 `;
 
@@ -176,7 +174,7 @@ const PlayButton = styled.img`
   }
 `;
 
-const HeroLinkDown = styled(Link)`
+const HeroLinkDown = styled.a`
   color: white;
   text-decoration: none;
   position: absolute;
