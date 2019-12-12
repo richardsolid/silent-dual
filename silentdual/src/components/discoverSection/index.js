@@ -18,6 +18,7 @@ import exploded1 from "../../images/explosionado_01.png";
 import exploded2 from "../../images/explosionado_02.png";
 import exploded3 from "../../images/explosionado_03.png";
 import exploded4 from "../../images/explosionado_04.png";
+import exploded5 from "../../images/explosionado_05.png";
 
 //data
 import data from "../../data";
@@ -124,6 +125,9 @@ const ImgExploded = styled(a.div)`
 	.exploded4 {
 		z-index: 1;
 	}
+	.exploded5 {
+		z-index: 1;
+	}
 `;
 
 const ImgExplodedLayer = styled.div`
@@ -164,23 +168,14 @@ const DiscoverSection = () => {
 
 	const propsExploded1 = useSpring({
 		from: {
-			transform: `translateX(-100px)`
+			transform: `translateX(100px)`
 		},
 		to: {
-			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(-100px)`
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(100px)`
 		}
 	});
 
 	const propsExploded2 = useSpring({
-		from: {
-			transform: `translateX(-50px)`
-		},
-		to: {
-			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(-50px)`
-		}
-	});
-
-	const propsExploded3 = useSpring({
 		from: {
 			transform: `translateX(50px)`
 		},
@@ -191,10 +186,19 @@ const DiscoverSection = () => {
 
 	const propsExploded4 = useSpring({
 		from: {
-			transform: `translateX(100px)`
+			transform: `translateX(-50px)`
 		},
 		to: {
-			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(100px)`
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(-50px)`
+		}
+	});
+
+	const propsExploded5 = useSpring({
+		from: {
+			transform: `translateX(-100px)`
+		},
+		to: {
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(-100px)`
 		}
 	});
 
@@ -327,27 +331,34 @@ const DiscoverSection = () => {
 									<ImgExplodedLayer>
 										<ImgExploded style={explodedProps}>
 											<a.img
-												style={propsExploded4}
+												style={propsExploded1}
 												src={exploded1}
 												className="exploded1"
 												alt="Discover exploded"
 											/>
 											<a.img
-												style={propsExploded3}
+												style={propsExploded2}
 												src={exploded2}
 												className="exploded2"
 												alt="Discover exploded"
 											/>
+
 											<a.img
-												style={propsExploded2}
 												src={exploded3}
 												className="exploded3"
 												alt="Discover exploded"
 											/>
+
 											<a.img
-												style={propsExploded1}
+												style={propsExploded4}
 												src={exploded4}
 												className="exploded4"
+												alt="Discover exploded"
+											/>
+											<a.img
+												style={propsExploded5}
+												src={exploded5}
+												className="exploded5"
 												alt="Discover exploded"
 											/>
 										</ImgExploded>

@@ -252,7 +252,6 @@ const Hero = () => {
 	const [showVideo, setShowVideo] = useState(false);
 
 	const handlePlayButton = () => {
-		console.log("btn");
 		setShowVideo(true);
 	};
 
