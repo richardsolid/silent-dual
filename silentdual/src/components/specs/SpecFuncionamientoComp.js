@@ -16,10 +16,6 @@ const CompContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-
-	@media screen and (min-width: ${breakpoints.large}px) {
-		margin: 0 auto 0 0;
-	}
 `;
 
 const Img = styled(a.img)`

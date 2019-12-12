@@ -57,10 +57,6 @@ const ImageContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-
-	@media screen and (min-width: ${breakpoints.large}px) {
-		margin: 0 0 0 auto;
-	}
 `;
 
 const Img = styled(a.img)`
@@ -229,7 +225,7 @@ const SpecSensores = ({ isResponsive, data }) => {
 			<Fixed>
 				<Wrapper>
 					<Row>
-						<Column xs={12} md={5}>
+						<Column xs={12} md={4} align="center">
 							<Info>
 								<Title
 									style={titleProps}
@@ -248,7 +244,7 @@ const SpecSensores = ({ isResponsive, data }) => {
 								/>
 							</Info>
 						</Column>
-						<Column xs={12} md={6} align="right">
+						<Column xs={12} md={4} align="center">
 							<ImageContainer>
 								<Img style={imageProps} src={SpecImg} alt="" />
 								<Icons style={icon1Props} src={Icon1PNG} alt="" />

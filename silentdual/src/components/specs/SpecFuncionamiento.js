@@ -207,7 +207,7 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 			<Fixed>
 				<Wrapper>
 					<Row>
-						<Column xs={12} md={6} align="left">
+						<Column xs={12} md={4} align="center">
 							<SpecFuncionesComp
 								isResponsive={isResponsive}
 								imageProps={imageProps}
@@ -215,7 +215,7 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 								icon2Props={icon2Props}
 							/>
 						</Column>
-						<Column xs={12} md={5}>
+						<Column xs={12} md={4} align="center">
 							<Info>
 								<Title
 									style={titleProps}
