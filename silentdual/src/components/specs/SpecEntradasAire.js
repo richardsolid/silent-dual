@@ -193,7 +193,7 @@ const SpecSensor = ({ isResponsive, data }) => {
 					</ResponsiveInfo>
 				</Column>
 
-				<Column xs={12} sm={8} align="right">
+				<Column xs={12} sm={8} align="center">
 					<ResponsiveImageContainer>
 						<ResponsiveImg style={imageProps} src={SpecImg} alt="" />
 						<ResponsiveIcons style={icon1Props} src={Icon1PNG} alt="" />

@@ -115,6 +115,8 @@ const PlayButton = styled.img`
 
 const InstallSectionVideo = styled.div`
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-top: 80px;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
@@ -238,7 +240,7 @@ const InstallSection = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: ratioBottom > 0.5 ? 1 : 0
+			opacity: ratioBottom > 0.25 ? 1 : 0
 		}
 	});
 
