@@ -26,6 +26,10 @@ const FormContainer = styled.section`
 	h2 {
 		margin: 100px 0 40px;
 		text-align: center;
+
+		@media screen and (min-width: ${breakpoints.tablet}px) {
+			margin: 180px 0 40px;
+		}
 	}
 
 	h3 {
