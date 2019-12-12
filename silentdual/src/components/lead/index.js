@@ -6,10 +6,6 @@ import useWindowSize from "../../utils/useWindowSize";
 import { breakpoints } from "../../assets/styles/breakpoints";
 import data from "../../data";
 import FullImg from "../../images/imagen_chica_background.jpg";
-import BackgroundImg from "../../images/background_imatge_promo.png";
-import LegImg from "../../images/cama_imatge_promo.png";
-import HeadImg from "../../images/cap_imatge_promo.png";
-import BathImg from "../../images/banyera_imatge_promo.png";
 
 const Parallax = styled.div``;
 const Fixed = styled(animated.div)`
@@ -38,26 +34,6 @@ const LeadSection = styled(animated.section)`
     width: 100%;
     &.bg {
       z-index: 1;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    &.leg {
-      z-index: 2;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    &.head {
-      z-index: 1;
-      position: absolute;
-      top: 1%;
-      left: 0;
-    }
-
-    &.bath {
-      z-index: 3;
       position: absolute;
       top: 0;
       left: 0;
@@ -97,13 +73,6 @@ const DescriptionH2 = styled(animated.h2)`
     line-height: 39px;
   }
 `;
-
-const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
-const bgtrans = (x, y) => `translate3d(${x / 60}px,${y / 40}px,0) scale(1.05)`;
-const legtrans = (x, y) => `translate3d(${x / 10}px,${y / 5}px,0) scale(1.1)`;
-const headtrans = (x, y) =>
-  `translate3d(${x / 20}px,${(y / 150) * -1}px,0) scale(1.1)`;
-const bathtrans = (x, y) => `translate3d(${x / 40}px,${y / 20}px,0) scale(1.1)`;
 
 const Lead = () => {
   const buildThresholdArray = () => Array.from(Array(100).keys(), i => i / 100);
@@ -157,18 +126,12 @@ const Lead = () => {
     setWidth(widthWindow.width);
   }, [widthWindow]);
 
-  const [props, set] = useSpring(() => ({
-    xy: [0, 0],
-    config: { mass: 1, tension: 5, friction: 5 }
-  }));
-
   if (width && typeof width === "number") {
     if (width > breakpoints.large) {
       return (
         <LeadSection
           id="descubrelo"
           ref={ref}
-          onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
           style={{
             ...sectionProps,
             visibility: sectionProps.opacity.interpolate(o =>
@@ -179,41 +142,17 @@ const Lead = () => {
           <Fixed style={parallaxProps}>
             <Parallax>
               <BackgroundImage src={FullImg} alt="background" />
-              <animated.img
-                className="bg"
-                src={BackgroundImg}
-                alt="background"
-                style={{ transform: props.xy.interpolate(bgtrans) }}
-              />
-              <animated.img
-                className="leg"
-                src={LegImg}
-                alt="leg"
-                style={{ transform: props.xy.interpolate(legtrans) }}
-              />
-              <animated.img
-                className="head"
-                src={HeadImg}
-                alt="head"
-                style={{ transform: props.xy.interpolate(headtrans) }}
-              />
-              <animated.img
-                className="bath"
-                src={BathImg}
-                alt="bath"
-                style={{ transform: props.xy.interpolate(bathtrans) }}
-              />
             </Parallax>
             <Description>
               <DescriptionH2
                 style={{
                   opacity: propsDescription.x.interpolate({
-                    range: [0, 0.5, 1],
+                    range: [0, 0.1, 1],
                     output: [0, 1, 1]
                   }),
                   transform: propsDescription.x
                     .interpolate({
-                      range: [0, 0.5, 1],
+                      range: [0, 0.3, 1],
                       output: [100, 0, 0]
                     })
                     .interpolate(x => `translate(0, ${x}px)`)
