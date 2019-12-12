@@ -240,7 +240,7 @@ const InstallSection = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: ratioBottom > 0.5 ? 1 : 0
+			opacity: ratioBottom > 0.25 ? 1 : 0
 		}
 	});
 
