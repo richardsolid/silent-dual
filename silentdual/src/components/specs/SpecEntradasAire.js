@@ -31,7 +31,7 @@ const Container = styled.div`
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 300px;
+	top: 220px;
 `;
 const Title = styled(a.h3)`
 	margin: 0 0 32px 0;
@@ -226,7 +226,7 @@ const SpecSensor = ({ isResponsive, data }) => {
 								/>
 							</Info>
 						</Column>
-						<Column xs={12} md={4} align="center">
+						<Column xs={12} md={6}>
 							<SpecEntradasAireComp
 								isResponsive={isResponsive}
 								imageProps={imageProps}

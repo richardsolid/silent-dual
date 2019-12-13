@@ -30,7 +30,7 @@ const Container = styled.div`
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 300px;
+	top: 220px;
 `;
 
 const Title = styled(a.h3)`
@@ -207,7 +207,7 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 			<Fixed>
 				<Wrapper>
 					<Row>
-						<Column xs={12} md={4} align="center">
+						<Column xs={12} md={6}>
 							<SpecFuncionesComp
 								isResponsive={isResponsive}
 								imageProps={imageProps}

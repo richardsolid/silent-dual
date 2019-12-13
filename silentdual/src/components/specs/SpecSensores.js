@@ -28,7 +28,7 @@ const Container = styled.div`
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 300px;
+	top: 220px;
 `;
 
 const Title = styled(a.h3)`
@@ -52,7 +52,7 @@ const Info = styled.div`
 
 const ImageContainer = styled.div`
 	position: relative;
-	height: calc(100vh - 400px);
+	height: calc(100vh - 280px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -244,7 +244,7 @@ const SpecSensores = ({ isResponsive, data }) => {
 								/>
 							</Info>
 						</Column>
-						<Column xs={12} md={4} align="center">
+						<Column xs={12} md={6}>
 							<ImageContainer>
 								<Img style={imageProps} src={SpecImg} alt="" />
 								<Icons style={icon1Props} src={Icon1PNG} alt="" />

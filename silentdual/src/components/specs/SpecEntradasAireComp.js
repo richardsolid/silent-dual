@@ -11,7 +11,7 @@ import Icon2PNG from "../../images/spec-entradas-aire-icons2.png";
 
 const CompContainer = styled.div`
 	position: relative;
-	height: calc(100vh - 400px);
+	height: calc(100vh - 280px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
