@@ -27,7 +27,7 @@ const LeadSection = styled(animated.section)`
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		background-image: none;
-		height: 50vh;
+		height: 75vh;
 	}
 
 	img {
@@ -56,6 +56,11 @@ const Description = styled(animated.div)`
 	justify-content: center;
 	align-items: center;
 	z-index: 10;
+
+	@media screen and (min-width: ${breakpoints.large}px) {
+		background-image: none;
+		height: 100vh;
+	}
 `;
 
 const DescriptionH2 = styled(animated.h2)`
@@ -90,7 +95,7 @@ const Lead = () => {
 		},
 		to: {
 			opacity: ratio > 0.75 ? 1 : 0,
-			transform: ratio >= 0.75 ? `translate(0px, 0px)` : `translate(0px, 50px)`
+			transform: ratio > 0.75 ? `translate(0px, 0px)` : `translate(0px, 50px)`
 		}
 	});
 
