@@ -169,8 +169,6 @@ const DiscoverSection = () => {
 
 	const ratio = format(entry.intersectionRatio);
 
-	console.log(ratio);
-
 	const propsExploded1 = useSpring({
 		from: {
 			transform: `translate(100px, 50px)`,
