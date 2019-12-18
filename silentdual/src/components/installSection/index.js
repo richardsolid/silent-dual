@@ -44,7 +44,7 @@ const InstallSectionContainer = styled.section`
 	padding: 100px 0;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		padding: 180px 0 120px;
+		padding: 140px 0 120px;
 	}
 
 	h2 {

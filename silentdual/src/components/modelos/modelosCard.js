@@ -23,7 +23,7 @@ const ModeloCardContainer = styled(a.div)`
 
 const ModeloImageBox = styled.div`
 	background: #eceded;
-	height: 300px;
+	height: 240px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -11,15 +11,11 @@ import Icon2PNG from "../../images/spec-funcionamiento-icons2.png";
 
 const CompContainer = styled.div`
 	position: relative;
-	height: calc(100vh - 400px);
+	height: calc(100vh - 280px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-
-	@media screen and (min-width: ${breakpoints.large}px) {
-		margin: 0 auto 0 0;
-	}
 `;
 
 const Img = styled(a.img)`

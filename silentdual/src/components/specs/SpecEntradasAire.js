@@ -31,7 +31,7 @@ const Container = styled.div`
 
 const Fixed = styled.div`
 	position: fixed;
-	top: 300px;
+	top: 220px;
 `;
 const Title = styled(a.h3)`
 	margin: 0 0 32px 0;
@@ -110,8 +110,8 @@ const SpecSensor = ({ isResponsive, data }) => {
 			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio >= 0.1 ? 1 : 0,
-			transform: ratio >= 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio > 0.1 ? 1 : 0,
+			transform: ratio > 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
@@ -121,8 +121,8 @@ const SpecSensor = ({ isResponsive, data }) => {
 			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio >= 0.2 ? 1 : 0,
-			transform: ratio >= 0.2 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio > 0.1 ? 1 : 0,
+			transform: ratio > 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
@@ -132,8 +132,8 @@ const SpecSensor = ({ isResponsive, data }) => {
 			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio >= 0.3 ? 1 : 0,
-			transform: ratio >= 0.3 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio > 0.1 ? 1 : 0,
+			transform: ratio > 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
@@ -143,30 +143,30 @@ const SpecSensor = ({ isResponsive, data }) => {
 			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio >= 0.4 ? 1 : 0,
-			transform: ratio >= 0.4 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio > 0.1 ? 1 : 0,
+			transform: ratio > 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
 	const icon1Props = useSpring({
 		from: {
 			opacity: 0,
-			transform: `translate(0px, 100px)`
+			transform: `translate(0px, -100px)`
 		},
 		to: {
-			opacity: ratio >= 0.5 ? 1 : 0,
-			transform: ratio >= 0.5 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio > 0.5 ? 1 : 0,
+			transform: ratio > 0.5 ? `translate(0px, 0px)` : `translate(0px, -100px)`
 		}
 	});
 
 	const icon2Props = useSpring({
 		from: {
 			opacity: 0,
-			transform: `translate(0px, 100px)`
+			transform: `translate(100px, 0)`
 		},
 		to: {
-			opacity: ratio >= 0.6 ? 1 : 0,
-			transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio > 0.5 ? 1 : 0,
+			transform: ratio > 0.5 ? `translate(0px, 0px)` : `translate(100px, 0)`
 		}
 	});
 
@@ -207,7 +207,7 @@ const SpecSensor = ({ isResponsive, data }) => {
 			<Fixed>
 				<Wrapper>
 					<Row>
-						<Column xs={12} md={5}>
+						<Column xs={12} md={4} align="center">
 							<Info>
 								<Title
 									style={titleProps}
@@ -226,7 +226,7 @@ const SpecSensor = ({ isResponsive, data }) => {
 								/>
 							</Info>
 						</Column>
-						<Column xs={12} md={6} align="right">
+						<Column xs={12} md={6}>
 							<SpecEntradasAireComp
 								isResponsive={isResponsive}
 								imageProps={imageProps}
