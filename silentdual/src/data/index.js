@@ -38,14 +38,6 @@ const data = {
 		title: "Descubre sus componentes",
 		hotspots: [
 			{
-				title: "Detector de presencia",
-				text:
-					"Sensor de presencia integrado con un amplio ángulo de detección.",
-				top: 17,
-				left: 67
-			},
-
-			{
 				title: "Piloto funcionamiento LED",
 				text: "Indicador de funcionamiento integrado.",
 				top: 40,
@@ -66,6 +58,13 @@ const data = {
 					"Conjunto motor-hélice montado en el soporte con un silentblock para reducir vibraciones y nivel sonoro.",
 				top: 30,
 				left: 55
+			},
+			{
+				title: "Detector de presencia",
+				text:
+					"Sensor de presencia integrado con un amplio ángulo de detección.",
+				top: 17,
+				left: 67
 			},
 
 			{

@@ -171,64 +171,54 @@ const DiscoverSection = () => {
 
 	const propsExploded1 = useSpring({
 		from: {
-			transform: `translate(100px, 50px)`,
+			transform: `translateX(100px)`,
 			opacity: 0
 		},
 		to: {
-			transform: `translate(${ratio > 0.48 ? "0" : "100px"}, ${
-				ratio > 0.08 ? "0" : "50px"
-			})`,
-			opacity: ratio > 0.08 ? 1 : 0
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(100px)`,
+			opacity: ratio > 0 ? 1 : 0
 		}
 	});
 
 	const propsExploded2 = useSpring({
 		from: {
-			transform: `translate(50px, 50px)`,
+			transform: `translateX(50px)`,
 			opacity: 0
 		},
 		to: {
-			transform: `translate(${ratio > 0.48 ? "0" : "50px"}, ${
-				ratio > 0.16 ? "0" : "50px"
-			})`,
-			opacity: ratio > 0.16 ? 1 : 0
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(50px)`,
+			opacity: ratio > 0 ? 1 : 0
 		}
 	});
 
 	const propsExploded3 = useSpring({
 		from: {
-			transform: `translate(0px, 50px)`,
 			opacity: 0
 		},
 		to: {
-			transform: `translate(0, ${ratio > 0.24 ? "0" : "50px"})`,
-			opacity: ratio > 0.24 ? 1 : 0
+			opacity: ratio > 0 ? 1 : 0
 		}
 	});
 
 	const propsExploded4 = useSpring({
 		from: {
-			transform: `translate(-50px, 50px)`,
+			transform: `translateX(-50px)`,
 			opacity: 0
 		},
 		to: {
-			transform: `translate(${ratio > 0.48 ? "0" : "-50px"}, ${
-				ratio > 0.32 ? "0" : "50px"
-			})`,
-			opacity: ratio > 0.32 ? 1 : 0
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(-50px)`,
+			opacity: ratio > 0 ? 1 : 0
 		}
 	});
 
 	const propsExploded5 = useSpring({
 		from: {
-			transform: `translate(-100px, 50px)`,
+			transform: `translateX(-100px)`,
 			opacity: 0
 		},
 		to: {
-			transform: `translate(${ratio > 0.48 ? "0" : "-100px"}, ${
-				ratio > 0.4 ? "0" : "50px"
-			})`,
-			opacity: ratio > 0.4 ? 1 : 0
+			transform: ratio > 0.25 ? `translateX(0px)` : `translateX(-100px)`,
+			opacity: ratio > 0 ? 1 : 0
 		}
 	});
 
