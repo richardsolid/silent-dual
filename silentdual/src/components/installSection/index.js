@@ -15,9 +15,9 @@ import useIntersect from "../../utils/useIntersect";
 
 //images:
 import instantFriendly from "../../images/instant-friendly.svg";
-import conexionado from "../../images/conexionado.jpg";
 import downloadIcon from "../../images/download_icon.svg";
-import videoPoster from "../../images/conexionado-a-2-picture.png";
+import videoPoster from "../../images/conexionado-a-2-picture.jpg";
+import videoPosterNoPlay from "../../images/conexionado-a-2-picture-no-play.jpg";
 
 //video:
 import Demovideo from "../../videos/conexionado-a-2.mp4";
@@ -291,7 +291,7 @@ const InstallSection = () => {
 							<InstallSectionVideo>
 								<PlayButton
 									onClick={handlePlayButton}
-									src={conexionado}
+									src={videoPoster}
 									alt={instalacion.imgAlt}
 								/>
 							</InstallSectionVideo>
@@ -320,7 +320,7 @@ const InstallSection = () => {
 				showVideo={showVideo}
 				video={Demovideo}
 				setShowVideo={setShowVideo}
-				videoPoster={videoPoster}
+				videoPoster={videoPosterNoPlay}
 			/>
 		</InstallSectionContainer>
 	);
