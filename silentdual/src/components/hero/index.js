@@ -337,6 +337,7 @@ const Hero = () => {
 					showVideo={showVideo}
 					video={DemoVideo}
 					setShowVideo={setShowVideo}
+					videoPoster={videoPoster}
 				/>
 			</HomeContainer>
 		</ScrollContainer>

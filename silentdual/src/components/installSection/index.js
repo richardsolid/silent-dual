@@ -17,9 +17,10 @@ import useIntersect from "../../utils/useIntersect";
 import instantFriendly from "../../images/instant-friendly.svg";
 import conexionado from "../../images/conexionado.jpg";
 import downloadIcon from "../../images/download_icon.svg";
+import videoPoster from "../../images/conexionado-a-2-picture.png";
 
 //video:
-import Demovideo from "../../videos/hero-silent-dual.mp4";
+import Demovideo from "../../videos/conexionado-a-2.mp4";
 
 //docs:
 import Instalacion from "../../docs/instalacion.pdf";
@@ -319,6 +320,7 @@ const InstallSection = () => {
 				showVideo={showVideo}
 				video={Demovideo}
 				setShowVideo={setShowVideo}
+				videoPoster={videoPoster}
 			/>
 		</InstallSectionContainer>
 	);

@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 
-//images:
-import videoPoster from "../../images/video_poster.png";
 import crossIcon from "../../images/cross.svg";
 
 const Background = styled.span`
@@ -57,7 +55,14 @@ const CloseButton = styled.span`
 	}
 `;
 
-const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
+const VideoPlayer = ({
+	showVideo,
+	width,
+	video,
+	setShowVideo,
+	id,
+	videoPoster
+}) => {
 	const showingVideo = () => {
 		gsap.to("#" + id, {
 			duration: 1,
@@ -107,6 +112,7 @@ const VideoPlayer = ({ showVideo, width, video, setShowVideo, id }) => {
 					controls={true}
 					type="video/mp4"
 					crossOrigin="anonymous"
+					autoPlay="true"
 				>
 					{!isPhoneSize && <source src={video} type="video/mp4" />}
 					Your browser can't play this video
