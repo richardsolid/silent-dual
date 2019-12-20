@@ -112,7 +112,6 @@ const VideoPlayer = ({
 					controls={true}
 					type="video/mp4"
 					crossOrigin="anonymous"
-					autoPlay="true"
 				>
 					{!isPhoneSize && <source src={video} type="video/mp4" />}
 					Your browser can't play this video
