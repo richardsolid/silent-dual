@@ -23,7 +23,8 @@ const Section = styled(a.section)`
 	position: relative;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		padding: 100vh 0 0;
+		padding: 0;
+		height: 130vh;
 	}
 `;
 

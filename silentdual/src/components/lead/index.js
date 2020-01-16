@@ -27,7 +27,7 @@ const LeadSection = styled(animated.section)`
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		background-image: none;
-		height: 75vh;
+		height: 130vh;
 	}
 
 	img {
@@ -85,17 +85,17 @@ const Lead = () => {
 		threshold: buildThresholdArray()
 	});
 
-	//convertir intersectionRatio en valor con dos decimales
-	const ratio = Math.round(entry.intersectionRatio * 100) / 100;
-
 	const titleProps = useSpring({
 		from: {
 			opacity: 0,
 			transform: `translate(0px,50px)`
 		},
 		to: {
-			opacity: ratio > 0.75 ? 1 : 0,
-			transform: ratio > 0.75 ? `translate(0px, 0px)` : `translate(0px, 50px)`
+			opacity: entry.intersectionRatio > 0.6 ? 1 : 0,
+			transform:
+				entry.intersectionRatio > 0.6
+					? `translate(0px, 0px)`
+					: `translate(0px, 50px)`
 		}
 	});
 
@@ -104,7 +104,7 @@ const Lead = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: entry.intersectionRatio > 0 ? 1 : 0
+			opacity: entry.intersectionRatio > 0.6 ? 1 : 0
 		}
 	});
 
@@ -113,7 +113,7 @@ const Lead = () => {
 			opacity: 0
 		},
 		to: {
-			opacity: entry.intersectionRatio > 0 ? 1 : 0
+			opacity: entry.intersectionRatio > 0.6 ? 1 : 0
 		}
 	});
 

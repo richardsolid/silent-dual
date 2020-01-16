@@ -23,8 +23,9 @@ const Container = styled.div`
 	position: relative;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: 200vh;
-		margin: 100vh 0;
+		height: 150vh;
+		margin-top: -80vh;
+		margin-bottom: 10vh;
 	}
 `;
 
@@ -102,7 +103,7 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 		threshold: buildThresholdArray()
 	});
 
-	const ratio = parseFloat(format(entry.intersectionRatio)) * 2;
+	const ratio = parseFloat(format(entry.intersectionRatio));
 
 	const titleProps = useSpring({
 		from: {
@@ -110,8 +111,8 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio > 0.1 ? 1 : 0,
-			transform: ratio > 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio >= 0.6 ? 1 : 0,
+			transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
@@ -121,8 +122,8 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio > 0.1 ? 1 : 0,
-			transform: ratio > 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio >= 0.6 ? 1 : 0,
+			transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
@@ -132,8 +133,8 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio > 0.1 ? 1 : 0,
-			transform: ratio > 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio >= 0.6 ? 1 : 0,
+			transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
@@ -143,8 +144,8 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 			transform: `translate(0px, 100px)`
 		},
 		to: {
-			opacity: ratio > 0.1 ? 1 : 0,
-			transform: ratio > 0.1 ? `translate(0px, 0px)` : `translate(0px, 100px)`
+			opacity: ratio >= 0.6 ? 1 : 0,
+			transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, 100px)`
 		}
 	});
 
@@ -154,8 +155,8 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 			transform: `translate(0px, -100px)`
 		},
 		to: {
-			opacity: ratio > 0.5 ? 1 : 0,
-			transform: ratio > 0.5 ? `translate(0px, 0px)` : `translate(0px, -100px)`
+			opacity: ratio >= 0.6 ? 1 : 0,
+			transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(0px, -100px)`
 		}
 	});
 
@@ -165,8 +166,8 @@ const SpecFuncionamiento = ({ isResponsive, data }) => {
 			transform: `translate(100px, 0px)`
 		},
 		to: {
-			opacity: ratio > 0.5 ? 1 : 0,
-			transform: ratio > 0.5 ? `translate(0px, 0px)` : `translate(100px, 0px)`
+			opacity: ratio >= 0.6 ? 1 : 0,
+			transform: ratio >= 0.6 ? `translate(0px, 0px)` : `translate(100px, 0px)`
 		}
 	});
 

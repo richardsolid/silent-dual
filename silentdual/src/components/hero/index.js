@@ -14,6 +14,7 @@ import variables from "../../assets/styles/variables";
 import instantFriendly from "../../images/instant-friendly.svg";
 import playButton from "../../images/play-button.svg";
 import videoPoster from "../../images/video_poster.png";
+import backgroundMobile from "../../images/background_mobile.jpg";
 import arrowDown from "../../images/arrow_down.svg";
 
 //video:
@@ -48,35 +49,34 @@ const HomeBackground = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
-
-	&:before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		top: 0;
-		z-index: 1;
-		height: 100vh;
-		width: 100vw;
-
-		background-color: #000;
-		opacity: 0.6;
-	}
+	background-color: #000;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		position: relative;
-
 		&:before {
-			opacity: 0.5;
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 0;
+			z-index: 1;
+			height: 100vh;
+			width: 100vw;
+			background-color: #000;
+			opacity: 0.6;
 		}
 	}
 
 	img,
 	video {
-		object-fit: cover;
-		min-width: 100%;
-		min-height: 102%;
+		width: 100%;
+
+		@media screen and (min-width: ${breakpoints.large}px) {
+			object-fit: cover;
+			min-width: 100%;
+			min-height: 102%;
+		}
 	}
 `;
 
@@ -94,7 +94,7 @@ const InstantFriendly = styled.img`
 	top: 75px;
 	height: 80px;
 	width: 70px;
-	margin-top: 40px;
+	margin-top: 0;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
 		height: 115px;
@@ -215,7 +215,7 @@ const HeroLinkDown = styled.a`
 
 const ScrollContainer = styled(animated.div)`
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: 200vh;
+		height: 100vh;
 		margin-bottom: 1px;
 	}
 `;
@@ -314,7 +314,7 @@ const Hero = () => {
 		<ScrollContainer id={"hero"}>
 			<HomeContainer>
 				<HomeBackground>
-					<img src={videoPoster} alt="site title" />
+					<img src={backgroundMobile} alt="silent dual" />
 				</HomeBackground>
 				<HeroContent>
 					<InstantFriendly src={instantFriendly} alt="instant friendly" />
