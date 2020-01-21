@@ -143,6 +143,8 @@ const Form = styled.div`
 
   textarea.hs-input {
     height: 152px;
+    font-family: ${variables.din} !important;
+    color: #545454 !important;
   }
 
   .hs-error-msgs {
