@@ -34,6 +34,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
   }
+
+  select, input, textarea {
+    font-family: ${variables.din};
+  }
 `;
 
 const Layout = ({ children }) => {
