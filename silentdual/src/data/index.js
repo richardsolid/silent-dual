@@ -149,7 +149,7 @@ const data = {
 		text: "Te ayudamos con tu proyecto, cuéntanos.",
 		loading: "Cargando"
 	},
-	footer: "© 2019 S&P Sistemas de Ventilación S.L.U."
+	footer: "© 2020 S&P Sistemas de Ventilación S.L.U."
 };
 
 export default data;
