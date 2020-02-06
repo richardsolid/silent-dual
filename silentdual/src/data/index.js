@@ -29,7 +29,7 @@ const data = {
 		title1: "SILENT",
 		title2: "DUAL",
 		subtitle:
-			"Los extractores de baño más inteligentes diseñados para una fácil instalación",
+			"El extractor de baño más inteligente diseñado para una fácil instalación",
 		linkText: "Descúbrelos",
 		link: "#descubrelo"
 	},
@@ -96,13 +96,13 @@ const data = {
 				title: "2 sensores",
 				subtitle: "Presencia y humedad",
 				description:
-					"Sensores de presencia y humedad, se activa automáticamente cuando detecta <strong>movimiento</strong> o un cambio en los niveles de <strong>saturación</strong>."
+					"Se activan automáticamente cuando detectan movimiento o un cambio en los niveles de humedad."
 			},
 			{
 				title: "2 modos de funcionamiento",
 				subtitle: "Contínuo e intermitente",
 				description:
-					"<strong>Funcionamiento contínuo </strong> cuando los sensores no detectan presencia ni cambios de humedad, <strong>funcionamiento intermitente</strong> cuando uno de los sensores se activa."
+					"<strong>Funcionamiento contínuo </strong> cuando los sensores no detectan presencia ni cambios de humedad.<strong><br>Funcionamiento intermitente </strong> cuando uno de los sensores se activa."
 			},
 			{
 				title: "2 entradas de aire",
