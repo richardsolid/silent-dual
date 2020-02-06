@@ -96,7 +96,7 @@ const data = {
 				title: "2 sensores",
 				subtitle: "Presencia y humedad",
 				description:
-					"Se activan automáticamente cuando detectan movimiento o un cambio en los niveles de humedad."
+					"Se activan automáticamente cuando detectan <strong>movimiento</strong> o un cambio en los niveles de <strong>humedad</strong>."
 			},
 			{
 				title: "2 modos de funcionamiento",
