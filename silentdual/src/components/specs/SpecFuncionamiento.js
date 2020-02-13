@@ -23,8 +23,8 @@ const Container = styled.div`
 	position: relative;
 
 	@media screen and (min-width: ${breakpoints.large}px) {
-		height: 150vh;
-		margin-top: -80vh;
+		height: 120vh;
+		margin-top: -40vh;
 		margin-bottom: 10vh;
 	}
 `;
