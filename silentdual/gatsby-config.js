@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/spsilent`,
+  pathPrefix: `/es-es/lanzamiento-silent-dual`,
   siteMetadata: {
     title: `S&P Silent Dual`,
     description: `Los extractores de baño más inteligentes diseñados para una fácil instalación.`,
@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sass`,
+    `gatsby-plugin-htaccess`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
