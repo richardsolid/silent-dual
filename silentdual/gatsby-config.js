@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/es-es/lanzamiento-silent-dual`,
+  pathPrefix: `/es/lanzamiento-silent-dual`,
   siteMetadata: {
     title: `S&P Silent Dual`,
     description: `Los extractores de baño más inteligentes diseñados para una fácil instalación.`,
