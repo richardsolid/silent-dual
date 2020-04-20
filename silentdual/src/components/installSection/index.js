@@ -14,7 +14,7 @@ import useWindowSize from "../../utils/useWindowSize";
 import useIntersect from "../../utils/useIntersect";
 
 //images:
-import instantFriendly from "../../images/instant-friendly.svg";
+import instantFriendly from "../../images/instant-friendly.png";
 import downloadIcon from "../../images/download_icon.svg";
 import videoPoster from "../../images/conexionado-a-2-picture.jpg";
 import videoPosterNoPlay from "../../images/conexionado-a-2-picture-no-play.jpg";

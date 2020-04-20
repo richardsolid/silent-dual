@@ -11,7 +11,7 @@ import { breakpoints } from "../../assets/styles/breakpoints";
 import variables from "../../assets/styles/variables";
 
 //images:
-import instantFriendly from "../../images/instant-friendly.svg";
+import instantFriendly from "../../images/instant-friendly.png";
 import playButton from "../../images/play-button.svg";
 import videoPoster from "../../images/video_poster.png";
 import backgroundMobile from "../../images/background_mobile.jpg";
