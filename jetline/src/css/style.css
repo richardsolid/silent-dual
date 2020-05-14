@@ -1,0 +1,42 @@
+/*! purgecss start ignore */
+@tailwind base;
+
+@font-face {
+  font-family: 'DIN';
+  src: url('fonts/din-light_eot.eot?#iefix') format('embedded-opentype'),  url('fonts/din-light_woff.woff') format('woff'), url('fonts/din-light_ttf.ttf')  format('truetype'), url('fonts/din-light_svg.svg#din-light') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'DIN';
+  src: url('fonts/din-regular_eot.eot?#iefix') format('embedded-opentype'),  url('fonts/din-regular_woff.woff') format('woff'), url('fonts/din-regular_ttf.ttf')  format('truetype'), url('fonts/din-regular_svg.svg#din-regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'DIN';
+  src: url('fonts/din-bold_eot.eot?#iefix') format('embedded-opentype'),  url('fonts/din-bold_woff.woff') format('woff'), url('fonts/din-bold_ttf.ttf') format('truetype'), url('fonts/din-bold_svg.svg#din-bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@tailwind components;
+/*! purgecss end ignore */
+@tailwind utilities;
+
+p{
+  @apply mb-5;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+ol li {
+  @apply mb-3;
+}
