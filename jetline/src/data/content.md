@@ -11,17 +11,19 @@ header:
       route: "#components"
     - item: Installation
       route: "#installation"
+    - item: Models
+      route: "#models"
     - item: Contact
       route: "#contact"
 sections:
   hero:
     caret_text: Find out
-  lead:
+  description:
     text: |-
       Quieter than any centrifugal in-line fan.
 
       Designed to safe time, tools and hassle.
-  description:
+  features:
     title: Quieter, smaller size and ultra efficient
     items:
       - item: High performance
@@ -37,7 +39,7 @@ sections:
           Integrated outlet diffuser optimizing air circulation to increase airflow efficiency and reduce in-duct sound level.
 
           Silent-block between the motor and the casing to reduce the motor’s vibrations and lower the sound level of the fan.
-  discover:
+  components:
     title: Discover its components
     hotspots:
       - id: 1
@@ -76,15 +78,17 @@ sections:
           ####JETLINE 100 AC
 
           ####JETLINE 100 ECOWATT
+        btn_text: Download Jetline AC Instruction Manual
+        btn_file: Manual_de_Instalacion_Jetline_AC.pdf
+
       - item: |-
           ####JETLINE 125 AC
 
           ####JETLINE 125 ECOWATT
-    downloads:
-      - btn: Download Jetline AC Instruction Manual
-      - btn: Download Jetline ECOWATT Instruction Manual
+        btn_text: Download Jetline ECOWATT Instruction Manual
+        btn_file: Manual_de_Instalacion_Jetline_AC.pdf
   contact:
     title: S&P by your side
     subtitle: We help you with anything you may need
-footer: © 2019 S&P Sistemas de Ventilación S.L.U.
+footer: © 2020 S&P Sistemas de Ventilación S.L.U.
 ---

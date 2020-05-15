@@ -1,48 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import MarkdownContent from "../MarkdownContent";
 
 export default function Description({
-  data,
-  images
+  background,
+  data
 }) {
   return(
-    <div className="w-full py-24 bg-white">
-      <div className="flex flex-col max-w-screen-lg mx-auto">
-        <h3 className="text-center text-3xl mb-20">{data.title}</h3>
-        <div>
-          {/* Item 01 */}
-          <div className="flex w-full">
-            <div className="flex flex-col flex-1 justify-center">
-              <h4 className="text-2xl mb-5">{ data.items[0].item }</h4>
-              <MarkdownContent content={ data.items[0].body }/>
-            </div>
-            <div className="flex-1 ml-24">
-              <Img fluid={ images[0].childImageSharp.fluid } />
-            </div>
-          </div>
-          {/* Item 02 */}
-          <div className="flex w-full flex-row-reverse">
-            <div className="flex flex-col flex-1 justify-center">
-              <h4 className="text-2xl mb-5">{ data.items[1].item }</h4>
-              <MarkdownContent content={ data.items[1].body }/>
-            </div>
-            <div className="flex-1 mr-24">
-              <Img fluid={ images[1].childImageSharp.fluid } />
-            </div>
-          </div>
-          {/* Item 03 */}
-          <div className="flex w-full">
-            <div className="flex flex-col flex-1 justify-center">
-              <h4 className="text-2xl mb-5">{ data.items[2].item }</h4>
-              <MarkdownContent content={ data.items[2].body }/>
-            </div>
-            <div className="flex-1 ml-24">
-              <Img fluid={ images[2].childImageSharp.fluid } />
-            </div>
-          </div>
-        </div>
+    <div id="description" className="relative h-screen">
+      <Img
+        fluid={ background.childImageSharp.fluid }
+        style={{position:"absolute"}}
+        className="left-0 top-0 w-full h-full"
+      />
+      <div className="relative w-full h-full flex justify-center items-center flex-col text-white text-center">
+        <h3 className="text-3xl md:w-7/12 xl:w-6/12 leading-loose font-bold">{data.text}</h3>
       </div>
     </div>
   )
@@ -50,5 +22,5 @@ export default function Description({
 
 Description.propTypes = {
   data: PropTypes.object,
-  images: PropTypes.object
+  background: PropTypes.object,
 }

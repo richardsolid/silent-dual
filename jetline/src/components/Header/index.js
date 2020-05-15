@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import Logo from "../../images/logo.inline.svg";
 
 function Header({ nav }) {
@@ -8,11 +8,9 @@ function Header({ nav }) {
   const [isExpanded, toggleExpansion] = useState(false);
 
   return (
-    <header className="bg-gray-900 fixed w-full z-10">
+    <header className="bg-black fixed w-full z-10">
       <div className="flex flex-wrap items-center justify-between py-4 px-12 mx-auto">
-        <AnchorLink to="#hero">
-          <Logo className="h-12"/>
-        </AnchorLink>
+        <Logo onClick={() => scrollTo("#hero")} className="h-12 cursor-pointer"/>
 
         <button
           className="flex items-center block px-3 py-2 text-white border border-white rounded md:hidden"
@@ -34,13 +32,13 @@ function Header({ nav }) {
           } md:block md:flex md:items-center w-full md:w-auto`}
         >
           {nav.map((link) => (
-            <AnchorLink
+            <button onClick={() => scrollTo(link.route)}
               className="block text-sm font-bold mt-4 text-white no-underline md:inline-block md:mt-0 md:ml-50"
               key={link.item}
               to={link.route}
             >
               {link.item}
-            </AnchorLink>
+            </button>
           ))}
         </nav>
       </div>

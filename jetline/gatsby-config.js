@@ -30,19 +30,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
           include: /\.inline\.svg$/
         }
       }
     },
-    {
-      resolve: "gatsby-plugin-anchor-links",
-      options: {
-        offset: -100
-      }
-    },
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

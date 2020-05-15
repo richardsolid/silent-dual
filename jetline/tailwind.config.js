@@ -39,7 +39,6 @@ module.exports = {
         xl: '100px',
       },
       colors: {
-        black: '#171717',
         gray: {
           300: '#ECEDED',
           500: '#B9B9B9',

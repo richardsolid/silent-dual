@@ -9,7 +9,7 @@ export default function Installation({
   images
 }) {
   return(
-    <div className="w-full py-24 bg-white">
+    <div id="installation" className="w-full py-24 bg-white">
       <div className="flex flex-col max-w-screen-lg items-center">
         <img className="mb-8" src={InstallFriendly} alt="Install friendly"/>
         <h3 className="text-center text-3xl mb-20 md:w-7/12 xl:w-6/12">{data.title}</h3>
@@ -54,5 +54,5 @@ export default function Installation({
 
 Installation.propTypes = {
   data: PropTypes.object,
-  images: PropTypes.object
+  images: PropTypes.array
 }

@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Hero from "../components/Hero";
-import Lead from "../components/Lead";
+import Features from "../components/Features";
 import Description from "../components/Description";
-import DiscoverComponents from "../components/DiscoverComponents";
+import Components from "../components/Components";
 import Installation from "../components/Installation";
 import Models from "../components/Models";
 import Contact from "../components/Contact";
@@ -33,12 +33,12 @@ function IndexPage({ data }) {
         video={video}
         videoBackground={video}
       />
-      <Lead data={sections.lead} background={data.bgLead}/>
-      <Description
-        data={sections.description}
-        images={[ data.descriptionImg01, data.descriptionImg02, data.descriptionImg03 ]}
+      <Description data={sections.description} background={data.bgDescription}/>
+      <Features
+        data={sections.features}
+        images={[ data.featuresImg01, data.featuresImg02, data.featuresImg03 ]}
       />
-      <DiscoverComponents data={sections.discover}/>
+      <Components data={sections.components}/>
       <Installation
         data={sections.installation}
         images={[ data.installationImg01, data.installationImg02, data.installationImg03 ]}
@@ -69,17 +69,17 @@ export const query = graphql`
           hero{
             caret_text
           }
-          lead{
+          description{
             text
           }
-          description{
+          features{
             title
             items{
               item
               body
             }
           }
-          discover{
+          components{
             title
             hotspots{
               id
@@ -99,9 +99,8 @@ export const query = graphql`
             title
             items{
               item
-            }
-            downloads{
-              btn
+              btn_text
+              btn_file
             }
           }
           contact{
@@ -119,7 +118,7 @@ export const query = graphql`
         }
       }
     }
-    bgLead: file(relativePath:{eq: "bg-lead.jpg"}){
+    bgDescription: file(relativePath:{eq: "bg-description.jpg"}){
       childImageSharp{
         fluid(quality:90, maxWidth:1440){
           ...GatsbyImageSharpFluid
@@ -133,21 +132,21 @@ export const query = graphql`
         }
       }
     }
-    descriptionImg01: file(relativePath:{eq: "description-01.jpg"}){
+    featuresImg01: file(relativePath:{eq: "features-01.jpg"}){
       childImageSharp{
         fluid(quality:90, maxWidth:768){
           ...GatsbyImageSharpFluid
         }
       }
     }
-    descriptionImg02: file(relativePath:{eq: "description-02.jpg"}){
+    featuresImg02: file(relativePath:{eq: "features-02.jpg"}){
       childImageSharp{
         fluid(quality:90, maxWidth:768){
           ...GatsbyImageSharpFluid
         }
       }
     }
-    descriptionImg03: file(relativePath:{eq: "description-03.jpg"}){
+    featuresImg03: file(relativePath:{eq: "features-03.jpg"}){
       childImageSharp{
         fluid(quality:90, maxWidth:768){
           ...GatsbyImageSharpFluid
