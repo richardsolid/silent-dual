@@ -11,6 +11,7 @@ import Models from "../components/Models";
 import Contact from "../components/Contact";
 import { graphql } from "gatsby";
 import video from "../video/Jetline_Video_EN.mp4";
+import videoBackground from "../video/videoBackground.mp4";
 
 function IndexPage({ data }) {
 
@@ -30,15 +31,19 @@ function IndexPage({ data }) {
         description={description}
         data={sections.hero}
         background={data.bgHero}
+        backgroundPortrait={data.bgHeroPortrait}
         video={video}
-        videoBackground={video}
+        videoBackground={videoBackground}
       />
       <Description data={sections.description} background={data.bgDescription}/>
       <Features
         data={sections.features}
         images={[ data.featuresImg01, data.featuresImg02, data.featuresImg03 ]}
       />
-      <Components data={sections.components}/>
+      <Components
+        data={sections.components}
+        images={[ data.componentsImg01, data.componentsImg02, data.componentsImg03, data.componentsImg04 ]}
+      />
       <Installation
         data={sections.installation}
         images={[ data.installationImg01, data.installationImg02, data.installationImg03 ]}
@@ -93,7 +98,8 @@ export const query = graphql`
               item
               body
             }
-            btn
+            btn_text
+            btn_file
           }
           models{
             title
@@ -112,6 +118,13 @@ export const query = graphql`
       }
     }
     bgHero: file(relativePath:{eq: "bg-hero.jpg"}){
+      childImageSharp{
+        fluid(quality:90, maxWidth:1440){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    bgHeroPortrait: file(relativePath:{eq: "bg-hero-portrait.jpg"}){
       childImageSharp{
         fluid(quality:90, maxWidth:1440){
           ...GatsbyImageSharpFluid
@@ -170,6 +183,34 @@ export const query = graphql`
     installationImg03: file(relativePath:{eq: "installation-03.jpg"}){
       childImageSharp{
         fluid(quality:90, maxWidth:768){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    componentsImg01: file(relativePath:{eq: "element1.png"}){
+      childImageSharp{
+        fluid(quality:90, maxWidth:1440){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    componentsImg02: file(relativePath:{eq: "element2.png"}){
+      childImageSharp{
+        fluid(quality:90, maxWidth:1440){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    componentsImg03: file(relativePath:{eq: "element3.png"}){
+      childImageSharp{
+        fluid(quality:90, maxWidth:1440){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    componentsImg04: file(relativePath:{eq: "element4.png"}){
+      childImageSharp{
+        fluid(quality:90, maxWidth:1440){
           ...GatsbyImageSharpFluid
         }
       }

@@ -1,48 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
-import MarkdownContent from "../MarkdownContent";
+import Feature from "./Feature";
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from 'react-spring';
 
 export default function Features({
   data,
   images
 }) {
+
+  const [ref, inView] = useInView({
+    rootMargin: '-100px 0px',
+    triggerOnce: true
+  })
+
+  const props = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView? 'translateY(0px)' : 'translateY(100px)',
+  })
+
   return(
-    <div id="features" className="w-full py-24 bg-white">
-      <div className="flex flex-col max-w-screen-lg mx-auto">
+    <div id="features" className="w-full py-24 bg-white px-5 lg:px-0">
+      <animated.div style={props} ref={ref} className="flex flex-col max-w-screen-lg mx-auto">
         <h3 className="text-center text-3xl mb-20">{data.title}</h3>
-        <div>
-          {/* Item 01 */}
-          <div className="flex w-full">
-            <div className="flex flex-col flex-1 justify-center">
-              <h4 className="text-2xl mb-5">{ data.items[0].item }</h4>
-              <MarkdownContent content={ data.items[0].body }/>
-            </div>
-            <div className="flex-1 ml-24">
-              <Img fluid={ images[0].childImageSharp.fluid } />
-            </div>
-          </div>
-          {/* Item 02 */}
-          <div className="flex w-full flex-row-reverse">
-            <div className="flex flex-col flex-1 justify-center">
-              <h4 className="text-2xl mb-5">{ data.items[1].item }</h4>
-              <MarkdownContent content={ data.items[1].body }/>
-            </div>
-            <div className="flex-1 mr-24">
-              <Img fluid={ images[1].childImageSharp.fluid } />
-            </div>
-          </div>
-          {/* Item 03 */}
-          <div className="flex w-full">
-            <div className="flex flex-col flex-1 justify-center">
-              <h4 className="text-2xl mb-5">{ data.items[2].item }</h4>
-              <MarkdownContent content={ data.items[2].body }/>
-            </div>
-            <div className="flex-1 ml-24">
-              <Img fluid={ images[2].childImageSharp.fluid } />
-            </div>
-          </div>
-        </div>
+      </animated.div>
+      <div className="flex flex-col max-w-screen-lg mx-auto">
+        <Feature data={data.items[0]} image={images[0]}/>
+        <Feature data={data.items[1]} image={images[1]} reverse={true}/>
+        <Feature data={data.items[2]} image={images[2]}/>
       </div>
     </div>
   )

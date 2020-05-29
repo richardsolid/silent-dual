@@ -4,10 +4,12 @@ const tailwindConfig = require("./tailwind.config.js");
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
+  pathPrefix: `/jetline`,
   siteMetadata: {
     title: `JETLINE`,
     description: `Performance and power in a very low profile`,
     author: `@SP_espana`,
+
   },
   plugins: [
     `gatsby-plugin-eslint`,

@@ -7,8 +7,8 @@ export default function DownloadButton({
   file
 }){
   return(
-    <a href={ file } download={true} className="flex items-stretch bg-red hover:bg-red-dark text-white font-bold mx-8 rounded inline-flex items-center">
-      <span className="py-4 px-5">{ text }</span>
+    <a href={ file } download={true} className="flex items-stretch bg-red transition duration-200 hover:bg-red-dark text-white font-bold rounded items-center">
+      <span className="py-4 px-5 text-center w-full">{ text }</span>
       <span className="flex items-center px-4 ml-auto border-l border-red-lighter">
         <DownloadIco className="fill-current w-4 h-4"/>
       </span>

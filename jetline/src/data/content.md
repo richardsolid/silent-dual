@@ -20,9 +20,8 @@ sections:
     caret_text: Find out
   description:
     text: |-
-      Quieter than any centrifugal in-line fan.
-
-      Designed to safe time, tools and hassle.
+      ###Quieter than any centrifugal in-line fan.<br/><br/>
+      ###Designed to safe time, tools and hassle.
   features:
     title: Quieter, smaller size and ultra efficient
     items:
@@ -43,14 +42,14 @@ sections:
     title: Discover its components
     hotspots:
       - id: 1
-        title: Support bracket
-        body: Optimised mounting bracket designed and positioned to increase performance and lower sound levels.
+        title: Built-in junction box
+        body: Built-in, IP65 terminal box that does not add to the overall height dimensions. AC version (1 cable gland), ECOWATT version (2 cable glands).
       - id: 2
-        title: Support bracket
-        body: Optimised mounting bracket designed and positioned to increase performance and lower sound levels.
+        title: Seals
+        body: Rubber gaskets providing an airtight seal for ducted systems.
       - id: 3
-        title: Support bracket
-        body: Optimised mounting bracket designed and positioned to increase performance and lower sound levels.
+        title: High performance impeller
+        body: New impeller geometry for reduced sound levels and greater performance.
       - id: 4
         title: Support bracket
         body: Optimised mounting bracket designed and positioned to increase performance and lower sound levels.
@@ -70,7 +69,8 @@ sections:
       - item: ZERO Complications
         body: |-
           Designed with rubber gaskets on the flanges to simplify the connection and reduce air leakage.
-    btn: Download Jetline user guide
+    btn_text: Download Jetline user guide
+    btn_file: Jetline_Manual_de_instrucciones.pdf
   models:
     title: Available models
     items:
@@ -78,14 +78,14 @@ sections:
           ####JETLINE 100 AC
 
           ####JETLINE 100 ECOWATT
-        btn_text: Download Jetline AC Instruction Manual
+        btn_text: Jetline AC Instruction
         btn_file: Manual_de_Instalacion_Jetline_AC.pdf
 
       - item: |-
           ####JETLINE 125 AC
 
           ####JETLINE 125 ECOWATT
-        btn_text: Download Jetline ECOWATT Instruction Manual
+        btn_text: Jetline ECOWATT Instruction
         btn_file: Manual_de_Instalacion_Jetline_AC.pdf
   contact:
     title: S&P by your side

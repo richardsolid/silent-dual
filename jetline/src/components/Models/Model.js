@@ -1,21 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DownloadButton from "../DownloadButton";
 import Card from "../Card";
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from 'react-spring';
 
 export default function Models({
     data,
-    image
+    image,
+    className
   }) {
+
+  const [ref, inView] = useInView({
+    rootMargin: '-100px 0px',
+    triggerOnce: true
+  })
+
+  const props = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView? 'translateY(0px)' : 'translateY(100px)',
+  })
+
   return(
-    <div className="flex flex-1 flex-col mr-5">
+    <animated.div style={props} ref={ref} className={className}>
       <Card text={ data.item } image={ image } />
-      <DownloadButton text={ data.btn_text} file={ data.btn_file } />
-    </div>
+    </animated.div>
   )
 }
 
 Models.propTypes = {
   data: PropTypes.object,
-  image: PropTypes.object
+  image: PropTypes.object,
+  className: PropTypes.string
 }

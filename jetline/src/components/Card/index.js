@@ -8,7 +8,7 @@ export default function Card({
   text
 }){
   return(
-    <div className="flex flex-col bg-white mb-12">
+    <div className="flex flex-col bg-white mb-6 sm:mb-12">
       <div className="w-full">
         <Img fluid={ image.childImageSharp.fluid } />
       </div>

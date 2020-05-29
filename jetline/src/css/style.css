@@ -28,6 +28,10 @@
 /*! purgecss end ignore */
 @tailwind utilities;
 
+*:focus {
+  outline: none;
+}
+
 p{
   @apply mb-5;
 }
