@@ -34,10 +34,10 @@ export default function Models({
       </animated.div>
 
       <div className="relative flex flex-col sm:flex-row max-w-screen-md mx-auto">
-        <Model className="flex flex-1 flex-col mr-0 sm:mr-5 mb-20 sm:mb-0" data={ data.items[0] } image={ images[0] } />
+        <Model className="flex flex-1 flex-col mr-0 sm:mr-5 mb-0" data={ data.items[0] } image={ images[0] } />
         <Model className="flex flex-1 flex-col mr-0 mb-0" data={ data.items[1] } image={ images[1] } />
       </div>
-      <div className="relative flex flex-col sm:flex-row max-w-screen-md mx-auto mt-16 sm:mt-0">
+      <div className="relative flex flex-col sm:flex-row max-w-screen-md mx-auto mt-8 sm:mt-0">
         <div className="w-full sm:w-6/12 mb-5 sm:mb-0 mx-0 sm:mx-8">
           <DownloadButton text={ data.items[0].btn_text} file={ data.items[0].btn_file } />
         </div>

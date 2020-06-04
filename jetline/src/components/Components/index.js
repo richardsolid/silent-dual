@@ -93,7 +93,7 @@ export default function Components({
         {
           hotspots.map((hotspot, index) =>
             <div key={`component-info-${index}`}>
-              <h6 className="font-bold">{index}.{hotspot.title}</h6>
+              <h6 className="font-bold">{index+1}.{hotspot.title}</h6>
               <p className="text-sm">{hotspot.body}</p>
             </div>)
         }

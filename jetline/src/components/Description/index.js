@@ -28,7 +28,7 @@ export default function Description({
         className="left-0 top-0 w-full h-full"
       />
       <animated.div style={props} ref={ref} className="px-5 sm:px-0 relative w-full h-full flex justify-center items-center flex-col text-white text-center">
-        <MarkdownContent className="text-3xl md:w-7/12 xl:w-6/12 leading-none font-light sm:font-bold" content={data.text} />
+        <MarkdownContent className="text-3xl md:w-7/12 xl:w-6/12 leading-none font-bold" content={data.text} />
       </animated.div>
     </div>
   )
