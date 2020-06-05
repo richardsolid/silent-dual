@@ -54,7 +54,7 @@ export default function Hero({
           <source src={ video } type="video/mp4"></source>
         </video>
       </ReactModal>
-      <button className="absolute top-0 right-0 pt-10 pr-10 z-30 cursor-pointer" onClick={()=>setVideoVisible(false)}>
+      <button className="fixed top-0 right-0 pt-10 pr-10 z-30 cursor-pointer" onClick={()=>setVideoVisible(false)}>
         <Close/>
       </button>
     </>
