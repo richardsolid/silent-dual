@@ -75,18 +75,14 @@ sections:
     title: Available models
     items:
       - item: |-
-          ####JETLINE 100 AC
-
-          ####JETLINE 100 ECOWATT
-        btn_text: Jetline AC Instruction
-        btn_file: Manual_de_Instalacion_Jetline_AC.pdf
+          ####JETLINE AC
+        btn_text: AC Instructions Manual
+        btn_file: Jetline_AC.pdf
 
       - item: |-
-          ####JETLINE 125 AC
-
-          ####JETLINE 125 ECOWATT
-        btn_text: Jetline ECOWATT Instruction
-        btn_file: Manual_de_Instalacion_Jetline_AC.pdf
+          ####JETLINE ECOWATT
+        btn_text: ECOWATT Instructions Manual
+        btn_file: Jetline_AC.pdf
   contact:
     title: S&P by your side
     subtitle: We help you with anything you may need
