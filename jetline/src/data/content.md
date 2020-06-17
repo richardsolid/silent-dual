@@ -21,7 +21,7 @@ sections:
   description:
     text: |-
       ###Quieter than any centrifugal in-line fan.<br/><br/>
-      ###Designed to safe time, tools and hassle.
+      ###Designed to save time, tools and hassle.
   features:
     title: Quieter, smaller size and ultra efficient
     items:
