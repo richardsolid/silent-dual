@@ -4,7 +4,7 @@ const tailwindConfig = require("./tailwind.config.js");
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
-  pathPrefix: `/jetline`,
+  pathPrefix: `/en-en/release-jetline`,
   siteMetadata: {
     title: `JETLINE`,
     description: `Performance and power in a very low profile`,
