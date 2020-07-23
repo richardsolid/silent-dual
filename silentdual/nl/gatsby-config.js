@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/du-nl/afzuigventilator-silent-dual`,
+  pathPrefix: `/nl-nl/afzuigventilator-silent-dual`,
   siteMetadata: {
     title: `S&P Silent Dual`,
     description: `De intelligentste badkamerventilator, ontworpen voor zeer eenvoudige installatie`,
