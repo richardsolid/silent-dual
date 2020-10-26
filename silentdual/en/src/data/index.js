@@ -1,27 +1,27 @@
 const data = {
 	navbar: [
 		{
-			name: "Descúbrelo",
+			name: "Omschrijving",
 			anchor: "#descubrelo"
 		},
 		{
-			name: "Características",
+			name: "Kenmerken",
 			anchor: "#caracteristicas"
 		},
 		{
-			name: "Componentes",
+			name: "Onderdelen",
 			anchor: "#componentes"
 		},
 		{
-			name: "Instalación",
+			name: "Installatie",
 			anchor: "#instalacion"
 		},
 		{
-			name: "Modelos",
+			name: "Modellen",
 			anchor: "#modelos"
 		},
 		{
-			name: "Contacta",
+			name: "Contact",
 			anchor: "#contacta"
 		}
 	],
@@ -29,56 +29,56 @@ const data = {
 		title1: "SILENT",
 		title2: "DUAL",
 		subtitle:
-			"El extractor de baño más inteligente diseñado para una fácil instalación",
-		linkText: "Descúbrelos",
+			"De intelligentste badkamerventilator, ontworpen voor zeer eenvoudige installatie",
+		linkText: "Ontdek",
 		link: "#descubrelo"
 	},
 	descubrelo: {
 		id: "componentes",
-		title: "Descubre sus componentes",
+		title: "Ontdek de onderdelen",
 		hotspots: [
 			{
-				title: "Piloto funcionamiento LED",
-				text: "Indicador de funcionamiento integrado.",
+				title: "AAN/UIT INDICATOR",
+				text: "Uitgerust met LED indicator, aan bij in bedrijf.",
 				top: 40,
 				left: 15
 			},
 
 			{
-				title: "Rejilla",
+				title: "ROOSTER",
 				text:
-					"Rejilla con diseño aerodinámico para optimizar la entrada del flujo de aire y mejorar prestaciones.",
+					"Frontrooster met aerodynamisch design voor optimale luchtstroming bij laag drukverlies.",
 				top: 50,
 				left: 35
 			},
 
 			{
-				title: "Silentblock",
+				title: "SILENT-BLOCK",
 				text:
-					"Conjunto motor-hélice montado en el soporte con un silentblock para reducir vibraciones y nivel sonoro.",
+					"Motor-rotor set gemonteerd op silent-block voor het dempen van trillingen en her verlagen van geluid.",
 				top: 30,
 				left: 55
 			},
 			{
-				title: "Detector de presencia",
+				title: "BEWEGINGSSENSOR",
 				text:
-					"Sensor de presencia integrado con un amplio ángulo de detección.",
+					"Geïntegreerde bewegingssensor met een wijde detectieblik",
 				top: 17,
 				left: 67
 			},
 
 			{
-				title: "Electrónica protegida",
+				title: "BESCHERMDE ELEKTRONICA",
 				text:
-					"Tapa bimaterial que garantiza un grado IP45 a la placa electrónica, a los sensores y a la ficha de conexiones.",
+					"Behuizing en constructie garanderen beschermingsklasse IP45 van de elektronica",
 				top: 50,
 				left: 70
 			},
 
 			{
-				title: "Compuerta antirretorno",
+				title: "TERUGSLAGKLEP",
 				text:
-					"Compuerta antirretorno amovible, con difusor para mejorar las prestaciones aerodinámicas.",
+					"Afneembare terugslagklep met luchtvanen voor verhogen van de aerodynamica.",
 				top: 35,
 				left: 90
 			}
@@ -86,46 +86,46 @@ const data = {
 	},
 	lead: {
 		description:
-			"Silent Dual, la nueva generación de extractores de baño inteligentes que se autoajustan para crear un ambiente óptimo."
+			"Silent Dual, de nieuwe generatie intelligente badkamerventilatoren, adaptief voor het perfecte klimaat."
 	},
 	caracteristicas: {
 		id: "caracteristicas",
-		sectionTitle: "La única opción doblemente inteligente",
+		sectionTitle: "De enige optie, dubbel intelligent",
 		specs: [
 			{
-				title: "2 sensores",
-				subtitle: "Presencia y humedad",
+				title: "2 sensoren",
+				subtitle: "Aanwezigheid en vochtigheid",
 				description:
-					"Se activan automáticamente cuando detectan <strong>movimiento</strong> o un cambio en los niveles de <strong>humedad</strong>."
+					"Automatisch door detectie van <strong>beweging</strong> of toename van de relatieve <strong>vochtigheid</strong>."
 			},
 			{
-				title: "2 modos de funcionamiento",
-				subtitle: "Contínuo e intermitente",
+				title: "2 bedrijfsmodi",
+				subtitle: "Continu of laag/hoog",
 				description:
-					"<strong>Funcionamiento contínuo </strong> cuando los sensores no detectan presencia ni cambios de humedad.<strong><br>Funcionamiento intermitente </strong> cuando uno de los sensores se activa."
+					"<strong>Uit of laag </strong> wanneer de sensoren geen beweging of verhoogde relatieve vochtigheid detecteren.<strong><br>Aan of hoog</strong> wanneer de sensoren activeren."
 			},
 			{
-				title: "2 entradas de aire",
-				subtitle: "Frontal y perimetral",
+				title: "2 luchtinlaten",
+				subtitle: "Front en zijkanten",
 				description:
-					"Prestaciones aerodinámicas que le proporcionan la entrada <strong>frontal</strong> y <strong>perimetral</strong> de aire."
+					"Aerodynamisch ontwerp voor <strong>ruime luchtinname</strong> met laag drukverlies."
 			}
 		]
 	},
 	instalacion: {
 		id: "instalacion",
-		title: "S&P diseña productos fáciles de instalar",
+		title: "S&P ontwerp eenvoudig te installeren producten",
 		subtitle: "Plug & Play",
-		titleText: "Conexionado a 2 hilos",
+		titleText: "Twee-draads-aansluiting",
 		descriptionText:
-			"En S&P apostamos por la innovación, por eso SILENT DUAL cuenta con el sello Install Friendly de garantía de calidad técnica y de facilidad a la hora de realizarse la instalación.<br/><br/>El extractor de baño se coloca con una práctica instalación que se realiza con una conexión directa de tan solo 2 hilos(L / N).",
-		imgAlt: "conexionado",
+			"Bij S&P ontwikkelen we producten met eenvoud in installatie steeds in gedachten. SILENT DUAL heeft het INSTALL FRIENDLY zegel verdiend, wat een garantie voor technische kwaliteit en eenvoudige installatie is.<br/><br/>Deze ventilator wordt snel en eenvoudig gemonteerd, en heeft slechts een twee-draads-aansluiting (fase en 0).",
+		imgAlt: "Twee-draads-aansluiting",
 		buttonAlt: "download icon",
-		button: "Descargar el manual de instalación"
+		button: "Download de installatie-handleiding"
 	},
 	modelos: {
 		id: "modelos",
-		title: "Modelos disponibles",
+		title: "Beschikbare modellen",
 		cards: [
 			{
 				title: "Silent Dual 100",
@@ -140,14 +140,16 @@ const data = {
 				description: { sizes: "232x195mm", power: "1010-2120 RPM" }
 			}
 		],
-		button: "Descargar las características técnicas"
+		button: "Download de technische kenmerken"
 	},
 	contacta: {
 		id: "contacta",
-		title: "Somos un equipo, tu equipo",
-		subtitle: "Asesoramiento profesional gratuito",
-		text: "Te ayudamos con tu proyecto, cuéntanos.",
-		loading: "Cargando"
+		title: "We zijn een team, uw team",
+		subtitle: "Professioneel advies",
+		text: "We helpen u graag met uw project.",
+		loading: "Het laden",
+		portalId: "2009592",
+		formId: "02f4cad0-1c4f-4f06-b74d-c2096fcf33f1"
 	},
 	footer: "© 2020 S&P Sistemas de Ventilación S.L.U."
 };

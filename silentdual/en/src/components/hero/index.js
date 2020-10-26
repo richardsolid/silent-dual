@@ -19,7 +19,7 @@ import arrowDown from "../../images/arrow_down.svg";
 
 //video:
 import BackgroundVideo from "../../videos/hero-silent-dual.mp4";
-import DemoVideo from "../../videos/SilentDual_CAST.mp4";
+import DemoVideo from "../../videos/SilentDual_DUTCH.mp4";
 
 //components:
 import VideoPlayer from "../videoPlayer";
@@ -183,13 +183,14 @@ const HeroLinkDown = styled.a`
 	padding-bottom: 40px;
 	z-index: 100;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
 
 	::after {
 		content: "";
 		position: absolute;
 		width: 15px;
 		height: 10px;
-		left: 36px;
 		bottom: 20px;
 		background-repeat: no-repeat;
 		background-image: url(${arrowDown});

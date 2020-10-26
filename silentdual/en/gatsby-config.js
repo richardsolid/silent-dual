@@ -1,8 +1,8 @@
 module.exports = {
-  pathPrefix: `/es-es/lanzamiento-silent-dual`,
+  pathPrefix: `/nl-nl/afzuigventilator-silent-dual`,
   siteMetadata: {
     title: `S&P Silent Dual`,
-    description: `Los extractores de baño más inteligentes diseñados para una fácil instalación.`,
+    description: `De intelligentste badkamerventilator, ontworpen voor zeer eenvoudige installatie`,
     author: `@gatsbyjs`
   },
   plugins: [
