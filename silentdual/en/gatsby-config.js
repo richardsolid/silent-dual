@@ -1,8 +1,9 @@
 module.exports = {
-  pathPrefix: `/nl-nl/afzuigventilator-silent-dual`,
+  pathPrefix: `/en-en/release-silent-dual/`,
   siteMetadata: {
     title: `S&P Silent Dual`,
-    description: `De intelligentste badkamerventilator, ontworpen voor zeer eenvoudige installatie`,
+    description: `The most intelligent bathroom fan designed for an easy installation`,
+    siteUrl: `https://www.solerpalau.com/en-en/release-silent-dual/`,
     author: `@gatsbyjs`
   },
   plugins: [

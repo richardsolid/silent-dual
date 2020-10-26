@@ -21,7 +21,7 @@ import data from "../../data";
 import downloadIcon from "../../images/download_icon.svg";
 
 //docs:
-import Caracteristicas from "../../docs/NL_SILENT_DUAL.pdf";
+import Caracteristicas from "../../docs/specs_SilentDual_ENG.pdf";
 
 //Components
 import ModeloCard from "./modelosCard";
@@ -153,7 +153,7 @@ const Modelos = () => {
               style={buttonProps}
               href={Caracteristicas}
               target="_blank"
-              download="NL_SILENT_DUAL"
+              download="specs_SilentDual_ENG"
               rel="noopener noreferrer"
             >
               <LeftButton>{modelos.button}</LeftButton>

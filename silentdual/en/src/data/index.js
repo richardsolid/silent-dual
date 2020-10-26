@@ -1,23 +1,23 @@
 const data = {
 	navbar: [
 		{
-			name: "Omschrijving",
+			name: "Description",
 			anchor: "#descubrelo"
 		},
 		{
-			name: "Kenmerken",
+			name: "Features",
 			anchor: "#caracteristicas"
 		},
 		{
-			name: "Onderdelen",
+			name: "Components",
 			anchor: "#componentes"
 		},
 		{
-			name: "Installatie",
+			name: "Installation",
 			anchor: "#instalacion"
 		},
 		{
-			name: "Modellen",
+			name: "Models",
 			anchor: "#modelos"
 		},
 		{
@@ -29,25 +29,25 @@ const data = {
 		title1: "SILENT",
 		title2: "DUAL",
 		subtitle:
-			"De intelligentste badkamerventilator, ontworpen voor zeer eenvoudige installatie",
-		linkText: "Ontdek",
+			"The most intelligent bathroom fan designed for an easy installation",
+		linkText: "Find out",
 		link: "#descubrelo"
 	},
 	descubrelo: {
 		id: "componentes",
-		title: "Ontdek de onderdelen",
+		title: "Discover its components",
 		hotspots: [
 			{
-				title: "AAN/UIT INDICATOR",
-				text: "Uitgerust met LED indicator, aan bij in bedrijf.",
+				title: "ON-OFF INDICATOR",
+				text: "Incorporates an LED indicator to display on-off mode.",
 				top: 40,
 				left: 15
 			},
 
 			{
-				title: "ROOSTER",
+				title: "GRILLE",
 				text:
-					"Frontrooster met aerodynamisch design voor optimale luchtstroming bij laag drukverlies.",
+					"Front grille with aerodynamic design to optimize airflow and improve performance.",
 				top: 50,
 				left: 35
 			},
@@ -55,30 +55,30 @@ const data = {
 			{
 				title: "SILENT-BLOCK",
 				text:
-					"Motor-rotor set gemonteerd op silent-block voor het dempen van trillingen en her verlagen van geluid.",
+					"Motor-rotor set mounted on the support with a silent-block to reduce vibrations and sound level.",
 				top: 30,
 				left: 55
 			},
 			{
-				title: "BEWEGINGSSENSOR",
+				title: "PRESENCE DETECTOR",
 				text:
-					"Geïntegreerde bewegingssensor met een wijde detectieblik",
+					"Integrated presence detector with a wide detection angle.",
 				top: 17,
 				left: 67
 			},
 
 			{
-				title: "BESCHERMDE ELEKTRONICA",
+				title: "PROTECTED ELECTRONICS",
 				text:
-					"Behuizing en constructie garanderen beschermingsklasse IP45 van de elektronica",
+					"Bi-material cover guarantees IP45 rating of the electronic board sensors and connection strips.",
 				top: 50,
 				left: 70
 			},
 
 			{
-				title: "TERUGSLAGKLEP",
+				title: "BACKDRAFT SHUTTER",
 				text:
-					"Afneembare terugslagklep met luchtvanen voor verhogen van de aerodynamica.",
+					"Removable backdraft shutter with airflow guide vanes to improve aerodynamic performance.",
 				top: 35,
 				left: 90
 			}
@@ -86,46 +86,46 @@ const data = {
 	},
 	lead: {
 		description:
-			"Silent Dual, de nieuwe generatie intelligente badkamerventilatoren, adaptief voor het perfecte klimaat."
+			"Silent Dual, the new generation of intelligents bathroom extract fans that self-adjusts to create the perfect environment."
 	},
 	caracteristicas: {
 		id: "caracteristicas",
-		sectionTitle: "De enige optie, dubbel intelligent",
+		sectionTitle: "The only option double intelligent",
 		specs: [
 			{
-				title: "2 sensoren",
-				subtitle: "Aanwezigheid en vochtigheid",
+				title: " 2 sensors",
+				subtitle: "Presence and Humidity",
 				description:
-					"Automatisch door detectie van <strong>beweging</strong> of toename van de relatieve <strong>vochtigheid</strong>."
+					"They are automatically activated when it detects <strong>movement</strong> or rises in <strong>humidity</strong> levels."
 			},
 			{
-				title: "2 bedrijfsmodi",
-				subtitle: "Continu of laag/hoog",
+				title: "2 operating modes",
+				subtitle: "Continuous and interminent",
 				description:
-					"<strong>Uit of laag </strong> wanneer de sensoren geen beweging of verhoogde relatieve vochtigheid detecteren.<strong><br>Aan of hoog</strong> wanneer de sensoren activeren."
+					"<strong>Continuous operation</strong> when the sensors do not detect movement or changes in humidity levels.<strong><br>Intermitent operation</strong> when one of the sensors is activated."
 			},
 			{
-				title: "2 luchtinlaten",
-				subtitle: "Front en zijkanten",
+				title: "2 air inputs",
+				subtitle: "Front and Perimenter",
 				description:
-					"Aerodynamisch ontwerp voor <strong>ruime luchtinname</strong> met laag drukverlies."
+					"Aerodynamic features that provide <strong>front</strong> and <strong>perimeter</strong> air inputs."
 			}
 		]
 	},
 	instalacion: {
 		id: "instalacion",
-		title: "S&P ontwerp eenvoudig te installeren producten",
+		title: "S&P designs easy to install products",
 		subtitle: "Plug & Play",
-		titleText: "Twee-draads-aansluiting",
+		titleText: "Two wires connectivity",
 		descriptionText:
-			"Bij S&P ontwikkelen we producten met eenvoud in installatie steeds in gedachten. SILENT DUAL heeft het INSTALL FRIENDLY zegel verdiend, wat een garantie voor technische kwaliteit en eenvoudige installatie is.<br/><br/>Deze ventilator wordt snel en eenvoudig gemonteerd, en heeft slechts een twee-draads-aansluiting (fase en 0).",
-		imgAlt: "Twee-draads-aansluiting",
+			"At S&P we design our products with ease of installation in mind, that's why SILENT DUAL has the Install Friendly stamp of guarantee for technical quality and ease of installation. <br/><br/>The bathroom extract fan is placed with an easy installation that is made with a direct connection of only 2 wires (L / N).",
+		imgAlt: "Two wires connectivity",
 		buttonAlt: "download icon",
-		button: "Download de installatie-handleiding"
+		button: "Download installation manual"
 	},
 	modelos: {
 		id: "modelos",
-		title: "Beschikbare modellen",
+		title: "Available models",
 		cards: [
 			{
 				title: "Silent Dual 100",
@@ -140,16 +140,16 @@ const data = {
 				description: { sizes: "232x195mm", power: "1010-2120 RPM" }
 			}
 		],
-		button: "Download de technische kenmerken"
+		button: "Download the technical characteristics"
 	},
 	contacta: {
 		id: "contacta",
-		title: "We zijn een team, uw team",
-		subtitle: "Professioneel advies",
-		text: "We helpen u graag met uw project.",
-		loading: "Het laden",
+		title: "We're a team, your team",
+		subtitle: "Free professional advice",
+		text: "We help you with your project, tell us.",
+		loading: "Loading",
 		portalId: "2009592",
-		formId: "02f4cad0-1c4f-4f06-b74d-c2096fcf33f1"
+		formId: "81389ac0-e355-4fca-af9f-11a663c36c02"
 	},
 	footer: "© 2020 S&P Sistemas de Ventilación S.L.U."
 };

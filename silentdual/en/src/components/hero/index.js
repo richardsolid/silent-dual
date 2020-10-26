@@ -19,7 +19,7 @@ import arrowDown from "../../images/arrow_down.svg";
 
 //video:
 import BackgroundVideo from "../../videos/hero-silent-dual.mp4";
-import DemoVideo from "../../videos/SilentDual_DUTCH.mp4";
+import DemoVideo from "../../videos/SilentDual_ENG.mp4";
 
 //components:
 import VideoPlayer from "../videoPlayer";

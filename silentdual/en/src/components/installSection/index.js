@@ -20,10 +20,10 @@ import videoPoster from "../../images/conexionado-a-2-picture.jpg";
 import videoPosterNoPlay from "../../images/conexionado-a-2-picture-no-play.jpg";
 
 //video:
-import Demovideo from "../../videos/conexionado-a-2.mp4";
+import Demovideo from "../../videos/installation_SilentDual_ENG.mp4";
 
 //docs:
-import Instalacion from "../../docs/instalacion.pdf";
+import Instalacion from "../../docs/Installation_SilentDual_ENG.pdf";
 
 //components:
 import VideoPlayer from "../videoPlayer";
@@ -301,7 +301,7 @@ const InstallSection = () => {
 							<DownloadButtonContainer
 								href={Instalacion}
 								target="_blank"
-								download="instalacion"
+								download="Installation_SilentDual_ENG"
 								rel="noopener noreferrer"
 							>
 								<LeftButton>{instalacion.button}</LeftButton>
