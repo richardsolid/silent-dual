@@ -10,7 +10,7 @@ import Installation from "../components/Installation";
 import Models from "../components/Models";
 import Contact from "../components/Contact";
 import { graphql } from "gatsby";
-import video from "../video/Video_Jetline_sept2020.mp4";
+import video from "../video/Video_Jetline_nov2020.mp4";
 import videoBackground from "../video/videoBackground.mp4";
 
 function IndexPage({ data }) {
