@@ -1,0 +1,111 @@
+// Body Styles 
+body,
+html, 
+.body {
+  background: #000 !important;
+}
+
+.container {
+  background: #000 !important;
+}
+
+/*
+** Custom styles
+*/
+.header .columns,
+.hero .columns,
+.lead .columns,
+.card .columns,
+.icons .columns,
+.banner .columns,
+.mas-info .columns,
+.social .columns,
+.legal .columns{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.header p{
+  color: #666666;
+  font-size: 12px;
+}
+
+.header p a{
+  color: #666666;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero .columns{
+  padding-bottom: 0;
+}
+
+.features-row{
+  min-height: 250px;
+  vertical-align: middle;
+}
+
+
+.card{
+  background: #FFFFFF;
+  text-align: center;
+}
+
+.features-row.gray .card{
+  background-color: #ECEDED;
+}
+.card h2{
+  text-align: center;
+  font-size: 23px;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 29px;
+  font-weight: bold;
+  margin-top:10px
+}
+
+.card p{
+  text-align: center;
+  color:#545454;
+  margin: 20px 15px;
+}
+
+.button{
+  margin:0 auto!important;
+}
+
+.social{
+  border-top:1px solid #FFF;
+  border-bottom:1px solid #FFF;
+}
+
+.social p{
+  text-align: center;
+}
+
+.social img{
+  margin-left: 8px;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.legal p{
+  text-align: center;
+  color: #FFF;
+  font-size: 12px;
+}
+
+.legal p a{
+  color: #FFF;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.legal img{
+  margin:0 auto;
+}
+
+
+
+
