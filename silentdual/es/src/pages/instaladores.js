@@ -11,46 +11,36 @@ import DiscoverSection from "../components/discoverSection";
 import FormSection from "../components/formSection";
 import Lead from "../components/lead";
 
-const IndexPage = () => (
+const InstallationPage = ({data}) => (
 	<Layout className="layout" style={{ width: "100vw" }}>
-		<Helmet>
+	<Helmet>
 			<link
 				rel="canonical"
-				href="https://www.solerpalau.com/es-es/lanzamiento-silent-dual"
+        href={data.site.siteMetadata.siteUrl}
 			/>
-			<meta name="format-detection" content="telephone=no" />
-			<title>S&P | Silent Dual</title>
-			<meta
-				name="description"
-				content="Los extractores de baño más inteligentes diseñados para una fácil instalación."
-			/>
-			<meta
-				property="og:url"
-				content="https://info.solerpalau.com/silent-dual/"
-			/>
-			<meta property="og:title" content="S&amp;P | Silent Dual" />
-			<meta
-				property="og:description"
-				content="Los extractores de baño más inteligentes diseñados para una fácil instalación."
-			/>
-			<meta
-				property="og:image"
-				content="https://info.solerpalau.com/silent-dual/rrss.jpg"
-			/>
+      <meta name="format-detection" content="telephone=no"/>
 
-			<meta
-				property="og:url"
-				content="https://info.solerpalau.com/silent-dual/"
-			/>
-			<meta property="og:title" content="S&amp;P | Silent Dual" />
-			<meta
-				property="og:description"
-				content="Los extractores de baño más inteligentes diseñados para una fácil instalación."
-			/>
-			<meta
-				property="og:image"
-				content="https://info.solerpalau.com/silent-dual/rrss.jpg"
-			/>
+      {/* HTML Meta Tags */}
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description}/>
+      
+      {/* Google / Search Engine Tags */}
+      <meta itemprop="name" content={data.site.siteMetadata.title}/>
+      <meta itemprop="description" content={data.site.siteMetadata.description}/>
+      <meta itemprop="image" content={`${data.site.siteMetadata.siteUrl}/rrss.jpg`}/>
+      
+      {/* Facebook Meta Tags */}
+      <meta property="og:url" content={data.site.siteMetadata.siteUrl}/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:title" content={data.site.siteMetadata.title}/>
+      <meta property="og:description" content={data.site.siteMetadata.description}/>
+      <meta property="og:image" content={`${data.site.siteMetadata.siteUrl}/rrss.jpg`}/>
+      
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="twitter:title" content={data.site.siteMetadata.title}/>
+      <meta name="twitter:description" content={data.site.siteMetadata.description}/>
+      <meta name="twitter:image" content={`${data.site.siteMetadata.siteUrl}/rrss.jpg`}/>
 		</Helmet>
 		<Hero />
 		<InstallSection />
@@ -62,4 +52,16 @@ const IndexPage = () => (
 	</Layout>
 );
 
-export default IndexPage;
+export default InstallationPage;
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
+  }
+`

@@ -100,9 +100,9 @@ const data = {
 			},
 			{
 				title: "2 modos de funcionamiento",
-				subtitle: "Contínuo e intermitente",
+				subtitle: "Continuo e intermitente",
 				description:
-					"<strong>Funcionamiento contínuo </strong> cuando los sensores no detectan presencia ni cambios de humedad.<strong><br>Funcionamiento intermitente </strong> cuando uno de los sensores se activa."
+					"<strong>Funcionamiento continuo</strong> para asegurar un caudal de extracción permanente a baja velocidad cuando los sensores no detectan presencia ni cambios de humedad. <strong><br>Funcionamiento intermitente </strong> para extraer el aire únicamente cuando uno de los sensores se activa."
 			},
 			{
 				title: "2 entradas de aire",

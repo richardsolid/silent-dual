@@ -51,8 +51,8 @@ sections:
         title: High performance impeller
         body: New impeller geometry for reduced sound levels and greater performance.
       - id: 4
-        title: Support bracket
-        body: Optimised mounting bracket designed and positioned to increase performance and lower sound levels.
+        title: Guide vanes
+        body: Optimized motor support with guide vanes designed and positioned to increase performance and lower sound levels.
   installation:
     title: At S&P we design our products with ease of installation in mind.
     items:

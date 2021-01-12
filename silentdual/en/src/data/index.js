@@ -99,9 +99,9 @@ const data = {
       },
       {
         title: "2 operating modes",
-        subtitle: "Continuous and interminent",
+        subtitle: "Continuous and Intermittent",
         description:
-          "<strong>Continuous operation</strong> when the sensors do not detect movement or changes in humidity levels.<strong><br>Intermitent operation</strong> when one of the sensors is activated.",
+          "<strong>Continuous operation</strong> to ensure a permanent low-speed extraction flow rate when the sensors do not detect movement or changes in humidity levels.<strong><br>Intermittent operation</strong> to extract air only when one of the sensors is activated.",
       },
       {
         title: "2 air inputs",

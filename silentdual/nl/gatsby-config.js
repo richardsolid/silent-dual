@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `S&P Silent Dual`,
     description: `De intelligentste badkamerventilator, ontworpen voor zeer eenvoudige installatie`,
+    siteUrl: `https://www.solerpalau.com/nl-nl/afzuigventilator-silent-dual`,
     author: `@gatsbyjs`
   },
   plugins: [

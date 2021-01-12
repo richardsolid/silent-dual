@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `S&P Silent Dual`,
     description: `Los extractores de baño más inteligentes diseñados para una fácil instalación.`,
+    siteUrl: `https://www.solerpalau.com/es-es/lanzamiento-silent-dual`,
     author: `@gatsbyjs`
   },
   plugins: [
