@@ -61,7 +61,7 @@ sections:
           1. Using the mounting bracket supplied, mark the fixing points where the product will be placed. Insert screws.
           2. Place the mounting bracket in position taking into account the location of the terminal box.
           3. Fix the product and mounting bracket securely in the previous marked place.
-      - item: 30% more compact*
+      - item: More compact*
         body: |-
           Compact design with an incredibly low profile to enable ease of installation into the smallest of spaces. The terminal box and the mounting bracket do not increase the product profile.
 
@@ -70,7 +70,7 @@ sections:
         body: |-
           Designed with rubber gaskets on the flanges to simplify the connection and reduce air leakage.
     btn_text: Download Jetline user guide
-    btn_file: Jetline_Manual_de_instrucciones.pdf
+    btn_file: Jetline_User_Guide.pdf
   models:
     title: Available models
     items:
