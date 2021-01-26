@@ -100,9 +100,9 @@ const data = {
 			},
 			{
 				title: "2 bedrijfsmodi",
-				subtitle: "Continu of laag/hoog",
+				subtitle: "Continu of aan/uit",
 				description:
-					"<strong>Uit of laag </strong> wanneer de sensoren geen beweging of verhoogde relatieve vochtigheid detecteren.<strong><br>Aan of hoog</strong> wanneer de sensoren activeren."
+					"<strong>Continu voor</strong> het verzorgen van continue ventilatie met laag debiet wanneer de sensoren niet activeren.<strong><br>Aan/uit</strong> waarbij alleen wordt geventileerd wanneer de sensoren activeren."
 			},
 			{
 				title: "2 luchtinlaten",

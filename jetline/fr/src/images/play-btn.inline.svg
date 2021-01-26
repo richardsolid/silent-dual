@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Oval</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <circle id="Oval" fill="#EA2C13" cx="30" cy="30" r="30"></circle>
+            <g id="ICONS/-Play_Arrow-/-Right-/-Light-/-large" transform="translate(11.000000, 12.000000)" fill="#FFFFFF">
+                <g id="Icons-/-Play_Arrow-/-Right-/-Light-/-large" transform="translate(13.000000, 8.000000)">
+                    <polygon id="play_arrow---material" points="0 0 16.452 10.476 0 20.952"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
