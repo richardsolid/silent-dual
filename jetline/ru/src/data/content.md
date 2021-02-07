@@ -5,7 +5,7 @@ header:
   nav:
     - item: Описание
       route: "#description"
-    - item: Описание
+    - item: Преимущества
       route: "#features"
     - item: Компоненты
       route: "#components"
@@ -71,7 +71,7 @@ sections:
       - item: НОЛЬ ПРОБЛЕМ
         body: |-
           Вентиляторы оснащены резиновыми уплотнителями на патрубках, которые упрощают подсоединение воздуховодов и препятствуют утечке воздуха.
-    btn_text:  Скачать инструкцию
+    btn_text:  Скачать лифлет JETLINE
     btn_file: Jetline_User_Guide.pdf
   models:
     title: Модельный ряд
@@ -84,7 +84,7 @@ sections:
       - item: |-
           ####JETLINE ECOWATT
         btn_text: Иструкция по монтажу и эксплуатации JETLINE ECOWATT
-        btn_file: Jetline_AC.pdf
+        btn_file: Jetline_ECOWATT.pdf
   contact:
     title:  Форма обратной связи S&P
     subtitle: Напишите нам и мы ответим на все ваши вопросы по продукции S&P

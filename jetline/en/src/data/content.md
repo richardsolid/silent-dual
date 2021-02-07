@@ -82,7 +82,7 @@ sections:
       - item: |-
           ####JETLINE ECOWATT
         btn_text: ECOWATT Instructions Manual
-        btn_file: Jetline_AC.pdf
+        btn_file: Jetline_ECOWATT.pdf
   contact:
     title: S&P by your side
     subtitle: We help you with anything you may need

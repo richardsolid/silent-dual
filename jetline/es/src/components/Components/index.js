@@ -104,7 +104,7 @@ export default function Components({ data, images }) {
           <Hotspot data={hotspots[0]} position={{ x: "72%", y: "49%" }} />
           <Hotspot data={hotspots[1]} position={{ x: "22%", y: "43%" }} />
           <Hotspot data={hotspots[2]} position={{ x: "52%", y: "38%" }} />
-          <Hotspot data={hotspots[3]} position={{ x: "55%", y: "63%" }} />
+          <Hotspot data={hotspots[3]} position={{ x: "62%", y: "63%" }} />
         </animated.div>
       </div>
       <div className="w-full text-white mt-10 block sm:hidden">

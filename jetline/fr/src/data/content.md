@@ -70,7 +70,7 @@ sections:
       - item: Zéro complications
         body: |-
           Brides de racordement fournis avec des joints en caoutchouc pour simplifier le montage des conduits et réduire les fuites d’air.
-    btn_text:  Télécharger la notice de montage
+    btn_text:  Télécharger le guide de l'utilisateur
     btn_file: Jetline_User_Guide.pdf
   models:
     title: Modèles disponibles
@@ -82,8 +82,8 @@ sections:
 
       - item: |-
           ####JETLINE ECOWATT
-        btn_text: E Notice de montage ECOWATT
-        btn_file: Jetline_AC.pdf
+        btn_text: Notice de montage ECOWATT
+        btn_file: Jetline_ECOWATT.pdf
   contact:
     title:  S&P à votre service
     subtitle: Nous pouvons vous apporter aide et assistance

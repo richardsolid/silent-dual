@@ -21,7 +21,7 @@ sections:
   description:
     text: |-
       ###Stiller dan iedere andere in-lijn-ventilator.<br/><br/>
-      ###Ontworpen om tijd, gereedschap en gedoe te beparen.
+      ###Ontworpen om tijd, gereedschap en gedoe te besparen.
   features:
     title: Stiller, kleiner en ultra-efficiënt
     items:
@@ -68,8 +68,8 @@ sections:
           *150 en 160 modellen
       - item: Geen complicaties
         body: |-
-          Ontworpen met rubberen pakkingen op de flenzen om de verbinding te vereenvoudigen en luchtlekkage te verminderen.
-    btn_text: Download JETLINE installatiehandleiding
+          Ontworpen met rubberen pakkingen op de flenzen om de verbinding te vereenvoudigen en luchtlekkage te voorkomen.
+    btn_text: Download de JETLINE brochure
     btn_file: Jetline_User_Guide.pdf
   models:
     title: Beschikbare series
@@ -82,7 +82,7 @@ sections:
       - item: |-
           ####JETLINE ECOWATT
         btn_text: ECOWATT installatiehandleiding
-        btn_file: Jetline_AC.pdf
+        btn_file: Jetline_ECOWATT.pdf
   contact:
     title: S&P aan uw zijde
     subtitle: We helpen u graag

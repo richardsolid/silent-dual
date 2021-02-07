@@ -71,7 +71,7 @@ sections:
       - item: Cero complicaciones
         body: |-
           Juntas de estanqueidad, que simplifican y facilitan su conexión a los conductos de la instalación, evitando fugas de aire.
-    btn_text:  Descargar el manual de instrucciones
+    btn_text:  Descargar la guía de usuario
     btn_file: Jetline_User_Guide.pdf
   models:
     title: Modelos disponibles
@@ -84,7 +84,7 @@ sections:
       - item: |-
           ####JETLINE ECOWATT
         btn_text: Manual de Instrucciones ECOWATT
-        btn_file: Jetline_AC.pdf
+        btn_file: Jetline_ECOWATT.pdf
   contact:
     title:  S&P a tu lado
     subtitle: Te ayudamos en cualquier cosa que puedas necesitar
