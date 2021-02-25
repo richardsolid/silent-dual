@@ -4,7 +4,7 @@ const tailwindConfig = require("./tailwind.config.js");
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
-  pathPrefix: `/ru-ru/release-jetline/`,
+  pathPrefix: `/ru-ru/jetline/`,
   siteMetadata: {
     title: `JETLINE`,
     siteUrl: `https://www.solerpalau.com/ru-ru/release-jetline/`,
