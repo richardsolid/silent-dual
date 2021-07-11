@@ -5,6 +5,7 @@ import InstallationItem from "./InstallationItem";
 import DownloadButton from "../DownloadButton";
 import { useInView } from 'react-intersection-observer';
 import { useSpring, animated } from 'react-spring';
+import video from "../../video/Video_Jetline_Installation.mp4";
 
 export default function Installation({
   data,
@@ -27,6 +28,23 @@ export default function Installation({
         <InstallFriendly className="mb-8" />
         <h3 className="text-center text-3xl mb-20 md:w-7/12 xl:w-6/12">{data.title}</h3>
       </animated.div>
+
+            <animated.div
+        style={props}
+        ref={ref}
+        className="flex flex-col max-w-screen-lg mx-auto items-center"
+      >
+        <video
+          // poster=""
+          className="w-full h-full left-0 top-0 object-cover mb-20"
+          preload="preload"
+          controls={true}
+          id="videoInstallation"
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      </animated.div>
+
       <div className="flex flex-col max-w-screen-lg mx-auto">
         <div>
           <InstallationItem data={data.items[0]} image={images[0]} />
