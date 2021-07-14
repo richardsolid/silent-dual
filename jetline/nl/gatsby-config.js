@@ -4,7 +4,7 @@ const tailwindConfig = require("./tailwind.config.js");
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
-  pathPrefix: `/demos/syp/nl/`,
+  pathPrefix: `/nl-nl/afzuigventilator-jetline/`,
   siteMetadata: {
     title: `JETLINE`,
     siteUrl: `https://www.solerpalau.com/nl-nl/afzuigventilator-jetline/`,
